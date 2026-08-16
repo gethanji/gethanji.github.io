@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hanji · The agent-native knowledge base</title>
+<meta name="description" content="Hanji keeps what a team knows as plain Markdown in the git you already own: a quiet paper front for people, a small protocol for agents, and a lock that goes down to a single file.">
+<link rel="icon" href="hanji-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Inter:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fcfcf8;--ink:#1e1c18;--ink-soft:#4a463f;--muted:#6f6a61;--faint:#a39d92;--hairline:#e8e5dd;--accent:#3f7c70;--accent-text:#37695f;--on-accent:#fcfcf8}
+@media (prefers-color-scheme:dark){:root{--paper:#191813;--ink:#ece9e2;--ink-soft:#c9c4ba;--muted:#98928a;--faint:#6b665e;--hairline:#32302a;--accent:#5aa392;--accent-text:#6fb3a3;--on-accent:#12110d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+a{color:var(--accent-text)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 1.5rem}
+header{padding:1.6rem 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between}
+.lockup{display:flex;align-items:center;gap:.6rem;font-family:Newsreader,serif;font-size:1.4rem;font-weight:600;color:var(--ink);text-decoration:none}
+.lockup img{width:1.6rem;height:1.6rem}
+header nav{display:flex;gap:1.4rem;font-size:.88rem}
+header nav a{color:var(--ink-soft);text-decoration:none}
+header nav a:hover{color:var(--accent-text)}
+.hero{padding:5.5rem 0 4rem;text-align:center}
+.hero h1{font-family:Newsreader,serif;font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.06;letter-spacing:-.022em;font-weight:600;margin:0 auto 1.2rem;max-width:17ch}
+.hero p.lede{font-family:Newsreader,serif;font-size:1.28rem;line-height:1.65;color:var(--ink-soft);max-width:36em;margin:0 auto 2.2rem}
+.cta{display:inline-flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+.cta a{padding:.7rem 1.3rem;border-radius:10px;font-size:.92rem;font-weight:500;text-decoration:none}
+.cta .primary{background:var(--accent);color:var(--on-accent)}
+.cta .primary:hover{opacity:.92}
+.cta .quiet{border:1px solid var(--hairline);color:var(--ink-soft)}
+.cta .quiet:hover{border-color:var(--faint)}
+.pre{margin-top:1.1rem;font-size:.78rem;color:var(--faint)}
+.pane{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:3rem;align-items:center;padding:3.6rem 0;border-top:1px solid var(--hairline)}
+.pane:nth-child(even){direction:rtl}.pane>*{direction:ltr}
+.pane h2{font-family:Newsreader,serif;font-size:1.85rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 .8rem}
+.pane p{font-family:Newsreader,serif;font-size:1.12rem;color:var(--ink-soft);margin:0 0 .7rem}
+.pane .shot{border:1px solid var(--hairline);border-radius:12px;overflow:hidden;box-shadow:0 18px 44px -22px rgba(30,28,24,.25)}
+.pane .shot img{display:block;width:100%;height:auto}
+.stance{border-top:1px solid var(--hairline);padding:3.4rem 0;text-align:center}
+.stance p.big{font-family:Newsreader,serif;font-size:clamp(1.4rem,3vw,1.9rem);font-style:italic;color:var(--ink-soft);max-width:30em;margin:0 auto .9rem}
+.stance p.small{font-size:.85rem;color:var(--muted);max-width:44em;margin:0 auto}
+footer{border-top:1px solid var(--hairline);padding:2.2rem 0 3rem;font-size:.82rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{color:var(--muted)}
+@media (max-width:760px){.pane{grid-template-columns:1fr;gap:1.6rem;padding:2.6rem 0}.pane:nth-child(even){direction:ltr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="lockup" href="/"><img src="hanji-mark.svg" alt="">Hanji</a>
+    <nav>
+      <a href="/docs/">Handbook</a>
+      <a href="https://github.com/gethanji">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>The agent-native knowledge base</h1>
+    <p class="lede">Hanji keeps what a team knows as plain Markdown, in the git you already own. People read and write on quiet, well-set paper. Coding agents read and contribute through the same git and a small protocol. Nothing is bundled, nothing is metered, and nothing is locked where only one program can reach it.</p>
+    <div class="cta">
+      <a class="primary" href="/docs/">Read the handbook</a>
+      <a class="quiet" href="https://github.com/gethanji">GitHub</a>
+    </div>
+    <p class="pre">Pre-release. The handbook is public today; the code lands as one clean release.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="pane">
+    <div>
+      <h2>A front worth reading</h2>
+      <p>Pages open on warm paper, set in a serif for long reading. Edit in place; press Update, and one clean commit happens behind you. No draft state to babysit, and a one-word fix is a one-line diff.</p>
+      <p>Because the store is git, history is not a feature bolted on — it is the commits, shown well.</p>
+    </div>
+    <div class="shot"><img src="assets/reading-view.png" alt="The Hanji reading view: a sidebar of mounts, a page set in serif on warm paper"></div>
+  </section>
+
+  <section class="pane">
+    <div>
+      <h2>Agents propose. You decide.</h2>
+      <p>Your agents already live in git — Hanji gives them a scoped, honest surface. They read through MCP and contribute as proposals: a branch, a diff, and your Merge. Their name stays in history, because a year from now <em>git blame</em> should still tell the truth.</p>
+    </div>
+    <div class="shot"><img src="assets/merge.gif" alt="A proposal reviewed and merged: the diff, the Merge button, the page updated with the agent's byline"></div>
+  </section>
+
+  <section class="pane">
+    <div>
+      <h2>A lock down to one file</h2>
+      <p>General access flows down like you'd expect; people are the exceptions that punch through. A note two people share is invisible to everyone else — tree, search, links, all of it — and a locked page looks identical to one that does not exist.</p>
+      <p>One read path enforces this for humans and agents alike. An agent holds exactly what it was granted, never more.</p>
+    </div>
+    <div class="shot"><img src="assets/share-popover.png" alt="The Share popover: general access set on a mount, one person's grant listed beneath"></div>
+  </section>
+</div>
+
+<section class="stance">
+  <div class="wrap">
+    <p class="big">No bundled model. No credits. No wall between your writing and your agents.</p>
+    <p class="small">Walk away whenever — it's Markdown in your repositories. The documentation you'll read next is itself a Hanji export, <a href="/docs/llms.txt">llms.txt</a> included.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>한지 — traditional Korean paper: durable for centuries, made to be written on.</span>
+    <span><a href="/docs/">Handbook</a> · <a href="https://github.com/gethanji">GitHub</a></span>
+  </div>
+</footer>
+</body>
+</html>
