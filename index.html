@@ -89,16 +89,43 @@ header nav a.go:hover{opacity:.92}
 .shot:hover{transform:rotate(0) scale(1.012);box-shadow:0 34px 72px -28px color-mix(in srgb,var(--accent) 28%,rgba(30,28,24,.35))}
 .shot img{display:block;width:100%;height:auto}
 
-/* scroll reveal — the product's sheet choreography, borrowed */
-.rise{opacity:0;transform:translateY(26px)}
-.seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.32,.72,0,1),transform .6s cubic-bezier(.32,.72,0,1)}
+/* scroll reveal — the product's sheet choreography, borrowed. Hidden only
+   once JS confirms it can reveal; without JS everything simply shows. */
+html.js .rise{opacity:0;transform:translateY(26px)}
+html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.32,.72,0,1),transform .6s cubic-bezier(.32,.72,0,1)}
 .seen .rise:nth-child(2){transition-delay:.08s}.seen .rise:nth-child(3){transition-delay:.14s}
 
-/* ---------- steps ---------- */
-.steps{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:2.6rem 0;position:relative;z-index:1}
-.steps .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
-.step b{display:block;font-family:ui-monospace,monospace;font-size:.7rem;color:var(--accent-text);margin-bottom:.35rem}
-.step{font-size:.88rem;color:var(--ink-soft)}
+/* ---------- paper-thin ---------- */
+.thin{padding:4.6rem 0 4.2rem;text-align:center;position:relative;z-index:1}
+.thin .kicker{margin-bottom:.9rem}
+.thin h2{font-family:Newsreader,serif;font-style:italic;font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-.02em;margin:0 0 .7rem}
+.thin .sub{font-family:Newsreader,serif;font-size:1.12rem;color:var(--ink-soft);max-width:38em;margin:0 auto 2.6rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:960px;margin:0 auto;border-top:1px solid var(--hairline)}
+.stat{padding:1.8rem 1rem 1.5rem;border-right:1px solid var(--hairline)}
+.stat:last-child{border-right:0}
+.stat .v{font-family:Newsreader,serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;letter-spacing:-.02em;line-height:1}
+.stat .v small{font-size:.45em;font-weight:400;color:var(--muted);margin-left:.1em}
+.stat .l{display:block;margin-top:.6rem;font-family:ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat.zero .v{color:var(--accent-text)}
+.stat.zero .l{color:var(--accent-text)}
+.thin .note{margin-top:2rem;font-size:.85rem;color:var(--muted)}
+@media (max-width:840px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--hairline)}}
+
+/* ---------- run it your way ---------- */
+.ways{border-top:1px solid var(--hairline);padding:4.4rem 0 4.6rem;position:relative;z-index:1}
+.ways .kicker{text-align:center}
+.ways h2{font-family:Newsreader,serif;font-size:clamp(1.8rem,3.4vw,2.4rem);letter-spacing:-.015em;text-align:center;margin:0 0 2.4rem}
+.waygrid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:980px;margin:0 auto}
+.way{position:relative;background:color-mix(in srgb,var(--sheet) 72%,transparent);border:1px solid var(--hairline);border-radius:14px;padding:1.5rem 1.6rem 1.3rem;transition:transform .3s cubic-bezier(.32,.72,0,1),border-color .3s,box-shadow .3s}
+.way:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--hairline));box-shadow:0 18px 40px -22px color-mix(in srgb,var(--accent) 30%,rgba(30,28,24,.3))}
+.way h3{font-family:Newsreader,serif;font-size:1.3rem;margin:0 0 .3rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.way .chip{font-family:ui-monospace,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--accent-text);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:99px;padding:.15rem .55rem;white-space:nowrap}
+.way p{font-family:Newsreader,serif;font-size:1rem;color:var(--ink-soft);margin:0 0 .9rem}
+.way pre{margin:0 0 .9rem;background:color-mix(in srgb,var(--ink) 94%,var(--accent));color:var(--paper);border-radius:9px;padding:.8rem 1rem;font-family:ui-monospace,monospace;font-size:.72rem;line-height:1.7;overflow-x:auto}
+@media (prefers-color-scheme:dark){.way pre{background:color-mix(in srgb,var(--sheet) 70%,black);color:var(--ink)}}
+.way a.more{font-size:.82rem;font-family:Inter,sans-serif;text-decoration:none}
+.way a.more:hover{text-decoration:underline}
+.ways .after{margin-top:1.8rem;text-align:center;font-size:.8rem;color:var(--faint)}
 
 /* ---------- agent notice ---------- */
 .notice{margin:5rem auto;max-width:640px;border:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);border-radius:14px;padding:1.6rem 2rem;text-align:center;position:relative;z-index:1;background:color-mix(in srgb,var(--sheet) 55%,transparent)}
@@ -206,12 +233,59 @@ footer a{color:var(--muted)}
   </section>
 </div>
 
-<section class="steps">
+<section class="thin pane" style="display:block" id="thin">
   <div class="wrap">
-    <div class="step"><b>01</b>Mount the repositories you already have.</div>
-    <div class="step"><b>02</b>People read and write on paper.</div>
-    <div class="step"><b>03</b>Agents read and propose over MCP.</div>
-    <div class="step"><b>04</b>Export it all to the open web.</div>
+    <p class="kicker rise">04 · THE WEIGHT</p>
+    <h2 class="rise">Paper-thin.</h2>
+    <p class="sub rise">Not only a metaphor about longevity — a claim about weight, measured. Reads come off a local clone and a local index. There is no cloud in the loop, and the editor doesn't even load until you press Edit.</p>
+    <div class="stats rise">
+      <div class="stat"><span class="v">~2<small>ms</small></span><span class="l">an agent fetches a page</span></div>
+      <div class="stat"><span class="v">~14<small>kB</small></span><span class="l">a page, over the wire</span></div>
+      <div class="stat"><span class="v">~55<small>ms</small></span><span class="l">time to first byte</span></div>
+      <div class="stat zero"><span class="v">0</span><span class="l">bundled LLM SDKs</span></div>
+    </div>
+    <p class="note rise">The zero is the point: nothing about Hanji's cost or weight grows because your team wrote more this month. <a href="/docs/handbook/product/performance/">All the numbers, measured →</a></p>
+  </div>
+</section>
+
+<section class="ways">
+  <div class="wrap">
+    <p class="kicker">05 · RUN IT YOUR WAY</p>
+    <h2>Pick your shape. It's a handful of lines, whichever you pick.</h2>
+    <div class="waygrid">
+      <div class="way">
+        <h3>Just you, locally</h3>
+        <p>Five minutes from a repo full of Markdown to a place worth reading.</p>
+        <pre>pnpm hanji add-mount notes git@github.com:you/notes.git notes
+pnpm hanji sync
+pnpm dev:web   # → localhost:4100</pre>
+        <a class="more" href="/docs/handbook/guide/quickstart/">Quick start →</a>
+      </div>
+      <div class="way">
+        <h3>Your team, on a tailnet</h3>
+        <p>One shared instance where the network signs people in. Nobody types a password.</p>
+        <pre>export HANJI_TAILSCALE_OWNER=you@github
+next start -H 127.0.0.1 -p 4100
+tailscale serve --bg 4100</pre>
+        <a class="more" href="/docs/handbook/guide/on-your-tailnet/">On your tailnet →</a>
+      </div>
+      <div class="way">
+        <h3>With your coding agents</h3>
+        <p>Scoped reads over MCP - a mount, a folder, or one page - and edits that arrive as proposals.</p>
+        <pre>pnpm hanji token my-claude notes=read+propose
+claude mcp add hanji --transport http \
+  http://localhost:4101/mcp</pre>
+        <a class="more" href="/docs/handbook/guide/agents/">Agents →</a>
+      </div>
+      <div class="way">
+        <h3>Published to the web <span class="chip">you're reading one</span></h3>
+        <p>Everything you've opened to everyone, as a website - llms.txt included, nothing else leaks.</p>
+        <pre>pnpm hanji rule handbook everyone-read
+pnpm hanji export ./site</pre>
+        <a class="more" href="/docs/handbook/guide/publish/">Publish to the web →</a>
+      </div>
+    </div>
+    <p class="after">All four ship in the first release. The handbook documents each of them today.</p>
   </div>
 </section>
 
@@ -244,6 +318,7 @@ footer a{color:var(--muted)}
 
 <script>
 (() => {
+  document.documentElement.classList.add("js");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const typed = document.getElementById("typed");
   const caret = document.getElementById("caret");
