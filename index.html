@@ -132,6 +132,22 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 .notice b{font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.14em;color:var(--accent-text);display:block;margin-bottom:.6rem}
 .notice p{font-family:Newsreader,serif;font-size:1.08rem;color:var(--ink-soft);margin:0}
 
+/* ---------- no-model ---------- */
+.nomodel{border-top:1px solid var(--hairline);padding:4.6rem 0;position:relative;z-index:1}
+.nomodel .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3.4rem;align-items:center}
+.nomodel h2{font-family:Newsreader,serif;font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.12;letter-spacing:-.018em;margin:0 0 .9rem}
+.nomodel h2 em{color:var(--accent-text)}
+.nomodel p{font-family:Newsreader,serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
+.envcard{background:color-mix(in srgb,var(--ink) 94%,var(--accent));border-radius:14px;padding:1.4rem 1.6rem;font-family:ui-monospace,monospace;font-size:.8rem;line-height:2;color:var(--paper);box-shadow:0 26px 60px -28px rgba(30,28,24,.4)}
+@media (prefers-color-scheme:dark){.envcard{background:color-mix(in srgb,var(--sheet) 70%,black);color:var(--ink)}}
+.envcard .t{color:color-mix(in srgb,var(--paper) 55%,transparent);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+@media (prefers-color-scheme:dark){.envcard .t{color:var(--faint)}}
+.envcard .k{color:var(--accent-text)}
+.envcard .no{opacity:.45;text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent)}
+.envcard .yay{border-top:1px dashed color-mix(in srgb,var(--paper) 25%,transparent);margin-top:.5rem;padding-top:.5rem;font-size:.72rem;color:color-mix(in srgb,var(--paper) 65%,transparent)}
+@media (prefers-color-scheme:dark){.envcard .yay{color:var(--muted);border-top-color:var(--hairline)}}
+@media (max-width:840px){.nomodel .wrap{grid-template-columns:1fr;gap:2rem}}
+
 /* ---------- stance + close ---------- */
 .stance{padding:5rem 0 3.4rem;text-align:center;position:relative;z-index:1}
 .stance .big{font-family:Newsreader,serif;font-style:italic;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--ink);max-width:26em;margin:0 auto 1rem;line-height:1.4}
@@ -295,6 +311,27 @@ pnpm hanji export ./site</pre>
     <p>Skip the pixels — this whole site is plain Markdown at <a href="/docs/llms.txt">/docs/llms.txt</a>. Tell your human we said hi.</p>
   </aside>
 </div>
+
+<section class="nomodel">
+  <div class="wrap">
+    <div>
+      <p class="kicker">06 · THE DEPENDENCY THAT ISN'T</p>
+      <h2>Built for agents.<br><em>Runs without one.</em></h2>
+      <p>Most tools this year ship with a model inside and a meter running. Hanji is agent-native the other way around: your agents are welcome guests, never a dependency.</p>
+      <p>There is no API key in the setup, no model picker in the settings, no "bring your own key." Nothing about it stops working when the tokens run out — because there are no tokens.</p>
+    </div>
+    <div class="envcard">
+      <span class="t">Everything Hanji needs to run</span><br>
+      <span class="k">HANJI_DATA_DIR</span>=~/.hanji<br>
+      <span class="k">HANJI_SESSION_SECRET</span>=•••<br>
+      <span class="k">HANJI_OWNER_PASSWORD</span>=•••<br>
+      <span class="no">OPENAI_API_KEY</span><br>
+      <span class="no">ANTHROPIC_API_KEY</span><br>
+      <span class="no">MODEL_PROVIDER</span><br>
+      <span class="yay">that's the whole list. nothing in it talks to a model.</span>
+    </div>
+  </div>
+</section>
 
 <section class="stance">
   <div class="wrap">
