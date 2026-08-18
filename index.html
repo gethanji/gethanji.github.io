@@ -11,8 +11,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Inter:wght@400..600&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#fcfcf8;--sheet:#ffffff;--ink:#1e1c18;--ink-soft:#4a463f;--muted:#6f6a61;--faint:#a39d92;--hairline:#e8e5dd;--accent:#3f7c70;--accent-text:#37695f;--on-accent:#fcfcf8;--green-bg:#e8f2ee}
-@media (prefers-color-scheme:dark){:root{--paper:#191813;--sheet:#201f19;--ink:#ece9e2;--ink-soft:#c9c4ba;--muted:#98928a;--faint:#6b665e;--hairline:#32302a;--accent:#5aa392;--accent-text:#6fb3a3;--on-accent:#12110d;--green-bg:#1e2b26}}
+:root{color-scheme:light dark;
+--paper:light-dark(#fcfcf8,#191813);--sheet:light-dark(#ffffff,#201f19);--ink:light-dark(#1e1c18,#ece9e2);--ink-soft:light-dark(#4a463f,#c9c4ba);--muted:light-dark(#6f6a61,#98928a);--faint:light-dark(#a39d92,#6b665e);--hairline:light-dark(#e8e5dd,#32302a);--accent:light-dark(#3f7c70,#5aa392);--accent-text:light-dark(#37695f,#6fb3a3);--on-accent:light-dark(#fcfcf8,#12110d);--green-bg:light-dark(#e8f2ee,#1e2b26);
+--codebg:light-dark(color-mix(in srgb,var(--ink) 94%,var(--accent)),color-mix(in srgb,var(--sheet) 70%,black));--codeink:light-dark(var(--paper),var(--ink));--codelabel:light-dark(color-mix(in srgb,var(--paper) 55%,transparent),var(--faint));--codenote:light-dark(color-mix(in srgb,var(--paper) 65%,transparent),var(--muted));--codeline:light-dark(color-mix(in srgb,var(--paper) 25%,transparent),var(--hairline))}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box}
 ::selection{background:var(--accent);color:var(--on-accent)}
 html{scroll-behavior:smooth}
@@ -39,6 +42,13 @@ header nav a{color:var(--ink-soft);text-decoration:none;padding:.42rem .75rem;bo
 header nav a:hover{background:color-mix(in srgb,var(--hairline) 55%,transparent);color:var(--ink)}
 header nav a.go{background:var(--accent);color:var(--on-accent);margin-left:.35rem;box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 20%,transparent),0 1px 2px color-mix(in srgb,var(--accent) 35%,transparent)}
 header nav a.go:hover{background:color-mix(in srgb,var(--accent) 92%,#fff);color:var(--on-accent)}
+.theme{display:none;place-items:center;width:2.1rem;height:2.1rem;border:0;border-radius:8px;background:none;color:var(--ink-soft);cursor:pointer;padding:0;transition:background .15s,color .15s}
+html.js .theme{display:grid}
+.theme:hover{background:color-mix(in srgb,var(--hairline) 55%,transparent);color:var(--ink)}
+.theme svg{width:1rem;height:1rem;display:none}
+:root:not([data-theme]) .theme .i-auto{display:block}
+:root[data-theme=light] .theme .i-light{display:block}
+:root[data-theme=dark] .theme .i-dark{display:block}
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:6.5rem 0 5.5rem;z-index:1}
@@ -134,8 +144,7 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 .way h3{font-family:Newsreader,serif;font-size:1.3rem;margin:0 0 .3rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
 .way .chip{font-family:ui-monospace,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--accent-text);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:99px;padding:.15rem .55rem;white-space:nowrap}
 .way p{font-family:Newsreader,serif;font-size:1rem;color:var(--ink-soft);margin:0 0 .9rem}
-.way pre{margin:0 0 .9rem;background:color-mix(in srgb,var(--ink) 94%,var(--accent));color:var(--paper);border-radius:9px;padding:.8rem 1rem;font-family:ui-monospace,monospace;font-size:.72rem;line-height:1.7;overflow-x:auto;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-@media (prefers-color-scheme:dark){.way pre{background:color-mix(in srgb,var(--sheet) 70%,black);color:var(--ink)}}
+.way pre{margin:0 0 .9rem;background:var(--codebg);color:var(--codeink);border-radius:9px;padding:.8rem 1rem;font-family:ui-monospace,monospace;font-size:.72rem;line-height:1.7;overflow-x:auto;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
 .way a.more{font-size:.82rem;font-family:Inter,sans-serif;font-weight:500;text-decoration:none}
 .way a.more:hover{text-decoration:underline;text-underline-offset:4px}
 .ways .after{margin-top:1.8rem;text-align:center;font-size:.8rem;color:var(--faint)}
@@ -151,14 +160,11 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 .nomodel h2{font-family:Newsreader,serif;font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.12;letter-spacing:-.018em;margin:0 0 .9rem}
 .nomodel h2 em{color:var(--accent-text)}
 .nomodel p{font-family:Newsreader,serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
-.envcard{background:color-mix(in srgb,var(--ink) 94%,var(--accent));border-radius:14px;padding:1.4rem 1.6rem;font-family:ui-monospace,monospace;font-size:.8rem;line-height:2;color:var(--paper);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 26px 60px -28px rgba(30,28,24,.4)}
-@media (prefers-color-scheme:dark){.envcard{background:color-mix(in srgb,var(--sheet) 70%,black);color:var(--ink)}}
-.envcard .t{color:color-mix(in srgb,var(--paper) 55%,transparent);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
-@media (prefers-color-scheme:dark){.envcard .t{color:var(--faint)}}
+.envcard{background:var(--codebg);border-radius:14px;padding:1.4rem 1.6rem;font-family:ui-monospace,monospace;font-size:.8rem;line-height:2;color:var(--codeink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 26px 60px -28px rgba(30,28,24,.4)}
+.envcard .t{color:var(--codelabel);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
 .envcard .k{color:var(--accent-text)}
 .envcard .no{opacity:.45;text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent)}
-.envcard .yay{border-top:1px dashed color-mix(in srgb,var(--paper) 25%,transparent);margin-top:.5rem;padding-top:.5rem;font-size:.72rem;color:color-mix(in srgb,var(--paper) 65%,transparent)}
-@media (prefers-color-scheme:dark){.envcard .yay{color:var(--muted);border-top-color:var(--hairline)}}
+.envcard .yay{border-top:1px dashed var(--codeline);margin-top:.5rem;padding-top:.5rem;font-size:.72rem;color:var(--codenote)}
 @media (max-width:840px){.nomodel .wrap{grid-template-columns:1fr;gap:2rem}}
 
 /* ---------- stance + close ---------- */
@@ -185,6 +191,7 @@ footer a:hover{color:var(--ink)}
   .shot,.shot:hover{transform:none}
 }
 </style>
+<script>document.documentElement.classList.add("js");try{const t=localStorage.getItem("hanji-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 <header>
@@ -193,6 +200,11 @@ footer a:hover{color:var(--ink)}
     <nav>
       <a href="/docs/">Handbook</a>
       <a href="https://github.com/gethanji">GitHub</a>
+      <button class="theme" id="theme" aria-label="Theme: auto" title="Theme: auto">
+        <svg class="i-auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
+        <svg class="i-light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v1.8M8 13.2V15M1 8h1.8M13.2 8H15M3.05 3.05l1.27 1.27M11.68 11.68l1.27 1.27M12.95 3.05l-1.27 1.27M4.32 11.68l-1.27 1.27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="i-dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.8 9.6A6 6 0 0 1 6.4 2.2a6 6 0 1 0 7.4 7.4z" fill="currentColor"/></svg>
+      </button>
       <a class="go" href="/docs/handbook/quickstart/">Get started</a>
     </nav>
   </div>
@@ -380,7 +392,18 @@ pnpm hanji export ./site</pre>
 
 <script>
 (() => {
-  document.documentElement.classList.add("js");
+  const themeBtn = document.getElementById("theme");
+  const themeLabel = () => { const t = document.documentElement.dataset.theme || "auto"; themeBtn.setAttribute("aria-label", "Theme: " + t); themeBtn.title = "Theme: " + t; };
+  themeLabel();
+  themeBtn.addEventListener("click", () => {
+    const cur = document.documentElement.dataset.theme || "auto";
+    const next = cur === "auto" ? "light" : cur === "light" ? "dark" : "auto";
+    try {
+      if (next === "auto") { delete document.documentElement.dataset.theme; localStorage.removeItem("hanji-theme"); }
+      else { document.documentElement.dataset.theme = next; localStorage.setItem("hanji-theme", next); }
+    } catch (e) {}
+    themeLabel();
+  });
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const typed = document.getElementById("typed");
   const caret = document.getElementById("caret");
