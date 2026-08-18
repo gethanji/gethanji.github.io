@@ -51,12 +51,13 @@ header nav a.go:hover{opacity:.92}
 .cta a{transition:transform .18s,box-shadow .18s}
 .cta .quiet{border:1px solid var(--hairline);color:var(--ink-soft);background:color-mix(in srgb,var(--sheet) 60%,transparent)}
 .cta .quiet:hover{border-color:var(--faint)}
-.notify{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.4rem}
+.launchnote{border-top:1px solid var(--hairline);padding:3.2rem 0 3.8rem;text-align:center;position:relative;z-index:1}
+.launchnote .lead{font-family:Newsreader,serif;font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin:0 0 1.4rem}
+.notify{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
 .notify input{padding:.72rem 1rem;border-radius:10px;border:1px solid var(--hairline);background:var(--sheet);color:var(--ink);font:inherit;font-size:.92rem;min-width:16rem}
 .notify input:focus{outline:none;border-color:var(--accent)}
 .notify button{padding:.75rem 1.35rem;border-radius:10px;border:0;font:inherit;font-size:.92rem;font-weight:500;background:var(--accent);color:var(--on-accent);cursor:pointer;box-shadow:0 10px 30px -12px color-mix(in srgb,var(--accent) 55%,transparent);transition:transform .18s,box-shadow .18s}
 .notify button:hover{transform:translateY(-1px);box-shadow:0 14px 34px -12px color-mix(in srgb,var(--accent) 60%,transparent)}
-.notify .small{flex-basis:100%;text-align:center;font-size:.8rem;color:var(--muted);margin:.1rem 0 0}
 .pre{margin-top:1rem;font-size:.76rem;color:var(--faint)}
 
 /* the living sheet */
@@ -350,12 +351,17 @@ pnpm hanji export ./site</pre>
   <div class="cta" style="justify-content:center">
     <a class="primary" href="/docs/">Read the handbook</a>
   </div>
-  <form class="notify" action="https://buttondown.com/api/emails/embed-subscribe/hanji" method="post" target="_blank">
-    <input type="email" name="email" placeholder="you@yours.dev" required>
-    <button type="submit">Get the launch note</button>
-    <p class="small">One email when the code lands. Maybe three a year after.</p>
-  </form>
 </div>
+
+<section class="launchnote">
+  <div class="wrap">
+    <p class="lead">One email when the code lands. Maybe three a year after.</p>
+    <form class="notify" action="https://buttondown.com/api/emails/embed-subscribe/hanji" method="post" target="_blank">
+      <input type="email" name="email" placeholder="you@yours.dev" required>
+      <button type="submit">Get the launch note</button>
+    </form>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
