@@ -1,0 +1,20 @@
+# Hanji
+
+> The agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in the git you already own — a paper front for people, a small protocol for agents, and a lock that goes down to a single file. No bundled model, no credits. Open source, AGPL-3.0.
+
+Hanji reads come off a local clone and a local index; there is no LLM SDK bundled and nothing meters usage. Agents are welcome guests over MCP — scoped reads and edits that arrive as proposals, with the agent's name kept in git history — never a dependency. Everything you open to everyone can be exported as a static website (this page and the handbook are Hanji exports).
+
+## Docs
+- [Handbook](https://gethanji.github.io/docs/): the full product handbook, itself a Hanji export
+- [Quick start](https://gethanji.github.io/docs/handbook/quickstart/): run it locally in a handful of lines
+- [Full llms.txt](https://gethanji.github.io/docs/llms.txt): the complete documented site as plain Markdown for agents
+
+## Source
+- [GitHub (gethanji)](https://github.com/gethanji): source code, AGPL-3.0
+
+## Key facts
+- Storage: plain Markdown files in your own git repositories — no proprietary store, no lock-in
+- Agents: read and propose over MCP; no bundled model, no API key required to run
+- Access: open by default, with per-mount / per-page / per-file locks; one read path enforces it for humans and agents alike
+- Cost & weight: nothing about cost or weight grows because your team wrote more this month — there are no tokens
+- License: AGPL-3.0, free
