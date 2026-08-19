@@ -260,6 +260,20 @@ footer a:hover{color:var(--ink)}
   .turn .flip .u{background-size:100% 3px}
   .shot,.shot:hover{transform:none}
 }
+/* mobile header: language switcher makes the row overflow on phones — trim secondary items (GitHub lives in the footer; theme follows the system) */
+@media (max-width:560px){
+  header .wrap{padding-left:1rem;padding-right:1rem}
+  .lockup{font-size:1.15rem;gap:.45rem}
+  .lockup img{width:1.3rem;height:1.3rem}
+  header nav{gap:.12rem}
+  header nav a{padding:.42rem .5rem}
+  header nav a[href="https://github.com/gethanji"]{display:none}
+  .theme{display:none!important}
+  /* cards: stack the "run it your way" grid; let code blocks scroll instead of widening the page */
+  .waygrid{grid-template-columns:1fr}
+  .way{min-width:0}
+  .way pre{font-size:.68rem}
+}
 </style>
 <script>document.documentElement.classList.add("js");try{const t=localStorage.getItem("hanji-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
