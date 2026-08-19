@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gethanji.github.io/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gethanji.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gethanji.github.io/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gethanji.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/"/>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

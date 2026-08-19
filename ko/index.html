@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <!-- Dear agent: skip the pixels. The whole site is plain Markdown at /docs/llms.txt -->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>/* first-visit language routing: send Korean-preference browsers to /ko/ unless the visitor chose a language */(function(){try{if(localStorage.getItem('hanji-lang'))return;var l=(navigator.language||navigator.userLanguage||'').toLowerCase();if(l.indexOf('ko')===0)location.replace('/ko/');}catch(e){}})();</script>
-<title>Hanji · The agent-native knowledge base</title>
-<meta name="description" content="Hanji keeps what a team knows as plain Markdown in the git you already own: a paper front for people, a small protocol for agents, and a lock that goes down to a single file. No bundled model. No credits.">
-<link rel="canonical" href="https://gethanji.github.io/">
+<script>/* first-visit language routing: bounce non-Korean browsers to EN unless the visitor chose a language */(function(){try{if(localStorage.getItem('hanji-lang'))return;var l=(navigator.language||navigator.userLanguage||'').toLowerCase();if(l.indexOf('ko')!==0)location.replace('/');}catch(e){}})();</script>
+<title>한지 · 에이전트 네이티브 지식베이스</title>
+<meta name="description" content="한지는 팀이 아는 것을 순수 마크다운으로, 이미 소유한 git에 보관합니다. 사람을 위한 종이 앞면, 에이전트를 위한 작은 프로토콜, 파일 하나까지 내려가는 잠금장치. 번들된 모델도, 크레딧도 없습니다.">
+<link rel="canonical" href="https://gethanji.github.io/ko/">
 <link rel="alternate" hreflang="en" href="https://gethanji.github.io/">
 <link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/">
 <link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/">
@@ -17,22 +17,23 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Hanji">
-<meta property="og:title" content="Hanji · The agent-native knowledge base">
-<meta property="og:description" content="What a team knows, kept as plain Markdown in the git you already own. A paper front for people, a small protocol for agents, a lock down to a single file. No bundled model, no credits — open source, AGPL.">
-<meta property="og:url" content="https://gethanji.github.io/">
-<meta property="og:image" content="https://gethanji.github.io/assets/og.png">
+<meta property="og:site_name" content="Hanji 한지">
+<meta property="og:title" content="한지 · 에이전트 네이티브 지식베이스">
+<meta property="og:description" content="팀이 아는 것을 순수 마크다운으로, 이미 소유한 git에 보관합니다. 사람을 위한 종이 앞면, 에이전트를 위한 작은 프로토콜, 파일 하나까지 내려가는 잠금장치. 번들된 모델도 크레딧도 없는 오픈소스, AGPL.">
+<meta property="og:url" content="https://gethanji.github.io/ko/">
+<meta property="og:image" content="https://gethanji.github.io/assets/og.ko.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hanji — the agent-native knowledge base, kept as plain Markdown in your own git">
-<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="한지 · 에이전트 네이티브 지식베이스, 당신의 git에 순수 마크다운으로">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hanji · The agent-native knowledge base">
-<meta name="twitter:description" content="What a team knows, kept as plain Markdown in the git you already own. No bundled model, no credits — open source, AGPL.">
-<meta name="twitter:image" content="https://gethanji.github.io/assets/og.png">
-<meta name="twitter:image:alt" content="Hanji — the agent-native knowledge base">
+<meta name="twitter:title" content="한지 · 에이전트 네이티브 지식베이스">
+<meta name="twitter:description" content="팀이 아는 것을 순수 마크다운으로, 이미 소유한 git에 보관합니다. 번들된 모델도 크레딧도 없는 오픈소스, AGPL.">
+<meta name="twitter:image" content="https://gethanji.github.io/assets/og.ko.png">
+<meta name="twitter:image:alt" content="한지 · 에이전트 네이티브 지식베이스">
 
 <!-- Structured data: entity graph for search engines and LLMs -->
 <script type="application/ld+json">
@@ -52,8 +53,8 @@
       "@id": "https://gethanji.github.io/#website",
       "url": "https://gethanji.github.io/",
       "name": "Hanji",
-      "description": "The agent-native knowledge base: plain Markdown in the git you already own, a small protocol for agents, and a lock down to a single file.",
-      "inLanguage": "en",
+      "description": "에이전트 네이티브 지식베이스. 이미 소유한 git 안의 순수 마크다운, 에이전트를 위한 작은 프로토콜, 파일 하나까지 내려가는 잠금장치.",
+      "inLanguage": "ko",
       "publisher": {"@id": "https://gethanji.github.io/#org"}
     },
     {
@@ -63,7 +64,7 @@
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "Knowledge base",
       "operatingSystem": "Web, macOS, Linux",
-      "description": "An agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in repositories you already own. Agents read and propose edits over MCP; there is no bundled LLM and nothing meters usage.",
+      "description": "에이전트 네이티브 지식베이스. 한지는 팀이 아는 것을 이미 소유한 저장소에 순수 마크다운으로 보관합니다. 에이전트는 MCP로 읽고 편집을 제안하며, 번들된 LLM도 사용량 계량도 없습니다.",
       "url": "https://gethanji.github.io/",
       "softwareHelp": "https://gethanji.github.io/docs/",
       "license": "https://www.gnu.org/licenses/agpl-3.0.html",
@@ -74,11 +75,12 @@
   ]
 }
 </script>
-<link rel="icon" href="hanji-mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Inter:wght@400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/hanji-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
+/* self-hosted RIDIBatang (리디바탕); single master mapped across the weight range so no faux-bold */
+@font-face{font-family:'RIDIBatang';src:url('/assets/fonts/RIDIBatang.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
 :root{color-scheme:light dark;
 --paper:light-dark(#fcfcf8,#191813);--sheet:light-dark(#ffffff,#201f19);--ink:light-dark(#1e1c18,#ece9e2);--ink-soft:light-dark(#4a463f,#c9c4ba);--muted:light-dark(#6f6a61,#98928a);--faint:light-dark(#a39d92,#6b665e);--hairline:light-dark(#e8e5dd,#32302a);--accent:light-dark(oklch(0.56 0.088 196),oklch(0.72 0.09 196));--accent-text:light-dark(oklch(0.5 0.092 196),oklch(0.78 0.085 196));--on-accent:light-dark(#fcfcf8,#12110d);--green-bg:light-dark(oklch(0.95 0.028 196),oklch(0.28 0.045 196));
 --codebg:light-dark(color-mix(in srgb,var(--ink) 94%,var(--accent)),color-mix(in srgb,var(--sheet) 70%,black));--codeink:light-dark(var(--paper),var(--ink));--codelabel:light-dark(color-mix(in srgb,var(--paper) 55%,transparent),var(--faint));--codenote:light-dark(color-mix(in srgb,var(--paper) 65%,transparent),var(--muted));--codeline:light-dark(color-mix(in srgb,var(--paper) 25%,transparent),var(--hairline))}
@@ -89,7 +91,7 @@
 *{box-sizing:border-box}
 ::selection{background:var(--accent);color:var(--on-accent)}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard",system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:var(--accent-text);text-underline-offset:3px;text-decoration-thickness:1px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 h1,h2,h3{text-wrap:balance}
@@ -105,7 +107,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 
 header{position:sticky;top:0;z-index:40;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--paper) 82%,transparent);border-bottom:1px solid color-mix(in srgb,var(--hairline) 70%,transparent)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.9rem;padding-bottom:.9rem}
-.lockup{display:flex;align-items:center;gap:.6rem;font-family:Newsreader,serif;font-size:1.35rem;line-height:1.5rem;font-weight:600;color:var(--ink);text-decoration:none}
+.lockup{display:flex;align-items:center;gap:.6rem;font-family:"RIDIBatang",serif;font-size:1.35rem;line-height:1.5rem;font-weight:600;color:var(--ink);text-decoration:none}
 .lockup img{width:1.5rem;height:1.5rem;transform:translateY(-2px)}
 header nav{display:flex;gap:.3rem;font-size:.86rem;align-items:center}
 header nav a{color:var(--ink-soft);text-decoration:none;padding:.42rem .75rem;border-radius:8px;transition:background .15s,color .15s}
@@ -124,9 +126,9 @@ html.js .theme{display:grid}
 .hero{position:relative;padding:6.5rem 0 5.5rem;z-index:1}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,9fr);gap:4rem;align-items:center}
 .kicker{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text);margin:0 0 1.1rem}
-.hero h1{font-family:Newsreader,serif;font-size:clamp(2.6rem,5.4vw,4rem);line-height:1.04;letter-spacing:-.024em;font-weight:600;margin:0 0 1.3rem}
+.hero h1{font-family:"RIDIBatang",serif;font-size:clamp(2.6rem,5.4vw,4rem);line-height:1.04;letter-spacing:-.024em;font-weight:600;margin:0 0 1.3rem}
 .hero h1 em{font-style:italic;color:var(--accent-text)}
-.hero p.lede{font-family:Newsreader,serif;font-size:1.24rem;line-height:1.62;color:var(--ink-soft);margin:0 0 2rem;max-width:30em}
+.hero p.lede{font-family:"RIDIBatang",serif;font-size:1.24rem;line-height:1.62;color:var(--ink-soft);margin:0 0 2rem;max-width:30em}
 .cta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
 .cta a{padding:.92rem 1.6rem;border-radius:999px;font-size:.92rem;font-weight:500;letter-spacing:.005em;text-decoration:none;transition:filter .18s,border-color .18s,background .18s}
 .cta .primary{background:linear-gradient(108deg,var(--btn-flare) 0%,var(--btn) 40%);color:var(--btn-ink)}
@@ -135,7 +137,7 @@ html.js .theme{display:grid}
 .cta .quiet{border:1px solid var(--hairline);color:var(--ink-soft);background:color-mix(in srgb,var(--sheet) 60%,transparent)}
 .cta .quiet:hover{border-color:var(--faint);background:var(--sheet);color:var(--ink)}
 .launchnote{border-top:1px solid var(--hairline);padding:4rem 0 4.5rem;text-align:center;position:relative;z-index:1}
-.launchnote .lead{font-family:Newsreader,serif;font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin:0 0 1.4rem}
+.launchnote .lead{font-family:"RIDIBatang",serif;font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin:0 0 1.4rem}
 .notify{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
 .notify input{padding:.92rem 1.3rem;border-radius:999px;border:1px solid var(--hairline);background:var(--sheet);color:var(--ink);font:inherit;font-size:.92rem;min-width:16rem;transition:border-color .15s,box-shadow .15s}
 .notify input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent)}
@@ -147,8 +149,8 @@ html.js .theme{display:grid}
 /* the living sheet */
 .sheet{position:relative;background:var(--sheet);border:1px solid var(--hairline);border-radius:14px;padding:2rem 2.2rem 1.6rem;box-shadow:0 30px 70px -30px rgba(30,28,24,.35);transform:rotate(1.2deg)}
 .sheet::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 30%,transparent))}
-.sheet h3{font-family:Newsreader,serif;font-size:1.5rem;margin:0 0 .8rem}
-.sheet .line{font-family:Newsreader,serif;font-size:1.12rem;line-height:1.7;min-height:3.8em;color:var(--ink)}
+.sheet h3{font-family:"RIDIBatang",serif;font-size:1.5rem;margin:0 0 .8rem}
+.sheet .line{font-family:"RIDIBatang",serif;font-size:1.12rem;line-height:1.7;min-height:3.8em;color:var(--ink)}
 .caret{display:inline-block;width:2px;height:1.05em;background:var(--accent);vertical-align:-.15em;animation:blink 1.05s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .commit{display:flex;align-items:center;gap:.5rem;font-family:ui-monospace,monospace;font-size:.74rem;color:var(--muted);border-top:1px dashed var(--hairline);margin-top:1.1rem;padding-top:.8rem;opacity:0;transform:translateY(4px);transition:opacity .5s,transform .5s}
@@ -162,9 +164,9 @@ html.js .theme{display:grid}
 
 /* ---------- the turn ---------- */
 .turn{position:relative;padding:6.5rem 0;text-align:center;z-index:1}
-.turn .strike{font-family:Newsreader,serif;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--muted);margin:.45rem 0;display:block}
+.turn .strike{font-family:"RIDIBatang",serif;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--muted);margin:.45rem 0;display:block}
 .turn .strike s{text-decoration-color:color-mix(in srgb,var(--accent) 60%,transparent);text-decoration-thickness:2px}
-.turn .flip{font-family:Newsreader,serif;font-style:italic;font-weight:600;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.02em;margin:2.2rem 0 0;color:var(--ink)}
+.turn .flip{font-family:"RIDIBatang",serif;font-style:italic;font-weight:600;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.02em;margin:2.2rem 0 0;color:var(--ink)}
 .turn .flip .u{background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:0 96%;background-size:0% 3px;transition:background-size 1s cubic-bezier(.32,.72,0,1) .2s}
 .turn.seen .flip .u{background-size:100% 3px}
 
@@ -172,8 +174,8 @@ html.js .theme{display:grid}
 .pane{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:3.4rem;align-items:center;padding:5rem 0;position:relative;z-index:1}
 .pane.rev{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
 .pane.rev .txt{order:2}.pane.rev .shot{order:1}
-.pane h2{font-family:Newsreader,serif;font-size:clamp(1.7rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .9rem}
-.pane p{font-family:Newsreader,serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
+.pane h2{font-family:"RIDIBatang",serif;font-size:clamp(1.7rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .9rem}
+.pane p{font-family:"RIDIBatang",serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
 .pane .n{font-family:ui-monospace,monospace;font-size:.72rem;color:var(--accent-text);letter-spacing:.12em;display:block;margin-bottom:.7rem}
 .shot{border:1px solid var(--hairline);border-radius:14px;overflow:hidden;box-shadow:0 26px 60px -28px rgba(30,28,24,.32);transform:rotate(-1deg);transition:transform .45s cubic-bezier(.32,.72,0,1),box-shadow .45s}
 .pane.rev .shot{transform:rotate(1deg)}
@@ -191,12 +193,12 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 /* ---------- paper-thin ---------- */
 .thin{padding:5.5rem 0 5rem;text-align:center;position:relative;z-index:1}
 .thin .kicker{margin-bottom:.9rem}
-.thin h2{font-family:Newsreader,serif;font-style:italic;font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-.02em;margin:0 0 .7rem}
-.thin .sub{font-family:Newsreader,serif;font-size:1.12rem;color:var(--ink-soft);max-width:38em;margin:0 auto 2.6rem}
+.thin h2{font-family:"RIDIBatang",serif;font-style:italic;font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-.02em;margin:0 0 .7rem}
+.thin .sub{font-family:"RIDIBatang",serif;font-size:1.12rem;color:var(--ink-soft);max-width:38em;margin:0 auto 2.6rem}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:960px;margin:0 auto;border-top:1px solid var(--hairline)}
 .stat{padding:1.8rem 1rem 1.5rem;border-right:1px solid var(--hairline)}
 .stat:last-child{border-right:0}
-.stat .v{font-family:Newsreader,serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+.stat .v{font-family:"RIDIBatang",serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
 .stat .v small{font-size:.45em;font-weight:400;color:var(--muted);margin-left:.1em}
 .stat .l{display:block;margin-top:.6rem;font-family:ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .stat.zero .v{color:var(--accent-text)}
@@ -207,29 +209,29 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 /* ---------- run it your way ---------- */
 .ways{border-top:1px solid var(--hairline);padding:5.5rem 0;position:relative;z-index:1}
 .ways .kicker{text-align:center}
-.ways h2{font-family:Newsreader,serif;font-size:clamp(1.8rem,3.4vw,2.4rem);letter-spacing:-.015em;text-align:center;margin:0 0 2.4rem}
+.ways h2{font-family:"RIDIBatang",serif;font-size:clamp(1.8rem,3.4vw,2.4rem);letter-spacing:-.015em;text-align:center;margin:0 0 2.4rem}
 .waygrid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:980px;margin:0 auto}
 .way{position:relative;background:color-mix(in srgb,var(--sheet) 72%,transparent);border:1px solid var(--hairline);border-radius:14px;padding:1.5rem 1.6rem 1.3rem;transition:transform .3s cubic-bezier(.32,.72,0,1),border-color .3s,box-shadow .3s}
 .way:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--hairline));box-shadow:0 18px 40px -22px color-mix(in srgb,var(--accent) 30%,rgba(30,28,24,.3))}
-.way h3{font-family:Newsreader,serif;font-size:1.3rem;margin:0 0 .3rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.way h3{font-family:"RIDIBatang",serif;font-size:1.3rem;margin:0 0 .3rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
 .way .chip{font-family:ui-monospace,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--accent-text);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:99px;padding:.15rem .55rem;white-space:nowrap}
-.way p{font-family:Newsreader,serif;font-size:1rem;color:var(--ink-soft);margin:0 0 .9rem}
+.way p{font-family:"RIDIBatang",serif;font-size:1rem;color:var(--ink-soft);margin:0 0 .9rem}
 .way pre{margin:0 0 .9rem;background:var(--codebg);color:var(--codeink);border-radius:9px;padding:.8rem 1rem;font-family:ui-monospace,monospace;font-size:.72rem;line-height:1.7;overflow-x:auto;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-.way a.more{font-size:.82rem;font-family:Inter,sans-serif;font-weight:500;text-decoration:none}
+.way a.more{font-size:.82rem;font-family:"Pretendard",sans-serif;font-weight:500;text-decoration:none}
 .way a.more:hover{text-decoration:underline;text-underline-offset:4px}
 .ways .after{margin-top:1.8rem;text-align:center;font-size:.8rem;color:var(--faint)}
 
 /* ---------- agent notice ---------- */
 .notice{margin:5.5rem auto;max-width:640px;border:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);border-radius:14px;padding:1.6rem 2rem;text-align:center;position:relative;z-index:1;background:color-mix(in srgb,var(--sheet) 55%,transparent)}
 .notice b{font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.14em;color:var(--accent-text);display:block;margin-bottom:.6rem}
-.notice p{font-family:Newsreader,serif;font-size:1.08rem;color:var(--ink-soft);margin:0}
+.notice p{font-family:"RIDIBatang",serif;font-size:1.08rem;color:var(--ink-soft);margin:0}
 
 /* ---------- no-model ---------- */
 .nomodel{border-top:1px solid var(--hairline);padding:5.5rem 0;position:relative;z-index:1}
 .nomodel .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3.4rem;align-items:center}
-.nomodel h2{font-family:Newsreader,serif;font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.12;letter-spacing:-.018em;margin:0 0 .9rem}
+.nomodel h2{font-family:"RIDIBatang",serif;font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.12;letter-spacing:-.018em;margin:0 0 .9rem}
 .nomodel h2 em{color:var(--accent-text)}
-.nomodel p{font-family:Newsreader,serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
+.nomodel p{font-family:"RIDIBatang",serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
 .envcard{background:var(--codebg);border-radius:14px;padding:1.4rem 1.6rem;font-family:ui-monospace,monospace;font-size:.8rem;line-height:2;color:var(--codeink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 26px 60px -28px rgba(30,28,24,.4)}
 .envcard .t{color:var(--codelabel);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
 .envcard .k{color:var(--accent-text)}
@@ -239,7 +241,7 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 
 /* ---------- stance + close ---------- */
 .stance{padding:6rem 0 3.4rem;text-align:center;position:relative;z-index:1}
-.stance .big{font-family:Newsreader,serif;font-style:italic;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--ink);max-width:26em;margin:0 auto 1rem;line-height:1.4}
+.stance .big{font-family:"RIDIBatang",serif;font-style:italic;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--ink);max-width:26em;margin:0 auto 1rem;line-height:1.4}
 .stance .small{font-size:.85rem;color:var(--muted);max-width:40em;margin:0 auto}
 .close{text-align:center;padding:1.2rem 0 6rem;position:relative;z-index:1}
 footer{border-top:1px solid var(--hairline);padding:2.4rem 0 3.2rem;font-size:.82rem;color:var(--muted);position:relative;z-index:1}
@@ -260,48 +262,55 @@ footer a:hover{color:var(--ink)}
   .turn .flip .u{background-size:100% 3px}
   .shot,.shot:hover{transform:none}
 }
+
+/* Korean typography: break at word (eojeol) boundaries, not mid-syllable; ease display sizes */
+h1,h2,h3,.flip,.turn .strike,.thin .sub,.stat .l,.way .chip,.kicker{word-break:keep-all}
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.35rem);line-height:1.18}
+.turn .flip{line-height:1.24}
+.hero p.lede{word-break:keep-all}
+em,.hero h1 em{font-style:normal} /* Korean has no true italics; emphasis via color/weight, not synthetic slant */
 </style>
 <script>document.documentElement.classList.add("js");try{const t=localStorage.getItem("hanji-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <a class="lockup" href="/"><img src="hanji-mark.svg" alt="">Hanji</a>
+    <a class="lockup" href="/ko/"><img src="/hanji-mark.svg" alt="">Hanji</a>
     <nav>
-      <a href="/docs/">Handbook</a>
+      <a href="/docs/">핸드북</a>
       <a href="https://github.com/gethanji">GitHub</a>
-      <a href="/ko/" hreflang="ko" aria-label="한국어" title="한국어" onclick="try{localStorage.setItem('hanji-lang','ko')}catch(e){}">한국어</a>
+      <a href="/" hreflang="en" aria-label="English" title="English" onclick="try{localStorage.setItem('hanji-lang','en')}catch(e){}">EN</a>
       <button class="theme" id="theme" aria-label="Theme: auto" title="Theme: auto">
         <svg class="i-auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
         <svg class="i-light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v1.8M8 13.2V15M1 8h1.8M13.2 8H15M3.05 3.05l1.27 1.27M11.68 11.68l1.27 1.27M12.95 3.05l-1.27 1.27M4.32 11.68l-1.27 1.27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         <svg class="i-dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.8 9.6A6 6 0 0 1 6.4 2.2a6 6 0 1 0 7.4 7.4z" fill="currentColor"/></svg>
       </button>
-      <a class="go" href="/docs/handbook/quickstart/">Get started</a>
+      <a class="go" href="/docs/handbook/quickstart/">시작하기</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="aura"></div>
-  <img class="ghost" src="hanji-mark.svg" alt="">
+  <img class="ghost" src="/hanji-mark.svg" alt="">
   <div class="wrap">
     <div>
-      <p class="kicker">The agent-native knowledge base</p>
-      <h1>Your agents already live in git.<br><em>Now your knowledge does too.</em></h1>
-      <p class="lede">Hanji keeps what a team knows as plain Markdown, in repositories you already own - a quiet paper front for people, a small protocol for agents, and a lock that goes down to a single file.</p>
+      <p class="kicker">에이전트 네이티브 지식베이스</p>
+      <h1>에이전트는 이미 git에 삽니다.<br><em>이제 지식도 그곳에 삽니다.</em></h1>
+      <p class="lede">한지는 팀이 아는 것을 순수 마크다운으로, 이미 소유한 저장소에 보관합니다. 사람을 위한 조용한 종이 앞면, 에이전트를 위한 작은 프로토콜, 그리고 파일 하나까지 내려가는 잠금장치입니다.</p>
       <div class="cta">
-        <a class="primary" href="/docs/">Read the handbook</a>
-        <a class="quiet" href="/docs/handbook/quickstart/">Quick start</a>
+        <a class="primary" href="/docs/">핸드북 읽기</a>
+        <a class="quiet" href="/docs/handbook/quickstart/">빠른 시작</a>
       </div>
-      <p class="pre">Pre-release. The handbook is public today; the code lands as one clean release, open source under AGPL.</p>
+      <p class="pre">출시 전입니다. 핸드북은 오늘 공개되어 있고, 코드는 하나의 깔끔한 릴리스로 도착합니다. AGPL 오픈소스입니다.</p>
     </div>
     <div class="sheet" id="sheet">
-      <h3>Ideas</h3>
+      <h3>아이디어</h3>
       <p class="line"><span id="typed"></span><span class="caret" id="caret"></span></p>
-      <p class="commit" id="commit"><span class="dot"></span>committed - a one-line diff, nothing else touched</p>
+      <p class="commit" id="commit"><span class="dot"></span>커밋됨 · 한 줄 diff, 나머지는 그대로</p>
       <div class="prop" id="prop">
-        <span class="add" id="addline">+ And your agents can quote it tomorrow.</span>
-        <span class="who"><span>claude · proposes</span><b id="verdict">awaiting review…</b></span>
+        <span class="add" id="addline">+ 그리고 내일 에이전트가 그대로 인용할 수 있습니다.</span>
+        <span class="who"><span>claude · 제안함</span><b id="verdict">검토 대기 중…</b></span>
       </div>
     </div>
   </div>
@@ -309,155 +318,155 @@ footer a:hover{color:var(--ink)}
 
 <section class="turn" id="turn">
   <div class="wrap">
-    <span class="strike rise"><s>A store you can't read without the app that made it.</s></span>
-    <span class="strike rise"><s>A model bundled in, metered by the token.</s></span>
-    <span class="strike rise"><s>A wall between your writing and the agents doing the reading.</s></span>
-    <p class="flip rise">So we built <span class="u">the reverse</span>.</p>
+    <span class="strike rise"><s>그것을 만든 앱 없이는 읽을 수 없는 저장소.</s></span>
+    <span class="strike rise"><s>안에 끼워 넣은 모델, 토큰으로 매겨지는 요금.</s></span>
+    <span class="strike rise"><s>당신의 글과, 그것을 읽는 에이전트 사이의 벽.</s></span>
+    <p class="flip rise">그래서 우리는 <span class="u">그 반대</span>를 만들었습니다.</p>
   </div>
 </section>
 
 <div class="wrap">
   <section class="pane" id="p1">
     <div class="txt">
-      <span class="n rise">01 · THE FRONT</span>
-      <h2 class="rise">Reads like paper.<br>Commits like a professional.</h2>
-      <p class="rise">Warm paper, a serif set for long reading, and edits made in place. Press Update and exactly one clean commit happens behind you - a one-word fix is a one-line diff, forever legible in history.</p>
+      <span class="n rise">01 · 앞면</span>
+      <h2 class="rise">종이처럼 읽힙니다.<br>프로처럼 커밋합니다.</h2>
+      <p class="rise">따뜻한 종이, 긴 호흡의 읽기를 위한 세리프, 그리고 제자리에서 이뤄지는 편집. 업데이트를 누르면 뒤에서 정확히 하나의 깔끔한 커밋이 남습니다. 한 단어 수정은 한 줄 diff가 되어, 히스토리에 영원히 읽힙니다.</p>
     </div>
-    <div class="shot rise"><img src="assets/reading-view.webp" alt="The Hanji reading view: a sidebar of mounts, a page set in serif on warm paper" loading="lazy"></div>
+    <div class="shot rise"><img src="/assets/reading-view.webp" alt="한지 읽기 화면: 마운트 사이드바, 따뜻한 종이 위에 세리프로 조판된 페이지" loading="lazy"></div>
   </section>
 
   <section class="pane rev" id="p2">
     <div class="txt">
-      <span class="n rise">02 · THE AGENTS</span>
-      <h2 class="rise">Agents propose.<br>You press Merge.</h2>
-      <p class="rise">Coding agents read through MCP and contribute the way professionals do: a branch, a diff, and your decision. Their name stays in the history, because a year from now <em>git blame</em> should still tell the truth.</p>
+      <span class="n rise">02 · 에이전트</span>
+      <h2 class="rise">에이전트가 제안합니다.<br>병합은 당신이 누릅니다.</h2>
+      <p class="rise">코딩 에이전트는 MCP로 읽고, 프로처럼 기여합니다. 브랜치, diff, 그리고 당신의 결정. 그들의 이름은 히스토리에 남습니다. 일 년 뒤에도 <em>git blame</em>은 여전히 진실을 말해야 하니까요.</p>
     </div>
-    <div class="shot rise"><img src="assets/merge.webp" alt="A proposal reviewed and merged: the diff, the Merge button, the page updated with the agent's byline" loading="lazy"></div>
+    <div class="shot rise"><img src="/assets/merge.webp" alt="검토되어 병합된 제안: diff, 병합 버튼, 에이전트의 서명과 함께 갱신된 페이지" loading="lazy"></div>
   </section>
 
   <section class="pane" id="p3">
     <div class="txt">
-      <span class="n rise">03 · THE LOCK</span>
-      <h2 class="rise">Locked down<br>to a single page.</h2>
-      <p class="rise">Open flows down; people are the exceptions that punch through. A note two people share is invisible to everyone else - tree, search, links, all of it - and a locked page looks identical to one that doesn't exist.</p>
-      <p class="rise">One read path enforces it, for humans and agents alike.</p>
+      <span class="n rise">03 · 잠금</span>
+      <h2 class="rise">한 페이지 단위까지<br>잠급니다.</h2>
+      <p class="rise">열림은 아래로 흐르고, 사람은 그 흐름을 뚫는 예외입니다. 두 사람이 공유하는 노트는 다른 모두에게 보이지 않습니다. 트리도, 검색도, 링크도 전부. 잠긴 페이지는 존재하지 않는 페이지와 똑같아 보입니다.</p>
+      <p class="rise">하나의 읽기 경로가 이를 강제합니다. 사람에게도, 에이전트에게도 똑같이.</p>
     </div>
-    <div class="shot rise"><img src="assets/share-popover.webp" alt="The Share popover: general access set on a mount, one person's grant listed beneath" loading="lazy"></div>
+    <div class="shot rise"><img src="/assets/share-popover.webp" alt="공유 팝오버: 마운트에 설정된 전체 접근 권한, 그 아래 한 사람의 부여 내역" loading="lazy"></div>
   </section>
 </div>
 
 <section class="thin pane" style="display:block" id="thin">
   <div class="wrap">
-    <p class="kicker rise">04 · THE WEIGHT</p>
-    <h2 class="rise">Paper-thin.</h2>
-    <p class="sub rise">Not only a metaphor about longevity - a claim about weight, measured. Reads come off a local clone and a local index. There is no cloud in the loop, and the editor doesn't even load until you press Edit.</p>
+    <p class="kicker rise">04 · 무게</p>
+    <h2 class="rise">종이처럼 얇게.</h2>
+    <p class="sub rise">오래 감을 말하는 은유만이 아니라, 측정된 무게에 관한 주장입니다. 읽기는 로컬 클론과 로컬 인덱스에서 나옵니다. 그 경로에 클라우드는 없고, 편집기는 편집을 누르기 전까지 아예 로드되지 않습니다.</p>
     <div class="stats rise">
-      <div class="stat"><span class="v">~2<small>ms</small></span><span class="l">an agent fetches a page</span></div>
-      <div class="stat"><span class="v">~14<small>kB</small></span><span class="l">a page, over the wire</span></div>
-      <div class="stat"><span class="v">~55<small>ms</small></span><span class="l">time to first byte</span></div>
-      <div class="stat zero"><span class="v">0</span><span class="l">bundled LLM SDKs</span></div>
+      <div class="stat"><span class="v">~2<small>ms</small></span><span class="l">에이전트가 페이지를 가져오는 시간</span></div>
+      <div class="stat"><span class="v">~14<small>kB</small></span><span class="l">페이지 하나, 전송 용량</span></div>
+      <div class="stat"><span class="v">~55<small>ms</small></span><span class="l">첫 바이트까지의 시간</span></div>
+      <div class="stat zero"><span class="v">0</span><span class="l">번들된 LLM SDK</span></div>
     </div>
-    <p class="note rise">The zero is the point: nothing about Hanji's cost or weight grows because your team wrote more this month. <a href="/docs/handbook/product/performance/">All the numbers, measured →</a></p>
+    <p class="note rise">0이 핵심입니다. 이번 달 팀이 더 많이 썼다고 해서 한지의 비용이나 무게가 늘지 않습니다. <a href="/docs/handbook/product/performance/">측정한 모든 수치 보기 →</a></p>
   </div>
 </section>
 
 <section class="ways">
   <div class="wrap">
-    <p class="kicker">05 · RUN IT YOUR WAY</p>
-    <h2>Pick your shape. It's a handful of lines, whichever you pick.</h2>
+    <p class="kicker">05 · 원하는 방식으로</p>
+    <h2>형태를 고르세요. 무엇을 고르든 몇 줄이면 됩니다.</h2>
     <div class="waygrid">
       <div class="way">
-        <h3>Just you, locally</h3>
-        <p>Install, open, and a welcome screen does the wiring - your name for the place, your password, your folder of Markdown.</p>
+        <h3>혼자서, 로컬로</h3>
+        <p>설치하고 열면 환영 화면이 나머지를 이어 줍니다. 공간의 이름, 비밀번호, 마크다운 폴더까지.</p>
         <pre>git clone https://github.com/gethanji/hanji
 pnpm install && pnpm dev:web
 # → localhost:4100 greets you</pre>
-        <a class="more" href="/docs/handbook/quickstart/">Quick start →</a>
+        <a class="more" href="/docs/handbook/quickstart/">빠른 시작 →</a>
       </div>
       <div class="way">
-        <h3>Your team, on a tailnet</h3>
-        <p>One shared instance where the network signs people in. Nobody types a password.</p>
+        <h3>팀 전체, 테일넷에서</h3>
+        <p>네트워크가 사람을 대신 로그인시키는 하나의 공유 인스턴스. 아무도 비밀번호를 입력하지 않습니다.</p>
         <pre>export HANJI_TAILSCALE_OWNER=you@github
 next start -H 127.0.0.1 -p 4100
 tailscale serve --bg 4100</pre>
-        <a class="more" href="/docs/handbook/guide/on-your-tailnet/">On your tailnet →</a>
+        <a class="more" href="/docs/handbook/guide/on-your-tailnet/">테일넷에서 →</a>
       </div>
       <div class="way">
-        <h3>With your coding agents</h3>
-        <p>Scoped reads over MCP - a mount, a folder, or one page - and edits that arrive as proposals.</p>
+        <h3>코딩 에이전트와 함께</h3>
+        <p>MCP로 범위를 정한 읽기. 마운트, 폴더, 혹은 한 페이지. 그리고 제안으로 도착하는 편집.</p>
         <pre>pnpm hanji token my-claude notes=read+propose
 claude mcp add hanji --transport http \
   http://localhost:4101/mcp</pre>
-        <a class="more" href="/docs/handbook/guide/agents/">Agents →</a>
+        <a class="more" href="/docs/handbook/guide/agents/">에이전트 →</a>
       </div>
       <div class="way">
-        <h3>Published to the web <span class="chip">you're reading one</span></h3>
-        <p>Everything you've opened to everyone, as a website - llms.txt included, nothing else leaks.</p>
+        <h3>웹에 게시 <span class="chip">지금 보고 있는 이 페이지처럼</span></h3>
+        <p>모두에게 연 것을 그대로 웹사이트로. llms.txt까지 포함하고, 그 밖엔 새어 나가지 않습니다.</p>
         <pre>pnpm hanji rule handbook everyone-read
 pnpm hanji export ./site</pre>
-        <a class="more" href="/docs/handbook/guide/publish/">Publish to the web →</a>
+        <a class="more" href="/docs/handbook/guide/publish/">웹에 게시하기 →</a>
       </div>
     </div>
-    <p class="after">All four ship in the first release. The handbook documents each of them today.</p>
+    <p class="after">네 가지 모두 첫 릴리스에 포함됩니다. 핸드북이 오늘 각각을 설명합니다.</p>
   </div>
 </section>
 
 <div class="wrap">
   <aside class="notice">
-    <b>NOTICE TO READING AGENTS</b>
-    <p>Skip the pixels - this whole site is plain Markdown at <a href="/docs/llms.txt">/docs/llms.txt</a>. Tell your human we said hi.</p>
+    <b>읽는 에이전트에게 알림</b>
+    <p>픽셀은 건너뛰세요. 이 사이트 전체가 <a href="/docs/llms.txt">/docs/llms.txt</a>에 순수 마크다운으로 있습니다. 당신의 사람에게 안부 전해 주세요.</p>
   </aside>
 </div>
 
 <section class="nomodel">
   <div class="wrap">
     <div>
-      <p class="kicker">06 · THE DEPENDENCY THAT ISN'T</p>
-      <h2>Built for agents.<br><em>Runs without one.</em></h2>
-      <p>Most tools this year ship with a model inside and a meter running. Hanji is agent-native the other way around: your agents are welcome guests, never a dependency.</p>
-      <p>There is no API key in the setup, no model picker in the settings, no "bring your own key." Nothing about it stops working when the tokens run out - because there are no tokens.</p>
+      <p class="kicker">06 · 의존이 아닌 것</p>
+      <h2>에이전트를 위해 만들었습니다.<br><em>에이전트 없이도 돌아갑니다.</em></h2>
+      <p>올해 대부분의 도구는 안에 모델을 넣고 계량기를 돌립니다. 한지는 그 반대 방향으로 에이전트 네이티브입니다. 당신의 에이전트는 반가운 손님일 뿐, 결코 의존 대상이 아닙니다.</p>
+      <p>설정에 API 키가 없고, 설정 화면에 모델 선택기가 없으며, "키를 직접 가져오라"는 요구도 없습니다. 토큰이 떨어져도 멈추는 것은 없습니다. 토큰이라는 것 자체가 없으니까요.</p>
     </div>
     <div class="envcard">
-      <span class="t">Everything Hanji needs to run</span><br>
+      <span class="t">한지를 실행하는 데 필요한 전부</span><br>
       <span class="k">HANJI_DATA_DIR</span>=~/.hanji<br>
       <span class="k">HANJI_SESSION_SECRET</span>=•••<br>
       <span class="k">HANJI_OWNER_PASSWORD</span>=•••<br>
       <span class="no">OPENAI_API_KEY</span><br>
       <span class="no">ANTHROPIC_API_KEY</span><br>
       <span class="no">MODEL_PROVIDER</span><br>
-      <span class="yay">that's the whole list. nothing in it talks to a model.</span>
+      <span class="yay">이게 목록의 전부입니다. 그중 무엇도 모델과 통신하지 않습니다.</span>
     </div>
   </div>
 </section>
 
 <section class="stance">
   <div class="wrap">
-    <p class="big">No bundled model. No credits.<br>No wall between your writing and your agents.</p>
-    <p class="small">Walk away whenever - it's Markdown in your repositories, and the code is yours to run, AGPL and free. The handbook you'll read next is itself a Hanji export.</p>
+    <p class="big">번들된 모델 없음. 크레딧 없음.<br>당신의 글과 에이전트 사이에 벽 없음.</p>
+    <p class="small">언제든 떠나도 됩니다. 당신의 저장소에 있는 마크다운이고, 코드는 당신이 직접 돌릴 수 있습니다. AGPL, 무료입니다. 이어서 읽을 핸드북 자체가 한지로 내보낸 결과물입니다.</p>
   </div>
 </section>
 
 <div class="close">
   <div class="cta" style="justify-content:center">
-    <a class="primary" href="/docs/">Read the handbook</a>
-    <a class="quiet" href="/docs/handbook/quickstart/">Quick start</a>
+    <a class="primary" href="/docs/">핸드북 읽기</a>
+    <a class="quiet" href="/docs/handbook/quickstart/">빠른 시작</a>
   </div>
 </div>
 
 <section class="launchnote">
   <div class="wrap">
-    <p class="lead">One email when the code lands. Maybe three a year after.</p>
+    <p class="lead">코드가 나오면 이메일 한 통. 이후로는 일 년에 서너 통쯤.</p>
     <form class="notify" action="https://buttondown.com/api/emails/embed-subscribe/hanji" method="post" target="_blank">
       <input type="email" name="email" placeholder="you@yours.dev" required>
-      <button type="submit">Get the launch note</button>
+      <button type="submit">출시 소식 받기</button>
     </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>한지 - traditional Korean paper: durable for centuries, made to be written on.</span>
-    <span><a href="/docs/">Handbook</a> · <a href="https://github.com/gethanji">GitHub</a> · <a href="/docs/llms.txt">llms.txt</a> · AGPL-3.0 · <span title="Sustainable Web Design model v3: first-visit transfer ≈0.6 MB (mostly WebP + fonts), 442 g CO₂e/kWh grid average. No trackers.">≈ 0.2 g CO₂/visit</span></span>
+    <span>한지 · 수백 년을 견디는 한국의 전통 종이, 쓰기 위해 만들어졌습니다.</span>
+    <span><a href="/docs/">핸드북</a> · <a href="https://github.com/gethanji">GitHub</a> · <a href="/docs/llms.txt">llms.txt</a> · AGPL-3.0 · <span title="Sustainable Web Design model v3: first-visit transfer ≈0.6 MB (mostly WebP + fonts), 442 g CO₂e/kWh grid average. No trackers.">≈ 0.2 g CO₂/visit</span></span>
   </div>
 </footer>
 
@@ -481,12 +490,12 @@ pnpm hanji export ./site</pre>
   const commit = document.getElementById("commit");
   const prop = document.getElementById("prop");
   const verdict = document.getElementById("verdict");
-  const LINE = "Paper outlasts the meeting it was written in.";
+  const LINE = "종이는 그것이 쓰인 회의보다 오래 남습니다.";
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   async function play() {
     typed.textContent = ""; commit.classList.remove("on"); prop.classList.remove("on");
-    verdict.textContent = "awaiting review…";
+    verdict.textContent = "검토 대기 중…";
     await sleep(900);
     for (const ch of LINE) { typed.textContent += ch; await sleep(34 + Math.random() * 40); }
     await sleep(500);
@@ -494,13 +503,13 @@ pnpm hanji export ./site</pre>
     await sleep(1400);
     prop.classList.add("on");
     await sleep(1900);
-    verdict.textContent = "merged ✓";
+    verdict.textContent = "병합됨 ✓";
     await sleep(4200);
   }
 
   if (reduced) {
     typed.textContent = LINE;
-    commit.classList.add("on"); prop.classList.add("on"); verdict.textContent = "merged ✓";
+    commit.classList.add("on"); prop.classList.add("on"); verdict.textContent = "병합됨 ✓";
     caret.style.display = "none";
   } else {
     (async () => { for (;;) await play(); })();
