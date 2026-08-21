@@ -119,6 +119,16 @@ html.js .theme{display:grid}
 :root:not([data-theme]) .theme .i-auto{display:block}
 :root[data-theme=light] .theme .i-light{display:block}
 :root[data-theme=dark] .theme .i-dark{display:block}
+/* Shots follow the effective scheme, same cascade as light-dark(): the OS
+   answer unless the toggle forces one. The dark twin hides by default. */
+.shot .shot-dark{display:none}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme=light]) .shot .shot-dark{display:block}
+:root:not([data-theme=light]) .shot .shot-light{display:none}
+}
+:root[data-theme=dark] .shot .shot-dark{display:block}
+:root[data-theme=dark] .shot .shot-light{display:none}
+
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:6.5rem 0 5.5rem;z-index:1}
@@ -337,7 +347,7 @@ footer a:hover{color:var(--ink)}
       <h2 class="rise">Reads like paper.<br>Commits like a professional.</h2>
       <p class="rise">Warm paper, a serif set for long reading, and edits made in place. Press Update and exactly one clean commit happens behind you - a one-word fix is a one-line diff, forever legible in history.</p>
     </div>
-    <div class="shot rise"><img src="assets/reading-view.webp" alt="The Hanji reading view: a sidebar of mounts, a page set in serif on warm paper" loading="lazy"></div>
+    <div class="shot rise"><img class="shot-light" src="assets/reading-view.webp" alt="The Hanji reading view: a sidebar of mounts, a page set in serif on warm paper" loading="lazy"><img class="shot-dark" src="assets/reading-view-dark.webp" alt="The Hanji reading view: a sidebar of mounts, a page set in serif on warm paper" loading="lazy"></div>
   </section>
 
   <section class="pane rev" id="p2">
@@ -356,7 +366,7 @@ footer a:hover{color:var(--ink)}
       <p class="rise">Open flows down; people are the exceptions that punch through. A note two people share is invisible to everyone else - tree, search, links, all of it - and a locked page looks identical to one that doesn't exist.</p>
       <p class="rise">One read path enforces it, for humans and agents alike.</p>
     </div>
-    <div class="shot rise"><img src="assets/share-popover.webp" alt="The Share popover: general access set on a mount, one person's grant listed beneath" loading="lazy"></div>
+    <div class="shot rise"><img class="shot-light" src="assets/share-popover.webp" alt="The Share popover: general access set on a mount, one person's grant listed beneath" loading="lazy"><img class="shot-dark" src="assets/share-popover-dark.webp" alt="The Share popover: general access set on a mount, one person's grant listed beneath" loading="lazy"></div>
   </section>
 </div>
 

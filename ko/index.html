@@ -121,6 +121,16 @@ html.js .theme{display:grid}
 :root:not([data-theme]) .theme .i-auto{display:block}
 :root[data-theme=light] .theme .i-light{display:block}
 :root[data-theme=dark] .theme .i-dark{display:block}
+/* Shots follow the effective scheme, same cascade as light-dark(): the OS
+   answer unless the toggle forces one. The dark twin hides by default. */
+.shot .shot-dark{display:none}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme=light]) .shot .shot-dark{display:block}
+:root:not([data-theme=light]) .shot .shot-light{display:none}
+}
+:root[data-theme=dark] .shot .shot-dark{display:block}
+:root[data-theme=dark] .shot .shot-light{display:none}
+
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:6.5rem 0 5.5rem;z-index:1}
@@ -345,7 +355,7 @@ em,.hero h1 em{font-style:normal} /* Korean has no true italics; emphasis via co
       <h2 class="rise">종이처럼 읽힙니다.<br>프로처럼 커밋합니다.</h2>
       <p class="rise">따뜻한 종이, 긴 호흡의 읽기를 위한 세리프, 그리고 제자리에서 이뤄지는 편집. 업데이트를 누르면 뒤에서 정확히 하나의 깔끔한 커밋이 남습니다. 한 단어 수정은 한 줄 diff가 되어, 히스토리에 영원히 읽힙니다.</p>
     </div>
-    <div class="shot rise"><img src="/assets/reading-view.webp" alt="한지 읽기 화면: 마운트 사이드바, 따뜻한 종이 위에 세리프로 조판된 페이지" loading="lazy"></div>
+    <div class="shot rise"><img class="shot-light" src="/assets/reading-view.webp" alt="한지 읽기 화면: 마운트 사이드바, 따뜻한 종이 위에 세리프로 조판된 페이지" loading="lazy"><img class="shot-dark" src="/assets/reading-view-dark.webp" alt="한지 읽기 화면: 마운트 사이드바, 따뜻한 종이 위에 세리프로 조판된 페이지" loading="lazy"></div>
   </section>
 
   <section class="pane rev" id="p2">
@@ -364,7 +374,7 @@ em,.hero h1 em{font-style:normal} /* Korean has no true italics; emphasis via co
       <p class="rise">열림은 아래로 흐르고, 사람은 그 흐름을 뚫는 예외입니다. 두 사람이 공유하는 노트는 다른 모두에게 보이지 않습니다. 트리도, 검색도, 링크도 전부. 잠긴 페이지는 존재하지 않는 페이지와 똑같아 보입니다.</p>
       <p class="rise">하나의 읽기 경로가 이를 강제합니다. 사람에게도, 에이전트에게도 똑같이.</p>
     </div>
-    <div class="shot rise"><img src="/assets/share-popover.webp" alt="공유 팝오버: 마운트에 설정된 전체 접근 권한, 그 아래 한 사람의 부여 내역" loading="lazy"></div>
+    <div class="shot rise"><img class="shot-light" src="/assets/share-popover.webp" alt="공유 팝오버: 마운트에 설정된 전체 접근 권한, 그 아래 한 사람의 부여 내역" loading="lazy"><img class="shot-dark" src="/assets/share-popover-dark.webp" alt="공유 팝오버: 마운트에 설정된 전체 접근 권한, 그 아래 한 사람의 부여 내역" loading="lazy"></div>
   </section>
 </div>
 
