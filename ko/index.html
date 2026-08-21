@@ -386,7 +386,7 @@ em,.hero h1 em{font-style:normal} /* Korean has no true italics; emphasis via co
     <div class="stats rise">
       <div class="stat"><span class="v">~2<small>ms</small></span><span class="l">에이전트가 페이지를 가져오는 시간</span></div>
       <div class="stat"><span class="v">~14<small>kB</small></span><span class="l">페이지 하나, 전송 용량</span></div>
-      <div class="stat"><span class="v">~55<small>ms</small></span><span class="l">첫 바이트까지의 시간</span></div>
+      <div class="stat"><span class="v">~2.5<small>분</small></span><span class="l">35,000페이지를 검색 가능하게</span></div>
       <div class="stat zero"><span class="v">0</span><span class="l">번들된 LLM SDK</span></div>
     </div>
     <p class="note rise">0이 핵심입니다. 이번 달 팀이 더 많이 썼다고 해서 한지의 비용이나 무게가 늘지 않습니다. <a href="/docs/handbook/product/performance/">측정한 모든 수치 보기 →</a></p>
@@ -416,7 +416,7 @@ tailscale serve --bg 4100</pre>
       </div>
       <div class="way">
         <h3>코딩 에이전트와 함께</h3>
-        <p>MCP로 범위를 정한 읽기. 마운트, 폴더, 혹은 한 페이지. 그리고 제안으로 도착하는 편집.</p>
+        <p>MCP 또는 순수 HTTP로 범위를 정한 읽기. curl을 든 셸 스크립트도 에이전트입니다. 그리고 제안으로 도착하는 편집.</p>
         <pre>pnpm hanji token my-claude notes=read+propose
 claude mcp add hanji --transport http \
   http://localhost:4101/mcp</pre>

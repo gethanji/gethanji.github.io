@@ -378,7 +378,7 @@ footer a:hover{color:var(--ink)}
     <div class="stats rise">
       <div class="stat"><span class="v">~2<small>ms</small></span><span class="l">an agent fetches a page</span></div>
       <div class="stat"><span class="v">~14<small>kB</small></span><span class="l">a page, over the wire</span></div>
-      <div class="stat"><span class="v">~55<small>ms</small></span><span class="l">time to first byte</span></div>
+      <div class="stat"><span class="v">~2.5<small>min</small></span><span class="l">35,000 pages made searchable</span></div>
       <div class="stat zero"><span class="v">0</span><span class="l">bundled LLM SDKs</span></div>
     </div>
     <p class="note rise">The zero is the point: nothing about Hanji's cost or weight grows because your team wrote more this month. <a href="/docs/handbook/product/performance/">All the numbers, measured →</a></p>
@@ -408,7 +408,7 @@ tailscale serve --bg 4100</pre>
       </div>
       <div class="way">
         <h3>With your coding agents</h3>
-        <p>Scoped reads over MCP - a mount, a folder, or one page - and edits that arrive as proposals.</p>
+        <p>Scoped reads over MCP or plain HTTP - a bash script with curl counts as an agent - and edits that arrive as proposals.</p>
         <pre>pnpm hanji token my-claude notes=read+propose
 claude mcp add hanji --transport http \
   http://localhost:4101/mcp</pre>
