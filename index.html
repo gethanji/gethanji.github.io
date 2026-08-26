@@ -245,6 +245,14 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 .envcard .k{color:var(--accent-text)}
 .envcard .no{opacity:.45;text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent)}
 .envcard .yay{border-top:1px dashed var(--codeline);margin-top:.5rem;padding-top:.5rem;font-size:.72rem;color:var(--codenote)}
+.notecard{background:var(--sheet);border:1px solid var(--hairline);border-radius:14px;padding:1.5rem 1.6rem;box-shadow:0 26px 60px -28px rgba(30,28,24,.32);transform:rotate(1deg);display:flex;flex-direction:column;gap:.9rem}
+.pane.rev .notecard{order:1}
+.notecard .q{margin:0 0 .2rem;font-family:Newsreader,serif;font-size:1.08rem;line-height:1.5;color:var(--ink)}
+.notecard .q mark{background:var(--green-bg);color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 55%,transparent);text-decoration-thickness:2px;text-underline-offset:2px;border-radius:2px}
+.notecard .note{background:color-mix(in srgb,var(--hairline) 32%,transparent);border-radius:10px;padding:.7rem .85rem;display:flex;flex-direction:column;gap:.4rem}
+.notecard .note.reply{margin-left:1.3rem;border-left:2px solid var(--hairline)}
+.notecard .who{align-self:flex-start;font-family:ui-monospace,monospace;font-size:.72rem;font-weight:500;color:var(--on-accent);background:var(--accent);border-radius:6px;padding:.05rem .45rem}
+.notecard .note p{margin:0;font-family:Newsreader,serif;font-size:1rem;line-height:1.4;color:var(--ink)}
 @media (max-width:840px){.nomodel .wrap{grid-template-columns:1fr;gap:2rem}}
 
 /* ---------- stance + close ---------- */
@@ -368,11 +376,31 @@ footer a:hover{color:var(--ink)}
     </div>
     <div class="shot rise"><img class="shot-light" src="assets/share-popover.webp" alt="The Share popover: general access set on a mount, one person's grant listed beneath" loading="lazy"><img class="shot-dark" src="assets/share-popover-dark.webp" alt="The Share popover: general access set on a mount, one person's grant listed beneath" loading="lazy"></div>
   </section>
+
+  <section class="pane rev" id="p4">
+    <div class="txt">
+      <span class="n rise">04 · THE MARGINS</span>
+      <h2 class="rise">Talk on the page.<br>Agents never see it.</h2>
+      <p class="rise">Highlight a word and comment on exactly that - the phrase lights up for every reader, and the notes gather in a panel beside the prose.</p>
+      <p class="rise">Comments live in Hanji's own store, never a commit and never in an export. What agents and the public read is the page alone.</p>
+    </div>
+    <div class="notecard rise" aria-hidden="true">
+      <p class="q"><mark>a one-word fix is a one-line diff</mark></p>
+      <div class="note">
+        <span class="who">@remy</span>
+        <p>Still true after the rename?</p>
+      </div>
+      <div class="note reply">
+        <span class="who">@owner</span>
+        <p>Yes - byte-fidelity holds. ✅</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <section class="thin pane" style="display:block" id="thin">
   <div class="wrap">
-    <p class="kicker rise">04 · THE WEIGHT</p>
+    <p class="kicker rise">05 · THE WEIGHT</p>
     <h2 class="rise">Paper-thin.</h2>
     <p class="sub rise">Not only a metaphor about longevity - a claim about weight, measured. Reads come off a local clone and a local index. There is no cloud in the loop, and the editor doesn't even load until you press Edit.</p>
     <div class="stats rise">
@@ -387,7 +415,7 @@ footer a:hover{color:var(--ink)}
 
 <section class="ways">
   <div class="wrap">
-    <p class="kicker">05 · RUN IT YOUR WAY</p>
+    <p class="kicker">06 · RUN IT YOUR WAY</p>
     <h2>Pick your shape. It's a handful of lines, whichever you pick.</h2>
     <div class="waygrid">
       <div class="way">
@@ -436,7 +464,7 @@ pnpm hanji export ./site</pre>
 <section class="nomodel">
   <div class="wrap">
     <div>
-      <p class="kicker">06 · THE DEPENDENCY THAT ISN'T</p>
+      <p class="kicker">07 · THE DEPENDENCY THAT ISN'T</p>
       <h2>Built for agents.<br><em>Runs without one.</em></h2>
       <p>Most tools this year ship with a model inside and a meter running. Hanji is agent-native the other way around: your agents are welcome guests, never a dependency.</p>
       <p>There is no API key in the setup, no model picker in the settings, no "bring your own key." Nothing about it stops working when the tokens run out - because there are no tokens.</p>
