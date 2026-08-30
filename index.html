@@ -19,20 +19,20 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hanji">
 <meta property="og:title" content="Hanji · The agent-native knowledge base">
-<meta property="og:description" content="What a team knows, kept as plain Markdown in the git you already own. A paper front for people, a small protocol for agents, a lock down to a single file. No bundled model, no credits — open source, AGPL.">
+<meta property="og:description" content="What a team knows, kept as plain Markdown in the git you already own. A paper front for people, a small protocol for agents, a lock down to a single file. No bundled model, no credits - open source, AGPL.">
 <meta property="og:url" content="https://gethanji.github.io/">
 <meta property="og:image" content="https://gethanji.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hanji — the agent-native knowledge base, kept as plain Markdown in your own git">
+<meta property="og:image:alt" content="Hanji - the agent-native knowledge base, kept as plain Markdown in your own git">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hanji · The agent-native knowledge base">
-<meta name="twitter:description" content="What a team knows, kept as plain Markdown in the git you already own. No bundled model, no credits — open source, AGPL.">
+<meta name="twitter:description" content="What a team knows, kept as plain Markdown in the git you already own. No bundled model, no credits - open source, AGPL.">
 <meta name="twitter:image" content="https://gethanji.github.io/assets/og.png">
-<meta name="twitter:image:alt" content="Hanji — the agent-native knowledge base">
+<meta name="twitter:image:alt" content="Hanji - the agent-native knowledge base">
 
 <!-- Structured data: entity graph for search engines and LLMs -->
 <script type="application/ld+json">
@@ -144,18 +144,25 @@ html.js .theme{display:grid}
 .cta .primary:active{filter:brightness(.97)}
 .cta .quiet{border:1px solid var(--hairline);color:var(--ink-soft);background:color-mix(in srgb,var(--sheet) 60%,transparent)}
 .cta .quiet:hover{border-color:var(--faint);background:var(--sheet);color:var(--ink)}
-.launchnote{border-top:1px solid var(--hairline);padding:4rem 0 4.5rem;text-align:center;position:relative;z-index:1}
-.launchnote .lead{font-family:Newsreader,serif;font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin:0 0 1.4rem}
+.launchnote{border-top:1px solid var(--hairline);padding:5.5rem 0 6rem;text-align:center;position:relative;z-index:1}
+.launchnote .kicker{margin-bottom:.9rem}
+.launchnote h2{font-family:Newsreader,serif;font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.15;letter-spacing:-.018em;margin:0 0 1.8rem}
+.launchnote h2 em{font-style:italic;color:var(--accent-text)}
+.launchnote .post{margin-top:1.1rem;font-size:.82rem;color:var(--muted);}
+.launchnote .meanwhile{margin-top:1.6rem;font-size:.9rem}
+.launchnote .meanwhile a{text-decoration:none}
+.launchnote .meanwhile a:hover{text-decoration:underline}
 .notify{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
-.notify input{padding:.92rem 1.3rem;border-radius:999px;border:1px solid var(--hairline);background:var(--sheet);color:var(--ink);font:inherit;font-size:.92rem;min-width:16rem;transition:border-color .15s,box-shadow .15s}
+.notify input{padding:calc(.92rem - 1px) 1.3rem;border-radius:999px;border:1px solid var(--hairline);background:var(--sheet);color:var(--ink);font:inherit;font-size:1rem;min-width:16rem;transition:border-color .15s,box-shadow .15s}
 .notify input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent)}
 .notify button{padding:.92rem 1.6rem;border-radius:999px;border:0;font:inherit;font-size:.92rem;font-weight:500;letter-spacing:.005em;background:linear-gradient(108deg,var(--btn-flare) 0%,var(--btn) 40%);color:var(--btn-ink);cursor:pointer;transition:filter .18s}
 .notify button:hover{filter:brightness(1.06) saturate(1.03)}
 .notify button:active{filter:brightness(.97)}
-.pre{margin-top:1rem;font-size:.76rem;color:var(--faint)}
+.pre{margin-top:1rem;font-size:.85rem;color:var(--muted)}
+.pre a{white-space:nowrap}
 
 /* the living sheet */
-.sheet{position:relative;background:var(--sheet);border:1px solid var(--hairline);border-radius:14px;padding:2rem 2.2rem 1.6rem;box-shadow:0 30px 70px -30px rgba(30,28,24,.35);transform:rotate(1.2deg)}
+.sheet{position:relative;background:light-dark(#ffffff,#282720);border:1px solid light-dark(var(--hairline),#3b382f);border-radius:14px;padding:2rem 2.2rem 1.6rem;box-shadow:0 14px 34px -20px rgba(30,28,24,.22);transform:rotate(1.2deg)}
 .sheet::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 30%,transparent))}
 .sheet h3{font-family:Newsreader,serif;font-size:1.5rem;margin:0 0 .8rem}
 .sheet .line{font-family:Newsreader,serif;font-size:1.12rem;line-height:1.7;min-height:3.8em;color:var(--ink)}
@@ -169,6 +176,8 @@ html.js .theme{display:grid}
 .prop .add{display:block;background:var(--green-bg);color:var(--accent-text);padding:.45rem .7rem;white-space:pre-wrap}
 .prop .who{display:flex;justify-content:space-between;align-items:center;background:color-mix(in srgb,var(--hairline) 40%,transparent);padding:.4rem .7rem;font-size:.7rem;color:var(--muted)}
 .prop .who b{color:var(--accent-text);font-weight:600;transition:opacity .3s}
+.prop .add{transition:background .6s}
+.prop.ok .add{background:color-mix(in srgb,var(--accent) 16%,var(--green-bg))}
 
 /* ---------- the turn ---------- */
 .turn{position:relative;padding:6.5rem 0;text-align:center;z-index:1}
@@ -185,9 +194,9 @@ html.js .theme{display:grid}
 .pane h2{font-family:Newsreader,serif;font-size:clamp(1.7rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .9rem}
 .pane p{font-family:Newsreader,serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
 .pane .n{font-family:ui-monospace,monospace;font-size:.72rem;color:var(--accent-text);letter-spacing:.12em;display:block;margin-bottom:.7rem}
-.shot{border:1px solid var(--hairline);border-radius:14px;overflow:hidden;box-shadow:0 26px 60px -28px rgba(30,28,24,.32);transform:rotate(-1deg);transition:transform .45s cubic-bezier(.32,.72,0,1),box-shadow .45s}
+.shot{border:1px solid var(--hairline);border-radius:14px;overflow:hidden;box-shadow:0 14px 34px -20px rgba(30,28,24,.22);transform:rotate(-1deg);transition:transform .45s cubic-bezier(.32,.72,0,1),box-shadow .45s}
 .pane.rev .shot{transform:rotate(1deg)}
-.shot:hover{transform:rotate(0) scale(1.012);box-shadow:0 34px 72px -28px color-mix(in srgb,var(--accent) 28%,rgba(30,28,24,.35))}
+.shot:hover{transform:rotate(0) scale(1.012);box-shadow:0 20px 44px -24px color-mix(in srgb,var(--accent) 28%,rgba(30,28,24,.3))}
 .shot{position:relative}
 .shot::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 5%,transparent);pointer-events:none}
 .shot img{display:block;width:100%;height:auto}
@@ -217,20 +226,20 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 /* ---------- run it your way ---------- */
 .ways{border-top:1px solid var(--hairline);padding:5.5rem 0;position:relative;z-index:1}
 .ways .kicker{text-align:center}
-.ways h2{font-family:Newsreader,serif;font-size:clamp(1.8rem,3.4vw,2.4rem);letter-spacing:-.015em;text-align:center;margin:0 0 2.4rem}
+.ways h2{font-family:Newsreader,serif;font-size:clamp(1.8rem,3.4vw,2.4rem);line-height:1.15;letter-spacing:-.015em;text-align:center;margin:0 0 2.4rem}
 .waygrid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:980px;margin:0 auto}
-.way{position:relative;background:color-mix(in srgb,var(--sheet) 72%,transparent);border:1px solid var(--hairline);border-radius:14px;padding:1.5rem 1.6rem 1.3rem;transition:transform .3s cubic-bezier(.32,.72,0,1),border-color .3s,box-shadow .3s}
+.way{position:relative;display:flex;flex-direction:column;background:color-mix(in srgb,var(--sheet) 72%,transparent);border:1px solid var(--hairline);border-radius:14px;padding:1.5rem 1.6rem 1.3rem;transition:transform .3s cubic-bezier(.32,.72,0,1),border-color .3s,box-shadow .3s}
 .way:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--hairline));box-shadow:0 18px 40px -22px color-mix(in srgb,var(--accent) 30%,rgba(30,28,24,.3))}
 .way h3{font-family:Newsreader,serif;font-size:1.3rem;margin:0 0 .3rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
 .way .chip{font-family:ui-monospace,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--accent-text);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:99px;padding:.15rem .55rem;white-space:nowrap}
 .way p{font-family:Newsreader,serif;font-size:1rem;color:var(--ink-soft);margin:0 0 .9rem}
 .way pre{margin:0 0 .9rem;background:var(--codebg);color:var(--codeink);border-radius:9px;padding:.8rem 1rem;font-family:ui-monospace,monospace;font-size:.72rem;line-height:1.7;overflow-x:auto;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-.way a.more{font-size:.82rem;font-family:Inter,sans-serif;font-weight:500;text-decoration:none}
+.way a.more{margin-top:auto;align-self:flex-start;font-size:.82rem;font-family:Inter,sans-serif;font-weight:500;text-decoration:none}
 .way a.more:hover{text-decoration:underline;text-underline-offset:4px}
-.ways .after{margin-top:1.8rem;text-align:center;font-size:.8rem;color:var(--faint)}
+.ways .after{margin-top:1.8rem;text-align:center;font-size:.85rem;color:var(--muted)}
 
 /* ---------- agent notice ---------- */
-.notice{margin:5.5rem auto;max-width:640px;border:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);border-radius:14px;padding:1.6rem 2rem;text-align:center;position:relative;z-index:1;background:color-mix(in srgb,var(--sheet) 55%,transparent)}
+.notice{margin:2.5rem auto;max-width:640px;border:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);border-radius:14px;padding:1.6rem 2rem;text-align:center;position:relative;z-index:1;background:color-mix(in srgb,var(--sheet) 55%,transparent)}
 .notice b{font-family:ui-monospace,monospace;font-size:.72rem;letter-spacing:.14em;color:var(--accent-text);display:block;margin-bottom:.6rem}
 .notice p{font-family:Newsreader,serif;font-size:1.08rem;color:var(--ink-soft);margin:0}
 
@@ -240,12 +249,13 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 .nomodel h2{font-family:Newsreader,serif;font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.12;letter-spacing:-.018em;margin:0 0 .9rem}
 .nomodel h2 em{color:var(--accent-text)}
 .nomodel p{font-family:Newsreader,serif;font-size:1.13rem;color:var(--ink-soft);margin:0 0 .7rem}
-.envcard{background:var(--codebg);border-radius:14px;padding:1.4rem 1.6rem;font-family:ui-monospace,monospace;font-size:.8rem;line-height:2;color:var(--codeink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 26px 60px -28px rgba(30,28,24,.4)}
+.envcard{background:var(--codebg);border-radius:14px;padding:1.4rem 1.6rem;font-family:ui-monospace,monospace;font-size:.8rem;line-height:2;color:var(--codeink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 14px 34px -20px rgba(30,28,24,.28)}
 .envcard .t{color:var(--codelabel);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
 .envcard .k{color:var(--accent-text)}
 .envcard .no{opacity:.45;text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent)}
 .envcard .yay{border-top:1px dashed var(--codeline);margin-top:.5rem;padding-top:.5rem;font-size:.72rem;color:var(--codenote)}
-.notecard{background:var(--sheet);border:1px solid var(--hairline);border-radius:14px;padding:1.5rem 1.6rem;box-shadow:0 26px 60px -28px rgba(30,28,24,.32);transform:rotate(1deg);display:flex;flex-direction:column;gap:.9rem}
+.notecard{background:var(--sheet);border:1px solid var(--hairline);border-radius:14px;padding:1.5rem 1.6rem;box-shadow:0 14px 34px -20px rgba(30,28,24,.22);transform:rotate(1deg);display:flex;flex-direction:column;gap:.9rem}
+.notecard .ok{width:.72em;height:.72em;color:var(--accent-text);vertical-align:-.02em}
 .pane.rev .notecard{order:1}
 .notecard .q{margin:0 0 .2rem;font-family:Newsreader,serif;font-size:1.08rem;line-height:1.5;color:var(--ink)}
 .notecard .q mark{background:var(--green-bg);color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 55%,transparent);text-decoration-thickness:2px;text-underline-offset:2px;border-radius:2px}
@@ -259,11 +269,14 @@ html.js .seen .rise{opacity:1;transform:none;transition:opacity .6s cubic-bezier
 .stance{padding:6rem 0 3.4rem;text-align:center;position:relative;z-index:1}
 .stance .big{font-family:Newsreader,serif;font-style:italic;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--ink);max-width:26em;margin:0 auto 1rem;line-height:1.4}
 .stance .small{font-size:.85rem;color:var(--muted);max-width:40em;margin:0 auto}
-.close{text-align:center;padding:1.2rem 0 6rem;position:relative;z-index:1}
 footer{border-top:1px solid var(--hairline);padding:2.4rem 0 3.2rem;font-size:.82rem;color:var(--muted);position:relative;z-index:1}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 footer a{color:var(--muted);transition:color .15s}
 footer a:hover{color:var(--ink)}
+
+/* numbered kickers 05-08 share the panes' mono numbering voice; declared late
+   because .pane p and .nomodel p otherwise out-rank .kicker on 05 and 07 */
+.thin .kicker,.ways .kicker,.nomodel .kicker,.launchnote .kicker{font-family:ui-monospace,monospace;font-size:.72rem;font-weight:500;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text)}
 
 @media (max-width:840px){
   .hero .wrap{grid-template-columns:1fr;gap:2.6rem}
@@ -283,14 +296,22 @@ footer a:hover{color:var(--ink)}
   header .wrap{padding-left:1rem;padding-right:1rem}
   .lockup{font-size:1.15rem;gap:.45rem}
   .lockup img{width:1.3rem;height:1.3rem}
-  header nav{gap:.12rem}
-  header nav a{padding:.42rem .5rem}
+  header nav{gap:.3rem}
+  header nav a{padding:.6rem .5rem}
   header nav a[href="https://github.com/gethanji"]{display:none}
   .theme{display:none!important}
   /* cards: stack the "run it your way" grid; let code blocks scroll instead of widening the page */
   .waygrid{grid-template-columns:1fr}
   .way{min-width:0}
   .way pre{font-size:.68rem}
+  /* phone rhythm: desktop breathing costs ~3 screens of scroll on the way to the form */
+  .hero{padding:3rem 0 3.5rem}
+  .hero .wrap{gap:1.8rem}
+  .hero h1{font-size:clamp(2.3rem,8.5vw,2.6rem)}
+  .turn,.thin,.ways,.nomodel{padding:3rem 0}
+  .stance{padding:3.5rem 0 2.5rem}
+  .launchnote{padding:3rem 0 3.5rem}
+  .notice{margin:2rem auto}
 }
 </style>
 <script>document.documentElement.classList.add("js");try{const t=localStorage.getItem("hanji-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -300,7 +321,6 @@ footer a:hover{color:var(--ink)}
   <div class="wrap">
     <a class="lockup" href="/"><img src="hanji-mark.svg" alt="">Hanji</a>
     <nav>
-      <a href="/docs/">Docs</a>
       <a href="https://github.com/gethanji">GitHub</a>
       <a href="/ko/" hreflang="ko" aria-label="한국어" title="한국어" onclick="try{localStorage.setItem('hanji-lang','ko')}catch(e){}">한국어</a>
       <button class="theme" id="theme" aria-label="Theme: auto" title="Theme: auto">
@@ -308,7 +328,7 @@ footer a:hover{color:var(--ink)}
         <svg class="i-light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v1.8M8 13.2V15M1 8h1.8M13.2 8H15M3.05 3.05l1.27 1.27M11.68 11.68l1.27 1.27M12.95 3.05l-1.27 1.27M4.32 11.68l-1.27 1.27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         <svg class="i-dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.8 9.6A6 6 0 0 1 6.4 2.2a6 6 0 1 0 7.4 7.4z" fill="currentColor"/></svg>
       </button>
-      <a class="go" href="/docs/handbook/quickstart/">Get started</a>
+      <a class="go" href="/docs/">Read the docs</a>
     </nav>
   </div>
 </header>
@@ -322,18 +342,18 @@ footer a:hover{color:var(--ink)}
       <h1>Your agents already live in git.<br><em>Now your knowledge does too.</em></h1>
       <p class="lede">Hanji keeps what a team knows as plain Markdown, in repositories you already own - a quiet paper front for people, a small protocol for agents, and a lock that goes down to a single file.</p>
       <div class="cta">
-        <a class="primary" href="/docs/">Read the handbook</a>
+        <a class="primary" href="/docs/">Read the docs</a>
         <a class="quiet" href="/docs/handbook/quickstart/">Quick start</a>
       </div>
-      <p class="pre">Pre-release. The handbook is public today; the code lands as one clean release, open source under AGPL.</p>
+      <p class="pre">Pre-release. The docs are public today; the code lands as one clean release, AGPL. <a href="#launch">One email when it lands →</a></p>
     </div>
     <div class="sheet" id="sheet">
       <h3>Ideas</h3>
-      <p class="line"><span id="typed"></span><span class="caret" id="caret"></span></p>
-      <p class="commit" id="commit"><span class="dot"></span>committed - a one-line diff, nothing else touched</p>
-      <div class="prop" id="prop">
+      <p class="line"><span id="typed">Paper outlasts the meeting it was written in.</span><span class="caret" id="caret"></span></p>
+      <p class="commit on" id="commit"><span class="dot"></span>committed - a one-line diff, nothing else touched</p>
+      <div class="prop on" id="prop">
         <span class="add" id="addline">+ And your agents can quote it tomorrow.</span>
-        <span class="who"><span>claude · proposes</span><b id="verdict">awaiting review…</b></span>
+        <span class="who"><span>claude · proposes</span><b id="verdict">merged ✓</b></span>
       </div>
     </div>
   </div>
@@ -380,7 +400,7 @@ footer a:hover{color:var(--ink)}
   <section class="pane rev" id="p4">
     <div class="txt">
       <span class="n rise">04 · THE MARGINS</span>
-      <h2 class="rise">Talk on the page.<br>Agents read it only if you let them.</h2>
+      <h2 class="rise">Talk in the margins.<br>Never in the record.</h2>
       <p class="rise">Highlight a word and comment on exactly that - the phrase lights up for every reader, and the notes gather in a panel beside the prose.</p>
       <p class="rise">Comments live in Hanji's own store, never a commit and never in an export. An agent reads them only through a scope you grant on purpose - by default, what agents and the public read is the page alone.</p>
     </div>
@@ -392,7 +412,7 @@ footer a:hover{color:var(--ink)}
       </div>
       <div class="note reply">
         <span class="who">@owner</span>
-        <p>Yes - byte-fidelity holds. ✅</p>
+        <p>Yes - byte-fidelity holds. <svg class="ok" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.6 4.7 9.2 10 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
       </div>
     </div>
   </section>
@@ -406,7 +426,7 @@ footer a:hover{color:var(--ink)}
     <div class="stats rise">
       <div class="stat"><span class="v">~2<small>ms</small></span><span class="l">an agent fetches a page</span></div>
       <div class="stat"><span class="v">~14<small>kB</small></span><span class="l">a page, over the wire</span></div>
-      <div class="stat"><span class="v">~2.5<small>min</small></span><span class="l">35,000 pages made searchable</span></div>
+      <div class="stat"><span class="v">~2.5<small>min</small></span><span class="l">35k pages indexed</span></div>
       <div class="stat zero"><span class="v">0</span><span class="l">bundled LLM SDKs</span></div>
     </div>
     <p class="note rise">The zero is the point: nothing about Hanji's cost or weight grows because your team wrote more this month. <a href="/docs/handbook/product/performance/">All the numbers, measured →</a></p>
@@ -421,7 +441,8 @@ footer a:hover{color:var(--ink)}
       <div class="way">
         <h3>Just you, locally</h3>
         <p>Install, open, and a welcome screen does the wiring - your name for the place, your password, your folder of Markdown.</p>
-        <pre>git clone https://github.com/gethanji/hanji
+        <pre># public with the release:
+git clone https://github.com/gethanji/hanji
 pnpm install && pnpm dev:web
 # → localhost:4100 greets you</pre>
         <a class="more" href="/docs/handbook/quickstart/">Quick start →</a>
@@ -437,7 +458,8 @@ tailscale serve --bg 4100</pre>
       <div class="way">
         <h3>With your coding agents</h3>
         <p>Scoped reads over MCP or plain HTTP - a bash script with curl counts as an agent - and edits that arrive as proposals.</p>
-        <pre>pnpm hanji token my-claude notes=read+propose
+        <pre>pnpm hanji token my-claude \
+  notes=read+propose
 claude mcp add hanji --transport http \
   http://localhost:4101/mcp</pre>
         <a class="more" href="/docs/handbook/guide/agents/">Agents →</a>
@@ -450,7 +472,7 @@ pnpm hanji export ./site</pre>
         <a class="more" href="/docs/handbook/guide/publish/">Publish to the web →</a>
       </div>
     </div>
-    <p class="after">All four ship in the first release. The handbook documents each of them today.</p>
+    <p class="after">All four ship in the first release - <a href="#launch">get the email when it lands →</a></p>
   </div>
 </section>
 
@@ -489,20 +511,16 @@ pnpm hanji export ./site</pre>
   </div>
 </section>
 
-<div class="close">
-  <div class="cta" style="justify-content:center">
-    <a class="primary" href="/docs/">Read the handbook</a>
-    <a class="quiet" href="/docs/handbook/quickstart/">Quick start</a>
-  </div>
-</div>
-
-<section class="launchnote">
+<section class="launchnote" id="launch">
   <div class="wrap">
-    <p class="lead">One email when the code lands. Maybe three a year after.</p>
-    <form class="notify" action="https://buttondown.com/api/emails/embed-subscribe/hanji" method="post" target="_blank">
-      <input type="email" name="email" placeholder="you@yours.dev" required>
+    <p class="kicker rise">08 · THE LAUNCH NOTE</p>
+    <h2 class="rise">Follow the build.<br><em>Run it first.</em></h2>
+    <form class="notify rise" action="https://buttondown.com/api/emails/embed-subscribe/hanji" method="post" target="_blank">
+      <input type="email" name="email" placeholder="you@yours.dev" required aria-label="Email address" autocomplete="email">
       <button type="submit">Get the launch note</button>
     </form>
+    <p class="post rise">A few letters a year: what shipped, what we learned, and the day the code is yours to run. Unsubscribe anytime.</p>
+    <p class="meanwhile rise"><a href="/docs/">Meanwhile, read the docs →</a></p>
   </div>
 </section>
 
@@ -536,32 +554,34 @@ pnpm hanji export ./site</pre>
   const LINE = "Paper outlasts the meeting it was written in.";
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+  // First paint ships the completed state in markup - the demo must perform
+  // the product even before JS, in scrapes, and mid-scroll. The loop resets
+  // then replays, compressed so the merge lands well inside a cold read.
   async function play() {
-    typed.textContent = ""; commit.classList.remove("on"); prop.classList.remove("on");
+    typed.textContent = ""; commit.classList.remove("on"); prop.classList.remove("on", "ok");
     verdict.textContent = "awaiting review…";
-    await sleep(900);
-    for (const ch of LINE) { typed.textContent += ch; await sleep(34 + Math.random() * 40); }
-    await sleep(500);
+    await sleep(300);
+    for (const ch of LINE) { typed.textContent += ch; await sleep(16 + Math.random() * 22); }
+    await sleep(400);
     commit.classList.add("on");
-    await sleep(1400);
+    await sleep(1000);
     prop.classList.add("on");
-    await sleep(1900);
+    await sleep(1300);
     verdict.textContent = "merged ✓";
-    await sleep(4200);
+    prop.classList.add("ok");
+    await sleep(4500);
   }
 
   if (reduced) {
-    typed.textContent = LINE;
-    commit.classList.add("on"); prop.classList.add("on"); verdict.textContent = "merged ✓";
     caret.style.display = "none";
   } else {
-    (async () => { for (;;) await play(); })();
+    (async () => { await sleep(3200); for (;;) await play(); })();
   }
 
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); }
   }, { threshold: 0.25 });
-  for (const el of document.querySelectorAll(".turn, .pane")) io.observe(el);
+  for (const el of document.querySelectorAll(".turn, .pane, .launchnote")) io.observe(el);
 })();
 </script>
 </body>
