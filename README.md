@@ -44,3 +44,8 @@ verified merge/reset, agent view, scoped page counts, and the mobile comparison 
 Simplified language switching to EN/KO, removed decorative button arrows,
 and gave the mobile hero a full opening view with a quieter demo link.
 Updated the hero description in both languages to include Tailscale.
+
+Refined the hero typography and removed its pre-release note. Organized the
+footer into brand, navigation, and small-print groups. Emphasized newsletter
+signup with a deep green panel, a clear email field, and a labeled button;
+verified English and Korean mobile layouts.
