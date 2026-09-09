@@ -13,10 +13,10 @@ const reset = document.getElementById('reset');
 function setMerged(merged) {
  document.getElementById('merged-line').hidden = !merged;
  document.getElementById('agent-added').hidden = !merged;
- document.getElementById('proposal-badge').textContent = merged ? pageCopy("Merged","반영됨") : '01';
+ document.getElementById('proposal-badge').textContent = merged ? pageCopy("Merged","반영됨") : '+1';
  document.getElementById('side-count').textContent = merged ? '0' : '1';
  document.getElementById('byline').textContent = merged ? pageCopy("Ada · merged claude’s proposal just now","Ada · 방금 claude의 제안을 반영") : pageCopy("Ada · updated today","Ada · 오늘 수정");
- document.getElementById('demo-status').textContent = merged ? pageCopy("✓ Merged in this example · one new commit, one added line","✓ 예시에 반영했습니다 · 커밋 하나, 추가된 한 줄") : pageCopy("● Interactive example · try merging the proposal","● 작동 예시 · 제안을 반영해 보세요");
+ document.getElementById('demo-status').textContent = merged ? pageCopy("✓ One line added. One commit.","✓ 추가된 한 줄. 커밋 하나.") : pageCopy("Interactive example · try Merge","작동 예시 · 제안을 반영해 보세요");
  merge.textContent = merged ? pageCopy("Merged ✓","반영됨 ✓") : pageCopy("Merge proposal","제안 반영");
  merge.disabled = merged;
  reset.hidden = !merged;
@@ -99,7 +99,7 @@ reset.addEventListener('click', () => { setMerged(false); selectTab(tabs[0]); me
    if(!to.width)return;
    const flight=document.createElement('div');
    flight.className='merge-flight';flight.setAttribute('aria-hidden','true');
-   flight.textContent=pageCopy("And give your agents the same place to look.","에이전트도 같은 곳에서 찾을 수 있도록.");
+   flight.textContent=pageCopy("Give the next person a place to start.","다음 사람이 시작할 자리를 남깁니다.");
    Object.assign(flight.style,{left:`${from.left}px`,top:`${from.top}px`,width:`${from.width}px`});
    document.body.append(flight); stage.classList.add('merging');
    const distanceX=to.left-from.left, distanceY=to.top-from.top;

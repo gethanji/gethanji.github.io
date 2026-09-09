@@ -33,3 +33,14 @@ The ignored `lab/` directory contains working previews, not release assets.
 - Added restrained motion and interactive product examples.
 - Translated the page and its interactive states into Korean.
 - Adopted “Paper-thin documentation tool” as the concise product descriptor.
+
+## Mobile refinement
+
+Shortened both languages, reduced the hero demo to one note and one proposal,
+moved the zero-model section earlier, and collapsed setup instructions by default.
+Checked layout boundaries at 320, 390, 768, and 1280 pixels in both languages;
+verified merge/reset, agent view, scoped page counts, and the mobile comparison picker.
+
+Simplified language switching to EN/KO, removed decorative button arrows,
+and gave the mobile hero a full opening view with a quieter demo link.
+Updated the hero description in both languages to include Tailscale.
