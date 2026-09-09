@@ -49,3 +49,6 @@ Refined the hero typography and removed its pre-release note. Organized the
 footer into brand, navigation, and small-print groups. Emphasized newsletter
 signup with a deep green panel, a clear email field, and a labeled button;
 verified English and Korean mobile layouts.
+
+The opening fills 90% of the viewport including the header, with the demo
+invitation at its bottom. It grows naturally when content needs more room.
