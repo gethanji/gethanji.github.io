@@ -1,8 +1,14 @@
 # Hanji
 
-> The agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in the git you already own — a paper front for people, a small protocol for agents, and a lock that goes down to a single file. No bundled model, no credits. Open source, AGPL-3.0.
+> Paper-thin documentation tool. An agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in the git you already own — a paper front for people, a small protocol for agents, and a lock that goes down to a single file. No bundled model, no credits. Open source, AGPL-3.0.
 
-Hanji reads come off a local clone and a local index; there is no LLM SDK bundled and nothing meters usage. Agents are welcome guests over MCP — scoped reads and edits that arrive as proposals, with the agent's name kept in git history — never a dependency. Everything you open to everyone can be exported as a static website (this page and the handbook are Hanji exports).
+Hanji reads come off a local clone and a local index; there is no LLM SDK bundled and nothing meters usage. Agents are welcome guests over MCP — scoped reads and edits that arrive as proposals, with the agent's name kept in git history — never a dependency. Everything you open to everyone can be exported as a static website (the handbook is a Hanji export).
+
+Status: pre-release. The handbook is public; the code release is still ahead.
+
+## Languages
+- [English](https://gethanji.github.io/)
+- [한국어](https://gethanji.github.io/ko/)
 
 ## Docs
 - [Handbook](https://gethanji.github.io/docs/): the full product handbook, itself a Hanji export
@@ -10,7 +16,7 @@ Hanji reads come off a local clone and a local index; there is no LLM SDK bundle
 - [Full llms.txt](https://gethanji.github.io/docs/llms.txt): the complete documented site as plain Markdown for agents
 
 ## Source
-- [GitHub (gethanji)](https://github.com/gethanji): source code, AGPL-3.0
+- [GitHub (gethanji)](https://github.com/gethanji): follow the project; code planned for release under AGPL-3.0
 
 ## Key facts
 - Storage: plain Markdown files in your own git repositories — no proprietary store, no lock-in
