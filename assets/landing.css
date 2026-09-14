@@ -204,3 +204,21 @@ html:lang(ko) .footer-top>p{font-size:20px;line-height:1.6}
 .review-diff{padding:16px 22px;display:flex;flex-direction:column;gap:4px;font-family:var(--mono);font-size:13px;line-height:1.6}
 .d-add{color:#1f5f43;background:rgba(184,218,207,.28);padding:2px 6px;border-radius:4px}
 @media(max-width:600px){.review-section{padding-top:56px}.review-row{flex-wrap:wrap;gap:8px;padding:15px 16px}.review-title{flex-basis:100%;font-size:16px}.review-note,.review-diff{padding:14px 16px}.review-diff{font-size:12px}}
+
+/* Rhythm. One value governs the pause between chapters, so the page reads as
+   a sequence of beats rather than a stack of panels. Every chapter takes the
+   whole pause on top and none on the bottom: the gap between any two is
+   exactly --chapter-gap, never the sum of two guesses. This rule sits last
+   on purpose; it overrides the nine scattered paddings above it. */
+:root{--chapter-gap:200px}
+@media(max-width:1100px){:root{--chapter-gap:140px}}
+@media(max-width:600px){:root{--chapter-gap:96px}}
+main > .story,main > .chapter{padding-top:var(--chapter-gap);padding-bottom:0}
+main > .weight-strip{margin-top:var(--chapter-gap);padding-top:0}
+/* The strip is a breath, not a chapter: the chapter after it takes a shorter pause. */
+main > .weight-strip + .chapter{padding-top:calc(var(--chapter-gap) * .6)}
+/* The hero's own exhale before the first chapter. */
+.hero-proof{display:none}
+main > .hero{padding-bottom:calc(var(--chapter-gap) * .35)}
+/* The last chapter needs its own floor before the footer's rule. */
+main > .chapter:last-of-type{padding-bottom:calc(var(--chapter-gap) * .7)}
