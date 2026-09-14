@@ -167,10 +167,9 @@ html:lang(ko) .footer-top>p{font-size:20px;line-height:1.6}
 /* One number in the hero. The claim no competitor can make, and the only one
    a reader can verify for themselves in ten seconds. Quiet evidence beside
    the lede, never a badge. */
-.hero-proof{margin:14px 0 0;font-size:15px;color:var(--muted);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.hero-proof-num{font-family:var(--mono);font-size:22px;color:var(--ink);line-height:1}
-.hero-proof a{color:var(--muted);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
-.hero-proof a:hover{color:var(--accent);text-decoration-color:currentColor}
+/* One number, as a sentence a person can feel: a promise about their time,
+   not a figure about our stack. */
+.hero-proof{margin:16px 0 0;max-width:430px;font-size:15px;line-height:1.55;color:var(--ink)}
 
 /* The agent is a reader too. A quiet second action that hands over the one
    command, rather than a second door for the same human. */
@@ -188,7 +187,7 @@ html:lang(ko) .footer-top>p{font-size:20px;line-height:1.6}
 
 
 
-@media(max-width:600px){.hero-proof{font-size:14px}.hero-proof-num{font-size:19px}}
+@media(max-width:600px){.hero-proof{font-size:14px}}
 
 /* The proposal, given its own chapter. This is the one screen no competitor
    has: a machine that asks instead of writing. It had been a detail inside
@@ -217,7 +216,6 @@ main > .weight-strip{margin-top:var(--chapter-gap);padding-top:0}
 /* The strip is a breath, not a chapter: the chapter after it takes a shorter pause. */
 main > .weight-strip + .chapter{padding-top:calc(var(--chapter-gap) * .6)}
 /* The hero's own exhale before the first chapter. */
-.hero-proof{display:none}
 main > .hero{padding-bottom:calc(var(--chapter-gap) * .35)}
 /* The last chapter needs its own floor before the footer's rule. */
 main > .chapter:last-of-type{padding-bottom:calc(var(--chapter-gap) * .7)}
