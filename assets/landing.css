@@ -90,6 +90,12 @@ html:lang(ko) .footer-top>p{font-size:20px;line-height:1.6}
 /* A quieter opening: one primary action, then an invitation to explore. */
 .top .nav .language-switch{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;font-size:12px;letter-spacing:.04em;color:var(--muted)}
 .top .nav .language-switch:hover{color:var(--accent)}
+/* The locale you are already reading: present so the switcher says where
+   you are, not only where you can go, but never offering a trip to here.
+   Scoped through .top .nav to match the rule above it, which is three classes
+   deep; a bare .language-switch.is-current loses the tie and renders muted. */
+.top .nav .language-switch.is-current{color:var(--ink);cursor:default}
+.top .nav .language-switch.is-current:hover{color:var(--ink)}
 .hero .eyebrow::before{content:none}
 .hero .lede{max-width:490px}
 .hero .lede span{font:inherit;color:inherit}
