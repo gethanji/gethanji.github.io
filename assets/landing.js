@@ -178,3 +178,33 @@ reset.addEventListener('click', () => { setMerged(false); selectTab(tabs[0]); me
   document.querySelectorAll('.merge-flight').forEach(el=>el.remove());
  });
 })();
+
+// Hand over the one command. Revealing it is the feature; copying it is a
+// bonus. A clipboard write can fail (permissions, an insecure context, a
+// browser that simply says no) and a button whose only behaviour is an
+// invisible write has no honest failure state, so the command is always put
+// on screen where it can be read and selected by hand.
+const agentCta = document.getElementById("agent-cta");
+const agentCommand = document.getElementById("agent-command");
+const agentNote = document.getElementById("agent-command-note");
+if (agentCta && agentCommand) {
+  agentCta.addEventListener("click", async () => {
+    if (agentCommand.hidden) {
+      agentCommand.hidden = false;
+      agentCta.setAttribute("aria-expanded", "true");
+      agentCta.textContent = "Copy the command";
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(document.getElementById("agent-command-text").textContent);
+      agentNote.textContent = "Copied.";
+      agentCommand.classList.add("copied");
+    } catch {
+      agentNote.textContent = "Select it above and copy by hand.";
+    }
+    setTimeout(() => {
+      agentNote.textContent = "Select it, or press the button again to copy.";
+      agentCommand.classList.remove("copied");
+    }, 2600);
+  });
+}

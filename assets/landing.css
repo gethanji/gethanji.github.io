@@ -163,3 +163,30 @@ html:lang(ko) .footer-top>p{font-size:20px;line-height:1.6}
 .hero-intro{display:flex;flex-direction:column;box-sizing:border-box;min-height:calc(90svh - 96px);padding-top:64px}
 .hero-explore{margin:auto auto 22px;padding:12px 18px;flex-shrink:0}
 @media(max-width:600px){.hero-intro{min-height:calc(90svh - 70px);padding-top:38px}.hero-explore{margin-bottom:20px}}
+
+/* One number in the hero. The claim no competitor can make, and the only one
+   a reader can verify for themselves in ten seconds. Quiet evidence beside
+   the lede, never a badge. */
+.hero-proof{margin:14px 0 0;font-size:15px;color:var(--muted);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.hero-proof-num{font-family:var(--mono);font-size:22px;color:var(--ink);line-height:1}
+.hero-proof a{color:var(--muted);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.hero-proof a:hover{color:var(--accent);text-decoration-color:currentColor}
+
+/* The agent is a reader too. A quiet second action that hands over the one
+   command, rather than a second door for the same human. */
+.button-quiet{background:transparent;border:1px solid var(--line);color:var(--ink);cursor:pointer;font:inherit}
+/* .button:hover fills with accent, which on a quiet button leaves ink text
+   on a mid-green field. A quiet action stays quiet: the border firms up,
+   the fill does not arrive. */
+.button-quiet:hover{background:transparent;border-color:var(--ink)}
+.button-quiet.copied{border-color:var(--accent);color:var(--accent)}
+/* The command itself, on screen. Revealing beats an invisible write. */
+.agent-command{margin:14px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;flex-direction:column;gap:8px;max-width:520px}
+.agent-command.copied{border-color:var(--accent)}
+.agent-command code{font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--ink);white-space:pre-wrap;word-break:break-all;user-select:all}
+.agent-command-note{font-size:12px;color:var(--muted)}
+
+/* The unasked question, answered before it is asked. */
+.price-note{margin:18px 0 0;max-width:430px;font-size:14px;line-height:1.55;color:var(--muted)}
+
+@media(max-width:600px){.hero-proof{font-size:14px}.hero-proof-num{font-size:19px}.price-note{font-size:13px}}
