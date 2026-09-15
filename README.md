@@ -66,3 +66,28 @@ copy review are still pending. Do not advertise those routes until ready.
 
 The remaining comparison-page and release-day tasks in the supplied plan are
 separate work. This revision does not change release status or publish the site.
+
+## September 15: screens
+
+The opening is one screen. `.hero-intro` is `calc(100svh - var(--top-h))`, and
+`--top-h` mirrors `.top`'s height at each breakpoint so the fold lands on the
+header's bottom edge rather than near it. The vignette is the only fixed height
+in the opening, so it is the one that gives way: `min(312px, 34svh)` above
+700px, and `30svh` in Korean, whose headline takes a third line. It never grows
+past its drawn size, and phones keep theirs, since there the opening is taller
+than the screen whatever we do.
+
+The demo below it is the second screen: `100svh`, the mockup centred, the panel
+now padded and rounded on all four corners instead of running off the bottom as
+a glimpse. The workspace and terminal grew to `min(600px, 68svh)`.
+
+A chapter dense enough to nearly fill a screen is given the whole one and
+centred in it; a short chapter flows in the rhythm above. Today that means
+access control, comments and history, and the comparison. The editor and
+proposal chapters, the deployment list and the closing invitation flow. The
+dark no-model panel is deliberately left out: at four fifths of a screen its
+leftover room became a band of empty dark inside the card.
+
+The pause between chapters is unchanged at `--chapter-gap`, verified at 122px
+before and after on every boundary except the one below the no-model panel,
+which was already 190px from that panel's own 68px bottom margin.

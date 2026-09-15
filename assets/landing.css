@@ -387,3 +387,33 @@ main>.chapter:last-of-type{padding-bottom:48px}
 /* The exposed edges follow the same perspective as the face. */
 .mini-window{box-shadow:0 22px 40px -23px #23433366,var(--edge-right,4px) var(--edge-bottom,5px) 0 #e0e7d9,calc(var(--edge-right,4px) + 1px) calc(var(--edge-bottom,5px) + 1px) 0 #c7d3c0;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s cubic-bezier(.2,.7,.2,1)}
 @media(prefers-reduced-motion:reduce){.mini-window{transition:none}}
+
+/* Screens. The opening owns a viewport, and the demo below it owns the next
+   one. A chapter dense enough to nearly fill a screen is given the whole one
+   and centred in it; a short chapter is left to flow in the rhythm above, so
+   the page alternates between held screens and passing beats.
+   --top-h mirrors .top's height, so the opening lands exactly on the fold. */
+:root{--top-h:96px}
+@media(max-width:600px){:root{--top-h:77px}}
+@media(max-width:360px){:root{--top-h:70px}}
+.hero-intro{min-height:calc(100svh - var(--top-h))}
+/* The vignette is the only fixed height in the opening, so it is the one that
+   gives way on a short window. It never grows past its drawn size, and phones
+   keep theirs: there the opening is taller than the screen no matter what. */
+@media(min-width:701px){.mini-window{height:min(312px,34svh)}
+/* The Korean headline takes three lines where English takes two, so the
+   vignette gives up a little more to keep the same fold. */
+html:lang(ko) .mini-window{height:min(312px,30svh)}}
+
+/* The demo is the second screen: one viewport, the mockup centred in it and
+   given more room than it had when it was only a glimpse under the fold. */
+.product-stage{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-bottom:24px;border-radius:12px}
+.product-stage .workspace,.product-stage .terminal{min-height:min(600px,68svh)}
+
+/* The dense chapters. The others flow: the editor and proposal chapters, the
+   deployment list, the closing invitation. Each screen keeps its --chapter-gap
+   on top, so the pause between beats is the same one value as before, and the
+   centring only spends the room left over. The dark no-model panel is left out
+   on purpose: at four fifths of a screen its leftover room became a band of
+   empty dark inside the card, which reads as a mistake rather than a pause. */
+.permission-section,.collaboration-section,.compare-section{min-height:100svh;display:flex;flex-direction:column;justify-content:center}
