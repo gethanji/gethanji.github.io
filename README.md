@@ -267,3 +267,37 @@ exactly their own frame-to-frame noise floor.
    the earlier rule; the file carries three to seven historical values for the
    same property. Collapsing them changes no rendering.
 4. **A native German and Japanese copy review**, still owed from the locale pass.
+
+## September 15: the three open items, closed
+
+**The vignette has a pause control.** Not a space-bar shortcut: the space bar
+belongs to page scrolling, and taking it would break the keyboard readers the
+criterion exists to protect. It is a real button under the figure, always
+visible rather than hover-revealed, because a control a reader has to discover
+by accident is not a mechanism. Its name changes with its state, so it always
+says what it will do next, and it answers the space bar for free, because that
+is what a focused button does. A reader's pause outranks the intersection
+observer: scrolling away and back does not restart something they stopped.
+The vignette gives back the 50px the control costs, so the opening still lands
+exactly on the fold in all five locales.
+
+**Contrast is zero failures in both themes**, down from 15 in light and 7 in
+dark. Not fifteen patches: twelve small labels had each drifted to their own
+lighter green, somewhere between 2.4:1 and 4.4:1 on paper. They now share one
+token, `--quiet`, which is `--muted` with a green cast instead of a blue-grey
+one at the same luminance. It was chosen as the *lightest* green that still
+clears 4.55:1 on every background such a label lands on, so the labels stay
+quiet instead of going heavy. The amber agent chip was its own case and got its
+own value.
+
+**The overridden declarations were the append-only habit made visible.** Each
+pass restated a box's padding or gap in a new rule instead of editing the
+earlier one, so the file carried up to seven historical values for the same
+property: `.hero` set `padding-top` five times before the one that wins,
+`.story-copy` five times before a `padding:0!important` killed them all. The
+browser parsed every one of them and threw them away, and a reader had to read
+all seven to know what the padding was. 244 declarations that can never win are
+gone, 5.9kB. Proven by pixel-diffing six sections before and after: all six are
+byte-identical, and the vignette still has 18 animations running.
+
+The stylesheet is 84.5kB, 21.2kB over the wire, down from 98.7kB.

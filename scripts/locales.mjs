@@ -20,15 +20,15 @@ const SITE = "https://gethanji.github.io";
 
 export const LOCALES = [
   { code: "en", path: "/",    dir: ".",  og: "en_US", label: "EN", name: "English",  aria: "Read in English",  live: true,
-    ui: { change: "Change language", theme: "Colour theme", light: "Light", dark: "Dark", system: "System" } },
+    ui: { change: "Change language", theme: "Colour theme", light: "Light", dark: "Dark", system: "System" , pause: "Pause", play: "Play" } },
   { code: "ko", path: "/ko/", dir: "ko", og: "ko_KR", label: "KO", name: "한국어",    aria: "한국어로 읽기",     live: true,
-    ui: { change: "언어 변경", theme: "색상 테마", light: "밝게", dark: "어둡게", system: "시스템" } },
+    ui: { change: "언어 변경", theme: "색상 테마", light: "밝게", dark: "어둡게", system: "시스템" , pause: "일시정지", play: "재생" } },
   { code: "de", path: "/de/", dir: "de", og: "de_DE", label: "DE", name: "Deutsch",  aria: "Auf Deutsch lesen", live: true,
-    ui: { change: "Sprache wechseln", theme: "Farbschema", light: "Hell", dark: "Dunkel", system: "System" } },
+    ui: { change: "Sprache wechseln", theme: "Farbschema", light: "Hell", dark: "Dunkel", system: "System" , pause: "Pause", play: "Abspielen" } },
   { code: "ja", path: "/ja/", dir: "ja", og: "ja_JP", label: "JA", name: "日本語",    aria: "日本語で読む",      live: true,
-    ui: { change: "言語を変更", theme: "配色", light: "ライト", dark: "ダーク", system: "システム" } },
+    ui: { change: "言語を変更", theme: "配色", light: "ライト", dark: "ダーク", system: "システム" , pause: "停止", play: "再生" } },
   { code: "fr", path: "/fr/", dir: "fr", og: "fr_FR", label: "FR", name: "Français", aria: "Lire en français",  live: true,
-    ui: { change: "Changer de langue", theme: "Thème", light: "Clair", dark: "Sombre", system: "Système" } },
+    ui: { change: "Changer de langue", theme: "Thème", light: "Clair", dark: "Sombre", system: "Système" , pause: "Pause", play: "Lecture" } },
 ];
 
 // Live means "advertised": in hreflang, in the sitemap, in the switcher, in
@@ -77,6 +77,15 @@ function theme(current) {
   return `<fieldset class="theme-switch"><legend class="visually-hidden">${u.theme}</legend>${one("light", u.light, false)}${one("dark", u.dark, false)}${one("system", u.system, true)}</fieldset>`;
 }
 
+// The vignette loops for as long as the page is open. prefers-reduced-motion
+// covers the readers who set it; WCAG 2.2.2 wants a control for everyone else,
+// and a control is also the only honest way to answer the space bar, which
+// belongs to page scrolling and must not be taken from a keyboard reader.
+function motion(current) {
+  const u = (live().find((l) => l.code === current) ?? live()[0]).ui;
+  return `<figcaption class="mini-controls"><button type="button" class="mini-pause" data-pause data-label-pause="${u.pause}" data-label-play="${u.play}"><i aria-hidden="true"></i><span>${u.pause}</span></button></figcaption>`;
+}
+
 function rewrite(loc) {
   const file = join(root, loc.dir, "index.html");
   if (!existsSync(file)) return { file, skipped: true };
@@ -96,6 +105,7 @@ function rewrite(loc) {
   // The picker and the theme control are both single blocks, replaced whole.
   s = s.replace(/<details class="lang-picker">[\s\S]*?<\/details>/, switcher(loc.code));
   s = s.replace(/<(div|fieldset) class="theme-switch"[\s\S]*?<\/\1>/, theme(loc.code));
+  s = s.replace(/<figcaption class="mini-controls">[\s\S]*?<\/figcaption>/, motion(loc.code));
   if (s !== before) writeFileSync(file, s);
   return { file, changed: s !== before };
 }

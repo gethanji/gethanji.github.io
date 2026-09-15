@@ -217,10 +217,24 @@ if (agentCta && agentCommand) {
 // Pause the decorative miniature offscreen and while the page is hidden.
 (()=>{
  const mini=document.querySelector('.mini-hanji');if(!mini)return;
- let visible=true;
- const update=()=>mini.classList.toggle('is-paused',!visible||document.hidden);
+ const toggle=mini.querySelector('[data-pause]');
+ let visible=true,byReader=false;
+ // A reader's choice outranks the observer: scrolling the vignette back into
+ // view must not restart something they deliberately stopped.
+ const update=()=>mini.classList.toggle('is-paused',byReader||!visible||document.hidden);
  new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;update();},{threshold:.1}).observe(mini);
  document.addEventListener('visibilitychange',update);
+ if(toggle){
+  const label=toggle.querySelector('span');
+  toggle.addEventListener('click',()=>{
+   byReader=!byReader;
+   toggle.classList.toggle('is-playing',byReader);
+   // The name changes with the state, so the button always says what it will
+   // do next. No aria-label: the visible word is the accessible name.
+   label.textContent=byReader?toggle.dataset.labelPlay:toggle.dataset.labelPause;
+   update();
+  });
+ }
 })();
 
 // A small pointer-following tilt, limited to fine pointers and motion-enabled users.
