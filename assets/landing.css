@@ -428,3 +428,49 @@ main > .hero{padding-bottom:0}
    on purpose: at four fifths of a screen its leftover room became a band of
    empty dark inside the card, which reads as a mistake rather than a pause. */
 .permission-section,.collaboration-section,.compare-section{min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+
+/* Japanese measures. The same problems Hangul has: there is no true italic,
+   so the display em must not be slanted, and full-width glyphs read far
+   larger than Latin at the same size, so every display size comes down. The
+   fonts are the reader's own; shipping a Japanese webfont would cost more
+   than the whole page weighs. Line breaking is the browser's, which is
+   already correct for Japanese, so only kinsoku is asked for. */
+html:lang(ja){--serif:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',Georgia,serif;--sans:'DM Sans','Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif}
+html:lang(ja) body{line-break:strict;overflow-wrap:break-word}
+html:lang(ja) h1 em,html:lang(ja) h2 em{font-style:normal}
+html:lang(ja) h1{font-size:clamp(42px,5.2vw,74px);line-height:1.34;letter-spacing:-.04em;max-width:1200px}
+html:lang(ja) h2{font-size:clamp(31px,3.5vw,49px);line-height:1.34;letter-spacing:-.03em}
+html:lang(ja) .lede{line-height:1.8}
+html:lang(ja) .doc h3{font-size:28px;line-height:1.5;letter-spacing:-.5px}
+html:lang(ja) .doc-prose{font-size:16px;line-height:1.9}
+html:lang(ja) .doc-prose h4{font-size:19px}
+html:lang(ja) .flow-quote{font-size:25px;line-height:1.6}
+html:lang(ja) .margin-page>p{font-size:clamp(24px,2.4vw,33px);line-height:1.7}
+html:lang(ja) .fit-matrix{font-size:13px;line-height:1.75}
+html:lang(ja) .matrix-corner{font-size:12px;font-style:normal}
+html:lang(ja) .footer-top>p{font-size:20px;line-height:1.65}
+html:lang(ja) .mini-window{height:min(312px,30svh)}
+@media(max-width:600px){
+html:lang(ja) h1,html:lang(ja) .hero h1{font-size:34px;line-height:1.35}
+html:lang(ja) h2{font-size:29px;line-height:1.4}
+html:lang(ja) .doc h3{font-size:25px}
+html:lang(ja) .product-stage .doc h3{font-size:22px;line-height:1.5}
+html:lang(ja) .product-stage .doc-prose{font-size:17px;line-height:1.7}
+html:lang(ja) .margin-page>p{font-size:24px;line-height:1.65}
+html:lang(ja) .fit-matrix{font-size:12px}
+html:lang(ja) .nav{gap:12px}
+}
+
+/* Five languages plus an action do not fit a phone's header. The GitHub link
+   already steps aside at 600px; below 480px the docs button does too, since
+   the hero repeats it as the primary action a thumb's width below. The
+   switcher stays: a reader who needs another language needs it here. */
+@media(max-width:480px){.top .nav .nav-cta{display:none}}
+/* At 320px even five labels need the gap pulled in. */
+@media(max-width:360px){.top .nav{gap:8px}}
+
+/* German and French measures. The words are simply longer: the opening
+   headline needs a wider line to stay the two lines the design is built
+   around, rather than a smaller type size, which would cost the page its one
+   loud voice. Korean and Japanese need the opposite and get it above. */
+html:lang(de) .hero h1,html:lang(fr) .hero h1{max-width:1240px}

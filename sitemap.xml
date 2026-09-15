@@ -5,8 +5,11 @@
     <loc>https://gethanji.github.io/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gethanji.github.io/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gethanji.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://gethanji.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gethanji.github.io/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,8 +17,47 @@
     <loc>https://gethanji.github.io/ko/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gethanji.github.io/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gethanji.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://gethanji.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gethanji.github.io/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gethanji.github.io/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gethanji.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gethanji.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://gethanji.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gethanji.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gethanji.github.io/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gethanji.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gethanji.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://gethanji.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gethanji.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gethanji.github.io/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gethanji.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gethanji.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://gethanji.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gethanji.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/"/>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

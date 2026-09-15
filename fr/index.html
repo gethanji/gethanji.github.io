@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Documentation fine comme du papier. Le savoir de votre équipe en Markdown dans votre git, avec un accès limité pour les agents. Sans modèle intégré, sans crédits.">
+<link rel="canonical" href="https://gethanji.github.io/fr/">
+<link rel="alternate" hreflang="en" href="https://gethanji.github.io/">
+<link rel="alternate" hreflang="ko" href="https://gethanji.github.io/ko/">
+<link rel="alternate" hreflang="de" href="https://gethanji.github.io/de/">
+<link rel="alternate" hreflang="ja" href="https://gethanji.github.io/ja/">
+<link rel="alternate" hreflang="fr" href="https://gethanji.github.io/fr/">
+<link rel="alternate" hreflang="x-default" href="https://gethanji.github.io/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Hanji 한지">
+<meta property="og:title" content="Hanji · Documentation fine comme du papier"><meta property="og:description" content="Documentation fine comme du papier. Le savoir de votre équipe en Markdown dans votre git, avec un accès limité pour les agents. Sans modèle intégré, sans crédits.">
+<meta property="og:url" content="https://gethanji.github.io/"><meta property="og:image" content="https://gethanji.github.io/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Hanji · Documentation fine comme du papier">
+<meta name="twitter:description" content="Documentation fine comme du papier. Le savoir de votre équipe en Markdown dans votre git, avec un accès limité pour les agents. Sans modèle intégré, sans crédits."><meta name="twitter:image" content="https://gethanji.github.io/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gethanji.github.io/#org",
+      "name": "Hanji",
+      "url": "https://gethanji.github.io/",
+      "logo": "https://gethanji.github.io/hanji-mark.svg",
+      "sameAs": ["https://github.com/gethanji", "https://x.com/get_hanji", "https://mastodon.social/@get_hanji"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gethanji.github.io/#website",
+      "url": "https://gethanji.github.io/",
+      "name": "Hanji",
+      "description": "The agent-native knowledge base: plain Markdown in the git you already own, a small protocol for agents, and a lock down to a single file.",
+      "inLanguage": "en",
+      "publisher": {"@id": "https://gethanji.github.io/#org"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://gethanji.github.io/#app",
+      "name": "Hanji",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "Knowledge base",
+      "operatingSystem": "Web, macOS, Linux",
+      "description": "An agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in repositories you already own. Agents read and propose edits over MCP; there is no bundled LLM and nothing meters usage.",
+      "url": "https://gethanji.github.io/",
+      "softwareHelp": "https://gethanji.github.io/docs/",
+      "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+      "isAccessibleForFree": true,
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "publisher": {"@id": "https://gethanji.github.io/#org"}
+    }
+  ]
+}
+</script>
+<meta name="theme-color" content="#f9faf6">
+<title>Hanji · Documentation fine comme du papier</title>
+<link rel="icon" href="/hanji-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/landing.css?v=20260915b">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="wrap top">
+ <a class="brand" href="https://gethanji.github.io/" aria-label="Accueil Hanji"><span class="brand-frame"><img src="/hanji-mark.svg" alt=""></span>Hanji</a>
+ <nav class="nav" aria-label="Navigation principale"><a class="github" href="https://github.com/gethanji">GitHub</a><a class="language-switch" href="/" lang="en" hreflang="en" aria-label="Read in English">EN</a><a class="language-switch" href="/ko/" lang="ko" hreflang="ko" aria-label="한국어로 읽기">KO</a><a class="language-switch" href="/de/" lang="de" hreflang="de" aria-label="Auf Deutsch lesen">DE</a><a class="language-switch" href="/ja/" lang="ja" hreflang="ja" aria-label="日本語で読む">JA</a><span class="language-switch is-current" lang="fr" aria-current="true">FR</span><a class="nav-cta" href="https://gethanji.github.io/docs/">Lire la doc</a></nav>
+</header>
+<main id="main" class="wrap">
+ <section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-intro">
+  <div class="hero-top"><p class="eyebrow">Documentation fine comme du papier</p></div>
+  <h1 id="hero-heading"><span>Vos agents vivent déjà dans Git</span><em>Votre savoir y vit aussi</em></h1>
+  <div class="hero-bottom"><div class="hero-message"><p class="lede">Rédigez et cherchez en Markdown. Relisez les modifications des agents. Gardez vos fichiers dans votre propre dépôt Git.</p><ul class="hero-keywords"><li>Open source</li><li>Auto-hébergé</li><li>Accès MCP</li></ul><div class="actions"><div class="action-row"><a class="button" href="https://gethanji.github.io/docs/">Lire le manuel</a><button type="button" class="button button-quiet" id="agent-cta" aria-expanded="false" aria-controls="agent-command">Connecter un agent</button></div><div class="agent-command" id="agent-command" hidden><code id="agent-command-text">claude mcp add hanji --transport http http://localhost:4101/mcp --header &quot;Authorization: Bearer YOUR_TOKEN&quot;</code><span class="agent-command-note" id="agent-command-note">Lancez d’abord Hanji et créez un jeton limité. Remplacez YOUR_TOKEN avant de connecter votre agent.</span></div></div></div><figure class="mini-hanji" aria-label="Illustration en boucle : une personne et deux agents contribuent à une page"><div class="mini-window" aria-hidden="true"><div class="mini-chrome"><span class="mini-brand"><img src="/hanji-mark.svg" alt="">Hanji</span><span class="mini-presence"><i>A</i><i>✳</i><i>⌘</i></span></div><div class="mini-body"><aside class="mini-nav"></aside><div class="mini-paper"><div class="mini-crumb">Manuel / Premiers pas</div><h3>Un peu de savoir partagé</h3><div class="mini-rule rule-long"></div><div class="mini-rule rule-short"></div><div class="mini-edits"><p class="mini-written line-one">Notez la décision et le pourquoi.</p><p class="mini-written line-two">Rendez-la facile à trouver pour tous.</p></div><div class="mini-proposed"><div class="mini-add add-one">+ Choisissez un responsable.<i>✓</i></div><div class="mini-add add-two">+ Écrivez l’étape suivante.<i>✓</i></div></div><div class="mini-review-bar"><span class="mini-reviewed">✓ Codex · deux lignes vérifiées</span><span class="mini-merge"><span class="merge-before">Fusionner</span><span class="merge-after">✓ Fusionné</span></span></div></div></div><div class="mini-cursor cursor-ada"><svg viewBox="0 0 18 22" aria-hidden="true"><path d="M2 2 15 13 9 14 6 20Z" fill="currentColor" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Ada <small>écrire</small></span></div><div class="mini-cursor cursor-claude"><svg viewBox="0 0 18 22" aria-hidden="true"><path d="M2 2 15 13 9 14 6 20Z" fill="currentColor" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Claude <small>proposer</small></span></div><div class="mini-cursor cursor-codex"><svg viewBox="0 0 18 22" aria-hidden="true"><path d="M2 2 15 13 9 14 6 20Z" fill="currentColor" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Codex <small>relire</small></span></div></div></figure></div>
+  <a class="hero-explore" href="#demo">Comment ça marche</a>
+  </div>
+  <div id="demo" class="product-stage" aria-label="Démonstration illustrative du produit Hanji">
+   <div class="stage-bar"><p class="stage-label">Lire. Relire. Fusionner.</p><div class="tabs" role="tablist" aria-label="Explorer les deux vues"><button id="people-tab" role="tab" aria-selected="true" aria-controls="people-view" tabindex="0">Côté humain</button><button id="agent-tab" role="tab" aria-selected="false" aria-controls="agent-view" tabindex="-1">Côté agent</button></div></div>
+   <div class="workspace" id="people-view" role="tabpanel" aria-labelledby="people-tab">
+    <aside class="sidebar" aria-label="Navigation de l’espace de travail d’exemple"><div class="workspace-brand"><img src="/hanji-mark.svg" alt="">Carnet de bord <span>⌄</span></div><div class="search">Rechercher <span>⌘ K</span></div><div class="side-label">Espace de travail</div><div class="side-item"><i>◷</i> Activité</div><div class="side-item"><i>⑂</i> Propositions <span id="side-count">1</span></div><div class="side-label">Manuel</div><div class="side-item active"><i>▤</i> Comment on travaille</div><div class="side-item"><i>▤</i> Décisions</div><div class="side-item"><i>▤</i> Premiers pas</div><div class="side-label">Ingénierie</div><div class="side-item"><i>›</i> Architecture</div><div class="side-item"><i>›</i> Procédures</div></aside>
+    <article class="doc"><div class="doc-top"><span>handbook / how-we-work.md</span></div><div class="doc-body"><h3>Comment on travaille</h3><p class="byline" id="byline">Ada · mis à jour aujourd’hui</p><div class="doc-prose"><p class="demo-summary">Un manuel partagé pour les décisions produit, les notes de projet et les guides d’équipe.</p><div class="demo-outline"><span>Manuel</span><span>Markdown</span><span>Adossé à Git</span></div><h4>Consigner une décision</h4><ul class="demo-list"><li>Décrivez le problème et les options.</li><li>Choisissez un responsable et une prochaine étape.</li></ul><h4>Rendre tout facile à trouver</h4><p>Reliez chaque nouveau guide à ce manuel.</p><p id="merged-line" hidden><mark>Donnez un point de départ à la personne suivante.</mark></p></div></div></article>
+    <aside class="proposal" aria-label="Exemple de proposition d’agent"><div class="proposal-label"><span>claude · propose</span><span class="badge" id="proposal-badge">+1</span></div><div class="diff"><div class="addition">+ Donnez un point de départ à la personne suivante.</div></div><button class="merge" id="merge">Fusionner</button></aside>
+   </div>
+   <div class="terminal" id="agent-view" role="tabpanel" aria-labelledby="agent-tab" hidden><div class="terminal-label">MCP / LA MÊME PAGE</div><pre><span class="prompt">→ hanji_read</span>
+handbook/how-we-work.md
+
+<span class="output"># Comment on travaille
+
+Un manuel partagé pour les décisions produit, les notes de projet et les guides d’équipe.
+
+## Consigner une décision
+- Décrivez le problème et les options.
+- Choisissez un responsable et une prochaine étape.
+
+## Rendre tout facile à trouver
+Reliez chaque nouveau guide à ce manuel.<span id="agent-added" hidden>
+Donnez un point de départ à la personne suivante.</span></span></pre><p class="terminal-caption">Du texte brut. Uniquement ce que vous avez autorisé.</p></div>
+   <div class="stage-foot"><span id="demo-status" role="status" aria-live="polite">Exemple interactif · essayez Fusionner</span><button class="reset" id="reset" hidden>Réinitialiser ↺</button><span class="branch">⑂ main · handbook/how-we-work.md</span></div>
+  </div>
+ </section>
+ <section class="story" id="writing" aria-labelledby="writing-heading">
+  <div class="story-head"><div><p class="section-index">ÉDITEUR MARKDOWN</p><h2 id="writing-heading">Éditer du Markdown.<br><em>Garder des diffs Git nets.</em></h2></div><div class="story-copy"><p>Un mot corrigé. Une ligne de diff. Rien d’autre n’a bougé.</p></div></div>
+  <div class="flow" aria-label="Exemple d’une modification d’un seul mot et de son diff git"><div class="flow-panel"><div class="flow-kicker"><span>CE QUE VOUS ÉDITEZ</span><span>decisions.md</span></div><p class="flow-quote">Rendez la <del>prochaine</del> <ins>bonne</ins> chose<br>facile à trouver.</p><p class="flow-note">Un mot changé. Mettre à jour.</p></div><div class="flow-arrow" aria-hidden="true">→</div><div class="flow-panel git-panel"><div class="flow-kicker"><span>CE QUE GIT VOIT</span><span>+1 −1</span></div><pre><span class="minus">− Rendez la prochaine chose facile à trouver.</span>
+<span class="plus">+ Rendez la bonne chose facile à trouver.</span></pre><p class="flow-note">Ada · Mise à jour de decisions.md</p></div></div>
+  <div class="story-bottom"><a class="text-link" href="https://gethanji.github.io/docs/handbook/product/byte-fidelity/">Les modifications qui préservent les octets</a></div>
+ </section>
+
+ <section class="review-section chapter" id="review" aria-labelledby="review-heading"><div class="story-head"><div><p class="section-index">PROPOSITIONS</p><h2 id="review-heading">Relire le diff.<br><em>Valider le changement.</em></h2></div><p class="story-copy">Les agents soumettent leurs modifications avec une explication. Vous relisez le diff avant de le fusionner dans vos pages.</p></div><div class="review-stage"><div class="review-row"><span class="review-who">claude</span><span class="review-title">Préciser le responsable de la revue</span><span class="review-weight">+2 −0</span></div><p class="review-note">Ajout d’un responsable : chaque revue d’incident a désormais une personne en charge.</p><div class="review-diff"><span class="d-add">+ ## Responsable de la revue</span><span class="d-add">+ Le responsable de l’incident rédige la revue et la partage avec l’équipe.</span></div></div></section>
+ <section class="no-model chapter" id="no-model" aria-labelledby="model-heading"><div class="no-model-top"><p class="section-index">LA FAUSSE DÉPENDANCE</p><span class="small-label">PAS DE COMPTEUR</span></div><div class="no-model-grid"><div class="zero" aria-label="Zéro modèle intégré">0<span aria-hidden="true">.</span></div><div class="no-model-copy"><h2 id="model-heading">Fait pour les agents.<br><em>Tourne sans modèle.</em></h2><p>Vos agents sont des invités bienvenus, jamais une dépendance. Aucune clé d’API à l’installation. Aucun sélecteur de modèle dans les réglages. Rien ne s’arrête quand les tokens sont épuisés.</p><p>Parce qu’il n’y a pas de tokens.</p></div></div><div class="zero-facts"><span><b>0</b> modèles intégrés</span><span><b>0</b> crédits IA</span><span><b>100%</b> votre Markdown</span></div><a class="agent-note" href="https://gethanji.github.io/docs/llms.txt"><span><span class="small-label">UN MOT AUX AGENTS LECTEURS</span>Vous préférez le texte ? Nous l’avons gardé pour vous aussi.</span><span class="mono">llms.txt</span></a></section>
+ <section class="permission-section chapter" id="permissions" aria-labelledby="permission-heading">
+  <div class="story-head"><div><p class="section-index">CONTRÔLE D’ACCÈS</p><h2 id="permission-heading">Définir les droits.<br><em>Pour humains et agents.</em></h2></div><div class="story-copy"><p>Ce qui est privé le reste. Pour les humains comme pour les agents.</p></div></div>
+  <div class="permission-demo" aria-label="Exemple illustratif de permissions">
+   <div class="permission-controls"><div class="identity-picker" role="group" aria-label="Choisissez quel accès prévisualiser"><button type="button" data-person="ada" aria-pressed="true"><span class="identity-avatar">A</span><span>Ada<small>Propriétaire</small></span></button><button type="button" data-person="remy" aria-pressed="false"><span class="identity-avatar">R</span><span>Remy<small>Contributeur</small></span></button><button type="button" data-person="agent" aria-pressed="false"><span class="identity-avatar machine">✳</span><span>Agent<small>Jeton limité</small></span></button></div><p class="interaction-hint">Choisissez un lecteur. Voyez ce qui reste.</p></div>
+   <div class="permission-tree"><div class="tree-header"><span>CARNET DE BORD / PAGES</span><span id="visible-count">4 visibles</span></div><div class="tree-pages" id="tree-pages"><div class="tree-page" data-access="ada remy agent"><span class="file-icon" aria-hidden="true"></span><span>Comment on travaille<small>handbook / how-we-work.md</small></span><span class="access-label">Tous</span></div><div class="tree-page" data-access="ada remy agent"><span class="file-icon" aria-hidden="true"></span><span>Architecture<small>engineering / architecture.md</small></span><span class="access-label">Équipe + agent</span></div><div class="tree-page" data-access="ada remy"><span class="file-icon" aria-hidden="true"></span><span>Le prochain chapitre<small>planning / next-chapter.md</small></span><span class="access-label">Ada + Remy</span></div><div class="tree-page" data-access="ada"><span class="file-icon" aria-hidden="true"></span><span>Un travail en cours<small>private / rough-thoughts.md</small></span><span class="access-label">Ada seule</span></div></div><p class="permission-status" id="permission-status" role="status" aria-live="polite">Ada est propriétaire de cet espace. Les quatre pages sont visibles.</p></div>
+  </div>
+  <p class="fine-print">Hanji contrôle l’accès à l’application. L’accès au dépôt expose toujours les fichiers.</p>
+ </section>
+ <section class="collaboration-section chapter" aria-labelledby="collaboration-heading">
+  <div class="story-head"><div><p class="section-index">COMMENTAIRES &amp; HISTORIQUE</p><h2 id="collaboration-heading">Discuter des changements.<br><em>Suivre les contributions.</em></h2></div><div class="story-copy"><p>Commentez une page. Voyez qui l’a modifiée.</p></div></div>
+  <div class="margin-demo"><div class="margin-page"><span class="small-label">EXTRAIT DU MANUEL</span><p><button type="button" class="annotated" id="comment-trigger" aria-expanded="false" aria-controls="margin-thread">Laissez un peu de contexte.<span class="comment-count" aria-hidden="true">2</span></button></p><span class="interaction-hint">Ouvrez la note dans la marge.</span></div><div class="margin-side"><div class="margin-idle" id="margin-idle"><span class="margin-line" aria-hidden="true"></span><p>Commentaires de page.<br><em>Stockés hors de Git.</em></p></div><div class="margin-thread" id="margin-thread" hidden><div class="thread-top"><span>SUR « UN PEU DE CONTEXTE… »</span><button type="button" id="close-comment" aria-label="Fermer le commentaire d’exemple">×</button></div><div class="comment-item"><span class="identity-avatar">R</span><div><strong>Remy <small>à l’instant</small></strong><p>Même ce qu’on a essayé sans succès ?</p></div></div><div class="comment-item"><span class="identity-avatar">A</span><div><strong>Ada <small>à l’instant</small></strong><p>Surtout ça.</p></div></div><span class="thread-foot">Deux voix. Zéro commit en plus.</span></div></div></div>
+  <div class="margin-caption"><p>Les commentaires restent hors de git. Les agents ne les lisent que si vous l’autorisez.</p><a class="text-link" href="https://gethanji.github.io/docs/handbook/guide/comments/">En savoir plus sur les commentaires</a></div>
+  <div class="activity-example"><div><span class="small-label">LA TRACE ÉCRITE</span><p>Les humains au-dessus. Les agents en dessous. Huit semaines de travail.</p></div><div class="activity-chart"><div class="activity-legend"><span><i></i> Humains</span><span><i></i> Agents</span></div><div class="activity-bars" id="activity-bars" role="img" aria-label="Bande d’activité illustrative sur huit semaines : les contributions humaines au-dessus de l’axe, celles des agents en dessous"></div><div class="activity-axis"><span>il y a 8 semaines</span><span>Aujourd’hui</span></div><p>Un jour calme n’écrit rien du tout.</p></div></div>
+ </section>
+
+ <section class="compare-section chapter" id="compare" aria-labelledby="compare-heading">
+  <div class="story-head"><div><p class="section-index">CHOISIR VOTRE OUTIL</p><h2 id="compare-heading">Trouver le bon outil<br><em>pour votre savoir.</em></h2></div><div class="story-copy"><p>Des outils différents. Des usages différents. Trouvez le vôtre.</p></div></div>
+  <div class="compare-toolbar"><p>La différence est dans les fondations.</p><label class="compare-picker" for="compare-tool">Hanji vs.<select id="compare-tool"><option value="obsidian">Obsidian</option><option value="notion">Notion</option><option value="confluence">Confluence</option><option value="gitbook">GitBook</option></select></label><span class="compare-desktop-note">CINQ OUTILS / USAGES DIFFÉRENTS</span></div>
+  <div class="matrix-shell">
+   <table class="fit-matrix"><caption class="visually-hidden">Comparez la vocation, le contenu, le rôle de git et l’accès des agents de Hanji avec ceux d’autres outils de connaissance.</caption><colgroup><col class="criteria-col"><col><col><col><col><col></colgroup><thead><tr><td><span class="matrix-corner">Qu’est-ce qui compte<br>pour vous ?</span></td><th scope="col" data-tool="hanji"><span class="matrix-brand"><img src="/hanji-mark.svg" alt="">Hanji</span><small>VOTRE SAVOIR, VOTRE GIT</small></th><th scope="col" data-tool="obsidian" data-active="true">Obsidian<small>LE COFFRE PERSONNEL</small></th><th scope="col" data-tool="notion">Notion<small>LE TOUT-EN-UN</small></th><th scope="col" data-tool="confluence">Confluence<small>LE WIKI D’ÉQUIPE · CLOUD</small></th><th scope="col" data-tool="gitbook">GitBook<small>LE SITE DE DOC</small></th></tr></thead><tbody>
+    <tr><th scope="row">Pour qui</th><td data-tool="hanji">Équipes + leurs agents</td><td data-tool="obsidian" data-active="true">Savoir personnel</td><td data-tool="notion">Docs + projets + bases</td><td data-tool="confluence">Équipes sur Atlassian</td><td data-tool="gitbook">Documentation publiée</td></tr>
+    <tr><th scope="row">Votre contenu</th><td data-tool="hanji">Fichiers Markdown</td><td data-tool="obsidian" data-active="true">Fichiers Markdown</td><td data-tool="notion">Pages + bases</td><td data-tool="confluence">Pages + espaces</td><td data-tool="gitbook">Docs + Git Sync optionnel</td></tr>
+    <tr><th scope="row">Rôle de Git</th><td data-tool="hanji"><strong>La source de vérité</strong></td><td data-tool="obsidian" data-active="true">Votre propre méthode</td><td data-tool="notion">Markdown à l’export</td><td data-tool="confluence">Contenu à l’export</td><td data-tool="gitbook">Sync bidirectionnelle</td></tr>
+    <tr><th scope="row">Accès agent</th><td data-tool="hanji">MCP limité<small>Modifications en diffs git</small></td><td data-tool="obsidian" data-active="true">Fichiers locaux<small>Vos propres outils</small></td><td data-tool="notion">Notion MCP<small>Assistants externes</small></td><td data-tool="confluence">Rovo MCP<small>Assistants externes</small></td><td data-tool="gitbook">MCP du site publié<small>Docs pour agents lecteurs</small></td></tr>
+    <tr class="matrix-tradeoffs"><th scope="row">À noter</th><td data-tool="hanji">Jeune. Auto-hébergé.<small>SSO et service hébergé à venir</small></td><td data-tool="obsidian" data-active="true">Coffre partagé, accès partagé.<small>Pas de droits par page en Sync</small></td><td data-tool="notion">Tout se passe dans Notion.<small>Le Markdown est un export</small></td><td data-tool="confluence">Tout se passe dans Confluence.<small>Pas un dépôt Markdown</small></td><td data-tool="gitbook">La publication d’abord.<small>Un autre objectif que Hanji</small></td></tr>
+   </tbody></table>
+  </div>
+  <div class="comparison-bottom"><p>Vos fichiers. Vos agents. Votre choix.</p><a class="text-link" href="https://gethanji.github.io/docs/handbook/story/is-hanji-for-you/">Trouver votre outil</a></div>
+  <details class="comparison-sources"><summary>Sources &amp; portée <span class="source-date">Vérifié le 9 septembre 2026</span><span class="disclosure" aria-hidden="true"></span></summary><div class="comparison-source-content"><p>Notre appréciation, fondée sur la documentation officielle ci-dessous. Confluence désigne ici Cloud. Les fonctionnalités et les accès dépendent du forfait et de la configuration ; des extensions peuvent ajouter d’autres possibilités.</p><ul><li><strong>Hanji :</strong> <a href="https://gethanji.github.io/docs/handbook/status/">État actuel</a> · <a href="https://gethanji.github.io/docs/handbook/product/two-faces/">Humains et agents</a></li><li><strong>Obsidian:</strong> <a href="https://obsidian.md/help/teams/sync">Fichiers et synchronisation d’équipe</a> · <a href="https://obsidian.md/help/sync/collaborate">Droits du coffre partagé</a></li><li><strong>Notion:</strong> <a href="https://www.notion.com/help/guides/build-a-docs-first-culture-with-a-beautiful-team-wiki-powered-by-a-database">Wikis et bases de données</a> · <a href="https://www.notion.com/en-gb/help/export-your-content">Exports</a> · <a href="https://www.notion.com/help/notion-mcp">MCP</a></li><li><strong>Confluence:</strong> <a href="https://www.atlassian.com/software/confluence/features">Fonctionnalités</a> · <a href="https://support.atlassian.com/confluence-cloud/docs/export-content-to-word-pdf-html-and-xml/">Exports</a> · <a href="https://www.atlassian.com/platform/rovo-mcp">Rovo MCP</a></li><li><strong>GitBook:</strong> <a href="https://www.gitbook.com/integrations">Git Sync bidirectionnel et MCP</a></li></ul></div></details>
+ </section>
+ <section class="run-section chapter" id="run" aria-labelledby="run-heading"><div class="run-intro"><p class="section-index">DÉPLOIEMENT</p><h2 id="run-heading">Lancer en local.<br><em>Partager à votre façon.</em></h2><p>En local. Partagé. Publié. À vous de choisir.</p><span class="availability"><span></span> Les quatre sont dans la première version.</span></div><div class="run-options">
+  <details><summary><span class="option-number">01</span>Vous seul, en local<span class="disclosure" aria-hidden="true"></span></summary><div class="option-body"><p>Ouvrez Hanji et un écran d’accueil fait le branchement : le nom que vous donnez au lieu, votre mot de passe, votre dossier de Markdown.</p><div class="code-block"><pre># public à la sortie :
+git clone https://github.com/gethanji/hanji
+pnpm install &amp;&amp; pnpm dev:web</pre></div><a class="text-link" href="https://gethanji.github.io/docs/handbook/quickstart/">Démarrer en cinq minutes</a></div></details>
+  <details><summary><span class="option-number">02</span>Votre équipe, sur un tailnet<span class="disclosure" aria-hidden="true"></span></summary><div class="option-body"><p>Une instance partagée où le réseau authentifie les personnes. Personne ne tape de mot de passe. Leurs droits restent exactement ceux que vous avez définis.</p><div class="code-block"><pre>export HANJI_TAILSCALE_OWNER=you@github
+next start -H 127.0.0.1 -p 4100
+tailscale serve --bg 4100</pre></div><a class="text-link" href="https://gethanji.github.io/docs/handbook/guide/on-your-tailnet/">Lancer sur votre tailnet</a></div></details>
+  <details><summary><span class="option-number">03</span>Avec vos agents de code<span class="disclosure" aria-hidden="true"></span></summary><div class="option-body"><p>Lectures limitées via MCP ou simple HTTP. Un script bash avec curl compte comme un agent. Les modifications arrivent en propositions, prêtes pour votre décision.</p><div class="code-block"><pre>pnpm hanji token my-claude notes=read+propose
+# Connectez votre agent avec le jeton renvoyé.</pre></div><a class="text-link" href="https://gethanji.github.io/docs/handbook/guide/agents/">Donner une clé à votre agent</a></div></details>
+  <details><summary><span class="option-number">04</span>Publié sur le web<span class="disclosure" aria-hidden="true"></span></summary><div class="option-body"><p>Tout ce que vous avez ouvert à tous, sous forme de site statique. Un miroir Markdown et llms.txt sont fournis. Le manuel est publié ainsi.</p><div class="code-block"><pre>pnpm hanji rule handbook everyone-read
+pnpm hanji export ./site</pre></div><a class="text-link" href="https://gethanji.github.io/docs/handbook/guide/publish/">En rendre une partie publique</a></div></details>
+ </div></section>
+ <section class="launch-section chapter" id="launch" aria-labelledby="launch-heading"><div class="launch-heading"><p class="section-index">SUIVRE LA SORTIE</p><h2 id="launch-heading">Recevoir l’annonce.<br><em>Démarrer dès la sortie.</em></h2><p>Suivez l’avancement. Soyez là le jour où le code sera à vous.</p></div><div class="launch-form"><form action="https://buttondown.com/api/emails/embed-subscribe/hanji" method="post" target="_blank" rel="noopener"><label for="email">La note de lancement</label><div class="email-row"><input type="email" name="email" id="email" placeholder="you@yours.dev" autocomplete="email" required><button type="submit" aria-label="S’abonner à la note de lancement de Hanji">S’abonner</button></div><p>Quelques lettres par an. Ce qui est sorti, ce que nous avons appris, et le jour où Hanji sera prêt. Désabonnement à tout moment.</p></form><a class="text-link" href="https://gethanji.github.io/docs/">En attendant, il y a de quoi lire</a></div></section>
+</main>
+<footer id="footer" class="wrap footer">
+ <div class="footer-layout">
+  <div class="footer-identity"><a class="brand" href="#main"><img src="/hanji-mark.svg" alt="">Hanji</a><p class="footer-quote">Le papier survit à la réunion<br>où il a été écrit.</p><p class="footer-origin">한지 · Papier coréen traditionnel, fait pour durer</p></div>
+  <nav class="footer-links" aria-label="Navigation de pied de page">
+   <div><p class="footer-label">Explorer</p><a href="https://gethanji.github.io/docs/">Manuel</a><a href="https://github.com/gethanji">GitHub</a></div>
+   <div><p class="footer-label">Suivre</p><a href="https://x.com/get_hanji">X</a><a href="https://mastodon.social/@get_hanji">Mastodon</a></div>
+  </nav>
+ </div>
+ <div class="footer-colophon"><p>Préversion · AGPL-3.0 · Aucun traceur</p><a href="#main">Haut de page</a></div>
+</footer>
+
+<script src="/assets/landing.js?v=20260915b" defer></script>
+</body>
+</html>

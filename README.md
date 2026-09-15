@@ -60,9 +60,8 @@ and expanded the illustrative document demo. Grouped section headings and suppor
 copy into one reading column, moved proposal review beside editing, and brought
 Korean agent controls and proposal content into parity with English.
 
-Locale metadata is managed by `scripts/locales.mjs`. English and Korean are live.
-German and Japanese remain declared with `live: false`; their pages and native
-copy review are still pending. Do not advertise those routes until ready.
+Locale metadata is managed by `scripts/locales.mjs`. See the September 15
+locale note below: all five languages are now live.
 
 The remaining comparison-page and release-day tasks in the supplied plan are
 separate work. This revision does not change release status or publish the site.
@@ -94,3 +93,44 @@ leftover room became a band of empty dark inside the card.
 The pause between chapters is unchanged at `--chapter-gap`, verified at 122px
 before and after on every boundary except the one below the no-model panel,
 which was already 190px from that panel's own 68px bottom margin.
+
+## September 15: five languages
+
+German, Japanese and French are live alongside English and Korean. Run
+`node scripts/locales.mjs` after any locale change: it is the only writer of
+`<html lang>`, canonical, hreflang, `og:locale`, the nav switcher, `sitemap.xml`
+and now the language list in `llms.txt`, which had already drifted to two of
+five entries.
+
+The pages were not hand-translated file by file. Every translatable string and
+attribute was extracted from `index.html` with its byte offsets, translated as
+a flat id-to-string map, and substituted back, so the markup of all five pages
+is identical by construction: same ids, same classes, same structure. The
+extractor round-trips to a byte-identical file when given an empty map, which
+is the check that the substitution is safe. Three sentences that split across
+inline markup are translated as whole units rather than as fragments, since
+word order moves: the `<del>`/`<ins>` diff demo, the footer quote, and the
+comparison table's corner label.
+
+`pageCopy` in `assets/landing.js` used to take `(en, ko)` positionally. It now
+takes a map keyed by locale and falls back to English, so the fifteen runtime
+strings the demo swaps in are covered in all five languages.
+
+Layout notes from measuring all five:
+- German and French headlines take a wider measure (`max-width: 1240px`) so the
+  opening headline stays two lines. Shrinking the type instead would have cost
+  the page its one loud voice.
+- Japanese gets its own typography block, mirroring the Korean one: system
+  mincho and gothic rather than a webfont, no synthetic italic on the display
+  `em`, smaller display sizes, and `line-break: strict`.
+- Five language labels plus an action do not fit a phone header. Below 480px
+  the docs button steps aside, as the GitHub link already does below 600px; the
+  switcher stays, because a reader who needs another language needs it there.
+- Verified at 1440, 1512, 1280, 1100, 900, 700 and 500 wide: no horizontal
+  overflow and no clipped text in any locale, and the opening still lands
+  exactly on the fold at 900px and wider in all five.
+
+**Not yet done: a native review of the German and Japanese copy.** The French
+was written for a native reader to check, and Korean predates this pass. The
+German and Japanese read well and are internally consistent, but no native
+speaker has read them.

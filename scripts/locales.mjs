@@ -19,10 +19,11 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://gethanji.github.io";
 
 export const LOCALES = [
-  { code: "en", path: "/",    dir: ".",  og: "en_US", label: "EN", aria: "Read in English",  live: true },
-  { code: "ko", path: "/ko/", dir: "ko", og: "ko_KR", label: "KO", aria: "한국어で読む".replace("で読む","로 읽기"), live: true },
-  { code: "de", path: "/de/", dir: "de", og: "de_DE", label: "DE", aria: "Auf Deutsch lesen", live: false },
-  { code: "ja", path: "/ja/", dir: "ja", og: "ja_JP", label: "JA", aria: "日本語で読む",      live: false },
+  { code: "en", path: "/",    dir: ".",  og: "en_US", label: "EN", name: "English",  aria: "Read in English",  live: true },
+  { code: "ko", path: "/ko/", dir: "ko", og: "ko_KR", label: "KO", name: "한국어",    aria: "한국어로 읽기",     live: true },
+  { code: "de", path: "/de/", dir: "de", og: "de_DE", label: "DE", name: "Deutsch",  aria: "Auf Deutsch lesen", live: true },
+  { code: "ja", path: "/ja/", dir: "ja", og: "ja_JP", label: "JA", name: "日本語",    aria: "日本語で読む",      live: true },
+  { code: "fr", path: "/fr/", dir: "fr", og: "fr_FR", label: "FR", name: "Français", aria: "Lire en français",  live: true },
 ];
 
 const live = () => LOCALES.filter((l) => l.live);
@@ -72,6 +73,18 @@ function rewrite(loc) {
   return { file, changed: s !== before };
 }
 
+// llms.txt names the languages for agents the same way the switcher does for
+// people. It is the kind of list that rots quietly, so the manifest owns it.
+function llms() {
+  const file = join(root, "llms.txt");
+  if (!existsSync(file)) return;
+  const before = readFileSync(file, "utf8");
+  const list = live().map((l) => `- [${l.name}](${SITE}${l.path})`).join("\n");
+  const s = before.replace(/(## Languages\n)(?:- \[[^\]]*\]\([^)]*\)\n?)+/, `$1${list}\n`);
+  if (s !== before) writeFileSync(file, s);
+  return s !== before;
+}
+
 function sitemap() {
   const alts = live()
     .map((l) => `    <xhtml:link rel="alternate" hreflang="${l.code}" href="${SITE}${l.path}"/>`)
@@ -101,6 +114,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     console.log(`  ${loc.code}  ${r.skipped ? "no page yet (declared, not advertised)" : r.changed ? "updated" : "already in sync"}`);
   }
   sitemap();
+  llms();
   console.log(`sitemap: ${live().length} locale page(s) + /docs/`);
   console.log(`live: ${live().map((l) => l.code).join(", ")}  ·  declared: ${LOCALES.filter((l) => !l.live).map((l) => l.code).join(", ")}`);
 }

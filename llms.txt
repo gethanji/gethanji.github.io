@@ -9,6 +9,9 @@ Status: pre-release. The handbook is public; the code release is still ahead.
 ## Languages
 - [English](https://gethanji.github.io/)
 - [한국어](https://gethanji.github.io/ko/)
+- [Deutsch](https://gethanji.github.io/de/)
+- [日本語](https://gethanji.github.io/ja/)
+- [Français](https://gethanji.github.io/fr/)
 
 ## Docs
 - [Handbook](https://gethanji.github.io/docs/): the full product handbook, itself a Hanji export
