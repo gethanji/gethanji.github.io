@@ -134,3 +134,47 @@ Layout notes from measuring all five:
 was written for a native reader to check, and Korean predates this pass. The
 German and Japanese read well and are internally consistent, but no native
 speaker has read them.
+
+## September 15: a picker, and a theme
+
+**Language picker.** Five flat labels in the header was fine for two languages
+and crowded at five. The picker is a native `<details>`: it opens on click and
+on Enter, closes on Escape or an outside click, and still works with JavaScript
+off, which a hand-built menu would not. Rows carry each language's own name,
+because a reader hunting for their language looks for the word they call it by.
+`scripts/locales.mjs` generates it, along with the theme control's labels, so
+all five pages and all five languages stay in step from one table.
+
+**Theme.** Light, dark, and system, with system the default. The choice lives
+in `localStorage` under `hanji-theme`; the resolved theme lands on
+`data-theme` and the choice itself on `data-theme-choice`, so System keeps
+following the system after a reload instead of freezing into whatever it
+resolved to that day. A two-line copy of that runs inline in `<head>` so the
+page never paints the wrong theme first, and it sets `theme-color` so the
+browser's own chrome follows.
+
+Nine dark values are chosen by hand. The rest are derived from the light
+stylesheet by role, because the long tail is a hundred near-identical tints
+whose job is to sit a hair above or below a surface, and a hair is a formula,
+not a decision. Text lightens, surfaces land in a narrow band above the page,
+borders stay just visible, and anything already light or already dark keeps the
+polarity it had.
+
+**The two product depictions stay light in both themes.** The hero vignette and
+the demo mockup are pictures of paper, which is the whole pitch; a dark page
+framing a lit document is the intended look, and it avoids inventing a dark
+product UI that does not exist yet. Note that pinning a token on those
+containers is not enough on its own: a child that inherits `color` inherits the
+page's computed value, not the token, so the container restates `color` too.
+
+Two things the automated contrast check caught, both worth keeping in mind when
+editing: an animation with `fill-mode: both` overrides a theme rule, so the
+diff demo's highlight had to become a token the keyframe lands on; and the skip
+link was hard-coded white, which only a keyboard reader would ever have found.
+
+Contrast was measured on every text node against its effective background in
+both themes. Dark now has 7 distinct failures, light has 15, and all 7 are
+shared: they sit inside the paper mockup, which is identical in both themes.
+**Those 15 are pre-existing and still owed a pass** — mostly 9 to 11px labels
+around 3.2:1 to 4.3:1, including the comparison table's corner label and the
+deployment list's step numbers.

@@ -69,13 +69,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/assets/landing.css?v=20260915b">
+<link rel="stylesheet" href="/assets/landing.css?v=20260915c">
+<script>try{var c=localStorage.getItem("hanji-theme")||"system",r=document.documentElement;r.dataset.theme=c==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):c;r.dataset.themeChoice=c;var b=document.querySelector('meta[name="theme-color"]');if(b)b.content=r.dataset.theme==="dark"?"#121715":"#f9faf6"}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="wrap top">
  <a class="brand" href="/ko/" aria-label="한지 홈"><span class="brand-frame"><img src="/hanji-mark.svg" alt=""></span>한지</a>
- <nav class="nav" aria-label="주요 메뉴"><a class="github" href="https://github.com/gethanji">GitHub</a><a class="language-switch" href="/" lang="en" hreflang="en" aria-label="Read in English">EN</a><span class="language-switch is-current" lang="ko" aria-current="true">KO</span><a class="language-switch" href="/de/" lang="de" hreflang="de" aria-label="Auf Deutsch lesen">DE</a><a class="language-switch" href="/ja/" lang="ja" hreflang="ja" aria-label="日本語で読む">JA</a><a class="language-switch" href="/fr/" lang="fr" hreflang="fr" aria-label="Lire en français">FR</a><a class="nav-cta" href="https://gethanji.github.io/docs/">문서 읽기</a></nav>
+ <nav class="nav" aria-label="주요 메뉴"><a class="github" href="https://github.com/gethanji">GitHub</a><details class="lang-picker"><summary aria-label="언어 변경"><span lang="ko">한국어</span><i class="caret" aria-hidden="true"></i></summary><div class="lang-menu"><a class="lang-option" href="/" lang="en" hreflang="en" aria-label="Read in English">English<i>EN</i></a><span class="lang-option is-current" lang="ko" aria-current="true">한국어<i>KO</i></span><a class="lang-option" href="/de/" lang="de" hreflang="de" aria-label="Auf Deutsch lesen">Deutsch<i>DE</i></a><a class="lang-option" href="/ja/" lang="ja" hreflang="ja" aria-label="日本語で読む">日本語<i>JA</i></a><a class="lang-option" href="/fr/" lang="fr" hreflang="fr" aria-label="Lire en français">Français<i>FR</i></a></div></details><div class="theme-switch" role="group" aria-label="색상 테마"><button type="button" class="theme-option" data-theme-set="light" aria-pressed="false" title="밝게"><span class="visually-hidden">밝게</span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.1"/><path d="M8 1.2v1.6M8 13.2v1.6M1.2 8h1.6M13.2 8h1.6M3.2 3.2l1.2 1.2M11.6 11.6l1.2 1.2M12.8 3.2l-1.2 1.2M4.4 11.6l-1.2 1.2"/></svg></button><button type="button" class="theme-option" data-theme-set="dark" aria-pressed="false" title="어둡게"><span class="visually-hidden">어둡게</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.7A5.9 5.9 0 0 1 6.3 2.6 5.9 5.9 0 1 0 13.4 9.7z"/></svg></button><button type="button" class="theme-option" data-theme-set="system" aria-pressed="true" title="시스템"><span class="visually-hidden">시스템</span><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.6" y="2.6" width="12.8" height="8.8" rx="1.6"/><path d="M5.6 14h4.8"/></svg></button></div><a class="nav-cta" href="https://gethanji.github.io/docs/">문서 읽기</a></nav>
 </header>
 <main id="main" class="wrap">
  <section class="hero" aria-labelledby="hero-heading">
@@ -172,6 +173,6 @@ pnpm hanji export ./site</pre></div><a class="text-link" href="https://gethanji.
  <div class="footer-colophon"><p>출시 준비 중 · AGPL-3.0 · 추적하지 않습니다</p><a href="#main">맨 위로</a></div>
 </footer>
 
-<script src="/assets/landing.js?v=20260915b" defer></script>
+<script src="/assets/landing.js?v=20260915c" defer></script>
 </body>
 </html>

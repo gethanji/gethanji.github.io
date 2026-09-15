@@ -226,3 +226,45 @@ if (agentCta && agentCommand) {
  scene.addEventListener('pointermove',e=>{if(motion.matches||!fine.matches)return;const r=scene.getBoundingClientRect();const x=Math.max(-.5,Math.min(.5,(e.clientX-r.left)/r.width-.5)),y=Math.max(-.5,Math.min(.5,(e.clientY-r.top)/r.height-.5));win.style.setProperty('--tilt-y',`${x*10}deg`);win.style.setProperty('--tilt-x',`${-y*8}deg`);win.style.setProperty('--edge-right',`${4-x*6}px`);win.style.setProperty('--edge-bottom',`${5-y*6}px`);});
  scene.addEventListener('pointerleave',reset);motion.addEventListener('change',reset);fine.addEventListener('change',reset);
 })();
+
+/* Theme. Three choices, System by default, remembered per reader. The resolved
+   theme lands on data-theme; the choice itself lands on data-theme-choice, so
+   System keeps following the system after a reload instead of freezing into
+   whichever value it happened to resolve to. A copy of the first two lines runs
+   inline in <head> so the page never paints the wrong theme first. */
+const THEME_KEY = "hanji-theme";
+const darkQuery = matchMedia("(prefers-color-scheme: dark)");
+const themeButtons = [...document.querySelectorAll("[data-theme-set]")];
+let themeChoice = "system";
+try { themeChoice = localStorage.getItem(THEME_KEY) || "system"; } catch { /* private mode */ }
+
+function applyTheme(choice) {
+ const root = document.documentElement;
+ root.dataset.theme = choice === "system" ? (darkQuery.matches ? "dark" : "light") : choice;
+ root.dataset.themeChoice = choice;
+ const bar = document.querySelector('meta[name="theme-color"]');
+ if (bar) bar.setAttribute("content", root.dataset.theme === "dark" ? "#121715" : "#f9faf6");
+ themeButtons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.themeSet === choice)));
+}
+applyTheme(themeChoice);
+themeButtons.forEach(b => b.addEventListener("click", () => {
+ themeChoice = b.dataset.themeSet;
+ try { localStorage.setItem(THEME_KEY, themeChoice); } catch { /* private mode */ }
+ applyTheme(themeChoice);
+}));
+darkQuery.addEventListener("change", () => { if (themeChoice === "system") applyTheme("system"); });
+
+/* The picker closes the way a menu is expected to: Escape, or a click outside.
+   <details> gives us the rest, including the keyboard, for nothing. */
+const langPicker = document.querySelector(".lang-picker");
+if (langPicker) {
+ document.addEventListener("click", event => {
+  if (langPicker.open && !langPicker.contains(event.target)) langPicker.open = false;
+ });
+ document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && langPicker.open) {
+   langPicker.open = false;
+   langPicker.querySelector("summary").focus();
+  }
+ });
+}
