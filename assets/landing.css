@@ -595,3 +595,20 @@ html[data-theme=dark] .identity-picker button[aria-pressed=true]{border-color:va
 .mini-pause i{width:9px;height:10px;flex:none;border-left:3px solid currentColor;border-right:3px solid currentColor}
 .mini-pause.is-playing i{width:0;height:0;border:5px solid transparent;border-left:8px solid currentColor;border-right:0}
 @media(max-width:600px){.mini-pause{min-height:44px;padding:0 8px}}
+
+/* The header reads as two things, not five. GitHub and the docs button are the
+   page's own navigation and stay with the wordmark's weight; the language and
+   the theme are settings about how you read it, so they sit apart at the far
+   right with a gap wide enough to be a separation rather than a list item. */
+.nav{gap:0}
+.nav-main{display:inline-flex;align-items:center;gap:32px}
+.nav-prefs{display:inline-flex;align-items:center;gap:14px;margin-left:72px}
+@media(max-width:1100px){.nav-main{gap:24px}.nav-prefs{margin-left:48px}}
+@media(max-width:850px){.nav-main{gap:20px}.nav-prefs{margin-left:36px}}
+@media(max-width:600px){.nav-main{gap:16px}.nav-prefs{gap:10px;margin-left:24px}}
+/* Below 480px both of nav-main's links have already stepped aside, so the
+   group itself should too rather than leave a gap standing in for them. */
+@media(max-width:480px){.nav-main{display:none}.nav-prefs{margin-left:0}}
+/* At 360px the three 44px theme targets and five languages no longer both fit;
+   36px still clears the 24px floor comfortably. */
+@media(max-width:360px){.nav-prefs{gap:8px}.theme-option{width:36px;height:36px}}
