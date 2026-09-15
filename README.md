@@ -335,3 +335,45 @@ The adversarial readers put the result at roughly 90% native for German and
 French, 80% for Japanese, with their remaining objections recorded in the run.
 Structure is identical across all five pages, ids and class counts match, and
 the opening still lands exactly on the fold in every locale and both themes.
+
+## September 15: the two ends, as one object
+
+The header and the footer were polished together, because they frame the page
+and were not reading as the same thing. Three designers looked at both, an art
+director merged them, and a hostile reviewer applied the patch to a copy and
+measured the claims before it shipped.
+
+Four defects, worst first:
+1. **The footer was greying its own wordmark.** `.footer{color:var(--muted)}` was
+   a leftover from when the footer was a one-line flex strip, and the brand
+   inherited it. "Hanji" rendered at 5.52:1 at the bottom and 14.99:1 at the top.
+2. **The mark had two treatments.** Framed in a rounded tile at the top, bare at
+   the bottom, 114x44 against 97x35.
+3. **The footer's link columns stopped 50px short** of the content edge that the
+   header's settings group and the colophon both land on.
+4. **A stray hairline under the language label.** `details{border-bottom}` from
+   the deployment accordion also matched `.lang-picker`, in all five locales. It
+   is scoped with `:not(.lang-picker)` now, because `.comparison-sources` is
+   itself a `<details>` that still wants the rule.
+
+The two ends now share three nameable things: **one lockup**, the mark in the
+tile with an ink wordmark, measured identical at both ends in every locale and
+at every width; **one right rail** at the content edge, where the header's
+settings, the footer's links and the colophon link all now land; and **one
+hairline per end**, the header's bottom rule and the footer's top rule, with the
+colophon's third rule replaced by 48px of air. The theme control also gave up its
+pill for an 8px radius, so the docs button, the theme control and the mark tile
+are one shape family rather than three.
+
+The Korean origin line went from 11px to 13px: 한지 and what it means is the
+product's name, not fine print.
+
+Dropped as taste without an argument: a 27 to 26px wordmark, the quote clamp and
+tracking, 10 to 11px labels, 13 to 14px links, changing the group gap that had
+just been settled, larger theme chips, recolouring the checked chip off `--ink`,
+re-anchoring the language menu, and a full settings-shell rebuild, which is a
+redesign rather than polish.
+
+Verified after applying: zero contrast failures in both themes, the opening still
+lands exactly on the fold in all five locales and both themes, the header keeps
+its 96/77/70px heights, and 320px still fits.
