@@ -178,3 +178,34 @@ shared: they sit inside the paper mockup, which is identical in both themes.
 **Those 15 are pre-existing and still owed a pass** — mostly 9 to 11px labels
 around 3.2:1 to 4.3:1, including the comparison table's corner label and the
 deployment list's step numbers.
+
+## September 15: weight
+
+The page was fetching 308kB of fonts from Google on every visit. It now fetches
+154kB from its own origin. Two changes got there.
+
+**Self-hosted.** A page that tells the reader their data stays where they put it
+should not hand their IP address to a third party to fetch a typeface. Removing
+the Google Fonts link also drops two DNS and TLS handshakes and a
+render-blocking round trip; first contentful paint went from 260ms to 124ms
+locally. The two fonts used above the fold are preloaded.
+
+**Newsreader lost its weight axis, not its optical-size axis.** The variable
+font carrying both axes is 272kB for roman plus italic; carrying only optical
+size it is 118kB. Optical size is what makes the display italic look drawn
+rather than scaled, so that axis stays. The weight axis was there for exactly
+two rules, both headings inside the product mockups, now set to 400. DM Sans
+stays variable across 400 to 600, where the range is cheaper than the three
+static instances it would otherwise need.
+
+**The Korean serif is cut to the glyphs the page sets**: RIDIBatang goes from
+440kB to 25kB. The full file stays in `assets/fonts/` as the source to re-cut
+from; the command is in the comment above the `@font-face` rule in
+`assets/landing.css`. Thirteen characters on the page fall outside the subset,
+all of them symbols and CJK the full font never had either, so nothing was lost.
+**If the Korean copy changes, re-cut the subset**, or new syllables will fall
+through to the reader's own serif.
+
+Measured over the wire, with GitHub Pages' gzip: HTML 9.4kB, CSS 23.7kB, JS
+7.2kB, fonts 154kB. Fonts are still 79% of the page, which is where any further
+work belongs.
