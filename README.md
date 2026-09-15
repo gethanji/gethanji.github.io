@@ -301,3 +301,37 @@ gone, 5.9kB. Proven by pixel-diffing six sections before and after: all six are
 byte-identical, and the vignette still has 18 animations running.
 
 The stylesheet is 84.5kB, 21.2kB over the wire, down from 98.7kB.
+
+## September 15: written, not translated
+
+A second pass over all four non-English locales, this time for intent rather
+than words. Per language: three independent rewrites from different angles (a
+copywriter, a technical writer, and a native reader hunting for tells), an
+editor merging them into one change-set with a single enforced glossary, then a
+hostile native reader trying to break the result. 254 strings changed in all:
+85 German, 65 Japanese, 56 French, 48 Korean.
+
+What the first pass had produced was competent and literal. The second pass
+found, among much else:
+- **German** was saying `schon` where German copy says `längst` for an
+  already-true claim, and `Jetzt auch Ihr Wissen`, a verbless stub, where the
+  image wants `Jetzt zieht Ihr Wissen nach`. The mock cursors read `Ada
+  schreiben`, an infinitive after a name, which is not German; they now read
+  `Ada schreibt`. `Papierdünn` is frozen in German as *flimsy*, so the descriptor
+  became `Dokumentation, dünn wie Papier`.
+- **Japanese** had a genuine meaning bug: the proposals paragraph had drifted
+  into handing the merge to the agent. A reader with no English to compare
+  against would have come away believing agents merge into pages themselves,
+  which is the opposite of the product. It now says, plainly, that the one who
+  reviews the diff and merges is you.
+- **French** had left the two strings a visitor reads first, the hero pair and
+  the lede, carrying the original translationese while the rest of the page was
+  polished.
+- **Korean**, which predates this work, was giving itself away with the English
+  possessive (당신의, seven times), English counters and word order, and 한자어
+  nominalisations sitting inside otherwise plain-spoken copy.
+
+The adversarial readers put the result at roughly 90% native for German and
+French, 80% for Japanese, with their remaining objections recorded in the run.
+Structure is identical across all five pages, ids and class counts match, and
+the opening still lands exactly on the fold in every locale and both themes.

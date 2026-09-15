@@ -15,8 +15,8 @@ function setMerged(merged) {
  document.getElementById('agent-added').hidden = !merged;
  document.getElementById('proposal-badge').textContent = merged ? pageCopy({en:"Merged",ko:"반영됨",de:"Gemergt",ja:"マージ済み",fr:"Fusionné"}) : '+1';
  document.getElementById('side-count').textContent = merged ? '0' : '1';
- document.getElementById('byline').textContent = merged ? pageCopy({en:"Ada · merged claude’s proposal just now",ko:"Ada · 방금 claude의 제안을 반영",de:"Ada · claudes Vorschlag gerade gemergt",ja:"Ada・たった今 claude の提案をマージ",fr:"Ada · proposition de claude fusionnée à l’instant"}) : pageCopy({en:"Ada · updated today",ko:"Ada · 오늘 수정",de:"Ada · heute aktualisiert",ja:"Ada・本日更新",fr:"Ada · mis à jour aujourd’hui"});
- document.getElementById('demo-status').textContent = merged ? pageCopy({en:"✓ One line added. One commit.",ko:"✓ 추가된 한 줄. 커밋 하나.",de:"✓ Eine Zeile mehr. Ein Commit.",ja:"✓ 1行追加、コミットは1つ",fr:"✓ Une ligne ajoutée. Un commit."}) : pageCopy({en:"Interactive example · try Merge",ko:"작동 예시 · 제안을 반영해 보세요",de:"Interaktives Beispiel · Mergen testen",ja:"操作できる例・マージしてみてください",fr:"Exemple interactif · essayez Fusionner"});
+ document.getElementById('byline').textContent = merged ? pageCopy({en:"Ada · merged claude’s proposal just now",ko:"Ada · 방금 claude의 제안을 반영",de:"Ada · claudes Vorschlag gerade gemergt",ja:"Ada・たった今 claude の提案をマージ",fr:"Ada · proposition de claude fusionnée à l’instant"}) : pageCopy({en:"Ada · updated today",ko:"Ada · 오늘 수정",de:"Ada · heute aktualisiert",ja:"Ada・本日更新",fr:"Ada · mise à jour aujourd’hui"});
+ document.getElementById('demo-status').textContent = merged ? pageCopy({en:"✓ One line added. One commit.",ko:"✓ 추가된 한 줄. 커밋 하나.",de:"✓ Eine Zeile mehr. Ein Commit.",ja:"✓ 1行追加、コミットは1つ",fr:"✓ Une ligne ajoutée. Un commit."}) : pageCopy({en:"Interactive example · try Merge",ko:"작동 예시 · 제안을 반영해 보세요",de:"Interaktives Beispiel · Mergen ausprobieren",ja:"操作できる例・マージしてみてください",fr:"Exemple interactif · essayez « Fusionner »"});
  merge.textContent = merged ? pageCopy({en:"Merged ✓",ko:"반영됨 ✓",de:"Gemergt ✓",ja:"マージ済み ✓",fr:"Fusionné ✓"}) : pageCopy({en:"Merge proposal",ko:"제안 반영",de:"Vorschlag mergen",ja:"提案をマージ",fr:"Fusionner"});
  merge.disabled = merged;
  reset.hidden = !merged;
@@ -98,7 +98,7 @@ reset.addEventListener('click', () => { setMerged(false); selectTab(tabs[0]); me
    if(!to.width)return;
    const flight=document.createElement('div');
    flight.className='merge-flight';flight.setAttribute('aria-hidden','true');
-   flight.textContent=pageCopy({en:"Give the next person a place to start.",ko:"다음 사람이 시작할 자리를 남깁니다.",de:"Der nächsten Person einen Startpunkt geben.",ja:"次の人が始められる場所を残します。",fr:"Donnez un point de départ à la personne suivante."});
+   flight.textContent=pageCopy({en:"Give the next person a place to start.",ko:"다음 사람이 시작할 자리를 남깁니다.",de:"Der nächsten Person einen Einstieg geben.",ja:"次の人が、ここから始められるようにします。",fr:"Donnez un point de départ à ceux qui suivront."});
    Object.assign(flight.style,{left:`${from.left}px`,top:`${from.top}px`,width:`${from.width}px`});
    document.body.append(flight); stage.classList.add('merging');
    const distanceX=to.left-from.left, distanceY=to.top-from.top;
@@ -115,7 +115,7 @@ reset.addEventListener('click', () => { setMerged(false); selectTab(tabs[0]); me
 
  const identities=[...document.querySelectorAll('[data-person]')];
  const pages=[...document.querySelectorAll('[data-access]')];
- const status={ada:pageCopy({en:"Ada owns this workspace. All four pages are visible.",ko:"소유자인 Ada에게는 페이지 네 개가 모두 보입니다.",de:"Ada besitzt diesen Workspace. Alle vier Seiten sind sichtbar.",ja:"Ada はこのワークスペースの所有者です。4つのページがすべて見えます。",fr:"Ada est propriétaire de cet espace. Les quatre pages sont visibles."}),remy:pageCopy({en:"Remy sees three pages. Ada’s private note is absent.",ko:"Remy에게는 페이지 세 개가 보입니다. Ada의 비공개 메모는 보이지 않습니다.",de:"Remy sieht drei Seiten. Adas private Notiz fehlt.",ja:"Remy には3つのページが見えます。Ada の非公開メモは見えません。",fr:"Remy voit trois pages. La note privée d’Ada est absente."}),agent:pageCopy({en:"The agent sees two pages. Planning and private notes are absent.",ko:"에이전트에게는 페이지 두 개가 보입니다. 계획과 비공개 메모는 보이지 않습니다.",de:"Der Agent sieht zwei Seiten. Planung und private Notizen fehlen.",ja:"エージェントには2つのページが見えます。計画と非公開のメモは表示されません。",fr:"L’agent voit deux pages. Planification et notes privées sont absentes."})};
+ const status={ada:pageCopy({en:"Ada owns this workspace. All four pages are visible.",ko:"소유자인 Ada에게는 페이지 네 개가 모두 보입니다.",de:"Der Workspace gehört Ada. Alle vier Seiten sind sichtbar.",ja:"Ada はこのワークスペースのオーナーです。4つのページがすべて見えます。",fr:"Ada est propriétaire de cet espace. Les quatre pages sont visibles."}),remy:pageCopy({en:"Remy sees three pages. Ada’s private note is absent.",ko:"Remy에게는 페이지 세 개가 보입니다. Ada의 비공개 메모는 보이지 않습니다.",de:"Remy sieht drei Seiten. Adas private Notiz fehlt.",ja:"Remy には3つのページが見えます。Ada の非公開メモは見えません。",fr:"Remy voit trois pages. La note privée d’Ada est absente."}),agent:pageCopy({en:"The agent sees two pages. Planning and private notes are absent.",ko:"에이전트에게는 페이지 두 개가 보입니다. 계획과 비공개 메모는 보이지 않습니다.",de:"Der Agent sieht zwei Seiten. Planung und private Notizen fehlen.",ja:"エージェントには2つのページが見えます。計画と非公開のメモは見えません。",fr:"L’agent voit deux pages. La planification et les notes privées sont absentes."})};
  identities.forEach(button=>button.addEventListener('click',()=>{
   const person=button.dataset.person;
   identities.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
@@ -197,18 +197,18 @@ if (agentCta && agentCommand) {
       // claiming "expanded" forever, with no way back, would be a lie.
       agentCta.removeAttribute("aria-expanded");
       agentCta.removeAttribute("aria-controls");
-      agentCta.textContent = pageCopy({en:"Copy command",ko:"명령어 복사",de:"Kopieren",ja:"コマンドをコピー",fr:"Copier"});
+      agentCta.textContent = pageCopy({en:"Copy command",ko:"명령어 복사",de:"Befehl kopieren",ja:"コマンドをコピー",fr:"Copier"});
       return;
     }
     try {
       await navigator.clipboard.writeText(document.getElementById("agent-command-text").textContent);
-      agentNote.textContent = pageCopy({en:"Copied. Replace YOUR_TOKEN with your scoped token.",ko:"복사했습니다. YOUR_TOKEN을 발급받은 토큰으로 바꾸세요.",de:"Kopiert. YOUR_TOKEN durch Ihren begrenzten Token ersetzen.",ja:"コピーしました。YOUR_TOKEN を自分の範囲限定トークンに置き換えてください。",fr:"Copié. Remplacez YOUR_TOKEN par votre jeton limité."});
+      agentNote.textContent = pageCopy({en:"Copied. Replace YOUR_TOKEN with your scoped token.",ko:"복사했습니다. YOUR_TOKEN을 발급받은 토큰으로 바꾸세요.",de:"Kopiert. YOUR_TOKEN durch Ihren Scoped Token ersetzen.",ja:"コピーしました。YOUR_TOKEN を自分のスコープ付きトークンに置き換えてください。",fr:"Copié. Remplacez YOUR_TOKEN par votre jeton limité."});
       agentCommand.classList.add("copied");
     } catch {
-      agentNote.textContent = pageCopy({en:"Select the command above and copy it.",ko:"위 명령어를 선택해 복사하세요.",de:"Befehl oben markieren und kopieren.",ja:"上のコマンドを選択してコピーしてください。",fr:"Sélectionnez et copiez la commande ci-dessus."});
+      agentNote.textContent = pageCopy({en:"Select the command above and copy it.",ko:"위 명령어를 선택해 복사하세요.",de:"Den Befehl oben markieren und kopieren.",ja:"上のコマンドを選択してコピーしてください。",fr:"Sélectionnez et copiez la commande ci-dessus."});
     }
     copyTimer = setTimeout(() => {
-      agentNote.textContent = pageCopy({en:"Select the command, or press the button to copy.",ko:"명령어를 선택하거나 버튼을 눌러 복사하세요.",de:"Befehl markieren oder per Button kopieren.",ja:"コマンドを選択するか、ボタンを押してコピーしてください。",fr:"Sélectionnez la commande, ou cliquez sur le bouton."});
+      agentNote.textContent = pageCopy({en:"Select the command, or press the button to copy.",ko:"명령어를 선택하거나 버튼을 눌러 복사하세요.",de:"Den Befehl markieren oder per Button kopieren.",ja:"コマンドを選択するか、ボタンを押してコピーしてください。",fr:"Sélectionnez la commande ou cliquez sur le bouton pour la copier."});
       agentCommand.classList.remove("copied");
     }, 2600);
   });
