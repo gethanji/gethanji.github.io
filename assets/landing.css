@@ -349,10 +349,10 @@ main>.chapter:last-of-type{padding-bottom:48px}
 /* The vignette is the only fixed height in the opening, so it is the one that
    gives way on a short window. It never grows past its drawn size, and phones
    keep theirs: there the opening is taller than the screen no matter what. */
-@media(min-width:701px){.mini-window{height:clamp(272px,30svh,312px)}
+@media(min-width:701px){.mini-window{height:clamp(288px,30svh,312px)}
 /* The Korean headline takes three lines where English takes two, so the
    vignette gives up a little more to keep the same fold. */
-html:lang(ko) .mini-window{height:clamp(280px,30svh,312px)}}
+html:lang(ko) .mini-window{height:clamp(296px,30svh,312px)}}
 
 /* The demo is the second screen: one viewport, the mockup centred in it and
    given more room than it had when it was only a glimpse under the fold. The
@@ -397,7 +397,7 @@ html:lang(ja) .flow-quote{font-size:25px;line-height:1.6}
 html:lang(ja) .margin-page>p{font-size:clamp(24px,2.4vw,33px);line-height:1.7}
 html:lang(ja) .fit-matrix{font-size:13px;line-height:1.75}
 html:lang(ja) .matrix-corner{font-size:12px;font-style:normal}
-html:lang(ja) .mini-window{height:clamp(280px,30svh,312px)}
+html:lang(ja) .mini-window{height:clamp(304px,30svh,312px)}
 @media(max-width:600px){
 html:lang(ja) h1,html:lang(ja) .hero h1{font-size:34px;line-height:1.35}
 html:lang(ja) h2{font-size:29px;line-height:1.4}
@@ -637,3 +637,11 @@ html:not([data-theme-choice]) .theme-now>span[data-mode=system]{display:inline-f
 .theme-row input{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .theme-row:has(input:checked){background:var(--surface);color:var(--accent)}
 .theme-row:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:-3px}
+
+/* The floor was set at the height where the vignette stops overflowing, which
+   is not the same as the height where it looks right: the Merge chip ended up
+   1px off the window's edge in Japanese and 6 to 8px in the others. The floor
+   now includes the clearance, and the opening pays for it out of its own
+   spacing rather than out of the fold. */
+.hero-intro{padding-top:56px}
+.hero-explore{margin-bottom:12px}

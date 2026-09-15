@@ -405,3 +405,21 @@ click outside, or choosing something. That includes **the relatedTarget guard, s
 the tab-killing freeze cannot come back through the new control** — clicking the
 mode you are already on is the same shape of interaction as clicking the language
 you are already reading, and both are now tested.
+
+### Clearance under the vignette's CTA
+
+The floor added above was set at the height where the vignette stops
+overflowing, which is not the height where it looks right. Measured, the Merge
+chip sat **1px** off the window's bottom edge in Japanese and 6 to 8px in the
+others. The floor now includes the clearance — 288px, 296px Korean, 304px
+Japanese — and the opening pays for it out of its own spacing (`hero-intro`
+padding 64 to 56, `hero-explore` bottom margin 22 to 12) rather than out of the
+fold. Clearance is 23 to 26px in every locale now, and the fold still lands
+exactly at 1280, 1440, 1512 and 1600.
+
+**Note on short windows.** At 1366x768, a viewport 681px tall, the opening runs
+about 115px past the fold in every locale. That is structural and predates this
+change (measured 798 before, 796 after in English): the headline, lede, keywords
+and buttons need roughly 420px, and a vignette that does not clip its own content
+needs 288px. There is no arrangement of those that fits 585px. A correct vignette
+is worth more than an exact fold on a 768px screen.
