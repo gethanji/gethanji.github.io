@@ -60,11 +60,15 @@ function switcher(current) {
         : `<a class="lang-option" href="${l.path}" lang="${l.code}" hreflang="${l.code}" aria-label="${l.aria}">${l.name}<i>${l.label}</i></a>`,
     )
     .join("");
-  return `<details class="lang-picker"><summary title="${here.ui.change}"><span lang="${here.code}">${here.name}</span><i class="caret" aria-hidden="true"></i></summary><div class="lang-menu">${rows}</div></details>`;
+  return `<details class="picker lang-picker"><summary title="${here.ui.change}"><span lang="${here.code}">${here.name}</span><i class="caret" aria-hidden="true"></i></summary><div class="lang-menu">${rows}</div></details>`;
 }
 
-// The theme control. System is the default and is marked pressed until the
-// reader chooses otherwise; assets/landing.js takes over from there.
+// The theme control, shaped like the language picker: the header shows only
+// what you have chosen, and the three options appear when you ask for them.
+// The radios live inside the menu, so the group keeps native semantics and
+// arrow-key navigation; the summary's face is chosen in CSS from
+// html[data-theme-choice], which the inline <head> script sets before first
+// paint, so the right mode shows with no JavaScript and no flash.
 function theme(current) {
   const u = (live().find((l) => l.code === current) ?? live()[0]).ui;
   const icon = {
@@ -72,9 +76,14 @@ function theme(current) {
     dark: '<path d="M13.4 9.7A5.9 5.9 0 0 1 6.3 2.6 5.9 5.9 0 1 0 13.4 9.7z"/>',
     system: '<rect x="1.6" y="2.6" width="12.8" height="8.8" rx="1.6"/><path d="M5.6 14h4.8"/>',
   };
-  const one = (mode, label, checked) =>
-    `<label class="theme-option" title="${label}"><input type="radio" name="theme" value="${mode}"${checked ? " checked" : ""}><span class="visually-hidden">${label}</span><svg viewBox="0 0 16 16" aria-hidden="true">${icon[mode]}</svg></label>`;
-  return `<fieldset class="theme-switch"><legend class="visually-hidden">${u.theme}</legend>${one("light", u.light, false)}${one("dark", u.dark, false)}${one("system", u.system, true)}</fieldset>`;
+  const modes = [["light", u.light], ["dark", u.dark], ["system", u.system]];
+  const glyph = (m) => `<svg viewBox="0 0 16 16" aria-hidden="true">${icon[m]}</svg>`;
+  const face = modes.map(([m, label]) => `<span data-mode="${m}">${glyph(m)}${label}</span>`).join("");
+  const rows = modes
+    .map(([m, label]) =>
+      `<label class="lang-option theme-row"><input type="radio" name="theme" value="${m}"${m === "system" ? " checked" : ""}>${glyph(m)}<span>${label}</span></label>`)
+    .join("");
+  return `<details class="picker theme-picker"><summary title="${u.theme}"><span class="theme-now">${face}</span><i class="caret" aria-hidden="true"></i></summary><div class="lang-menu theme-menu">${rows}</div></details>`;
 }
 
 // The vignette loops for as long as the page is open. prefers-reduced-motion
@@ -103,8 +112,8 @@ function rewrite(loc) {
       .map((l) => `<meta property="og:locale:alternate" content="${l.og}">`).join("\n") + "\n",
   );
   // The picker and the theme control are both single blocks, replaced whole.
-  s = s.replace(/<details class="lang-picker">[\s\S]*?<\/details>/, switcher(loc.code));
-  s = s.replace(/<(div|fieldset) class="theme-switch"[\s\S]*?<\/\1>/, theme(loc.code));
+  s = s.replace(/<details class="(?:picker )?lang-picker">[\s\S]*?<\/details>/, switcher(loc.code));
+  s = s.replace(/<(?:(div|fieldset) class="theme-switch"[\s\S]*?<\/\1>|details class="picker theme-picker">[\s\S]*?<\/details>)/, theme(loc.code));
   s = s.replace(/<figcaption class="mini-controls">[\s\S]*?<\/figcaption>/, motion(loc.code));
   if (s !== before) writeFileSync(file, s);
   return { file, changed: s !== before };

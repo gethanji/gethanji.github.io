@@ -377,3 +377,31 @@ redesign rather than polish.
 Verified after applying: zero contrast failures in both themes, the opening still
 lands exactly on the fold in all five locales and both themes, the header keeps
 its 96/77/70px heights, and 320px still fits.
+
+## September 15: the canvas floor, and a lighter theme control
+
+**The vignette had been squeezed below what it can hold.** Reclaiming 50px for
+the pause control shrank `.mini-window` to 227px at 1440x900, and the vignette's
+own layout needs 268px, 280px in Japanese. The Merge button was rendering 42 to
+49px clean off the bottom of the window in every language. The window has a floor
+now, `clamp(272px, 30svh, 312px)` and `clamp(280px, …)` for Korean and Japanese,
+and above 700px the pause control is lifted out of the flow so paying for that
+floor does not cost the opening its fold. Korean and Japanese carry a taller
+headline as well, so their display leading came in from 1.3/1.34 to 1.2/1.24 and
+the gap around the hero's lower row gave up 12px. Measured: nothing escapes the
+canvas in any locale at any viewport height, and the opening lands exactly on the
+fold in all five locales and both themes at 1280, 1440, 1512 and 1600.
+
+**The theme control is a picker now**, wearing the language picker's clothes. The
+header shows only the mode you chose; the three options appear when you ask for
+them. The radios still live inside the menu, so the group keeps native semantics
+and arrow keys. Which face the summary shows is decided in CSS from
+`html[data-theme-choice]`, which the inline `<head>` script writes before first
+paint, so the right mode is there with no JavaScript and no flash, and System
+shows when there is no attribute at all.
+
+Both controls are `details.picker` and share one closing behaviour: Escape, a
+click outside, or choosing something. That includes **the relatedTarget guard, so
+the tab-killing freeze cannot come back through the new control** — clicking the
+mode you are already on is the same shape of interaction as clicking the language
+you are already reading, and both are now tested.

@@ -254,7 +254,7 @@ if (agentCta && agentCommand) {
 const THEME_KEY = "hanji-theme";
 const THEMES = ["light", "dark", "system"];
 const darkQuery = matchMedia("(prefers-color-scheme: dark)");
-const themeInputs = [...document.querySelectorAll('.theme-switch input[name="theme"]')];
+const themeInputs = [...document.querySelectorAll('.theme-picker input[name="theme"]')];
 let themeChoice = "system";
 try {
  const stored = localStorage.getItem(THEME_KEY);
@@ -278,29 +278,29 @@ themeInputs.forEach(input => input.addEventListener("change", () => {
 }));
 darkQuery.addEventListener("change", () => { if (themeChoice === "system") applyTheme("system"); });
 
-/* The picker closes the way a menu is expected to: Escape, or a click outside.
-   <details> gives us the rest, including the keyboard, for nothing. */
-const langPicker = document.querySelector(".lang-picker");
-if (langPicker) {
+/* Every picker closes the way a menu is expected to: Escape, a click outside,
+   or choosing something. <details> gives us the rest, including the keyboard.
+
+   The guard on relatedTarget is not a nicety. Pressing the mouse on a row that
+   cannot take focus — the current language is a span, not a link — blurs the
+   summary and reports relatedTarget null, and closing a <details> from inside
+   that focus dispatch wedges the renderer hard enough to kill the tab. A real
+   focus move always names where focus went, so require it. */
+document.querySelectorAll("details.picker").forEach(picker => {
+ const menu = picker.querySelector(".lang-menu");
  document.addEventListener("click", event => {
-  if (langPicker.open && !langPicker.contains(event.target)) langPicker.open = false;
+  if (picker.open && !picker.contains(event.target)) picker.open = false;
  });
  document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && langPicker.open) {
-   langPicker.open = false;
-   langPicker.querySelector("summary").focus();
+  if (event.key === "Escape" && picker.open) {
+   picker.open = false;
+   picker.querySelector("summary").focus();
   }
  });
- // Tabbing past the last language used to leave a 196px menu open over the page.
- // The guard on relatedTarget is not a nicety: pressing the mouse on a row that
- // is not focusable (the current language is a span, not a link) blurs the
- // summary and reports relatedTarget null, and closing a <details> from inside
- // that focus dispatch wedges the renderer hard enough to kill the tab. A real
- // focus move always names where focus went, so require it.
- langPicker.addEventListener("focusout", event => {
-  if (langPicker.open && event.relatedTarget && !langPicker.contains(event.relatedTarget)) langPicker.open = false;
+ picker.addEventListener("focusout", event => {
+  if (picker.open && event.relatedTarget && !picker.contains(event.relatedTarget)) picker.open = false;
  });
- // Choosing your current language is still choosing: the menu should close,
- // even though the row is not a link and nothing navigates.
- langPicker.querySelector(".lang-menu")?.addEventListener("click", () => { langPicker.open = false; });
-}
+ // Choosing is choosing, even when it is the option already selected and
+ // nothing navigates or changes.
+ menu?.addEventListener("click", () => { picker.open = false; });
+});
