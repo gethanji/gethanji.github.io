@@ -192,19 +192,37 @@ if (agentCta && agentCommand) {
     if (agentCommand.hidden) {
       agentCommand.hidden = false;
       agentCta.setAttribute("aria-expanded", "true");
-      agentCta.textContent = "Copy the command";
+      agentCta.textContent = pageCopy("Copy command", "명령어 복사");
       return;
     }
     try {
       await navigator.clipboard.writeText(document.getElementById("agent-command-text").textContent);
-      agentNote.textContent = "Copied.";
+      agentNote.textContent = pageCopy("Copied. Replace YOUR_TOKEN with your scoped token.", "복사했습니다. YOUR_TOKEN을 발급받은 토큰으로 바꾸세요.");
       agentCommand.classList.add("copied");
     } catch {
-      agentNote.textContent = "Select it above and copy by hand.";
+      agentNote.textContent = pageCopy("Select the command above and copy it.", "위 명령어를 선택해 복사하세요.");
     }
     setTimeout(() => {
-      agentNote.textContent = "Select it, or press the button again to copy.";
+      agentNote.textContent = pageCopy("Select the command, or press the button to copy.", "명령어를 선택하거나 버튼을 눌러 복사하세요.");
       agentCommand.classList.remove("copied");
     }, 2600);
   });
 }
+
+// Pause the decorative miniature offscreen and while the page is hidden.
+(()=>{
+ const mini=document.querySelector('.mini-hanji');if(!mini)return;
+ let visible=true;
+ const update=()=>mini.classList.toggle('is-paused',!visible||document.hidden);
+ new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;update();},{threshold:.1}).observe(mini);
+ document.addEventListener('visibilitychange',update);
+})();
+
+// A small pointer-following tilt, limited to fine pointers and motion-enabled users.
+(()=>{
+ const scene=document.querySelector('.mini-hanji'),win=scene?.querySelector('.mini-window');if(!win)return;
+ const motion=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
+ const reset=()=>{for(const property of ['--tilt-x','--tilt-y','--edge-right','--edge-bottom'])win.style.removeProperty(property);};
+ scene.addEventListener('pointermove',e=>{if(motion.matches||!fine.matches)return;const r=scene.getBoundingClientRect();const x=Math.max(-.5,Math.min(.5,(e.clientX-r.left)/r.width-.5)),y=Math.max(-.5,Math.min(.5,(e.clientY-r.top)/r.height-.5));win.style.setProperty('--tilt-y',`${x*10}deg`);win.style.setProperty('--tilt-x',`${-y*8}deg`);win.style.setProperty('--edge-right',`${4-x*6}px`);win.style.setProperty('--edge-bottom',`${5-y*6}px`);});
+ scene.addEventListener('pointerleave',reset);motion.addEventListener('change',reset);fine.addEventListener('change',reset);
+})();

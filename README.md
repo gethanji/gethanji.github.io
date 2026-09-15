@@ -52,3 +52,17 @@ verified English and Korean mobile layouts.
 
 The opening fills 90% of the viewport including the header, with the demo
 invitation at its bottom. It grows naturally when content needs more room.
+
+## September 14 refinement (local review)
+
+Reworked the hero around a sourced local page-read measurement, framed the logo,
+and expanded the illustrative document demo. Grouped section headings and supporting
+copy into one reading column, moved proposal review beside editing, and brought
+Korean agent controls and proposal content into parity with English.
+
+Locale metadata is managed by `scripts/locales.mjs`. English and Korean are live.
+German and Japanese remain declared with `live: false`; their pages and native
+copy review are still pending. Do not advertise those routes until ready.
+
+The remaining comparison-page and release-day tasks in the supplied plan are
+separate work. This revision does not change release status or publish the site.
