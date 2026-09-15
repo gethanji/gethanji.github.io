@@ -209,3 +209,61 @@ through to the reader's own serif.
 Measured over the wire, with GitHub Pages' gzip: HTML 9.4kB, CSS 23.7kB, JS
 7.2kB, fonts 154kB. Fonts are still 79% of the page, which is where any further
 work belongs.
+
+## September 15: the review pass
+
+Two adversarial reviews, one on correctness and one on dead code, then fixes.
+
+**The dark theme had shipped a page no keyboard user could navigate.** The
+derived focus ring landed at `#0e241e` on a `#121715` page: 1.13:1, invisible
+on every focusable element. The derivation asked "what is this colour?" and
+answered by role, which is right for a surface and exactly backwards for
+anything whose job is to be *seen against* a surface. Eight more elements had
+the same bug, including both halves of the activity chart, where the agent bars
+sat at 1.06:1 and the caption "People above. Agents below." was simply untrue in
+dark mode. All corrected and re-measured; the focus ring is now 8.55:1.
+
+**Other confirmed defects, now fixed:** the `.annotated` dark rule used the
+`background` shorthand and silently reset `background-size`, killing the
+comments demo's only affordance; the permission demo's visible-count was the one
+string that never went through `pageCopy`, so German, Japanese and French
+readers got "3 visible" in English inside a live region; the copy-confirmation
+timer was never cleared, so a second copy was wiped 0.6s later by the first
+click's timer; `aria-expanded` on the agent button was set to true and never
+returned, and the copy result was never announced; the identity picker was the
+only animating control that did not cancel in-flight animations; the stored
+theme value was used unvalidated on a shared origin; and the picker stayed open
+when focus tabbed past it.
+
+**The theme control is now three radios in a fieldset**, not three
+`aria-pressed` toggles in a group. A mutually exclusive choice is a radio group;
+native radios also bring arrow-key navigation and roving tabindex for nothing.
+The picker's `aria-label` was replaced by `title`: the visible word was already
+the accessible name, and overriding it with "Change language" broke Label in
+Name for voice control in all five locales.
+
+**The generator was rewriting more than it could write.** `live` now means "the
+page exists", because a `live:true` locale with no file was fully advertised in
+hreflang, sitemap and switcher while the script printed "not advertised" — the
+exact outcome its own header calls worse than silence. `lastmod` no longer
+claims today on every run. The entry guard no longer no-ops on any path
+containing a space.
+
+**Dead code:** 141 rules and 8 unreachable `@keyframes` removed, 11.6kB, plus
+one dead line of JavaScript. Verified by pixel-diffing four sections before and
+after: two are byte-identical and the two containing animations differ by
+exactly their own frame-to-frame noise floor.
+
+### Still open
+
+1. **The hero vignette loops forever with no pause control** (WCAG 2.2.2).
+   `prefers-reduced-motion` is respected, but that only covers readers who set
+   it. Adding a visible control to the hero is a design decision, not a bug fix.
+2. **15 pre-existing contrast failures in light mode**, 9 to 11px labels between
+   3.2:1 and 4.3:1. Dark is now at 7, all of them shared and all inside the
+   paper mockup.
+3. **~4.9kB of overridden declarations.** 277 selectors are declared more than
+   once because each pass restated a box's padding and gap instead of editing
+   the earlier rule; the file carries three to seven historical values for the
+   same property. Collapsing them changes no rendering.
+4. **A native German and Japanese copy review**, still owed from the locale pass.

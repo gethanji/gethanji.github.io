@@ -11,9 +11,9 @@
 // A locale with live:false is declared but NOT advertised: no hreflang, no
 // sitemap row, no switcher link. Pointing hreflang at a page that does not
 // exist is worse than staying quiet about the language.
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
 import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://gethanji.github.io";
@@ -31,7 +31,12 @@ export const LOCALES = [
     ui: { change: "Changer de langue", theme: "Thème", light: "Clair", dark: "Sombre", system: "Système" } },
 ];
 
-const live = () => LOCALES.filter((l) => l.live);
+// Live means "advertised": in hreflang, in the sitemap, in the switcher, in
+// llms.txt. A locale can only be advertised if its page exists, or we point
+// readers and crawlers at a 404 — which the header above calls worse than
+// staying quiet. The flag is an intent; the file on disk is the fact.
+const hasPage = (l) => existsSync(join(root, l.dir, "index.html"));
+const live = () => LOCALES.filter((l) => l.live && hasPage(l));
 
 // Every live locale, plus x-default pointing at English.
 function alternates() {
@@ -55,7 +60,7 @@ function switcher(current) {
         : `<a class="lang-option" href="${l.path}" lang="${l.code}" hreflang="${l.code}" aria-label="${l.aria}">${l.name}<i>${l.label}</i></a>`,
     )
     .join("");
-  return `<details class="lang-picker"><summary aria-label="${here.ui.change}"><span lang="${here.code}">${here.name}</span><i class="caret" aria-hidden="true"></i></summary><div class="lang-menu">${rows}</div></details>`;
+  return `<details class="lang-picker"><summary title="${here.ui.change}"><span lang="${here.code}">${here.name}</span><i class="caret" aria-hidden="true"></i></summary><div class="lang-menu">${rows}</div></details>`;
 }
 
 // The theme control. System is the default and is marked pressed until the
@@ -67,9 +72,9 @@ function theme(current) {
     dark: '<path d="M13.4 9.7A5.9 5.9 0 0 1 6.3 2.6 5.9 5.9 0 1 0 13.4 9.7z"/>',
     system: '<rect x="1.6" y="2.6" width="12.8" height="8.8" rx="1.6"/><path d="M5.6 14h4.8"/>',
   };
-  const one = (mode, label, pressed) =>
-    `<button type="button" class="theme-option" data-theme-set="${mode}" aria-pressed="${pressed}" title="${label}"><span class="visually-hidden">${label}</span><svg viewBox="0 0 16 16" aria-hidden="true">${icon[mode]}</svg></button>`;
-  return `<div class="theme-switch" role="group" aria-label="${u.theme}">${one("light", u.light, "false")}${one("dark", u.dark, "false")}${one("system", u.system, "true")}</div>`;
+  const one = (mode, label, checked) =>
+    `<label class="theme-option" title="${label}"><input type="radio" name="theme" value="${mode}"${checked ? " checked" : ""}><span class="visually-hidden">${label}</span><svg viewBox="0 0 16 16" aria-hidden="true">${icon[mode]}</svg></label>`;
+  return `<fieldset class="theme-switch"><legend class="visually-hidden">${u.theme}</legend>${one("light", u.light, false)}${one("dark", u.dark, false)}${one("system", u.system, true)}</fieldset>`;
 }
 
 function rewrite(loc) {
@@ -90,7 +95,7 @@ function rewrite(loc) {
   );
   // The picker and the theme control are both single blocks, replaced whole.
   s = s.replace(/<details class="lang-picker">[\s\S]*?<\/details>/, switcher(loc.code));
-  s = s.replace(/<div class="theme-switch"[\s\S]*?<\/svg><\/button><\/div>|<div class="theme-switch"[\s\S]*?<\/button><\/div>/, theme(loc.code));
+  s = s.replace(/<(div|fieldset) class="theme-switch"[\s\S]*?<\/\1>/, theme(loc.code));
   if (s !== before) writeFileSync(file, s);
   return { file, changed: s !== before };
 }
@@ -112,9 +117,17 @@ function sitemap() {
     .map((l) => `    <xhtml:link rel="alternate" hreflang="${l.code}" href="${SITE}${l.path}"/>`)
     .concat(`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}/"/>`)
     .join("\n");
-  const today = new Date().toISOString().slice(0, 10);
+  // lastmod is the date the page changed, not the date this script ran. Reuse
+  // the date already in the sitemap unless the page file is newer, or every
+  // run tells crawlers all five pages changed and the signal becomes noise.
+  const prev = existsSync(join(root, "sitemap.xml")) ? readFileSync(join(root, "sitemap.xml"), "utf8") : "";
+  const stamp = (l) => {
+    const seen = prev.match(new RegExp(`<loc>${SITE}${l.path}</loc>[\\s\\S]*?<lastmod>([0-9-]+)</lastmod>`));
+    const mtime = statSync(join(root, l.dir, "index.html")).mtime.toISOString().slice(0, 10);
+    return seen && seen[1] >= mtime ? seen[1] : mtime;
+  };
   const pages = live()
-    .map((l) => `  <url>\n    <loc>${SITE}${l.path}</loc>\n${alts}\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`)
+    .map((l) => `  <url>\n    <loc>${SITE}${l.path}</loc>\n${alts}\n    <lastmod>${stamp(l)}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`)
     .join("\n");
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -130,7 +143,7 @@ ${pages}
   writeFileSync(join(root, "sitemap.xml"), xml);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   for (const loc of LOCALES) {
     const r = rewrite(loc);
     console.log(`  ${loc.code}  ${r.skipped ? "no page yet (declared, not advertised)" : r.changed ? "updated" : "already in sync"}`);

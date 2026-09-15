@@ -35,7 +35,6 @@ reset.addEventListener('click', () => { setMerged(false); selectTab(tabs[0]); me
   return span;
  };
  // One stroke weight, optical size and alignment for every directional cue.
- document.querySelectorAll('.arrow').forEach(el => {el.textContent='';el.append(icon().firstElementChild);});
  document.querySelectorAll('a, .flow-arrow, .merge').forEach(el => {
   const walker = document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
   const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
@@ -124,9 +123,10 @@ reset.addEventListener('click', () => { setMerged(false); selectTab(tabs[0]); me
   pages.forEach((page,index)=>{
    const visible=page.dataset.access.split(' ').includes(person);
    page.hidden=!visible;
-   if(visible){count++;if(!reduceMotion.matches)page.animate([{opacity:.1,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:280,delay:index*35,fill:'backwards'});}
+   if(visible){count++;if(!reduceMotion.matches){page.getAnimations().forEach(a=>a.cancel());page.animate([{opacity:.1,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:280,delay:index*35,fill:'backwards'});}}
   });
-  document.getElementById('visible-count').textContent=`${count}${document.documentElement.lang==='ko'?'개 표시':' visible'}`;
+  document.getElementById('visible-count').textContent=pageCopy({
+   en:`${count} visible`,ko:`${count}개 표시`,de:`${count} sichtbar`,ja:`${count}件表示`,fr:`${count} visibles`});
   document.getElementById('permission-status').textContent=status[person];
  }));
 
@@ -188,10 +188,15 @@ const agentCta = document.getElementById("agent-cta");
 const agentCommand = document.getElementById("agent-command");
 const agentNote = document.getElementById("agent-command-note");
 if (agentCta && agentCommand) {
+  let copyTimer;
   agentCta.addEventListener("click", async () => {
+    clearTimeout(copyTimer);
     if (agentCommand.hidden) {
       agentCommand.hidden = false;
-      agentCta.setAttribute("aria-expanded", "true");
+      // It was a disclosure for exactly one click. It is a copy button now, and
+      // claiming "expanded" forever, with no way back, would be a lie.
+      agentCta.removeAttribute("aria-expanded");
+      agentCta.removeAttribute("aria-controls");
       agentCta.textContent = pageCopy({en:"Copy command",ko:"명령어 복사",de:"Kopieren",ja:"コマンドをコピー",fr:"Copier"});
       return;
     }
@@ -202,7 +207,7 @@ if (agentCta && agentCommand) {
     } catch {
       agentNote.textContent = pageCopy({en:"Select the command above and copy it.",ko:"위 명령어를 선택해 복사하세요.",de:"Befehl oben markieren und kopieren.",ja:"上のコマンドを選択してコピーしてください。",fr:"Sélectionnez et copiez la commande ci-dessus."});
     }
-    setTimeout(() => {
+    copyTimer = setTimeout(() => {
       agentNote.textContent = pageCopy({en:"Select the command, or press the button to copy.",ko:"명령어를 선택하거나 버튼을 눌러 복사하세요.",de:"Befehl markieren oder per Button kopieren.",ja:"コマンドを選択するか、ボタンを押してコピーしてください。",fr:"Sélectionnez la commande, ou cliquez sur le bouton."});
       agentCommand.classList.remove("copied");
     }, 2600);
@@ -233,22 +238,27 @@ if (agentCta && agentCommand) {
    whichever value it happened to resolve to. A copy of the first two lines runs
    inline in <head> so the page never paints the wrong theme first. */
 const THEME_KEY = "hanji-theme";
+const THEMES = ["light", "dark", "system"];
 const darkQuery = matchMedia("(prefers-color-scheme: dark)");
-const themeButtons = [...document.querySelectorAll("[data-theme-set]")];
+const themeInputs = [...document.querySelectorAll('.theme-switch input[name="theme"]')];
 let themeChoice = "system";
-try { themeChoice = localStorage.getItem(THEME_KEY) || "system"; } catch { /* private mode */ }
+try {
+ const stored = localStorage.getItem(THEME_KEY);
+ if (THEMES.includes(stored)) themeChoice = stored;   // a foreign or stale value is not a theme
+} catch { /* private mode */ }
 
 function applyTheme(choice) {
  const root = document.documentElement;
  root.dataset.theme = choice === "system" ? (darkQuery.matches ? "dark" : "light") : choice;
  root.dataset.themeChoice = choice;
+ themeInputs.forEach(i => { i.checked = i.value === choice; });
  const bar = document.querySelector('meta[name="theme-color"]');
  if (bar) bar.setAttribute("content", root.dataset.theme === "dark" ? "#121715" : "#f9faf6");
- themeButtons.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.themeSet === choice)));
 }
 applyTheme(themeChoice);
-themeButtons.forEach(b => b.addEventListener("click", () => {
- themeChoice = b.dataset.themeSet;
+themeInputs.forEach(input => input.addEventListener("change", () => {
+ if (!input.checked) return;
+ themeChoice = input.value;
  try { localStorage.setItem(THEME_KEY, themeChoice); } catch { /* private mode */ }
  applyTheme(themeChoice);
 }));
@@ -266,5 +276,9 @@ if (langPicker) {
    langPicker.open = false;
    langPicker.querySelector("summary").focus();
   }
+ });
+ // Tabbing past the last language used to leave a 196px menu open over the page.
+ langPicker.addEventListener("focusout", event => {
+  if (langPicker.open && !langPicker.contains(event.relatedTarget)) langPicker.open = false;
  });
 }
