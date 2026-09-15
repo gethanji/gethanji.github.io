@@ -406,9 +406,20 @@ main>.chapter:last-of-type{padding-bottom:48px}
 html:lang(ko) .mini-window{height:min(312px,30svh)}}
 
 /* The demo is the second screen: one viewport, the mockup centred in it and
-   given more room than it had when it was only a glimpse under the fold. */
-.product-stage{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-bottom:24px;border-radius:12px}
-.product-stage .workspace,.product-stage .terminal{min-height:min(600px,68svh)}
+   given more room than it had when it was only a glimpse under the fold. The
+   card is inset from the top and bottom the way it is from the sides, so it
+   reads as a card standing on the page rather than a full-bleed panel.
+   --stage-inset tracks the .wrap gutter, which is 60-96px on a desktop width,
+   32px once .wrap goes edge-relative, and 18px on a phone. Card plus its two
+   insets still comes to one screen, so the demo stays a screen you scroll to. */
+:root{--stage-inset:64px}
+@media(max-width:1100px){:root{--stage-inset:32px}}
+@media(max-width:600px){:root{--stage-inset:18px}}
+.product-stage{min-height:calc(100svh - var(--stage-inset) * 2);margin-block:var(--stage-inset);display:flex;flex-direction:column;justify-content:center;padding-bottom:24px;border-radius:12px}
+.product-stage .workspace,.product-stage .terminal{min-height:min(600px,64svh)}
+/* The card's bottom inset is the hero's exhale now, so the hero does not add
+   a second one on top of it. */
+main > .hero{padding-bottom:0}
 
 /* The dense chapters. The others flow: the editor and proposal chapters, the
    deployment list, the closing invitation. Each screen keeps its --chapter-gap

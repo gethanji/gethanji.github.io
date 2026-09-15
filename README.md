@@ -77,9 +77,12 @@ in the opening, so it is the one that gives way: `min(312px, 34svh)` above
 past its drawn size, and phones keep theirs, since there the opening is taller
 than the screen whatever we do.
 
-The demo below it is the second screen: `100svh`, the mockup centred, the panel
-now padded and rounded on all four corners instead of running off the bottom as
-a glimpse. The workspace and terminal grew to `min(600px, 68svh)`.
+The demo below it is the second screen: the mockup centred in a card that is
+padded and rounded on all four corners instead of running off the bottom as a
+glimpse. The card is inset from the top and bottom by `--stage-inset`, which
+tracks the `.wrap` gutter at each breakpoint, so it reads as a card standing on
+the page rather than a full-bleed panel. Card plus its two insets still comes to
+one screen. The workspace and terminal grew to `min(600px, 64svh)`.
 
 A chapter dense enough to nearly fill a screen is given the whole one and
 centred in it; a short chapter flows in the rhythm above. Today that means
