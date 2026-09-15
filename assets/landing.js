@@ -292,7 +292,15 @@ if (langPicker) {
   }
  });
  // Tabbing past the last language used to leave a 196px menu open over the page.
+ // The guard on relatedTarget is not a nicety: pressing the mouse on a row that
+ // is not focusable (the current language is a span, not a link) blurs the
+ // summary and reports relatedTarget null, and closing a <details> from inside
+ // that focus dispatch wedges the renderer hard enough to kill the tab. A real
+ // focus move always names where focus went, so require it.
  langPicker.addEventListener("focusout", event => {
-  if (langPicker.open && !langPicker.contains(event.relatedTarget)) langPicker.open = false;
+  if (langPicker.open && event.relatedTarget && !langPicker.contains(event.relatedTarget)) langPicker.open = false;
  });
+ // Choosing your current language is still choosing: the menu should close,
+ // even though the row is not a link and nothing navigates.
+ langPicker.querySelector(".lang-menu")?.addEventListener("click", () => { langPicker.open = false; });
 }
