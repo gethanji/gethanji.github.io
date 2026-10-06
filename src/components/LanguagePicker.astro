@@ -1,19 +1,14 @@
 ---
-import Chevron from './Chevron.astro';
 import { locales, languages, route, dictionary } from '../data/site';
 const { lang, page } = Astro.props;
 const ui = dictionary(lang).ui;
 ---
-<div class="family-language">
-  <details class="picker lang-picker ui-disclosure" data-disclosure>
-    <summary class="ui-control" title={ui.language} aria-label={ui.language}>
-      <svg class="language-globe" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.5" ry="7.5"/><path d="M2.5 10h15"/></svg>
-      <span lang={lang}>{languages[lang]}</span><Chevron />
-    </summary>
-    <div class="lang-menu ui-disclosure-panel">
-      {locales.map(code => code === lang
-        ? <span class="lang-option is-current" lang={code} aria-current="true">{languages[code]}<i>✓</i></span>
-        : <a class="lang-option" href={route(code, page)} lang={code} hreflang={code}>{languages[code]}<i>{code.toUpperCase()}</i></a>)}
-    </div>
-  </details>
-</div>
+<details class="picker lang-picker ui-disclosure" data-disclosure data-page={page}>
+  <summary class="ui-control icon-control" title={ui.language} aria-label={ui.language}>
+    <svg class="setting-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.5" ry="7.5"/><path d="M2.5 10h15"/></svg>
+  </summary>
+  <div class="lang-menu ui-disclosure-panel">
+    <a class="lang-option is-current" data-language="system" href={route(lang,page)} aria-current="true">{ui.theme.system}<i aria-hidden="true">✓</i></a>
+    {locales.map(code => <a class="lang-option" data-language={code} href={route(code,page)} lang={code} hreflang={code}>{languages[code]}<i aria-hidden="true">✓</i></a>)}
+  </div>
+</details>

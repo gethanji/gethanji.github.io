@@ -1,12 +1,13 @@
 ---
-import Chevron from './Chevron.astro';
 import { dictionary } from '../data/site';
 const { lang } = Astro.props;
 const t = dictionary(lang).ui.theme;
 ---
 <details class="picker theme-picker ui-disclosure" data-disclosure>
-  <summary class="ui-control">{t.label}<Chevron /></summary>
+  <summary class="ui-control icon-control" title={t.label} aria-label={t.label}>
+    <svg class="setting-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 2.5a7.5 7.5 0 0 1 0 15Z" fill="currentColor" stroke="none"/></svg>
+  </summary>
   <div class="lang-menu theme-menu ui-disclosure-panel">
-    {['light', 'dark', 'system'].map(mode => <label class="lang-option theme-row"><input type="radio" name="theme" value={mode} checked={mode === 'system'} /><span>{t[mode]}</span></label>)}
+    {['system', 'light', 'dark'].map(mode => <label class="lang-option theme-row"><input type="radio" name="theme" value={mode} checked={mode === 'system'} /><span>{t[mode]}</span><i aria-hidden="true">✓</i></label>)}
   </div>
 </details>

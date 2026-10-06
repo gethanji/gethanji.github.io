@@ -9,8 +9,6 @@ html[data-theme=dark]{color-scheme:dark}
 .mini-window,.product-stage .workspace{color-scheme:light}
 
 html[data-theme=dark] body{--shadow-menu:0 14px 45px #0006;--shadow-paper:0 20px 35px -24px #0009}
-html[data-theme=dark] .family-project-mark{background:#293b2d;color:#a7c9a5}
-html[data-theme=dark] .family-project-mark.tracker{background:#34243f;color:#ceaceb}
 html[data-theme=dark] .illustration-steps{opacity:1}
 html[data-theme=dark] .illustration-step>span{background:var(--color-muted)}
 html[data-theme=dark] .illustration-step[aria-pressed=true]>span{background:var(--color-accent)}

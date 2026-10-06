@@ -18,6 +18,7 @@ npm run test:consistency
 npm run test:tracker-hero
 npm run test:controls
 npm run test:theme
+npm run test:header
 npm run preview -- --port 4321
 ```
 
@@ -81,7 +82,12 @@ in both themes; see `lab-brand.css`.
 Shared chrome reads these tokens, with product-specific light and dark palettes.
 The original Knowledge editorial layout and demo styling remain intact.
 
-All three pages share Light / Dark / System under Projects → Appearance.
+All three pages use a compact shared header: Hanji links home, Knowledge and
+Tracker remain direct links, and language and appearance are icon menus on the
+far right. Both preferences default to System. Language follows the browser
+on unprefixed entry pages; explicit localized URLs stay shareable. Choosing a
+language persists the preference and preserves the current page, query, and
+anchor. The brand reduces to its mark on small screens.
 The head bootstrap resolves `hanji-theme` before paint; `theme.ts` owns radio
 controls, live system changes, cross-tab updates, and the browser theme color.
 Manual choices persist across product and language navigation. Unavailable
@@ -155,8 +161,8 @@ HTML, stylesheet, and Markdown mirrors.
 Both legacy editorial stylesheets load through a low-priority `editorial`
 cascade layer. Shared chrome owns typography, line height and icons. The
 navbar uses the system UI font, avoiding a webfont swap between routes while
-editorial content retains DM Sans and Newsreader. `Chevron.astro` owns the
-SVG caret geometry; no legacy border-based caret participates. Knowledge’s
+editorial content retains DM Sans and Newsreader. Language and appearance use equally sized SVG icons with accessible labels;
+no nested project menu or caret is needed. Knowledge’s
 arrow enhancement is limited to `#main` and cannot rewrite header links.
 
 Tracker centers a persistent canvas. Hanji, the workspace agent, chats in a
@@ -211,7 +217,7 @@ current Claude and Codex capabilities remain distinct.
 
 The Knowledge browser fixture checks original structure, attributes, and links
 while allowing the reviewed prose to change. It does not compare literal text.
-Project-menu summaries wrap on narrow screens. Commands and destination URLs
+The header stays compact on narrow screens. Commands and destination URLs
 remain unchanged by this editorial pass.
 
 Tracker copy was checked against `hanji-wt-tracker` revision `75dd1ad` and
