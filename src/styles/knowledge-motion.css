@@ -1,0 +1,5 @@
+.mini-hanji .knowledge-story-controls{position:static;display:flex;justify-content:flex-end;align-items:center;margin:12px 0 0;gap:10px}
+.mini-hanji[data-managed-motion] .mini-window *,.mini-hanji[data-managed-motion] .mini-merge::after{animation:none!important}
+.mini-hanji:not([data-enhanced=true]) .knowledge-story-controls{display:none}
+@media(prefers-reduced-motion:reduce){.mini-hanji .knowledge-story-controls *{transition:none!important}}
+.mini-hanji[data-managed-motion] .mini-merge .merge-before{display:block}

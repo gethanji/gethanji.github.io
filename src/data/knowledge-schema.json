@@ -1,0 +1,247 @@
+{
+  "en": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hanji.ink/#org",
+        "name": "Hanji",
+        "url": "https://hanji.ink/",
+        "logo": "https://hanji.ink/hanji-mark.svg",
+        "sameAs": [
+          "https://github.com/gethanji",
+          "https://x.com/get_hanji",
+          "https://mastodon.social/@get_hanji"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hanji.ink/#website",
+        "url": "https://hanji.ink/",
+        "name": "Hanji",
+        "description": "The agent-native knowledge base: plain Markdown in the git you already own, a small protocol for agents, and a lock down to a single file.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://hanji.ink/projects/knowledge/#app",
+        "name": "Hanji Knowledge",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Knowledge base",
+        "operatingSystem": "Web, macOS, Linux",
+        "description": "An agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in repositories you already own. Agents read and propose edits over MCP; there is no bundled LLM and nothing meters usage.",
+        "url": "https://hanji.ink/projects/knowledge/",
+        "softwareHelp": "https://gethanji.github.io/docs/",
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      }
+    ]
+  },
+  "ko": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hanji.ink/#org",
+        "name": "Hanji",
+        "url": "https://hanji.ink/",
+        "logo": "https://hanji.ink/hanji-mark.svg",
+        "sameAs": [
+          "https://github.com/gethanji",
+          "https://x.com/get_hanji",
+          "https://mastodon.social/@get_hanji"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hanji.ink/ko/lab/#website",
+        "url": "https://hanji.ink/ko/lab/",
+        "name": "Hanji",
+        "description": "에이전트 네이티브 지식베이스. 이미 쓰고 있는 git 안의 평범한 마크다운, 에이전트를 위한 작은 프로토콜, 파일 하나까지 걸 수 있는 잠금.",
+        "inLanguage": "ko",
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://hanji.ink/projects/knowledge/#app",
+        "name": "Hanji Knowledge",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Knowledge base",
+        "operatingSystem": "Web, macOS, Linux",
+        "description": "에이전트 네이티브 지식베이스. 한지는 팀이 아는 것을 이미 소유한 저장소에 그냥 마크다운으로 보관합니다. 에이전트는 MCP로 읽고 편집을 제안합니다. 딸려 오는 LLM도, 사용량을 재는 장치도 없습니다.",
+        "url": "https://hanji.ink/ko/projects/knowledge/",
+        "softwareHelp": "https://gethanji.github.io/docs/",
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      }
+    ]
+  },
+  "de": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hanji.ink/#org",
+        "name": "Hanji",
+        "url": "https://hanji.ink/",
+        "logo": "https://hanji.ink/hanji-mark.svg",
+        "sameAs": [
+          "https://github.com/gethanji",
+          "https://x.com/get_hanji",
+          "https://mastodon.social/@get_hanji"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hanji.ink/de/lab/#website",
+        "url": "https://hanji.ink/de/lab/",
+        "name": "Hanji",
+        "description": "The agent-native knowledge base: plain Markdown in the git you already own, a small protocol for agents, and a lock down to a single file.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://hanji.ink/projects/knowledge/#app",
+        "name": "Hanji Knowledge",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Knowledge base",
+        "operatingSystem": "Web, macOS, Linux",
+        "description": "An agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in repositories you already own. Agents read and propose edits over MCP; there is no bundled LLM and nothing meters usage.",
+        "url": "https://hanji.ink/de/projects/knowledge/",
+        "softwareHelp": "https://gethanji.github.io/docs/",
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      }
+    ]
+  },
+  "ja": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hanji.ink/#org",
+        "name": "Hanji",
+        "url": "https://hanji.ink/",
+        "logo": "https://hanji.ink/hanji-mark.svg",
+        "sameAs": [
+          "https://github.com/gethanji",
+          "https://x.com/get_hanji",
+          "https://mastodon.social/@get_hanji"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hanji.ink/ja/lab/#website",
+        "url": "https://hanji.ink/ja/lab/",
+        "name": "Hanji",
+        "description": "The agent-native knowledge base: plain Markdown in the git you already own, a small protocol for agents, and a lock down to a single file.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://hanji.ink/projects/knowledge/#app",
+        "name": "Hanji Knowledge",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Knowledge base",
+        "operatingSystem": "Web, macOS, Linux",
+        "description": "An agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in repositories you already own. Agents read and propose edits over MCP; there is no bundled LLM and nothing meters usage.",
+        "url": "https://hanji.ink/ja/projects/knowledge/",
+        "softwareHelp": "https://gethanji.github.io/docs/",
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      }
+    ]
+  },
+  "fr": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hanji.ink/#org",
+        "name": "Hanji",
+        "url": "https://hanji.ink/",
+        "logo": "https://hanji.ink/hanji-mark.svg",
+        "sameAs": [
+          "https://github.com/gethanji",
+          "https://x.com/get_hanji",
+          "https://mastodon.social/@get_hanji"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hanji.ink/fr/lab/#website",
+        "url": "https://hanji.ink/fr/lab/",
+        "name": "Hanji",
+        "description": "The agent-native knowledge base: plain Markdown in the git you already own, a small protocol for agents, and a lock down to a single file.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://hanji.ink/projects/knowledge/#app",
+        "name": "Hanji Knowledge",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Knowledge base",
+        "operatingSystem": "Web, macOS, Linux",
+        "description": "An agent-native knowledge base. Hanji keeps what a team knows as plain Markdown in repositories you already own. Agents read and propose edits over MCP; there is no bundled LLM and nothing meters usage.",
+        "url": "https://hanji.ink/fr/projects/knowledge/",
+        "softwareHelp": "https://gethanji.github.io/docs/",
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@id": "https://hanji.ink/#org"
+        }
+      }
+    ]
+  }
+}

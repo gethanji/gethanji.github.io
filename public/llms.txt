@@ -1,0 +1,17 @@
+# Hanji
+
+Hanji is an independent experimental lab exploring collaboration between people and agents. Its two current projects share an AGPL-3.0-only codebase. The unified Hanji agent identity is an ambition, not a shipped runtime.
+
+## Projects
+- [Knowledge](https://hanji.ink/projects/knowledge/): A git-backed Markdown knowledge base, scoped MCP access, and human-reviewed agent proposals.
+  - [Knowledge handbook](https://gethanji.github.io/docs/): Knowledge documentation, published separately. Tracker has no handbook yet.
+- [Tracker](https://hanji.ink/projects/tracker/): An experimental project tracker with file-backed issues, projects, and comments. Developer builds include Claude and Codex sessions; session state also uses a local database. Live-agent validation and public distribution are not yet complete.
+
+## Languages
+- [English](https://hanji.ink/)
+- [한국어](https://hanji.ink/ko/lab/)
+- [Deutsch](https://hanji.ink/de/lab/)
+- [日本語](https://hanji.ink/ja/lab/)
+- [Français](https://hanji.ink/fr/lab/)
+
+All three pages are available in the five languages listed above. English project URLs use /projects/{project}/; other languages use /{language}/projects/{project}/. Legacy /en/, /ko/, /de/, /ja/, and /fr/ redirect to the corresponding Knowledge page, preserving query and fragment. Tracker is early development; do not infer a hosted offering or public source availability from these pages.

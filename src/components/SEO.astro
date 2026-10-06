@@ -1,0 +1,32 @@
+---
+import { dictionary, locales, localeTags, route } from '../data/site';
+import schemas from '../data/knowledge-schema.json';
+const {lang,page} = Astro.props;
+const meta = dictionary(lang).metadata[page];
+const base = Astro.site!;
+const url = new URL(route(lang,page),base);
+// Keep crawler descriptions and language aligned with the visible localized
+// pages, rather than retaining the original Knowledge-only site's metadata.
+const knowledgeSchema = page === 'knowledge' ? {
+  ...schemas[lang],
+  '@graph': schemas[lang]['@graph'].map(node => node['@type'] === 'WebSite'
+    ? {...node, inLanguage: lang, description: dictionary(lang).metadata.lab.description}
+    : node['@type'] === 'SoftwareApplication'
+      ? {...node, description: meta.description}
+      : node),
+} : undefined;
+---
+<title>{meta.title}</title>
+<meta name="description" content={meta.description} />
+<link rel="canonical" href={url} />
+{locales.map(l=><link rel="alternate" hreflang={l} href={new URL(route(l,page),base)} />)}
+<link rel="alternate" hreflang="x-default" href={new URL(route('en',page),base)} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={meta.title} /><meta property="og:description" content={meta.description} />
+<meta property="og:url" content={url} /><meta property="og:locale" content={localeTags[lang]} />
+{locales.filter(l=>l!==lang).map(l=><meta property="og:locale:alternate" content={localeTags[l]} />)}
+{page === 'knowledge' && <meta property="og:image" content={new URL(`/assets/og${lang==='ko'?'.ko':''}.png`,base)} />}
+<meta name="twitter:card" content={page === 'knowledge' ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={meta.title} /><meta name="twitter:description" content={meta.description} />
+
+{page === 'knowledge' && <><meta name="twitter:image" content={new URL(`/assets/og${lang==='ko'?'.ko':''}.png`,base)} /><script type="application/ld+json" set:html={JSON.stringify(knowledgeSchema).replaceAll('<','\\u003c')}></script></>}

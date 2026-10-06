@@ -1,0 +1,25 @@
+{
+  "name": "hanji-lab",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:consistency": "node tests/consistency-browser.mjs",
+    "test:tracker-hero": "node tests/tracker-hero-browser.mjs",
+    "test:controls": "node tests/controls-browser.mjs",
+    "test:theme": "node tests/theme-browser.mjs"
+  },
+  "dependencies": {
+    "astro": "7.3.5"
+  },
+  "devDependencies": {
+    "puppeteer-core": "25.7.0"
+  }
+}

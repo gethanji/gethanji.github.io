@@ -1,0 +1,44 @@
+---
+import SEO from '../components/SEO.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { dictionary } from '../data/site';
+import '../styles/tokens.css';
+import '../styles/motion.css';
+import '../styles/paper-motion.css';
+import '../styles/site-chrome.css';
+import '../styles/knowledge-compat.css';
+import '../styles/theme.css';
+const {lang,page} = Astro.props;
+const ui = dictionary(lang).ui;
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <SEO lang={lang} page={page} />
+  <link rel="icon" href="/hanji-mark.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#f9faf6" />
+  <link rel="stylesheet" href={page==='knowledge'?'/assets/knowledge-editorial.css':'/assets/lab-editorial.css'} />
+  <script is:inline>
+    (() => {
+      let choice = 'system';
+      try { const saved = localStorage.getItem('hanji-theme'); if (['light','dark','system'].includes(saved)) choice = saved; } catch {}
+      document.documentElement.dataset.themeChoice = choice;
+      document.documentElement.dataset.theme = choice === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : choice;
+    })();
+  </script>
+  <noscript><style>.media-status{position:static;background:none;border:0;padding:16px}.media-status small,.capture-tabs{display:none}.capture[hidden]{display:block}</style></noscript>
+</head>
+<body class:list={[page==='knowledge'?'knowledge-family':page==='tracker'?'tracker tracker-v3':'lab lab-v2 brand-v3']} data-product={page}>
+  <a class="skip" href="#main">{ui.skip}</a>
+  <SiteHeader lang={lang} page={page} />
+  <main id="main" class={page==='knowledge'?'wrap':undefined}><slot /></main>
+  <SiteFooter lang={lang} />
+  {page==='knowledge'?<script is:inline src="/assets/landing.js" defer></script>:<script is:inline src="/assets/lab.js" defer></script>}
+<script>import '../scripts/paper-tilt';
+ import '../scripts/theme';
+ for(const link of document.querySelectorAll<HTMLAnchorElement>('[data-quick-start]'))link.addEventListener('click',()=>document.getElementById('get-started')?.focus({preventScroll:true}));
+</script>
+</body>
+</html>

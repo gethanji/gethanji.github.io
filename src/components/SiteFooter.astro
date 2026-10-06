@@ -1,0 +1,6 @@
+---
+import { dictionary, projects, route } from '../data/site';
+const {lang} = Astro.props;
+const ui = dictionary(lang).ui;
+---
+<footer class="site-footer wrap"><div class="footer-main"><a class="brand" href={route(lang,'lab')}><img src="/hanji-mark.svg" alt="" width="24" height="28" />Hanji</a><nav aria-label={ui.footerLabel}><a href={route(lang,'lab')}>{ui.lab}</a>{projects.map(p=><a href={route(lang,p.id)}>{p.name}</a>)}</nav></div><div class="footer-end"><span>{ui.footerNote}</span><a href="#main">{ui.top}</a></div></footer>

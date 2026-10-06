@@ -1,0 +1,10 @@
+---
+import '../../styles/illustration-controls.css';
+const {copy,frames=[0,1,2,3,6]} = Astro.props;
+---
+<div class="illustration-controls" role="group" aria-label={copy.controlsLabel}>
+  <div class="illustration-steps" aria-label={copy.staticLabel}>
+    {frames.map((frame,i)=><button class="ui-control illustration-step" type="button" data-story-step={frame} aria-label={`${i+1}. ${copy.steps[i]}`} aria-pressed={frame===frames.at(-1)}><span aria-hidden="true"></span></button>)}
+  </div>
+  <div class="illustration-playback"><button class="ui-control" type="button" data-story-toggle>{copy.replay}</button><button class="ui-control" type="button" data-story-restart aria-label={copy.restart} title={copy.restart}>↺</button></div>
+</div>

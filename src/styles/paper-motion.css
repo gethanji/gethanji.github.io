@@ -1,0 +1,10 @@
+/* Knowledge's original pose, optical edges, easing and cycle are shared. */
+.mini-hanji{--paper-edge:#e0e7d9;--paper-edge-line:#c7d3c0;--paper-shadow:#23433366}
+.tracker-mini{--paper-edge:var(--color-accent-soft);--paper-edge-line:var(--color-accent-edge);--paper-shadow:#54336b55}
+:is(.mini-hanji,.tracker-mini)>:is(.mini-window,.tracker-mini-window){
+ transform:rotateY(calc(-6deg + var(--tilt-y,0deg))) rotateX(calc(4deg + var(--tilt-x,0deg))) rotateZ(1deg);
+ box-shadow:0 22px 40px -23px var(--paper-shadow),var(--edge-right,4px) var(--edge-bottom,5px) 0 var(--paper-edge),calc(var(--edge-right,4px) + 1px) calc(var(--edge-bottom,5px) + 1px) 0 var(--paper-edge-line);
+ transition:transform var(--motion-tilt) var(--ease-standard),box-shadow var(--motion-tilt) var(--ease-standard);
+}
+.mini-hanji :is(.mini-written,.mini-proposed,.mini-add,.mini-reviewed,.mini-merge,.mini-cursor,.merge-before,.merge-after),.mini-hanji .mini-add i,.mini-hanji .mini-merge:after{animation-duration:var(--motion-paper-cycle)}
+@media(prefers-reduced-motion:reduce){:is(.mini-hanji,.tracker-mini)>:is(.mini-window,.tracker-mini-window){transition:none}}

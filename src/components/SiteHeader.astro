@@ -1,0 +1,32 @@
+---
+import Chevron from './Chevron.astro';
+import { dictionary, projects, route } from '../data/site';
+import LanguagePicker from './LanguagePicker.astro';
+import ThemePicker from './ThemePicker.astro';
+const { lang, page } = Astro.props;
+const ui = dictionary(lang).ui;
+---
+<header class="family-nav site-header">
+  <div class="family-inner">
+    <a class="family-brand" href={route(lang,'lab')} aria-label={ui.homeLabel}><span><img src="/hanji-mark.svg" alt="" /></span>Hanji</a>
+    <nav class="family-shortcuts" aria-label={ui.shortcuts}>
+      {projects.map(p => <a href={route(lang,p.id)} aria-current={page === p.id ? 'page' : undefined}>{p.name}</a>)}
+    </nav>
+    <div class="family-right">
+      <a class="family-lab" href={route(lang,'lab')} aria-current={page === 'lab' ? 'page' : undefined}>{ui.lab}</a>
+      <details class="family-projects ui-disclosure" data-disclosure>
+        <summary class="ui-control">{ui.projects}<Chevron /></summary>
+        <nav class="family-menu ui-disclosure-panel" aria-label={ui.explore}>
+          <p class="family-menu-label">{ui.experiments}</p>
+          {projects.map(p => <a class="family-project-link" href={route(lang,p.id)} aria-current={page === p.id ? 'page' : undefined}><span class:list={['family-project-mark',p.id]}>ㅎ</span><span><strong>{p.name}</strong><small>{ui[p.summary]}</small></span><span class="family-current">{page === p.id ? ui.current : '↗'}</span></a>)}
+          <div class="family-menu-bottom"><a href={route(lang,'lab')}>{ui.exploreLab}</a><a href={route(lang,'lab')+'#about'}>{ui.purpose}</a></div>
+          <div class="family-preferences"><ThemePicker lang={lang} /></div>
+        </nav>
+      </details>
+      <div class="site-tools"><LanguagePicker lang={lang} page={page} /></div>
+    </div>
+  </div>
+</header>
+<script>
+  import '../scripts/site-chrome';
+</script>

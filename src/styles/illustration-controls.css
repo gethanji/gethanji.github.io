@@ -1,0 +1,10 @@
+.illustration-controls{display:flex;align-items:center;gap:var(--space-2);flex-shrink:0}.illustration-playback{display:flex;align-items:center}.illustration-controls .ui-control{font-size:10px;padding:6px;min-height:32px}.illustration-steps{display:flex;gap:0}.illustration-step.ui-control{padding:6px 4px;min-width:24px;border-radius:var(--radius-pill)}.illustration-step>span{width:4px;height:4px;display:block;background:var(--color-accent-edge);border-radius:50%}.illustration-step[aria-pressed=true]>span{background:var(--color-accent)}
+.illustration-playback .ui-control{min-width:28px}.illustration-steps{opacity:.6}
+.illustration-controls{font-family:var(--font-ui);color:var(--color-muted)}
+.illustration-controls .ui-control:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
+.illustration-controls .ui-control{border:0;border-radius:var(--radius-pill);background:transparent;color:inherit;cursor:pointer;line-height:1.3}
+.illustration-controls .ui-control:hover,.illustration-controls .ui-control[aria-pressed=true]{background:var(--color-accent-soft);color:var(--color-accent)}
+/* Stage dots are interactive controls, so retain contrast in the light theme. */
+.illustration-steps{opacity:1}
+.illustration-step>span{background:var(--color-muted)}
+.illustration-step[aria-pressed=true]>span{background:var(--color-accent)}

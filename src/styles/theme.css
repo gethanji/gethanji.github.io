@@ -1,0 +1,33 @@
+/* Theme state is shared; Knowledge's editorial dark palette stays in its
+   preserved stylesheet. These rules cover shared chrome and the newer pages. */
+html[data-theme=light]{color-scheme:light}
+html[data-theme=dark]{color-scheme:dark}
+.theme-row input{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.theme-row:has(input:checked){background:var(--color-accent-soft);color:var(--color-accent)}
+.theme-row:has(input:focus-visible){outline:2px solid var(--color-accent);outline-offset:-3px}
+/* The Knowledge vignette and its product mockup intentionally remain paper. */
+.mini-window,.product-stage .workspace{color-scheme:light}
+
+html[data-theme=dark] body{--shadow-menu:0 14px 45px #0006;--shadow-paper:0 20px 35px -24px #0009}
+html[data-theme=dark] .family-project-mark{background:#293b2d;color:#a7c9a5}
+html[data-theme=dark] .family-project-mark.tracker{background:#34243f;color:#ceaceb}
+html[data-theme=dark] .illustration-steps{opacity:1}
+html[data-theme=dark] .illustration-step>span{background:var(--color-muted)}
+html[data-theme=dark] .illustration-step[aria-pressed=true]>span{background:var(--color-accent)}
+
+html[data-theme=dark] :is([data-product=lab],[data-product=tracker]){--color-on-accent:#17221c}
+html[data-theme=dark] [data-product=tracker]{--color-on-accent:#21132b;--color-builder:#d8b088}
+html[data-theme=dark] :is([data-product=lab],[data-product=tracker]) ::selection{background:var(--color-accent);color:var(--color-on-accent)}
+html[data-theme=dark] :is([data-product=lab],[data-product=tracker]) .button{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-on-accent)}
+html[data-theme=dark] :is([data-product=lab],[data-product=tracker]) .button:hover{background:var(--color-text);border-color:var(--color-text);color:var(--color-on-accent)}
+html[data-theme=dark] :is([data-product=lab],[data-product=tracker]) .skip{background:var(--color-accent);color:var(--color-on-accent)}
+
+
+html[data-theme=dark] .tracker-v3 .hero .overline{color:var(--color-accent)}
+html[data-theme=dark] .capture{background:var(--color-panel);border-color:var(--color-border)}
+html[data-theme=dark] .capture img{border-color:var(--color-accent-edge);box-shadow:0 4px 14px #0004}
+html[data-theme=dark] .capture-tabs [aria-selected=true]{background:var(--color-accent-soft);border-color:var(--color-accent-edge);color:var(--color-accent)}
+html[data-theme=dark] .tm-pointer>span,html[data-theme=dark] .tm-cursor>span{color:var(--color-on-accent)}
+html[data-theme=dark] .tm-builder-1{color:var(--color-builder)}
+html[data-theme=dark] .tm-builder-1>span{background:var(--color-builder)}
+html[data-theme=dark] .tm-canvas,html[data-theme=dark] .tm-task-chat,html[data-theme=dark] .tm-conductor-chat{box-shadow:0 3px 0 var(--color-accent-soft),0 10px 25px #0005}

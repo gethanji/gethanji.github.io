@@ -1,0 +1,12 @@
+---
+import Chevron from './Chevron.astro';
+import { dictionary } from '../data/site';
+const { lang } = Astro.props;
+const t = dictionary(lang).ui.theme;
+---
+<details class="picker theme-picker ui-disclosure" data-disclosure>
+  <summary class="ui-control">{t.label}<Chevron /></summary>
+  <div class="lang-menu theme-menu ui-disclosure-panel">
+    {['light', 'dark', 'system'].map(mode => <label class="lang-option theme-row"><input type="radio" name="theme" value={mode} checked={mode === 'system'} /><span>{t[mode]}</span></label>)}
+  </div>
+</details>

@@ -1,1 +1,12 @@
 .DS_Store
+node_modules/
+dist/
+.astro/
+test-results/
+# Historical local prototype exclusions must not hide canonical locale output.
+!/src/
+!/public/
+
+# Local agent state and working notes are not website source.
+.codex/
+notes/

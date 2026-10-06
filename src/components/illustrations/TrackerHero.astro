@@ -1,0 +1,102 @@
+---
+import {dictionary} from '../../data/site';
+import StoryControls from './StoryControls.astro';
+import '../../styles/illustration.css';
+const {lang} = Astro.props;
+const t=dictionary(lang).story,c=t.canvasHero;
+const tasks=[{title:c.outline,ask:c.ask2,reply:c.reply2},{title:c.invitation,ask:c.ask0,reply:c.reply0},{title:c.feedback,ask:c.ask1,reply:c.reply1},{title:c.publish,ask:c.ask3,reply:c.reply3}];
+---
+<figure class="tracker-mini illustration" id="canvas" data-stage="done" data-focus="canvas" aria-label={c.label}>
+ <script type="application/json" data-story-copy set:html={JSON.stringify(t).replaceAll('<','\\u003c')}></script>
+ <div class="tracker-mini-window">
+  <div class="tm-conductor-chat" aria-label={c.conductor}>
+   <header><img src="/hanji-mark.svg" alt=""/><span>{c.conductor}</span><i aria-hidden="true">✳</i></header>
+   <div class="tm-user-message"><small>Ada</small><p>{c.request}</p></div>
+   <div class="tm-conductor-reply"><small>{c.conductor}</small><p>{c.response}</p></div>
+  </div>
+  <div class="tm-canvas">
+   <div class="tm-chrome"><span><img src="/hanji-mark.svg" alt=""/>Tracker</span><span>{t.canvas}</span></div>
+   <div class="tm-project">
+    <div class="tm-project-label"><span>Fieldnotes</span><small>Fieldnotes / 01</small></div>
+    <svg class="tm-flow" viewBox="0 0 500 170" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="flow-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L6 4 L1 7"/></marker></defs>{[[0,1],[0,2],[1,3],[2,3]].map(([a,b])=><path class="tm-flow-edge" data-from={a} data-to={b} marker-end="url(#flow-arrow)"/>)}</svg>
+    <div class="tm-task-cards">{tasks.map((task,i)=><button type="button" class="tm-card" data-card={i} data-state="review" data-reviewed={String(i===1)} aria-expanded={i===1} aria-controls={`task-chat-${i}`} disabled><small><span class="tm-node-dot"></span>0{i+1}<span class="tm-card-check" aria-hidden="true">✓</span></small><b>{task.title}</b><span class="tm-card-result">{c.result}</span></button>)}</div>
+    {['Claude','Codex','Ada'].map((name,i)=><span class:list={['tm-pointer',i===2?'tm-cursor':`tm-builder tm-builder-${i}`]} aria-hidden="true"><svg viewBox="0 0 18 22"><path d="M2 2 15 13 9 14 6 20Z" fill="currentColor" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg><span>{name}</span></span>)}
+   </div>
+  </div>
+  <svg class="tm-links" aria-hidden="true"><path/></svg>
+  <div class="tm-chat-slot">
+   {tasks.map((task,i)=><section class="tm-task-chat" id={`task-chat-${i}`} data-task-chat={i} hidden={i!==1} aria-labelledby={`task-chat-title-${i}`}>
+    <header><h3 id={`task-chat-title-${i}`} tabindex="-1">LAB-{i+1} · {task.title}</h3><button type="button" data-close-task aria-label={c.close}>×</button></header>
+    <div class="tm-task-ask"><small>Ada</small><p>{task.ask}</p></div>
+    <div class="tm-task-reply"><small>Claude ✳</small><p>“{task.reply}”</p><span class="tm-complete">✓ {c.result}</span></div>
+   </section>)}
+  </div>
+ </div>
+ <figcaption><span>{c.caption}<small>{c.label}</small></span><StoryControls copy={t}/></figcaption>
+ <ol class="illustration-summary">{t.story.map(line=><li>{line}</li>)}</ol>
+</figure>
+<script>
+ import {timeline,motionTrack} from '../../scripts/timeline';
+ for(const root of document.querySelectorAll<HTMLElement>('.tracker-mini')){
+  const t=JSON.parse(root.querySelector('[data-story-copy]')!.textContent!);
+  const q=(s:string)=>root.querySelector<HTMLElement>(s)!;
+  const total=14000,easing=getComputedStyle(root).getPropertyValue('--ease-standard').trim();
+  const cards=[...root.querySelectorAll<HTMLButtonElement>('[data-card]')],panels=[...root.querySelectorAll<HTMLElement>('[data-task-chat]')];
+  let selected=1;
+  const project=q('.tm-project'),scene=q('.tracker-mini-window'),svg=scene.querySelector<SVGSVGElement>('.tm-links')!,edge=svg.querySelector('path')!,slot=q('.tm-chat-slot');
+  function point(el:HTMLElement){let x=0,y=0;for(let n:HTMLElement|null=el;n&&n!==scene;n=n.offsetParent as HTMLElement|null){x+=n.offsetLeft;y+=n.offsetTop;}return{x,y};}
+  function connect(){
+   svg.setAttribute('viewBox',`0 0 ${scene.clientWidth} ${scene.clientHeight}`);
+   const flow=project.querySelector<SVGSVGElement>('.tm-flow')!;
+   flow.setAttribute('viewBox',`0 0 ${project.clientWidth} ${project.clientHeight}`);
+   flow.querySelectorAll<SVGPathElement>('.tm-flow-edge').forEach(path=>{
+    const a=cards[Number(path.dataset.from)],b=cards[Number(path.dataset.to)],x1=a.offsetLeft+a.offsetWidth+2,y1=a.offsetTop+a.offsetHeight/2,x2=b.offsetLeft-4,y2=b.offsetTop+b.offsetHeight/2;
+    path.setAttribute('d',`M${x1} ${y1} C${(x1+x2)/2} ${y1} ${(x1+x2)/2} ${y2} ${x2} ${y2}`);
+   });
+   if(selected<0){edge.setAttribute('d','');return;}
+   const card=cards[selected],from=point(card),to=point(slot),x=from.x+card.offsetWidth/2,y=from.y,endX=to.x+15,endY=to.y+slot.offsetHeight;
+   edge.setAttribute('d',`M${x} ${y} C${x} ${y-15} ${endX} ${endY+12} ${endX} ${endY}`);
+  }
+  function select(next:number,focus=false){
+   selected=next;root.dataset.selected=String(next);
+   cards.forEach((card,i)=>card.setAttribute('aria-expanded',String(i===next)));
+   panels.forEach((panel,i)=>panel.hidden=i!==next);connect();
+   if(focus&&next>=0)panels[next].querySelector<HTMLElement>('h3')!.focus({preventScroll:true});
+  }
+  const resize=new ResizeObserver(connect);[scene,project,...cards,slot].forEach(el=>resize.observe(el));
+  const tracks:Animation[]=[];
+  function reveal(el:Element,start:number,duration=650){tracks.push(motionTrack(el,[{at:0,opacity:0,transform:'translateY(4px)'},{at:start,opacity:0,transform:'translateY(4px)'},{at:start+duration,opacity:1,transform:'translateY(0)'},{at:total,opacity:1,transform:'translateY(0)'}],total,easing));}
+  reveal(q('.tm-flow'),4900);
+  root.querySelectorAll('.tm-builder').forEach((el,i)=>tracks.push(motionTrack(el,[{at:0,opacity:0,left:'50%',top:'18%'},{at:3100+i*250,opacity:0,left:'50%',top:'18%'},{at:3900+i*250,opacity:1,left:i?'77%':'24%',top:i?'62%':'45%'},{at:4900+i*250,opacity:1,left:i?'78%':'25%',top:i?'64%':'47%'},{at:5600,opacity:0,left:i?'78%':'25%',top:i?'64%':'47%'},{at:total,opacity:0,left:i?'78%':'25%',top:i?'64%':'47%'}],total,easing)));
+  tracks.push(motionTrack(q('.tm-cursor'),[{at:0,opacity:0,left:'15%',top:'72%'},{at:5100,opacity:0,left:'15%',top:'72%'},{at:5900,opacity:1,left:'47%',top:'18%'},{at:6800,opacity:1,left:'48%',top:'20%'},{at:7300,opacity:0,left:'49%',top:'21%'},{at:total,opacity:0,left:'49%',top:'21%'}],total,easing));
+  reveal(q('.tm-conductor-reply'),1200);reveal(project,2400);cards.forEach((card,i)=>reveal(card,4400+i*250));
+  panels.forEach(panel=>reveal(panel.querySelector('.tm-task-reply')!,9200));
+  cards.forEach(card=>reveal(card.querySelector('.tm-card-result')!,11600));
+  root.querySelectorAll('.tm-complete').forEach(el=>reveal(el,11600,300));
+  const steps=[...root.querySelectorAll<HTMLButtonElement>('[data-story-step]')],frames=['request','project','cards','work','work','work','done'];
+  const control=timeline(root,[2200,2200,2400,2400,2400,2400,0],n=>{
+   root.dataset.stage=frames[n];root.dataset.context=n<3?'workspace':'task';root.dataset.focus=n===0?'chat':n===3||n===4?'task':'canvas';
+   cards.forEach((card,i)=>{card.disabled=n<2;card.dataset.reviewed=String(i===1&&n>=5);});select(n<3?-1:1);
+   steps.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.storyStep)===(n>=3&&n<=5?3:n))));
+  },(running,n,resumed)=>{const button=q('[data-story-toggle]'),text=running?t.pause:n===6?t.replay:resumed?t.resume:t.play;if(button.textContent!==text)button.textContent=text;button.setAttribute('aria-pressed',String(running));},tracks,{loop:true,hold:2400});
+  cards.forEach((card,i)=>card.addEventListener('click',()=>{control.choose(6);cards.forEach((c,j)=>c.dataset.reviewed=String(i===j));select(i,true);root.dataset.focus='task';}));
+  // Keep keyboard targets present while someone explores the canvas. Playback
+  // controls remain explicit commands, so focusing Pause must not toggle twice.
+  root.addEventListener('focusin',event=>{
+   const target=event.target as Element;
+   if(!target.closest('[data-card],[data-task-chat]'))return;
+   control.pause();
+   // A card can receive Tab while its entrance is still transparent. Settle
+   // the canvas before pausing, without opening an unrelated task window.
+   if(target.closest('[data-card]')&&Number(root.dataset.playhead)<6800){
+    control.choose(3);select(-1);root.dataset.focus='canvas';
+   }
+  });
+  function dismiss(){const previous=selected;control.pause();select(-1);root.dataset.focus='canvas';if(previous>=0)cards[previous].focus({preventScroll:true});}
+  root.querySelectorAll('[data-close-task]').forEach(button=>button.addEventListener('click',dismiss));
+  root.addEventListener('keydown',e=>{if(e.key==='Escape'&&selected>=0){e.preventDefault();dismiss();}});
+  steps.forEach(b=>b.addEventListener('click',()=>{control.choose(Number(b.dataset.storyStep),700);select(Number(b.dataset.storyStep)<3?-1:1);}));
+  q('[data-story-toggle]').addEventListener('click',control.toggle);
+  q('[data-story-restart]').addEventListener('click',()=>{control.choose(0);select(-1);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)control.play();else{control.choose(6);select(1);}});
+ }
+</script>

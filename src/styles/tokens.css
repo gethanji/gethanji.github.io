@@ -1,0 +1,25 @@
+/* Shared contract. Product variants change accents, never component structure. */
+:root {
+  --font-chrome: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-ui: DM, 'DM Sans', Arial, sans-serif;
+  --font-editorial: Newsreader, Georgia, serif;
+  --font-code: ui-monospace, SFMono-Regular, monospace;
+  --text-control: .75rem; --text-caption: .6875rem; --text-small: .8125rem; --text-body: 1rem;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --radius-small: 5px; --radius-control: 8px; --radius-panel: 16px; --radius-pill: 999px;
+  --color-surface: #fafaf7; --color-panel: #fffefb; --color-text: #263b35;
+  --color-muted: #626f66; --color-border: #dbe0d5;
+  --color-accent: #326d56; --color-accent-soft: #e7eee0; --color-accent-edge: #c8d9be;
+  --shadow-menu: 0 14px 45px #26352f16;
+  --shadow-paper: 0 20px 35px -24px #28362b66;
+  --focus-ring: 0 0 0 3px var(--color-accent-soft);
+}
+[data-product=knowledge] { --color-accent:#285d46; --color-accent-soft:#e6efdd; --color-accent-edge:#c7d3c0; }
+[data-product=lab] { --color-surface:#f8f7f4; --color-panel:#fffefa; --color-text:#343330; --color-muted:#6b6862; --color-border:#dedbd5; --color-accent:#605c55; --color-accent-soft:#eeece7; --color-accent-edge:#c8c3b9; }
+[data-product=tracker] { --color-surface:#faf7fd; --color-panel:#fffaff; --color-text:#44314e; --color-muted:#705c79; --color-border:#e3d9e9; --color-accent:#785099; --color-accent-soft:#eee4f6; --color-accent-edge:#d6c3e5; }
+html[data-theme=dark] [data-product=knowledge] { --color-surface:#17221c; --color-panel:#1d2a23; --color-text:#e2e9de; --color-muted:#a0b19f; --color-border:#354a3a; --color-accent:#a7c9a5; --color-accent-soft:#293b2d; --color-accent-edge:#4d6c51; }
+html[data-theme=dark] [data-product=lab] { --color-surface:#1b1a19; --color-panel:#252422; --color-text:#ebe9e4; --color-muted:#bcb8af; --color-border:#49463f; --color-accent:#cdc7bc; --color-accent-soft:#33312d; --color-accent-edge:#898277; }
+html[data-theme=dark] [data-product=tracker] { --color-surface:#18141d; --color-panel:#241d2d; --color-text:#efe7f4; --color-muted:#beacc9; --color-border:#51425c; --color-accent:#ceaceb; --color-accent-soft:#34243f; --color-accent-edge:#9576a9; }
+/* Bridge the retained editorial CSS to shared semantic values. */
+body[data-product=lab],body[data-product=tracker]{--paper:var(--color-surface);--ink:var(--color-text);--muted:var(--color-muted);--line:var(--color-border);--accent:var(--color-accent);--wash:var(--color-accent-soft);--sans:var(--font-ui);--serif:var(--font-editorial)}

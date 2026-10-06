@@ -1,0 +1,49 @@
+name: Build or publish Pages
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Publish this revision to hanji.ink
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - run: npm test
+      - name: Verify separate handbook boundary
+        run: test ! -e dist/docs
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    if: inputs.deploy && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+# Manual deployment only. GitHub Pages must first be configured for Actions.
+# Domain registration is a separate Pages setting; this workflow never edits DNS.
+# gethanji/docs owns /docs/. Never copy or replace that separate project export.

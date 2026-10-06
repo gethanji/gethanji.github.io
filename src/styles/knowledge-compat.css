@@ -1,0 +1,14 @@
+.knowledge-family .reveal.waiting{opacity:1;transform:none}.knowledge-family .mini-written.line-one{animation-name:family-line-one}.knowledge-family .mini-written.line-two{animation-name:family-line-two}.knowledge-family .mini-proposed{animation-name:family-proposal}.knowledge-family .mini-add{animation:none;clip-path:none}.knowledge-family .mini-written{clip-path:none}@keyframes family-line-one{0%,5%{opacity:.55}17%,94%{opacity:1}100%{opacity:.55}}@keyframes family-line-two{0%,14%{opacity:.55}26%,94%{opacity:1}100%{opacity:.55}}@keyframes family-proposal{0%,28%{opacity:.5;transform:none;background:#eef2e9}33%,82%{opacity:1;transform:none;background:#e6efdd}86%,100%{opacity:.8;transform:none;background:#f2f5eb}}
+@media(prefers-reduced-motion:reduce){.knowledge-family .mini-written,.knowledge-family .mini-proposed{opacity:1;clip-path:none}}
+/* Keep small labels readable while preserving the original paper and motion. */
+.knowledge-family .mini-crumb{color:#61705a}
+.knowledge-family .mini-add{color:#20523d}
+.knowledge-family .product-stage .side-label{color:#5d6a56}
+.knowledge-family .identity-picker button small{opacity:1}
+@media(prefers-reduced-motion:reduce){
+ .knowledge-family .mini-cursor,.knowledge-family .mini-cursor small{opacity:1!important}
+}
+/* Keep the illustration controls in view on short desktop screens. */
+@media(min-width:1101px){
+ .knowledge-family .hero-intro{padding-top:clamp(28px,calc(100svh - 692px),56px)}
+}
