@@ -10,8 +10,10 @@ html{scroll-padding-top:100px}
 .family-brand img{width:16px;height:18px;display:block}
 .family-shortcuts{display:flex;align-items:center;gap:26px;height:100%;font-size:13px}
 .family-shortcuts a{display:flex;align-items:center;height:100%;position:relative}
-.family-shortcuts a:hover{text-decoration:underline;text-underline-offset:5px}
-.family-shortcuts [aria-current=page]:after{content:'';height:2px;background:currentColor;position:absolute;bottom:-1px;left:0;right:0}
+.family-shortcuts a:after{content:'';height:2px;background:currentColor;position:absolute;bottom:-1px;left:0;right:0;opacity:0;transform:scaleX(.65);transition:opacity 140ms ease,transform 140ms ease}
+.family-shortcuts [aria-current=page]:after{opacity:1;transform:scaleX(1)}
+@media(hover:hover){.family-shortcuts a:not([aria-current=page]):hover:after{opacity:.4;transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.family-shortcuts a:after{transition:none}}
 .family-right{display:flex;align-items:center;margin-left:auto;gap:4px}
 .ui-disclosure{position:relative}
 .site-header details{border:0;margin:0;padding:0}
