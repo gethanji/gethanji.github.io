@@ -15,7 +15,7 @@ const p=await browser.newPage();const errors=[],missing=[];
 p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.url().startsWith(origin)&&r.status()>=400)missing.push(r.url());});
 const go=route=>p.goto(origin+route,{waitUntil:'load'}),wait=ms=>new Promise(r=>setTimeout(r,ms));
 const langs=['en','ko','de','ja','fr'],pages=['lab','knowledge','tracker'];
-const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page}/`;
+const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page==='knowledge'?'write':'work'}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page==='knowledge'?'write':'work'}/`;
 const out=process.env.QA_OUTPUT||'test-results';mkdirSync(out,{recursive:true});
 const choose=async mode=>{
  if(!await p.$eval('.theme-picker',e=>e.open))await p.click('.theme-picker summary');
@@ -48,7 +48,7 @@ try{
   console.log(width,l,product,'system, manual override, keyboard and menu bounds pass (dark contrast checked for lab/Tracker)');
  }}
  await p.setViewport({width:1366,height:768});await go('/');await choose('dark');await p.keyboard.press('Escape');await p.keyboard.press('Escape');
- for(const [selector,destination] of [['.family-shortcuts a[href="/projects/tracker/"]','/projects/tracker/'],['.family-shortcuts a[href="/projects/knowledge/"]','/projects/knowledge/'],['.family-brand','/']]){await navigateClick(p,selector);assert.equal(new URL(p.url()).pathname,destination);assert.deepEqual(await state(),expected('dark','dark'));}
+ for(const [selector,destination] of [['.family-shortcuts a[href="/projects/work/"]','/projects/work/'],['.family-shortcuts a[href="/projects/write/"]','/projects/write/'],['.family-brand','/']]){await navigateClick(p,selector);assert.equal(new URL(p.url()).pathname,destination);assert.deepEqual(await state(),expected('dark','dark'));}
  await p.click('.lang-picker summary');await navigateClick(p,'.lang-picker a[lang=ko]');assert.deepEqual(await state(),expected('dark','dark'));await p.reload({waitUntil:'load'});assert.deepEqual(await state(),expected('dark','dark'));
  await p.emulateMediaFeatures([{name:'prefers-color-scheme',value:'light'}]);assert.deepEqual(await state(),expected('dark','dark'));
  const tab=await browser.newPage();await tab.goto(origin);await tab.evaluate(()=>localStorage.setItem('hanji-theme','light'));await p.waitForFunction(()=>document.documentElement.dataset.theme==='light');await tab.evaluate(()=>localStorage.removeItem('hanji-theme'));await p.waitForFunction(()=>document.documentElement.dataset.themeChoice==='system');await tab.close();console.log('Choice persists through real page/language navigation and reload; manual beats system; tabs stay in sync');

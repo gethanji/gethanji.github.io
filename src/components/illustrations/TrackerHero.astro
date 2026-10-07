@@ -1,5 +1,5 @@
 ---
-import {dictionary} from '../../data/site';
+import {dictionary, projects} from '../../data/site';
 import StoryControls from './StoryControls.astro';
 const {lang} = Astro.props;
 const t=dictionary(lang).story,c=t.canvasHero;
@@ -14,7 +14,7 @@ const tasks=[{title:c.outline,ask:c.ask2,reply:c.reply2},{title:c.invitation,ask
    <div class="tm-conductor-reply"><small>{c.conductor}</small><p>{c.response}</p></div>
   </div>
   <div class="tm-canvas">
-   <div class="tm-chrome"><span><img src="/hanji-mark.svg" alt=""/>Tracker</span><span>{t.canvas}</span></div>
+   <div class="tm-chrome"><span><img src="/hanji-mark.svg" alt=""/>{projects.find(p=>p.id==='tracker')!.name}</span><span>{t.canvas}</span></div>
    <div class="tm-project">
     <div class="tm-project-label"><span>Fieldnotes</span><small>Fieldnotes / 01</small></div>
     <svg class="tm-flow" viewBox="0 0 500 170" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="flow-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L6 4 L1 7"/></marker></defs>{[[0,1],[0,2],[1,3],[2,3]].map(([a,b])=><path class="tm-flow-edge" data-from={a} data-to={b} marker-end="url(#flow-arrow)"/>)}</svg>

@@ -3,14 +3,15 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import LabContent from '../components/pages/LabContent.astro';
 import KnowledgeContent from '../components/pages/KnowledgeContent.astro';
 import TrackerContent from '../components/pages/TrackerContent.astro';
-import { canonicalRoutes, locales, route, languages } from '../data/site';
+import { canonicalRoutes, legacyRoutes, projects, route, languages } from '../data/site';
 export function getStaticPaths(){return [
  ...canonicalRoutes.map(({lang,page,path})=>({params:{path:path.slice(1,-1)||undefined},props:{lang,page,alias:false}})),
- ...locales.map(lang=>({params:{path:lang},props:{lang,page:'knowledge',alias:true}})),
+ ...legacyRoutes.map(({lang,page,path})=>({params:{path:path.slice(1,-1)},props:{lang,page,alias:true}})),
 ];}
 const {lang,page,alias}=Astro.props;
 const Page = {lab:LabContent, knowledge:KnowledgeContent,tracker:TrackerContent}[page];
-const destination=route(lang,'knowledge');
+const destination=route(lang,page);
+const productName=projects.find(p=>p.id===page)?.name;
 ---
-{alias ? <html lang={lang}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Hanji Knowledge</title><meta name="robots" content="noindex"/><link rel="canonical" href={new URL(destination,Astro.site)}/></head><body><a id="legacy-destination" href={destination}>Hanji Knowledge · {languages[lang]} →</a><script is:inline>const a=document.getElementById('legacy-destination');location.replace(a.getAttribute('href')+location.search+location.hash);</script></body></html>
+{alias ? <html lang={lang}><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Hanji {productName}</title><meta name="robots" content="noindex"/><link rel="canonical" href={new URL(destination,Astro.site)}/></head><body><a id="legacy-destination" href={destination}>Hanji {productName} · {languages[lang]} →</a><script is:inline>const a=document.getElementById('legacy-destination');location.replace(a.getAttribute('href')+location.search+location.hash);</script></body></html>
  : <SiteLayout lang={lang} page={page}><Page lang={lang}/></SiteLayout>}

@@ -14,7 +14,7 @@ const p=await browser.newPage();const errors=[],missing=[];
 p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.url().startsWith(origin)&&r.status()>=400)missing.push(r.url());});
 const go=route=>p.goto(origin+route,{waitUntil:'load'}),wait=ms=>new Promise(r=>setTimeout(r,ms));
 const langs=['en','ko','de','ja','fr'],pages=['lab','knowledge','tracker'];
-const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page}/`;
+const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page==='knowledge'?'write':'work'}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page==='knowledge'?'write':'work'}/`;
 const out=process.env.QA_OUTPUT||'test-results';mkdirSync(out,{recursive:true});
 await p.setCacheEnabled(false);
 await p.setRequestInterception(true);

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync,readdirSync} from 'node:fs';
 const langs=['en','ko','de','ja','fr'], pages=['lab','knowledge','tracker'];
-const route=(l,p)=>l==='en'?(p==='lab'?'/':`/projects/${p}/`):p==='lab'?`/${l}/lab/`:`/${l}/projects/${p}/`;
+const route=(l,p)=>l==='en'?(p==='lab'?'/':`/projects/${p==='knowledge'?'write':'work'}/`):p==='lab'?`/${l}/lab/`:`/${l}/projects/${p==='knowledge'?'write':'work'}/`;
 const read=p=>readFileSync(p,'utf8');
 const dictionaries=Object.fromEntries(langs.map(l=>[l,JSON.parse(read(`src/data/locales/${l}.json`))]));
 function keys(object,prefix=''){return Object.entries(object).flatMap(([k,v])=>v&&typeof v==='object'?keys(v,prefix+k+'.'):[prefix+k]).sort();}
@@ -30,4 +30,21 @@ test('Knowledge script changes are limited to shared tilt extraction, shared pic
  start=expected.indexOf(" if('IntersectionObserver' in window){");end=expected.indexOf(" const progress=document.createElement('div');",start);
  expected=expected.slice(0,start)+' // Shared page-motion.ts owns editorial reveals on every page.\n'+expected.slice(end);
  assert.equal(read('public/assets/landing.js'),expected);
+});
+
+test('renamed project routes preserve every old project link and publish only canonical URLs',()=>{
+ const sitemap=read('dist/sitemap.xml');
+ for(const lang of langs)for(const [id,name] of [['knowledge','Write'],['tracker','Work']]){
+  const destination=route(lang,id),oldPath=`${lang==='en'?'':`/${lang}`}/projects/${id}/`;
+  const alias=read(`dist${oldPath}index.html`),html=read(`dist${destination}index.html`);
+  assert(alias.includes(`rel="canonical" href="https://hanji.ink${destination}"`));
+  assert(alias.includes(`id="legacy-destination" href="${destination}"`));
+  assert(alias.includes('location.search+location.hash'));
+  assert(alias.includes('content="noindex"'));
+  assert(!sitemap.includes(`<loc>https://hanji.ink${oldPath}</loc>`));
+  assert(sitemap.includes(`<loc>https://hanji.ink${destination}</loc>`));
+  assert(html.includes(`<title>Hanji ${name} —`));
+  assert(!/href="[^" ]*\/projects\/(knowledge|tracker)\//.test(html));
+  assert(!html.includes('Hanji Knowledge')&&!html.includes('Hanji Tracker'));
+ }
 });

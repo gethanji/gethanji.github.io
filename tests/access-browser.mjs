@@ -14,7 +14,7 @@ const p=await browser.newPage();const errors=[],missing=[];
 p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.url().startsWith(origin)&&r.status()>=400)missing.push(r.url());});
 const go=route=>p.goto(origin+route,{waitUntil:'load'}),wait=ms=>new Promise(r=>setTimeout(r,ms));
 const langs=['en','ko','de','ja','fr'],pages=['lab','knowledge','tracker'];
-const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page}/`;
+const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page==='knowledge'?'write':'work'}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page==='knowledge'?'write':'work'}/`;
 const out=process.env.QA_OUTPUT||'test-results';mkdirSync(out,{recursive:true});
 try {
  await p.setRequestInterception(true);
@@ -39,7 +39,7 @@ try {
    }else{
     const url=new URL(await p.$eval('[data-access-request]',a=>a.href));
     assert.equal(url.origin+url.pathname,'https://formsubmit.co/el/xuriwu');
-    assert.equal(url.searchParams.get('subject'),'Hanji Tracker access request');
+    assert.equal(url.searchParams.get('subject'),'Hanji Work access request');
    }
    assert(!await p.$eval('.setup-notes',e=>e.open));
    await p.click('[data-quick-start]');assert.equal(await p.evaluate(()=>document.activeElement.id),'get-started');
@@ -49,15 +49,15 @@ try {
    await p.click('.setup-notes summary');assert(await p.$eval('.setup-notes',e=>e.open));
   }
  }
- await go('/projects/knowledge/');
+ await go('/projects/write/');
  assert.equal(await p.$eval('[data-access-form]',f=>f.dataset.ready),'true');
  await p.$eval('[data-access-form]',f=>f.scrollIntoView({behavior:'instant',block:'center'}));
  await p.click('.access-form button');assert.equal(posts.length,0,'Empty form never submits');
  await p.type('[name=name]','Test visitor');await p.type('.access-form [name=email]','visitor@example.test');await p.type('[name=message]','I would like to review agent notes with my team.');
  mode='provider-error';await p.click('.access-form button');await p.waitForSelector('.access-result[data-state=error]');assert.equal(await p.$eval('[name=message]',e=>e.value),'I would like to review agent notes with my team.');assert(!await p.$eval('.access-form fieldset',e=>e.disabled));
  mode='network-error';await p.click('.access-form button');await p.waitForFunction(()=>!document.querySelector('.access-form').hasAttribute('aria-busy'));assert.equal(await p.$eval('.access-result',e=>e.dataset.state),'error');
- mode='success';await p.click('.access-form button');await p.waitForSelector('.access-result[data-state=success]');assert.equal(await p.$eval('[name=message]',e=>e.value),'');assert.equal(await p.$eval('.access-result',e=>e===document.activeElement),true);assert.equal(posts.length,3);assert(posts.every(x=>x.url==='https://formsubmit.co/ajax/c4fda211bcbfbc7401fe094caee1bbc3'&&x.data.project==='Knowledge'&&x.data.email==='visitor@example.test'));
+ mode='success';await p.click('.access-form button');await p.waitForSelector('.access-result[data-state=success]');assert.equal(await p.$eval('[name=message]',e=>e.value),'');assert.equal(await p.$eval('.access-result',e=>e===document.activeElement),true);assert.equal(posts.length,3);assert(posts.every(x=>x.url==='https://formsubmit.co/ajax/c4fda211bcbfbc7401fe094caee1bbc3'&&x.data.project==='Write'&&x.data.email==='visitor@example.test'));
  await p.type('[name=name]','Bot');await p.type('.access-form [name=email]','bot@example.test');await p.type('[name=message]','This is the honeypot test message.');await p.$eval('[name=_honey]',e=>e.value='spam');await p.click('.access-form button');await wait(80);assert.equal(posts.length,3,'Honeypot never submits');
- await p.setJavaScriptEnabled(false);await go('/projects/knowledge/');assert.equal(await p.$eval('[data-access-form]',f=>f.method),'post');assert.equal(await p.$eval('[data-access-form]',f=>f.action),'https://formsubmit.co/c4fda211bcbfbc7401fe094caee1bbc3');assert(!await p.$eval('fieldset',f=>f.disabled));
+ await p.setJavaScriptEnabled(false);await go('/projects/write/');assert.equal(await p.$eval('[data-access-form]',f=>f.method),'post');assert.equal(await p.$eval('[data-access-form]',f=>f.action),'https://formsubmit.co/c4fda211bcbfbc7401fe094caee1bbc3');assert(!await p.$eval('fieldset',f=>f.disabled));
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);console.log('PASS: 15 localized inline Knowledge forms and 15 hosted Tracker access sections, setup disclosures, empty validation, retained input on errors, success reset/focus, honeypot; provider requests mocked');
 }finally{await browser.close();await new Promise(r=>server.close(r));}

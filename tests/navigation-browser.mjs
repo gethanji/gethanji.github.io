@@ -15,7 +15,7 @@ const p=await browser.newPage();const errors=[],missing=[];
 p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.url().startsWith(origin)&&r.status()>=400)missing.push(r.url());});
 const go=route=>p.goto(origin+route,{waitUntil:'load'}),wait=ms=>new Promise(r=>setTimeout(r,ms));
 const langs=['en','ko','de','ja','fr'],pages=['lab','knowledge','tracker'];
-const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page}/`;
+const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page==='knowledge'?'write':'work'}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page==='knowledge'?'write':'work'}/`;
 const out=process.env.QA_OUTPUT||'test-results';mkdirSync(out,{recursive:true});
 try {
  await p.setViewport({width:1366,height:900});
@@ -32,7 +32,7 @@ try {
   if(request.url().includes('/KnowledgeHero.')&&!held)held=request;
   else request.continue();
  });
- const loading=go('/projects/knowledge/');
+ const loading=go('/projects/write/');
  await p.waitForSelector('.mini-window');
  await p.waitForFunction(()=>document.fonts.status==='loaded');
  await wait(1000);
@@ -59,8 +59,8 @@ try {
   await ready(path);
  };
  await go('/');await ready();
- const prefetched=p.waitForResponse(r=>new URL(r.url()).pathname==='/projects/tracker/');
- await p.hover('.family-shortcuts a[href="/projects/tracker/"]');await prefetched;
+ const prefetched=p.waitForResponse(r=>new URL(r.url()).pathname==='/projects/work/');
+ await p.hover('.family-shortcuts a[href="/projects/work/"]');await prefetched;
  await p.evaluate(()=>{window.__header=document.querySelector('.site-header');window.__themeInput=document.querySelector('.theme-picker input');window.__origin=performance.timeOrigin;window.__oldScenes=[];});
  let documentRequests=0;p.on('request',r=>{if(r.isNavigationRequest()&&r.frame()===p.mainFrame())documentRequests++;});
  for(let lap=0;lap<3;lap++)for(const product of ['tracker','knowledge','lab']){
@@ -99,32 +99,42 @@ try {
   posts++;return request.respond({status:200,headers,body:JSON.stringify({success:true})});
  };p.on('request',mock);
  for(let i=0;i<2;i++){
-  await clickRoute('/projects/knowledge/');
+  await clickRoute('/projects/write/');
   await p.type('#access-knowledge-name','Navigation QA');await p.type('#access-knowledge-email','qa@example.test');await p.type('#access-knowledge-message','Testing the client navigation lifecycle.');
   await p.$eval('[data-access-form]',form=>form.requestSubmit());await p.waitForSelector('.access-result[data-state="success"]');
-  assert.equal(posts,i+1,'Exactly one mocked submission per visit');await clickRoute('/projects/tracker/');
+  assert.equal(posts,i+1,'Exactly one mocked submission per visit');await clickRoute('/projects/work/');
  }
  p.off('request',mock);await p.setRequestInterception(false);
  // A persisted header must also acquire each destination's labels and links.
- await clickRoute('/projects/knowledge/');
+ await clickRoute('/projects/write/');
  await p.click('.theme-picker summary');await p.click('.theme-row:has(input[value="dark"])');await p.keyboard.press('Escape');
- await p.click('.lang-picker summary');await clickRoute('/fr/projects/knowledge/','[data-language="fr"]');
+ await p.click('.lang-picker summary');await clickRoute('/fr/projects/write/','[data-language="fr"]');
  assert.equal(await p.$eval('html',e=>e.lang),'fr');assert.equal(await p.$eval('html',e=>e.dataset.theme),'dark');
  assert.equal(await p.$eval('.family-brand',e=>new URL(e.href).pathname),'/fr/lab/');
  assert((await p.$eval('.theme-picker summary',e=>e.getAttribute('aria-label'))).length>0);
  assert(await p.evaluate(()=>window.__header===document.querySelector('.site-header')));
- await clickRoute('/fr/projects/tracker/');
- await p.goBack();await ready('/fr/projects/knowledge/');assert.equal(new URL(p.url()).pathname,'/fr/projects/knowledge/');assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
- await p.goForward();await ready('/fr/projects/tracker/');assert.equal(new URL(p.url()).pathname,'/fr/projects/tracker/');
+ await clickRoute('/fr/projects/work/');
+ await p.goBack();await ready('/fr/projects/write/');assert.equal(new URL(p.url()).pathname,'/fr/projects/write/');assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
+ await p.goForward();await ready('/fr/projects/work/');assert.equal(new URL(p.url()).pathname,'/fr/projects/work/');
  await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
- await clickRoute('/fr/projects/knowledge/');assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
+ await clickRoute('/fr/projects/write/');assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
  assert.equal(await p.$eval('.mini-hanji',e=>e.dataset.running),'false');
  // Browser without the View Transition API still uses Astro's swap fallback.
  const fallbackContext=await browser.createBrowserContext();const fallback=await fallbackContext.newPage();await fallback.evaluateOnNewDocument(()=>{document.startViewTransition=undefined;});
  await fallback.goto(origin);await fallback.waitForFunction(()=>document.documentElement.dataset.pageReady===location.pathname);
  await fallback.evaluate(()=>window.__header=document.querySelector('.site-header'));
- await navigateClick(fallback,'.family-shortcuts a[href="/projects/knowledge/"]');
+ await navigateClick(fallback,'.family-shortcuts a[href="/projects/write/"]');
  await fallback.waitForFunction(()=>document.querySelector('.mini-hanji')?.dataset.enhanced==='true');assert(await fallback.evaluate(()=>window.__header===document.querySelector('.site-header')));await fallbackContext.close();
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
  console.log('PASS: persistent document/header/controls, product palette, one intro per visit, repeated demos, disposal, language/theme/history/reduced motion and no-View-Transition fallback');
+ // Bookmarks to former project routes retain their locale, query and section.
+ for(const lang of langs)for(const [id,slug] of [['knowledge','write'],['tracker','work']]){
+  const prefix=lang==='en'?'':`/${lang}`;
+  await go(`${prefix}/projects/${id}/?from=legacy#get-started`);
+  await ready(`${prefix}/projects/${slug}/`);
+  assert.equal(new URL(p.url()).pathname,`${prefix}/projects/${slug}/`);
+  assert(p.url().endsWith('?from=legacy#get-started'));
+  assert.deepEqual(await p.$$eval('.family-shortcuts a',nodes=>nodes.map(n=>n.textContent.trim())),['Write','Work']);
+ }
+ console.log('PASS: all ten former project URLs redirect with locale, query and fragment intact');
 }finally{await browser.close();await new Promise(r=>server.close(r));}

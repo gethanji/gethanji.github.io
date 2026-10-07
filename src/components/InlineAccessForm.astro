@@ -1,10 +1,10 @@
 ---
-import { dictionary } from '../data/site';
+import { dictionary, projects } from '../data/site';
 import { accessFormEndpoint, accessFormReady } from '../data/access';
 import '../styles/inline-access-form.css';
 const {lang,product}=Astro.props;
 const t=dictionary(lang).access.form;
-const project=product==='knowledge'?'Knowledge':'Tracker';
+const project=projects.find(p=>p.id===product)!.name;
 const prefix=`access-${product}`;
 ---
 <form class="access-form" action={accessFormEndpoint} method="post" data-access-form data-ready={String(accessFormReady)} data-sending={t.sending} data-success={t.success} data-error={t.error}>

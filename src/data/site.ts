@@ -11,17 +11,27 @@ export const localeTags = { en: 'en_US', ko: 'ko_KR', de: 'de_DE', ja: 'ja_JP', 
 const dictionaries = { en, ko, de, ja, fr };
 export const dictionary = (lang: Locale) => dictionaries[lang];
 export const projects = [
-  { id: 'knowledge', name: 'Knowledge', accent: 'celadon', summary: 'knowledgeSummary', status: 'closed-beta' },
-  { id: 'tracker', name: 'Tracker', accent: 'orchid', summary: 'trackerSummary', status: 'alpha' },
+  { id: 'knowledge', name: 'Write', slug: 'write', accent: 'celadon', summary: 'knowledgeSummary', status: 'closed-beta' },
+  { id: 'tracker', name: 'Work', slug: 'work', accent: 'orchid', summary: 'trackerSummary', status: 'alpha' },
 ] as const;
 export const pages: Page[] = ['lab', ...projects.map(p => p.id)];
 export function route(lang: Locale, page: Page) {
-  if (lang === 'en') return page === 'lab' ? '/' : `/projects/${page}/`;
-  return page === 'lab' ? `/${lang}/lab/` : `/${lang}/projects/${page}/`;
+  if (page === 'lab') return lang === 'en' ? '/' : `/${lang}/lab/`;
+  const slug = projects.find(p => p.id === page)!.slug;
+  return `${lang === 'en' ? '' : `/${lang}`}/projects/${slug}/`;
 }
 export function localHref(lang: Locale, href: string) {
   const [path, hash] = href.split('#');
-  const page = path === '/' ? 'lab' : path.includes('/knowledge/') ? 'knowledge' : 'tracker';
+  const page = path === '/' ? 'lab' : (path.includes('/write/') || path.includes('/knowledge/')) ? 'knowledge' : 'tracker';
   return route(lang, page) + (hash ? `#${hash}` : '');
 }
 export const canonicalRoutes = locales.flatMap(lang => pages.map(page => ({ lang, page, path: route(lang, page) })));
+
+// Preserve previously published project URLs and original language entry links.
+export const legacyRoutes = locales.flatMap(lang => [
+  {lang, page: 'knowledge' as Page, path: `/${lang}/`},
+  ...projects.map(project => ({
+    lang, page: project.id,
+    path: `${lang === 'en' ? '' : `/${lang}`}/projects/${project.id}/`,
+  })),
+]);

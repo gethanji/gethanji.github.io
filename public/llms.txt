@@ -1,11 +1,11 @@
 # Hanji
 
-Hanji is an experimental lab exploring the thin surface between people and agents. Its interfaces take different shapes for sharing knowledge, exchanging ideas, and coordinating work. Its mission is to make collaboration with agents clearer. Knowledge sharing was the first experiment; Tracker followed to explore managing work with agents. The projects share an AGPL-3.0-only codebase.
+Hanji is an experimental lab exploring the thin surface between people and agents. Its interfaces take different shapes for sharing knowledge, exchanging ideas, and coordinating work. Its mission is to make collaboration with agents clearer. Hanji Write is for shared knowledge; Hanji Work is for organizing tasks and moving projects forward. Knowledge sharing was the first experiment; Work followed to explore managing work with agents. The projects share an AGPL-3.0-only codebase.
 
 ## Projects
-- [Knowledge](https://hanji.ink/projects/knowledge/): Closed beta, with access by request. A Git-backed Markdown knowledge base, scoped MCP access, and human-reviewed agent proposals.
-  - [Knowledge handbook](https://gethanji.github.io/docs/): Knowledge documentation, published separately. Tracker has no handbook yet.
-- [Tracker](https://hanji.ink/projects/tracker/): Alpha, with access by request. A project tracker with file-backed issues, projects, and comments. Developer builds include Claude and Codex sessions; session state also uses a local database. Live-agent validation and public distribution are not yet complete.
+- [Write](https://hanji.ink/projects/write/): Closed beta, with access by request. A Git-backed Markdown knowledge base, scoped MCP access, and human-reviewed agent proposals.
+  - [Write handbook](https://gethanji.github.io/docs/): Write documentation, published separately. Work has no handbook yet.
+- [Work](https://hanji.ink/projects/work/): Alpha, with access by request. A project tracker with file-backed issues, projects, and comments. Developer builds include Claude and Codex sessions; session state also uses a local database. Live-agent validation and public distribution are not yet complete.
 
 ## Languages
 - [English](https://hanji.ink/)
@@ -14,4 +14,4 @@ Hanji is an experimental lab exploring the thin surface between people and agent
 - [日本語](https://hanji.ink/ja/lab/)
 - [Français](https://hanji.ink/fr/lab/)
 
-All three pages are available in the five languages listed above. English project URLs use /projects/{project}/; other languages use /{language}/projects/{project}/. Legacy /en/, /ko/, /de/, /ja/, and /fr/ redirect to the corresponding Knowledge page, preserving query and fragment. Knowledge is in closed beta and Tracker is in alpha. Neither is an unrestricted public release.
+All three pages are available in the five languages listed above. English project URLs use /projects/{project}/; other languages use /{language}/projects/{project}/. Legacy /en/, /ko/, /de/, /ja/, and /fr/ redirect to the corresponding Write page, preserving query and fragment. Former /projects/knowledge/ and /projects/tracker/ URLs, including their localized versions, redirect to Write and Work. Write is in closed beta and Work is in alpha. Neither is an unrestricted public release.

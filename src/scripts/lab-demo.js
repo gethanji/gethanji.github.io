@@ -38,7 +38,7 @@ sceneTabs.forEach((tab, index) => {
 // Preserve links to the original product sections, now on Knowledge's route.
 if (location.pathname === '/') {
   const legacy = new Set(['demo','writing','review','no-model','permissions','collaboration','compare','run','launch']);
-  if (legacy.has(location.hash.slice(1))) location.replace('/projects/knowledge/' + location.search + location.hash);
+  if (legacy.has(location.hash.slice(1))) location.replace('/projects/write/' + location.search + location.hash);
 }
 const captures=[...document.querySelectorAll('.capture-tabs [role="tab"]')];
 function selectCapture(tab){captures.forEach(b=>{const yes=b===tab;b.tabIndex=yes?0:-1;b.setAttribute('aria-selected',String(yes));document.getElementById(b.getAttribute('aria-controls')).hidden=!yes;});}

@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 test('structured metadata uses the page language and current lab/product descriptions', () => {
   for (const lang of ['en', 'ko', 'de', 'ja', 'fr']) {
     const prefix = lang === 'en' ? '' : `/${lang}`;
-    const html = readFileSync(`dist${prefix}/projects/knowledge/index.html`, 'utf8');
+    const html = readFileSync(`dist${prefix}/projects/write/index.html`, 'utf8');
     const schema = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
     const metadata = JSON.parse(readFileSync(`src/data/locales/${lang}.json`, 'utf8')).metadata;
     const website = schema['@graph'].find(node => node['@type'] === 'WebSite');
