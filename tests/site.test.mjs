@@ -16,7 +16,7 @@ test('handbook belongs to the separate docs site and never enters marketing outp
 test('non-English lab and Tracker prose has no silent English fallback',()=>{for(const l of langs.filter(l=>l!=='en'))for(const p of ['lab','tracker'])for(const [k,v] of Object.entries(dictionaries[l][p])){if(k.includes('.pre.')||k.endsWith('.href')||k.endsWith('.src'))continue;if(typeof v==='string'&&v.trim().length>60)assert.notEqual(v,dictionaries.en[p][k],`${l}.${p}.${k}`);}});
 test('original Knowledge CSS remains unchanged',()=>{const expected=JSON.parse(read('tests/fixtures/knowledge-assets.json'));return import('node:crypto').then(({createHash})=>{for(const [file,hash] of Object.entries(expected).filter(([file])=>file==='landing.css'))assert.equal(createHash('sha256').update(readFileSync('public/assets/'+file)).digest('hex'),hash);});});
 
-test('Knowledge script changes are limited to shared tilt extraction, shared picker ownership, main-only arrow enhancement, shared playback controls, and shared theme ownership',()=>{
+test('Knowledge script changes are limited to shared tilt extraction, shared picker ownership, main-only arrow enhancement, shared playback controls, shared theme ownership, and shared editorial reveals',()=>{
  let expected=read('tests/fixtures/knowledge-before-extraction.js');
  let start=expected.indexOf('// A small pointer-following tilt,'),end=expected.indexOf('/* Theme.',start);
  expected=expected.slice(0,start)+'// Paper tilt is shared by Knowledge and Tracker in src/scripts/paper-tilt.ts.\n\n'+expected.slice(end);
@@ -27,5 +27,7 @@ test('Knowledge script changes are limited to shared tilt extraction, shared pic
  expected=expected.slice(0,start)+'// Shared site-chrome.ts owns the header pickers and nested keyboard behavior.\n'+expected.slice(end);
  start=expected.indexOf('/* Theme.');end=expected.indexOf('// Shared site-chrome.ts',start);
  expected=expected.slice(0,start)+'// Shared theme.ts owns the saved Light / Dark / System preference on all pages.\n\n'+expected.slice(end);
+ start=expected.indexOf(" if('IntersectionObserver' in window){");end=expected.indexOf(" const progress=document.createElement('div');",start);
+ expected=expected.slice(0,start)+' // Shared page-motion.ts owns editorial reveals on every page.\n'+expected.slice(end);
  assert.equal(read('public/assets/landing.js'),expected);
 });

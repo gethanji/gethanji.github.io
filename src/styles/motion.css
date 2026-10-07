@@ -15,3 +15,23 @@
  html {scroll-behavior:auto!important}
  .ui-control,.site-header *,.site-footer *,.illustration *,.reliable-media>img {animation:none!important;transition:none!important}
 }
+
+/* Knowledge's soft, staggered opening is now the default for every page. */
+@keyframes editorial-reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+body[data-product] .hero-top{animation:none}
+@media(prefers-reduced-motion:no-preference){
+ html:not([data-entry-static=true]) body[data-product] .hero :is(.eyebrow,.overline){animation:editorial-reveal 650ms 50ms var(--ease-standard) both}
+ html:not([data-entry-static=true]) body[data-product] .hero h1{animation:editorial-reveal 800ms 120ms var(--ease-standard) both}
+ html:not([data-entry-static=true]) body[data-product] :is(.hero-bottom,.tracker-hero-bottom),
+ html:not([data-entry-static=true]) body[data-product=lab] .hero>.lede{animation:editorial-reveal 800ms 200ms var(--ease-standard) both}
+ html:not([data-entry-static=true]) body[data-product=lab] .hero>.actions{animation:editorial-reveal 800ms 260ms var(--ease-standard) both}
+ html:not([data-entry-static=true]) body[data-product=lab] .paper-story{animation:editorial-reveal 800ms 300ms var(--ease-standard) both}
+ body[data-product] .reveal.waiting{opacity:0;transform:translateY(18px)}
+ body[data-product] .reveal.visible{animation:editorial-reveal 750ms var(--ease-standard) both}
+ body[data-product] .reveal:focus-within,body[data-product] .reveal:target{opacity:1;transform:none;animation:none}
+}
+html[data-entry-static=true] body[data-product] .hero :is(h1,.hero-bottom){animation:none}
+@media(prefers-reduced-motion:reduce){
+ body[data-product] *,body[data-product] *::before,body[data-product] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ body[data-product] .reveal.waiting{opacity:1;transform:none}
+}

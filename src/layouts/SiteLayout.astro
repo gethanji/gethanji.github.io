@@ -3,12 +3,14 @@ import SEO from '../components/SEO.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { dictionary } from '../data/site';
+import '../styles/fonts.css';
 import '../styles/tokens.css';
 import '../styles/motion.css';
 import '../styles/paper-motion.css';
 import '../styles/site-chrome.css';
 import '../styles/knowledge-compat.css';
 import '../styles/theme.css';
+import '../styles/editorial-system.css';
 const {lang,page} = Astro.props;
 const ui = dictionary(lang).ui;
 ---
@@ -38,6 +40,7 @@ const ui = dictionary(lang).ui;
   {page==='knowledge'?<script is:inline src="/assets/landing.js" defer></script>:<script is:inline src="/assets/lab.js" defer></script>}
 <script>import '../scripts/paper-tilt';
  import '../scripts/theme';
+ import '../scripts/page-motion';
  for(const link of document.querySelectorAll<HTMLAnchorElement>('[data-quick-start]'))link.addEventListener('click',()=>document.getElementById('get-started')?.focus({preventScroll:true}));
 </script>
 </body>

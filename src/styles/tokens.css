@@ -1,7 +1,7 @@
 /* Shared contract. Product variants change accents, never component structure. */
 :root {
   --font-chrome: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-ui: DM, 'DM Sans', Arial, sans-serif;
+  --font-ui: 'DM Sans', Arial, sans-serif;
   --font-editorial: Newsreader, Georgia, serif;
   --font-code: ui-monospace, SFMono-Regular, monospace;
   --text-control: .75rem; --text-caption: .6875rem; --text-small: .8125rem; --text-body: 1rem;
@@ -23,3 +23,10 @@ html[data-theme=dark] [data-product=lab] { --color-surface:#1b1a19; --color-pane
 html[data-theme=dark] [data-product=tracker] { --color-surface:#18141d; --color-panel:#241d2d; --color-text:#efe7f4; --color-muted:#beacc9; --color-border:#51425c; --color-accent:#ceaceb; --color-accent-soft:#34243f; --color-accent-edge:#9576a9; }
 /* Bridge the retained editorial CSS to shared semantic values. */
 body[data-product=lab],body[data-product=tracker]{--paper:var(--color-surface);--ink:var(--color-text);--muted:var(--color-muted);--line:var(--color-border);--accent:var(--color-accent);--wash:var(--color-accent-soft);--sans:var(--font-ui);--serif:var(--font-editorial)}
+
+/* Common editorial rhythm, independent of a product's accent. */
+:root{--chapter-gap:104px;--header-height:81px;--hero-pad:clamp(28px,calc(100svh - 740px),56px);--button-radius:6px}
+html:lang(ko){--font-ui:'DM Sans','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--font-editorial:'Hanji Korean Serif',Georgia,serif}
+html:lang(ja){--font-ui:'DM Sans','Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif;--font-editorial:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',Georgia,serif}
+@media(max-width:700px){:root{--header-height:69px;--hero-pad:28px}}
+@media(max-width:600px){:root{--chapter-gap:64px}}

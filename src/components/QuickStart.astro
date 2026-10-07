@@ -1,4 +1,5 @@
 ---
+import LinkArrow from './LinkArrow.astro';
 import AccessForm from './AccessForm.astro';
 import {dictionary} from '../data/site';
 import '../styles/quick-start.css';
@@ -16,11 +17,11 @@ pnpm dev:tracker-web`;
  <p class="quick-start-eyebrow">{t.cta}</p><h2 id="quick-start-title">{t.title}</h2>
  <p class="quick-start-availability">{c.availability}</p>
  <AccessForm lang={lang} product={product} />
- <a class="text-link" href={product==='knowledge'?'https://gethanji.github.io/docs/':'#views'}>{c.now} <span aria-hidden="true">↗</span></a>
+ <a class="text-link" href={product==='knowledge'?'https://gethanji.github.io/docs/':'#views'}>{c.now} <LinkArrow /></a>
  <details class="setup-notes"><summary>{access.setup}</summary>
  <ol class="quick-start-steps">
   {[c.prerequisites,c.setup,c.outcome,c.agent].map((text,i)=><li><h3><span aria-hidden="true">0{i+1}</span>{t.heads[i]}</h3><p>{text}</p>{i===1&&<pre><code>{command}</code></pre>}</li>)}
  </ol>
- <a class="text-link" href={product==='knowledge'?'#run':'#status'}>{c.next} <span aria-hidden="true">↗</span></a>
+ <a class="text-link" href={product==='knowledge'?'#run':'#status'}>{c.next} <LinkArrow /></a>
  </details>
 </section>

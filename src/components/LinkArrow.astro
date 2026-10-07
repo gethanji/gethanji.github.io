@@ -1,0 +1,5 @@
+---
+const {direction='diagonal'}=Astro.props;
+const paths={diagonal:'M5 11 11 5M5 5h6v6',right:'M3 8h10M8 3l5 5-5 5',down:'M8 3v10M3 8l5 5 5-5'};
+---
+<span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d={paths[direction as keyof typeof paths]} /></svg></span>

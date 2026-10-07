@@ -245,3 +245,20 @@ prefilled in the subject. Both paths identify FormSubmit as the processor.
 Never commit a recipient email or private activation link. Recipient changes
 happen with the provider. Browser tests mock submissions and do not prove email
 delivery; delivery needs a recipient-confirmed end-to-end check.
+
+## Shared editorial system
+
+`src/styles/editorial-system.css` owns the common hero typography, dot eyebrows,
+primary and quiet buttons, text links, section headings, spacing and focus states.
+All pages load the same self-hosted fonts from `fonts.css`, including Latin
+extensions and locale-specific fallbacks. Product colors remain semantic tokens.
+`LinkArrow.astro` gives newer content the same arrow geometry as Knowledge.
+
+`page-motion.ts` and `motion.css` share the soft opening and one-time section
+reveals. Anchor navigation skips the opening; reduced motion disables effects,
+and content stays readable without JavaScript. Illustrative product timelines
+retain their independent pause, replay and focus behavior.
+
+Run `npm run test:editorial` after changing shared primitives. It compares all
+three pages across five languages and four widths, plus both themes, keyboard
+focus, anchor navigation, reduced motion and no-JavaScript reading.

@@ -151,16 +151,7 @@ reset.addEventListener('click', () => { setMerged(false); selectTab(tabs[0]); me
   bar.innerHTML='<i></i><i></i>';bars.append(bar);
  }
 
- if('IntersectionObserver' in window){
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-   if(entry.isIntersecting){entry.target.classList.remove('waiting');entry.target.classList.add('visible');observer.unobserve(entry.target);}
-  }),{threshold:.08});
-  document.querySelectorAll('.story-head,.flow,.permission-demo,.margin-demo,.activity-chart,.no-model-grid,.matrix-shell,.run-intro,.run-options,.launch-heading,.launch-form').forEach(el=>{
-   el.classList.add('reveal');
-   if(!reduceMotion.matches && el.getBoundingClientRect().top>innerHeight)el.classList.add('waiting');
-   observer.observe(el);
-  });
- }
+ // Shared page-motion.ts owns editorial reveals on every page.
  const progress=document.createElement('div');progress.className='reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
  let scheduled=false;
  const updateProgress=()=>{const range=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${range>0?Math.min(1,Math.max(0,scrollY/range)):0})`;scheduled=false;};

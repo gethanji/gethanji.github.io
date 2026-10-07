@@ -21,7 +21,6 @@ html[data-theme=dark] :is([data-product=lab],[data-product=tracker]) .button:hov
 html[data-theme=dark] :is([data-product=lab],[data-product=tracker]) .skip{background:var(--color-accent);color:var(--color-on-accent)}
 
 
-html[data-theme=dark] .tracker-v3 .hero .overline{color:var(--color-accent)}
 html[data-theme=dark] .capture{background:var(--color-panel);border-color:var(--color-border)}
 html[data-theme=dark] .capture img{border-color:var(--color-accent-edge);box-shadow:0 4px 14px #0004}
 html[data-theme=dark] .capture-tabs [aria-selected=true]{background:var(--color-accent-soft);border-color:var(--color-accent-edge);color:var(--color-accent)}
