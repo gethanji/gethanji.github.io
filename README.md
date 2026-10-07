@@ -271,12 +271,19 @@ styles are linked as hashed assets; the Tracker illustration CSS only loads on
 Tracker. Keep CSS imports in the build pipeline rather than public wrappers.
 Below-the-fold screenshots use native lazy loading, including inactive tabs.
 
-Astro prefetches same-origin destinations on hover or keyboard focus. Navigation
-uses ordinary document replacement with no page snapshots or crossfades: outgoing
-and incoming content must never overlap. The header uses the same neutral palette
-on every route in each theme. This preserves the existing scripts' document
-lifecycle without an SPA router. Language and theme are resolved in the head.
-Internal navigation, history and anchor visits skip the entrance animation.
+Astro's `ClientRouter` prefetches and swaps page content without reloading the
+document. `SiteHeader.astro` uses `transition:persist`: the navbar and its controls
+retain their DOM identity. `navigation.ts` synchronizes destination links, labels
+and active state before each swap; colors inherit the active product and theme.
+Browser snapshot animations are skipped, so old and new page content never fade
+through one another. Each forward visit gets one soft editorial intro; anchors,
+history restoration and reduced motion skip that intro.
+
+`page-lifecycle.ts` initializes each page once and tears down listeners, timers,
+observers and animation loops before a swap. Modules loaded on later visits use
+the same lifecycle, including legacy Knowledge examples and inline forms. The
+original public assets remain fixtures; the shipped demo controllers now live
+in `src/scripts`. Theme state is carried through swaps before the next paint.
 
 Knowledge reserves control geometry before initialization and pauses its CSS
 fallback at frame zero until the shared timeline takes over. Visible editorial
@@ -284,4 +291,5 @@ content is never hidden again by a late initialization. Playback labels update
 only when their state changes.
 
 Run `npm run test:navigation` for delayed script loading, a single hero entrance,
-stable control geometry, prefetch, lazy screenshot tabs, and back/forward behavior.
+stable control geometry, actual header/document persistence, repeated demos and
+mocked form submissions, locale/theme changes, history, and router fallback.

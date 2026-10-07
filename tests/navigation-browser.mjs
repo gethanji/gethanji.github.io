@@ -1,3 +1,4 @@
+import {navigateClick} from './navigation-helpers.mjs';
 import puppeteer from 'puppeteer-core';
 import assert from 'node:assert/strict';
 import {createServer} from 'node:http';
@@ -50,49 +51,80 @@ try {
  });
  await wait(450);assert((await p.evaluate(()=>window.__labelMutations))<6,'Playback does not rewrite controls every frame');
  p.removeAllListeners('request');await p.setRequestInterception(false);
- // Intent prefetch, real document navigation, controls and history still work.
- await go('/');
+
+ const ready=(path)=>p.waitForFunction(path=>(!path||location.pathname===path)&&document.documentElement.dataset.pageReady===location.pathname&&!document.documentElement.hasAttribute('data-astro-transition'),{},path);
+ const clickRoute=async(path,selector)=>{
+  await p.evaluate(()=>window.__heroStarts=[]);
+  await navigateClick(p,selector||(path==='/'?'.family-brand':`.family-shortcuts a[href="${path}"]`));
+  await ready(path);
+ };
+ await go('/');await ready();
  const prefetched=p.waitForResponse(r=>new URL(r.url()).pathname==='/projects/tracker/');
  await p.hover('.family-shortcuts a[href="/projects/tracker/"]');await prefetched;
- await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click('.family-shortcuts a[href="/projects/tracker/"]')]);
- assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none','Navigation does not replay the page entrance');
- assert.equal(await p.evaluate(()=>window.__nativeTransition),false,'Navigation must not overlay old and new page snapshots');
- await p.waitForFunction(()=>document.querySelector('.tracker-mini').dataset.running==='true');
- await p.click('[data-story-toggle]');assert.equal(await p.$eval('.tracker-mini',e=>e.dataset.running),'false');
- assert.equal(await p.$eval('#capture-panel-list img',e=>e.complete),false,'Hidden screenshots are deferred');
- await p.click('#capture-list');await p.waitForFunction(()=>document.querySelector('#capture-panel-list img').naturalWidth>0);
- await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click('.family-shortcuts a[href="/projects/knowledge/"]')]);
- assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
- await p.click('[data-story-toggle]');await p.click('[data-story-restart]');
- assert.equal(await p.$eval('.mini-hanji',e=>e.dataset.running),'true');
- await p.goBack({waitUntil:'load'});assert.equal(new URL(p.url()).pathname,'/projects/tracker/');
- await p.click('.theme-picker summary');assert(await p.$eval('.theme-picker',e=>e.open));
- await p.goForward({waitUntil:'load'});assert.equal(new URL(p.url()).pathname,'/projects/knowledge/');
- await p.click('[data-story-restart]');assert.equal(await p.$eval('.mini-hanji',e=>e.dataset.running),'true');
- // Real link clicks: header stays identical from the first rendered frame,
- // without masking the result behind a transition-settling delay.
- const header=()=>p.$eval('.site-header',e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect(),mark=getComputedStyle(e.querySelector('.family-brand>span'));return {bg:s.backgroundColor,color:s.color,border:s.borderBottomColor,height:r.height,width:r.width,mark:mark.backgroundColor};});
- for(const width of [1366,390])for(const theme of ['light','dark']){
-  await p.setViewport({width,height:900});
-  await p.evaluate(theme=>localStorage.setItem('hanji-theme',theme),theme);
-  await go('/');const expected=await header();
-  for(const path of ['/projects/knowledge/','/projects/tracker/','/']){
-   const selector=path==='/'?'.family-brand':`.family-shortcuts a[href="${path}"]`;
-   await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click(selector)]);
-   assert.equal(await p.evaluate(()=>window.__nativeTransition),false);
-   assert.deepEqual(await header(),expected,`${width}/${theme}/${path} header palette and geometry`);
-   assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
-   const frames=await p.evaluate(()=>new Promise(resolve=>{
-    const frames=[];function sample(){const h=document.querySelector('.site-header'),s=getComputedStyle(h);frames.push({opacity:s.opacity,bg:s.backgroundColor,overlap:document.documentElement.matches(':active-view-transition')});if(frames.length<12)requestAnimationFrame(sample);else resolve(frames);}requestAnimationFrame(sample);
-   }));
-   assert(frames.every(f=>f.opacity==='1'&&f.bg===expected.bg&&!f.overlap),'No header fade, recoloring or overlapping page snapshots');
+ await p.evaluate(()=>{window.__header=document.querySelector('.site-header');window.__themeInput=document.querySelector('.theme-picker input');window.__origin=performance.timeOrigin;window.__oldScenes=[];});
+ let documentRequests=0;p.on('request',r=>{if(r.isNavigationRequest()&&r.frame()===p.mainFrame())documentRequests++;});
+ for(let lap=0;lap<3;lap++)for(const product of ['tracker','knowledge','lab']){
+  const path=route('en',product);await clickRoute(path);
+  assert(await p.evaluate(()=>window.__header===document.querySelector('.site-header')&&window.__themeInput===document.querySelector('.theme-picker input')&&window.__origin===performance.timeOrigin),'Header, controls and document persist');
+  assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'editorial-reveal');
+  await wait(950);assert.deepEqual(await p.evaluate(()=>window.__heroStarts),['editorial-reveal'],'Exactly one intro on every client visit');
+  assert(await p.$eval('.site-header',e=>getComputedStyle(e).backgroundColor===getComputedStyle(document.body).getPropertyValue('--color-surface').trim()||getComputedStyle(e).getPropertyValue('--color-surface').trim()===getComputedStyle(document.body).getPropertyValue('--color-surface').trim()),'Header follows the product palette');
+  if(product!=='lab'){
+   const scene=product==='knowledge'?'.mini-hanji':'.tracker-mini';
+   await p.waitForFunction(s=>document.querySelector(s).dataset.enhanced==='true',{},scene);
+   await p.click('[data-story-toggle]');assert.equal(await p.$eval(scene,e=>e.dataset.running),'false');
+   await p.click('[data-story-restart]');assert.equal(await p.$eval(scene,e=>e.dataset.running),'true');
+   if(product==='knowledge'){
+    await p.click('#agent-cta');assert.equal(await p.$eval('#agent-command',e=>e.hidden),false);
+    await p.$eval('#merge',e=>e.click());assert(await p.$eval('#merge',e=>e.disabled));await p.$eval('#reset',e=>e.click());assert(!(await p.$eval('#merge',e=>e.disabled)));
+   }else{
+    await p.click('[data-story-step="6"]');await p.click('[data-card="0"]');assert.equal(await p.$eval('.tracker-mini',e=>e.dataset.selected),'0');
+    await p.$eval('#capture-list',e=>e.click());await p.waitForFunction(()=>document.querySelector('#capture-panel-list img').naturalWidth>0);
+   }
+   await p.evaluate(s=>window.__oldScenes.push(document.querySelector(s)),scene);
   }
+  await p.click('.lang-picker summary');assert(await p.$eval('.lang-picker',e=>e.open));await p.keyboard.press('Escape');
+  await p.click('.theme-picker summary');assert(await p.$eval('.theme-picker',e=>e.open));await p.keyboard.press('Escape');
  }
- for(const product of pages){
-  await go(route('en',product));
-  const imports=await p.evaluate(()=>[...document.styleSheets].flatMap(s=>[...s.cssRules]).filter(r=>r instanceof CSSImportRule).length);
-  assert.equal(imports,0,'No runtime stylesheet import waterfall');
+ assert.equal(documentRequests,0,'No document reloads while moving between pages');
+ const stopped=await p.evaluate(()=>window.__oldScenes.map(e=>({connected:e.isConnected,time:e.dataset.playhead,animations:e.getAnimations({subtree:true}).length})));
+ await wait(200);assert.deepEqual(await p.evaluate(()=>window.__oldScenes.map(e=>({connected:e.isConnected,time:e.dataset.playhead,animations:e.getAnimations({subtree:true}).length}))),stopped,'Discarded demos stop updating');
+ assert(stopped.every(e=>!e.connected&&e.animations===0));
+ // The form must submit once per visit after repeated client navigation.
+ let posts=0;await p.setRequestInterception(true);
+ const mock=request=>{
+  if(new URL(request.url()).hostname!=='formsubmit.co')return request.continue();
+  const headers={'Access-Control-Allow-Origin':origin,'Access-Control-Allow-Methods':'POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Accept','Content-Type':'application/json'};
+  if(request.method()==='OPTIONS')return request.respond({status:204,headers});
+  posts++;return request.respond({status:200,headers,body:JSON.stringify({success:true})});
+ };p.on('request',mock);
+ for(let i=0;i<2;i++){
+  await clickRoute('/projects/knowledge/');
+  await p.type('#access-knowledge-name','Navigation QA');await p.type('#access-knowledge-email','qa@example.test');await p.type('#access-knowledge-message','Testing the client navigation lifecycle.');
+  await p.$eval('[data-access-form]',form=>form.requestSubmit());await p.waitForSelector('.access-result[data-state="success"]');
+  assert.equal(posts,i+1,'Exactly one mocked submission per visit');await clickRoute('/projects/tracker/');
  }
+ p.off('request',mock);await p.setRequestInterception(false);
+ // A persisted header must also acquire each destination's labels and links.
+ await clickRoute('/projects/knowledge/');
+ await p.click('.theme-picker summary');await p.click('.theme-row:has(input[value="dark"])');await p.keyboard.press('Escape');
+ await p.click('.lang-picker summary');await clickRoute('/fr/projects/knowledge/','[data-language="fr"]');
+ assert.equal(await p.$eval('html',e=>e.lang),'fr');assert.equal(await p.$eval('html',e=>e.dataset.theme),'dark');
+ assert.equal(await p.$eval('.family-brand',e=>new URL(e.href).pathname),'/fr/lab/');
+ assert((await p.$eval('.theme-picker summary',e=>e.getAttribute('aria-label'))).length>0);
+ assert(await p.evaluate(()=>window.__header===document.querySelector('.site-header')));
+ await clickRoute('/fr/projects/tracker/');
+ await p.goBack();await ready('/fr/projects/knowledge/');assert.equal(new URL(p.url()).pathname,'/fr/projects/knowledge/');assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
+ await p.goForward();await ready('/fr/projects/tracker/');assert.equal(new URL(p.url()).pathname,'/fr/projects/tracker/');
+ await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
+ await clickRoute('/fr/projects/knowledge/');assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
+ assert.equal(await p.$eval('.mini-hanji',e=>e.dataset.running),'false');
+ // Browser without the View Transition API still uses Astro's swap fallback.
+ const fallbackContext=await browser.createBrowserContext();const fallback=await fallbackContext.newPage();await fallback.evaluateOnNewDocument(()=>{document.startViewTransition=undefined;});
+ await fallback.goto(origin);await fallback.waitForFunction(()=>document.documentElement.dataset.pageReady===location.pathname);
+ await fallback.evaluate(()=>window.__header=document.querySelector('.site-header'));
+ await navigateClick(fallback,'.family-shortcuts a[href="/projects/knowledge/"]');
+ await fallback.waitForFunction(()=>document.querySelector('.mini-hanji')?.dataset.enhanced==='true');assert(await fallback.evaluate(()=>window.__header===document.querySelector('.site-header')));await fallbackContext.close();
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
- console.log('PASS: delayed Knowledge enhancement has one entrance and stable geometry; low control churn, intent prefetch, snapshot-free navigation, neutral header in both themes, lazy screenshots and history interactions verified');
+ console.log('PASS: persistent document/header/controls, product palette, one intro per visit, repeated demos, disposal, language/theme/history/reduced motion and no-View-Transition fallback');
 }finally{await browser.close();await new Promise(r=>server.close(r));}

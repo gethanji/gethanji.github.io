@@ -1,3 +1,5 @@
+import {onPage} from './page-lifecycle';
+onPage(scope=>{
 // Content is visible without JavaScript. Only offscreen editorial blocks wait
 // for their first reveal; interactive examples own their own animation clocks.
 const preference = matchMedia('(prefers-reduced-motion: reduce)');
@@ -5,8 +7,8 @@ const skipEntryForAnchor = () => {
   if (location.hash) document.documentElement.dataset.entryStatic = 'true';
 };
 skipEntryForAnchor();
-addEventListener('hashchange', skipEntryForAnchor);
-addEventListener('pageshow', event => {
+scope.listen(window,'hashchange', skipEntryForAnchor);
+scope.listen(window,'pageshow', event => {
   if (event.persisted) document.documentElement.dataset.entryStatic = 'true';
 });
 const sections = [...document.querySelectorAll<HTMLElement>([
@@ -25,6 +27,7 @@ if ('IntersectionObserver' in window && !preference.matches) {
       observer.unobserve(entry.target);
     }
   }, {threshold: 0.08});
+  scope.disposeWith(()=>observer.disconnect());
   for (const section of sections) {
     section.classList.add('reveal');
     if (section.getBoundingClientRect().top > innerHeight) {
@@ -32,9 +35,11 @@ if ('IntersectionObserver' in window && !preference.matches) {
       observer.observe(section);
     }
   }
-  preference.addEventListener('change', () => {
+  scope.listen(preference,'change', () => {
     if (!preference.matches) return;
     observer.disconnect();
     for (const section of sections) section.classList.remove('waiting');
   });
 }
+
+});

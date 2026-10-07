@@ -1,3 +1,5 @@
+import {onPage} from './page-lifecycle';
+onPage(scope=>{
 // Explicit localized URLs stay shareable. System chooses the browser language
 // on unprefixed entry pages and whenever the user selects System.
 const picker = document.querySelector<HTMLDetailsElement>('.lang-picker');
@@ -16,9 +18,11 @@ if (picker) {
     const selected = link.dataset.language === choice;
     link.classList.toggle('is-current', selected);
     if (selected) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
-    link.addEventListener('click', () => {
+    scope.listen(link,'click', () => {
       try { localStorage.setItem(key, link.dataset.language!); } catch {}
       link.href = withLocation(link.href);
     });
   }
 }
+
+});

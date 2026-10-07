@@ -1,8 +1,10 @@
+import {onPage} from './page-lifecycle';
+onPage(scope=>{
 for (const form of document.querySelectorAll<HTMLFormElement>('[data-access-form]')) {
   const fields = form.querySelector<HTMLFieldSetElement>('fieldset')!;
   const result = form.querySelector<HTMLElement>('.access-result')!;
   let pending = false;
-  form.addEventListener('submit', async event => {
+  scope.listen(form,'submit', async event => {
     event.preventDefault();
     if (form.dataset.ready !== 'true' || pending || !form.reportValidity()) return;
     const payload = Object.fromEntries(new FormData(form).entries());
@@ -13,6 +15,7 @@ for (const form of document.querySelectorAll<HTMLFormElement>('[data-access-form
     result.textContent = form.dataset.sending!;
     delete result.dataset.state;
     const controller = new AbortController();
+    scope.signal.addEventListener('abort',()=>controller.abort(),{once:true});
     const timeout = window.setTimeout(() => controller.abort(), 15000);
     try {
       const response = await fetch(form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/'), {
@@ -32,7 +35,9 @@ for (const form of document.querySelectorAll<HTMLFormElement>('[data-access-form
       fields.disabled = false;
       pending = false;
       form.removeAttribute('aria-busy');
-      result.focus({preventScroll: true});
+      if(!scope.signal.aborted)result.focus({preventScroll: true});
     }
   });
 }
+
+});

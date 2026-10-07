@@ -5,7 +5,7 @@ import ThemePicker from './ThemePicker.astro';
 const { lang, page } = Astro.props;
 const ui = dictionary(lang).ui;
 ---
-<header class="family-nav site-header">
+<header class="family-nav site-header" transition:persist="site-header" transition:animate="none">
   <div class="family-inner">
     <a class="family-brand" href={route(lang,'lab')} aria-label={ui.homeLabel}><span><img src="/hanji-mark.svg" alt="" /></span><b class="brand-name">Hanji</b></a>
     <nav class="family-shortcuts" aria-label={ui.shortcuts}>

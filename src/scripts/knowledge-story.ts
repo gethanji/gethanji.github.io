@@ -1,4 +1,6 @@
+import {onPage} from './page-lifecycle';
 import {timeline} from './timeline';
+onPage(scope=>{
 // Reuse the original CSS keyframes, including the click ring. Controls own time;
 // neither the illustration's drawing nor its easing is reimplemented here.
 const definitions=new Map<string,Keyframe[]>();
@@ -48,7 +50,10 @@ for(const root of document.querySelectorAll<HTMLElement>('.mini-hanji')){
   if(button.textContent!==text)button.textContent=text;
   if(button.getAttribute('aria-pressed')!==String(running))button.setAttribute('aria-pressed',String(running));
  },[clock],{loop:true,hold:0});
+ scope.disposeWith(()=>{control.dispose();animations.forEach(a=>a.cancel());});
  steps.forEach(b=>b.addEventListener('click',()=>{const n=+b.dataset.storyStep!;control.choose(n,samples[n]-starts[n]);}));
  root.querySelector('[data-story-toggle]')!.addEventListener('click',control.toggle);
  root.querySelector('[data-story-restart]')!.addEventListener('click',()=>{if(reduced.matches)control.choose(5);else{control.choose(0);control.play();}});
 }
+
+});

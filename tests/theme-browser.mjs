@@ -1,3 +1,4 @@
+import {navigateClick} from './navigation-helpers.mjs';
 import puppeteer from 'puppeteer-core';
 import assert from 'node:assert/strict';
 import {createServer} from 'node:http';
@@ -47,8 +48,8 @@ try{
   console.log(width,l,product,'system, manual override, keyboard and menu bounds pass (dark contrast checked for lab/Tracker)');
  }}
  await p.setViewport({width:1366,height:768});await go('/');await choose('dark');await p.keyboard.press('Escape');await p.keyboard.press('Escape');
- for(const [selector,destination] of [['.family-shortcuts a[href="/projects/tracker/"]','/projects/tracker/'],['.family-shortcuts a[href="/projects/knowledge/"]','/projects/knowledge/'],['.family-brand','/']]){await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click(selector)]);assert.equal(new URL(p.url()).pathname,destination);assert.deepEqual(await state(),expected('dark','dark'));}
- await p.click('.lang-picker summary');await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click('.lang-picker a[lang=ko]')]);assert.deepEqual(await state(),expected('dark','dark'));await p.reload({waitUntil:'load'});assert.deepEqual(await state(),expected('dark','dark'));
+ for(const [selector,destination] of [['.family-shortcuts a[href="/projects/tracker/"]','/projects/tracker/'],['.family-shortcuts a[href="/projects/knowledge/"]','/projects/knowledge/'],['.family-brand','/']]){await navigateClick(p,selector);assert.equal(new URL(p.url()).pathname,destination);assert.deepEqual(await state(),expected('dark','dark'));}
+ await p.click('.lang-picker summary');await navigateClick(p,'.lang-picker a[lang=ko]');assert.deepEqual(await state(),expected('dark','dark'));await p.reload({waitUntil:'load'});assert.deepEqual(await state(),expected('dark','dark'));
  await p.emulateMediaFeatures([{name:'prefers-color-scheme',value:'light'}]);assert.deepEqual(await state(),expected('dark','dark'));
  const tab=await browser.newPage();await tab.goto(origin);await tab.evaluate(()=>localStorage.setItem('hanji-theme','light'));await p.waitForFunction(()=>document.documentElement.dataset.theme==='light');await tab.evaluate(()=>localStorage.removeItem('hanji-theme'));await p.waitForFunction(()=>document.documentElement.dataset.themeChoice==='system');await tab.close();console.log('Choice persists through real page/language navigation and reload; manual beats system; tabs stay in sync');
  await p.evaluate(()=>localStorage.removeItem('hanji-language'));

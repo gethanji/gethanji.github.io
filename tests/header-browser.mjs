@@ -1,3 +1,4 @@
+import {navigateClick} from './navigation-helpers.mjs';
 import puppeteer from 'puppeteer-core';
 import assert from 'node:assert/strict';
 import {createServer} from 'node:http';
@@ -27,22 +28,22 @@ try {
  await french.goto(origin+'/ja/projects/tracker/?entry=direct#views');
  assert.equal(await french.$eval('html',e=>e.lang),'ja','Explicit localized URLs remain shareable');
  await french.click('.lang-picker summary');
- await Promise.all([french.waitForNavigation(),french.click('[data-language=system]')]);
+ await navigateClick(french,'[data-language=system]');
  assert.equal(new URL(french.url()).pathname,'/fr/projects/tracker/');
  assert(french.url().endsWith('?entry=direct#views'));
  await french.click('.lang-picker summary');
- await Promise.all([french.waitForNavigation(),french.click('[data-language=en]')]);
+ await navigateClick(french,'[data-language=en]');
  assert.equal(new URL(french.url()).pathname,'/projects/tracker/');
  assert.equal(await french.evaluate(()=>localStorage.getItem('hanji-language')),'en');
  await french.reload();assert.equal(await french.$eval('html',e=>e.lang),'en');
  await french.click('.lang-picker summary');
- await Promise.all([french.waitForNavigation(),french.click('[data-language=system]')]);
+ await navigateClick(french,'[data-language=system]');
  assert.equal(new URL(french.url()).pathname,'/fr/projects/tracker/');
  await french.close();
  const blocked=await browser.newPage();
  await blocked.evaluateOnNewDocument(()=>{Object.defineProperty(navigator,'languages',{get:()=>['fr']});Storage.prototype.getItem=()=>{throw new Error('Unavailable')};Storage.prototype.setItem=()=>{throw new Error('Unavailable')};});
  await blocked.goto(origin+'/');await blocked.waitForFunction(()=>location.pathname==='/fr/lab/');
- await blocked.click('.lang-picker summary');await Promise.all([blocked.waitForNavigation(),blocked.click('[data-language=en]')]);
+ await blocked.click('.lang-picker summary');await navigateClick(blocked,'[data-language=en]');
  await wait(250);assert.equal(await blocked.$eval('html',e=>e.lang),'en','Manual language still works when storage is blocked');await blocked.close();
  await p.goto(origin+'/');await p.evaluate(()=>localStorage.clear());
  for(const width of [1366,390,320]) {

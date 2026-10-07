@@ -1,3 +1,5 @@
+import {onPage} from './page-lifecycle';
+onPage(scope=>{
 // The head bootstrap resolves the saved choice before the page can paint.
 // This shared controller owns controls, system changes and other open tabs.
 const key = 'hanji-theme';
@@ -14,14 +16,16 @@ function apply() {
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', getComputedStyle(document.body).backgroundColor);
 }
 
-inputs.forEach(input => input.addEventListener('change', () => {
+inputs.forEach(input => scope.listen(input,'change', () => {
   if (!input.checked) return;
   choice = valid(input.value);
   try { localStorage.setItem(key, choice); } catch { /* A session choice still works when storage is unavailable. */ }
   apply();
 }));
-system.addEventListener('change', () => { if (choice === 'system') apply(); });
-window.addEventListener('storage', event => {
+scope.listen(system,'change', () => { if (choice === 'system') apply(); });
+scope.listen(window,'storage', event => {
   if (event.key === key || event.key === null) { choice = valid(event.newValue); apply(); }
 });
 apply();
+
+});

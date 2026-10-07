@@ -1,5 +1,6 @@
 ---
 import SEO from '../components/SEO.astro';
+import {ClientRouter} from 'astro:transitions';
 import knowledgeCSS from '../styles/knowledge-base.css?url';
 import labCSS from '../styles/lab-base.css?url';
 import trackerCSS from '../styles/tracker-base.css?url';
@@ -18,7 +19,7 @@ const {lang,page} = Astro.props;
 const ui = dictionary(lang).ui;
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} transition:animate="none">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <script is:inline>
@@ -27,7 +28,7 @@ const ui = dictionary(lang).ui;
       root.dataset.js = 'true';
       const internal = document.referrer && new URL(document.referrer).origin === location.origin;
       const restored = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
-      if (location.hash || internal || restored) root.dataset.entryStatic = 'true';
+      if (location.hash || restored) root.dataset.entryStatic = 'true';
       // Resolve language before the body can paint; explicit localized links win.
       const supported = ['en','ko','de','ja','fr'];
       const detected = (navigator.languages || [navigator.language]).map(tag => tag.toLowerCase().split('-')[0]).find(lang => supported.includes(lang)) || 'en';
@@ -44,6 +45,7 @@ const ui = dictionary(lang).ui;
       document.documentElement.dataset.theme = choice === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : choice;
     })();
   </script>
+  <ClientRouter fallback="swap" />
   <SEO lang={lang} page={page} />
   <link rel="icon" href="/hanji-mark.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#f9faf6" />
@@ -56,10 +58,12 @@ const ui = dictionary(lang).ui;
   <SiteHeader lang={lang} page={page} />
   <main id="main" class={page==='knowledge'?'wrap':undefined}><slot /></main>
   <SiteFooter lang={lang} />
-<script>import '../scripts/paper-tilt';
+<script>import '../scripts/navigation';
+ import {onPage} from '../scripts/page-lifecycle';
+ import '../scripts/paper-tilt';
  import '../scripts/theme';
  import '../scripts/page-motion';
- for(const link of document.querySelectorAll<HTMLAnchorElement>('[data-quick-start]'))link.addEventListener('click',()=>document.getElementById('get-started')?.focus({preventScroll:true}));
+ onPage(scope=>{for(const link of document.querySelectorAll<HTMLAnchorElement>('[data-quick-start]'))scope.listen(link,'click',()=>document.getElementById('get-started')?.focus({preventScroll:true}));});
 </script>
 </body>
 </html>

@@ -1,8 +1,10 @@
+import {pageScope} from './page-lifecycle';
 /** One playhead drives the whole illustration, including in-between motion.
  * Animations remain paused WAAPI objects: time, visibility and reader controls
  * have one owner. Seeking/pausing never rebuilds elements or restarts keyframes.
  */
 export function timeline(root: HTMLElement, durations: number[], render: (index: number) => void, label: (running: boolean,index: number,resumed: boolean)=>void, tracks: Array<Pick<Animation,'currentTime'>> = [], options: {loop?:boolean;hold?:number} = {}) {
+ const scope=pageScope();
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const starts=durations.map((_,i)=>durations.slice(0,i).reduce((a,b)=>a+b,0));
  const total=starts.at(-1)!;
@@ -32,12 +34,12 @@ export function timeline(root: HTMLElement, durations: number[], render: (index:
  function choose(next:number,offset=0){pause();initiated=true;holdTime=0;time=Math.min(total,starts[next]+offset);paint();}
  function play(){if(reduced.matches){choose(durations.length-1);return;}if(frame)return;initiated=true;if(time>=total){time=0;holdTime=0;}last=performance.now();frame=requestAnimationFrame(tick);paint();}
  function toggle(){frame?pause():play();}
- root.addEventListener('keydown',e=>{if(e.key==='Escape')pause();});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
- reduced.addEventListener('change',()=>{pause();if(reduced.matches)choose(durations.length-1);});
- if('IntersectionObserver' in window)new IntersectionObserver(([entry])=>{if(!entry.isIntersecting)pause();else if(!initiated&&!reduced.matches&&!document.hidden)play();},{threshold:.35}).observe(root);
+ scope.listen(root,'keydown',e=>{if(e.key==='Escape')pause();});
+ scope.listen(document,'visibilitychange',()=>{if(document.hidden)pause();});
+ scope.listen(reduced,'change',()=>{pause();if(reduced.matches)choose(durations.length-1);});
+ if('IntersectionObserver' in window){const observer=new IntersectionObserver(([entry])=>{if(!entry.isIntersecting)pause();else if(!initiated&&!reduced.matches&&!document.hidden)play();},{threshold:.35});observer.observe(root);scope.disposeWith(()=>observer.disconnect());}
  root.dataset.enhanced='true';paint();
- return{pause,play,toggle,choose};
+ return{pause,play,toggle,choose,dispose(){scope.dispose();if(frame)cancelAnimationFrame(frame);frame=0;}};
 }
 
 /** Keyframe times use the same editorial clock; no CSS transition competes. */
