@@ -1,0 +1,29 @@
+---
+import { dictionary } from '../data/site';
+import { accessFormEndpoint, accessFormReady } from '../data/access';
+import '../styles/inline-access-form.css';
+const {lang,product}=Astro.props;
+const t=dictionary(lang).access.form;
+const project=product==='knowledge'?'Knowledge':'Tracker';
+const prefix=`access-${product}`;
+---
+<form class="access-form" action={accessFormEndpoint} method="post" data-access-form data-ready={String(accessFormReady)} data-sending={t.sending} data-success={t.success} data-error={t.error}>
+  {!accessFormReady && <p class="access-unavailable" role="status">{t.unavailable}</p>}
+  <fieldset disabled={!accessFormReady}>
+    <input type="hidden" name="project" value={project} />
+    <input type="hidden" name="_subject" value={`Hanji ${project} access request`} />
+    <input type="hidden" name="_template" value="table" />
+    <div class="access-honey" aria-hidden="true"><label>Website<input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label></div>
+    <div class="access-fields">
+      <label for={`${prefix}-name`}>{t.name}<input id={`${prefix}-name`} name="name" autocomplete="name" required maxlength="100" /></label>
+      <label for={`${prefix}-email`}>{t.email}<input id={`${prefix}-email`} name="email" type="email" autocomplete="email" required maxlength="254" /></label>
+    </div>
+    <label for={`${prefix}-message`}>{t.message}<textarea id={`${prefix}-message`} name="message" rows="4" required minlength="10" maxlength="3000" placeholder={t.placeholder}></textarea></label>
+    <button class="button" type="submit">{t.submit}</button>
+  </fieldset>
+  <p class="access-privacy">{t.privacy}</p>
+  <p class="access-result" role="status" aria-live="polite" tabindex="-1"></p>
+</form>
+<script>
+  import '../scripts/access-form';
+</script>

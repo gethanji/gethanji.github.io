@@ -8,3 +8,8 @@ export function accessRequestUrl(product: 'knowledge' | 'tracker'): string {
   url.searchParams.set('subject', `Hanji ${project} access request`);
   return url.href;
 }
+
+// Public invisible-email ID supplied after recipient confirmation.
+export const accessFormId = 'c4fda211bcbfbc7401fe094caee1bbc3';
+export const accessFormReady = /^[a-f0-9]{32}$/i.test(accessFormId);
+export const accessFormEndpoint = accessFormReady ? `https://formsubmit.co/${accessFormId}` : undefined;

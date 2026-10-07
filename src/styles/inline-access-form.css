@@ -1,0 +1,19 @@
+.access-form{max-width:760px;margin:26px 0;color:var(--color-text)}
+.access-form fieldset{border:0;padding:0;margin:0;min-width:0}
+.access-fields{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.access-form label{display:block;font:500 13px/1.5 var(--font-ui);margin-bottom:20px}
+.access-form input:not([type=hidden]),.access-form textarea{display:block;width:100%;box-sizing:border-box;margin-top:8px;border:1px solid var(--color-border);border-radius:var(--radius-control);padding:12px 14px;font:400 14px/1.5 var(--font-ui);background:var(--color-panel);color:var(--color-text)}
+.access-form textarea{resize:vertical;min-height:116px}
+.access-form textarea::placeholder{color:var(--color-muted);opacity:1}
+.access-form input:focus-visible,.access-form textarea:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+.access-form .access-honey{display:none}
+.access-form .button{cursor:pointer}
+.access-form fieldset:disabled{opacity:.6}
+.access-form fieldset:disabled .button{cursor:not-allowed}
+.access-privacy,.access-result,.access-unavailable{font:400 12px/1.6 var(--font-ui);color:var(--color-muted);max-width:650px;margin:14px 0 0}
+.access-unavailable{margin:0 0 18px;padding:12px 16px;border-left:2px solid var(--color-accent);background:var(--color-accent-soft);color:var(--color-text)}
+.access-result:empty{display:none}
+.access-result[data-state=success]{color:var(--color-accent)}
+.access-result[data-state=error]{color:var(--color-text);border-left:2px solid currentColor;padding-left:12px}
+.access-result:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px}
+@media(max-width:550px){.access-fields{grid-template-columns:1fr;gap:0}}

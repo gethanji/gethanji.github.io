@@ -1,14 +1,15 @@
 ---
+import InlineAccessForm from './InlineAccessForm.astro';
 import { dictionary } from '../data/site';
 import { accessRequestUrl } from '../data/access';
 import '../styles/access-form.css';
 const {lang,product}=Astro.props;
 const access=dictionary(lang).access;
 ---
-<div class="access-request">
+{product === 'knowledge' ? <InlineAccessForm lang={lang} product={product} /> : <div class="access-request">
   <a class="button" href={accessRequestUrl(product)} data-access-request aria-describedby={`access-${product}-hosted`}>
     {access.cta} <span aria-hidden="true">↗</span>
   </a>
   <p id={`access-${product}-hosted`} class="access-hosted">{access.form.hosted}</p>
   <p class="access-privacy">{access.form.privacy}</p>
-</div>
+</div>}

@@ -745,8 +745,18 @@
       "description": "Tracker ist in der Alpha. Zugang gibt es auf Anfrage. Oberfläche und Funktionen entwickeln sich weiter. Schreiben Sie uns, wenn Sie es ausprobieren und Feedback geben möchten."
     },
     "form": {
-      "hosted": "Öffnet unser Kontaktformular bei FormSubmit.",
-      "privacy": "Wir verwenden Ihre Angaben, um Ihre Anfrage zu beantworten. FormSubmit verarbeitet die Übermittlung."
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail-Adresse",
+      "message": "Was möchten Sie ausprobieren?",
+      "placeholder": "Erzählen Sie uns kurz von Ihrer Arbeit und wie Sie dieses Projekt nutzen möchten.",
+      "submit": "Anfrage senden",
+      "sending": "Wird gesendet…",
+      "success": "Ihre Anfrage wurde gesendet. Wir antworten per E-Mail.",
+      "error": "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut; Ihre Nachricht bleibt erhalten.",
+      "privacy": "Wir verwenden Ihre Angaben, um Ihre Anfrage zu beantworten. FormSubmit verarbeitet die Übermittlung.",
+      "unavailable": "Zugangsanfragen sind hier in Kürze möglich.",
+      "availability": "Verfügbarkeit",
+      "hosted": "Öffnet unser Kontaktformular bei FormSubmit."
     }
   }
 }

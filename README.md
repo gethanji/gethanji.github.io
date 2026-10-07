@@ -235,13 +235,13 @@ Hanji is a thin surface between people and agents, adapting to different
 interactions. The lab story moves from knowledge sharing to managing work.
 All five locales include explicit closed-beta and alpha maturity labels.
 
-Access requests open the recipient-provided FormSubmit hosted contact form.
-`src/data/access.ts` stores its public `/el/` link and adds a project-specific
-subject using the provider's documented query parameter. Never commit a recipient
-email or private activation link. The same-tab link works without JavaScript;
-the surrounding copy identifies FormSubmit before visitors leave the site.
-The provider handles the form and submission feedback. A hosted `/el/` link is
-not an AJAX endpoint; an embedded form would require a separate invisible-email
-form ID. Recipient changes happen with the provider, not in the site source.
-Browser checks intercept external navigation and do not send submissions.
-Email delivery still needs a recipient-confirmed end-to-end check.
+Knowledge uses an inline FormSubmit form with a recipient-confirmed public
+invisible-email ID in `src/data/access.ts`. Name, reply email, project and message
+are submitted through the AJAX endpoint, with native POST as the no-JavaScript
+fallback. Validation, a honeypot and duplicate-submit prevention protect the
+flow; failed requests retain the message and successful requests reset the form.
+Tracker uses the recipient-provided hosted `/el/` form with its project name
+prefilled in the subject. Both paths identify FormSubmit as the processor.
+Never commit a recipient email or private activation link. Recipient changes
+happen with the provider. Browser tests mock submissions and do not prove email
+delivery; delivery needs a recipient-confirmed end-to-end check.
