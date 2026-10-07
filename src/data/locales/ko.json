@@ -1,9 +1,9 @@
 {
   "lab": {
-    "hero.overline.1.text0": "Hanji · 협업을 탐구하는 독립 연구실",
-    "hero.h1.1.text0": "함께하는 일,",
-    "hero.em.1.text0": "사람이 만드는 방향.",
-    "hero.lede.1.text0": "사람과 에이전트가 지식을 공유하고, 작업을 조율하며, 충분한 맥락을 바탕으로 판단할 수 있도록 실험적인 도구를 만듭니다.",
+    "hero.overline.1.text0": "Hanji · 협업을 실험하는 연구실",
+    "hero.h1.1.text0": "사람과 에이전트 사이,",
+    "hero.em.1.text0": "얇은 하나의 표면.",
+    "hero.lede.1.text0": "Hanji는 지식을 나누고, 생각을 주고받고, 에이전트와 일하는 방식에 따라 모습을 바꿉니다. 함께 일하는 방식의 가능성을 탐구하는 공간입니다.",
     "hero.button.1.text0": "프로젝트 둘러보기",
     "hero.text-link.1.text0": "우리의 접근 방식 ",
     "hero.span.1.text0": "↓",
@@ -28,10 +28,10 @@
     "paper-story.p.3.text1": "변화 속에서 배웁니다.",
     "paper-story.paper-foot.3.text0": "이해할 수 있는 진전",
     "about.overline.1.text0": "한지가 존재하는 이유",
-    "about.h2.1.text0": "공유하는 맥락.",
-    "about.em.1.text0": "근거 있는 판단.",
-    "about.p.1.text0": "효과적인 협업은 맥락을 공유하는 데서 시작합니다. 작업의 목적, 결정의 근거, 다음 단계를 맡을 사람이 분명해야 합니다.",
-    "about.p.2.text0": "에이전트가 더 많은 작업을 맡을수록 이 맥락은 더욱 중요해집니다. 한지는 소프트웨어가 각자의 기여를 이해하고 검토하며 방향을 정하는 데 어떻게 도움이 될 수 있는지 탐구합니다.",
+    "about.h2.1.text0": "빠르게 변하는 세상에",
+    "about.em.1.text0": "조금 더 선명한 이해를.",
+    "about.p.1.text0": "에이전트는 우리가 적응하는 속도보다 빠르게 일하는 방식을 바꾸고 있습니다. 우리는 새로운 지능과 나란히 일하는 법을 배우는 중이며, 그 상호작용의 방식도 아직 만들어지고 있습니다.",
+    "about.p.2.text0": "Hanji의 미션은 그 상호작용을 더 명확하게 만드는 것입니다. 사람이 에이전트의 기여를 이해하고, 질문하고, 다음 방향을 정할 수 있는 작고 세심한 인터페이스를 만들고 실험합니다.",
     "chapter.overline.1.text0": "우리가 접근하는 방식",
     "chapter.h2.1.text0": "더 나은 협업을 위한",
     "chapter.em.1.text0": "조건을 만듭니다.",
@@ -47,15 +47,15 @@
     "chapter.h3.3.text0": "지식과 실행을 연결합니다.",
     "chapter.p.4.text0": "공유하는 지식을 프로젝트 작업에 연결합니다. 에이전트의 역할을 분명히 하되, 우선순위와 방향은 사람이 정하도록 합니다.",
     "projects.overline.1.text0": "프로젝트",
-    "projects.h2.1.text0": "두 개의 프로젝트.",
-    "projects.em.1.text0": "하나의 연구 방향.",
-    "projects.p.1.text0": "Knowledge는 지식을 문서로 공유하고, Tracker는 프로젝트 작업을 정리합니다. 각각 독립적으로 사용할 수 있으며, 맥락과 실행이 서로 어떻게 도움이 되는지 탐구합니다.",
+    "projects.h2.1.text0": "두 가지 실험.",
+    "projects.em.1.text0": "하나의 질문.",
+    "projects.p.1.text0": "에이전트와의 협업이 명확하고 유용하려면 무엇이 필요할까요? 지식 공유에서 시작한 실험은 그 지식을 바탕으로 함께 일하는 방식으로 이어졌습니다.",
     "projects.project-number.1.text0": "01",
-    "projects.tag.1.text0": "지식 베이스 · 매일 사용 중",
+    "projects.tag.1.text0": "클로즈드 베타",
     "projects.h3.1.text0": "Knowledge",
     "projects.project-subhead.1.text0": "에이전트는 이미 Git에서 일합니다.",
     "projects.project-subhead.1.text1": "이제 지식도 함께합니다.",
-    "projects.p.2.text0": "내 Git 저장소의 마크다운을 읽고 편집합니다. 에이전트에 접근 범위를 지정하고, 제안된 변경 사항을 병합 전에 검토합니다.",
+    "projects.p.2.text0": "에이전트는 문서와 노트를 빠르게 만들어 냅니다. Knowledge는 사람이 그 결과를 읽고, 편집하고, 에이전트와 함께 발전시킬 수 있는 공간에서 시작했습니다. Markdown은 내 Git 저장소에 남고, 제안된 변경은 사람이 검토합니다.",
     "projects.text-link.1.href": "/ko/projects/knowledge/",
     "projects.text-link.1.text0": "Knowledge 알아보기 ",
     "projects.product-photo.1.href": "/ko/projects/knowledge/#demo",
@@ -69,11 +69,11 @@
     "projects.small.1.text0": "이미지를 원본 크기로 열기.",
     "projects.photo-caption.1.text0": "한지로 쓰고 게시한 핸드북입니다. ",
     "projects.project-number.2.text0": "02",
-    "projects.tag.2.text0": "프로젝트 추적 · 실험 중",
+    "projects.tag.2.text0": "알파",
     "projects.h3.2.text0": "Tracker",
     "projects.project-subhead.2.text0": "작업을 한눈에.",
     "projects.project-subhead.2.text1": "다음 단계를 함께 묻는 곳.",
-    "projects.p.3.text0": "내가 소유한 파일로 이슈, 프로젝트, 의존 관계를 관리합니다. 개별 이슈나 전체 작업 공간에 연결된 대화에서 에이전트와 협업합니다.",
+    "projects.p.3.text0": "이어서 두 번째 질문이 생겼습니다. 에이전트와 함께하는 일은 어떻게 관리해야 할까요? Tracker는 프로젝트, 작업, 의존성을 탐구합니다. 대화를 작업에 연결해 진행 상황을 이해하고 다음 단계를 이끌 수 있도록 합니다.",
     "projects.text-link.2.href": "/ko/projects/tracker/",
     "projects.text-link.2.text0": "Tracker 알아보기 ",
     "projects.product-photo.2.href": "/ko/projects/tracker/#views",
@@ -85,22 +85,22 @@
     "projects.small.2.text0": "이미지를 원본 크기로 열기.",
     "projects.photo-caption.2.text0": "실제 인터페이스 · 가상 작업 공간 ",
     "projects.span.7.text0": "↗",
-    "vision.overline.1.text0": "연구 방향",
-    "vision.h2.1.text0": "함께 일하는 사람을",
-    "vision.em.1.text0": "이해하는 에이전트.",
+    "vision.overline.1.text0": "계속 열어 두는 질문",
+    "vision.h2.1.text0": "에이전트 시대를 향한",
+    "vision.em.1.text0": "하나의 문.",
     "vision.img.1.alt": "",
-    "vision.p.1.text0": "장기적으로는 공유하는 맥락을 이해하고, 결정 과정을 살피며, 참여하는 사람에게 맞춰 협업을 돕는 한지 에이전트를 지향합니다.",
-    "vision.p.2.text0": "이는 연구 목표입니다. 현재는 Knowledge와 Tracker를 개발하고 사용하며 그 바탕이 되는 아이디어를 검증하고 있습니다.",
+    "vision.p.1.text0": "Hanji는 변화하는 일의 세계로 들어가는 실험적인 문입니다. 사람과 에이전트가 서로를 더 잘 이해하고, 더 분명한 방향을 가지고 함께 일하는 방법을 탐구합니다.",
+    "vision.p.2.text0": "배움에 따라 표면도 계속 달라집니다. Knowledge와 Tracker는 사용하는 사람들과 함께 만들어 가는 첫 번째 실험입니다.",
     "chapter.overline.2.text0": "한지 / 생각을 담는 재료",
-    "chapter.p.5.text0": "종이는 생각을 담고,",
-    "chapter.em.2.text0": "사람은 의미를 만듭니다.",
-    "chapter.div.2.text0": "한지는 한국의 전통 수제 종이에서 이름을 따왔습니다. 지식을 기록하고, 아이디어를 발전시키며, 함께 일할 수 있는 오래가는 기반을 만든다는 뜻을 담았습니다.",
-    "chapter.div.2.text2": "각 프로젝트에서 현재 개발 중인 내용과 앞으로의 방향을 살펴보세요.",
+    "chapter.p.5.text0": "하나의 재료.",
+    "chapter.em.2.text0": "여러 가지 모습.",
+    "chapter.div.2.text0": "Hanji라는 이름은 한국의 전통 종이인 한지에서 왔습니다. 우리에게 한지는 소프트웨어를 바라보는 방식입니다. 사람과 에이전트 사이에서 상호작용에 맞게 모양과 색조를 바꾸는 얇은 표면입니다.",
+    "chapter.div.2.text2": "문서, 대화, 프로젝트 캔버스. 모습은 달라도 질문은 같습니다. 어떻게 하면 함께 잘 일할 수 있을까요?",
     "chapter.text-link.1.text0": "프로젝트 살펴보기 ",
     "chapter.span.4.text0": "↑"
   },
   "knowledge": {
-    "hero.eyebrow.1.text0": "Git 기반 지식베이스",
+    "hero.eyebrow.1.text0": "Knowledge · 클로즈드 베타",
     "hero.span.1.text0": "에이전트는 이미 Git에서 일합니다",
     "hero.em.1.text0": "이제 지식도 그곳에서",
     "hero.lede.1.text0": "내 Git 저장소의 마크다운을 읽고 편집하세요. 에이전트의 접근 범위를 정하고 제안된 변경을 검토할 수 있습니다.",
@@ -402,11 +402,11 @@
     "run.run-heading.1.text0": "로컬에서 실행하고",
     "run.em.1.text0": "필요한 만큼 공유하세요",
     "run.p.1.text0": "로컬에서. 팀과 함께. 웹으로. 고르는 건 내 몫.",
-    "run.availability.1.text1": " 현재 개발 버전의 배포 방식입니다.",
+    "run.availability.1.text1": " 클로즈드 베타",
     "run.option-number.1.text0": "01",
     "run.summary.1.text1": "혼자, 로컬에서",
     "run.p.2.text0": "한지를 실행하고 작업 공간의 이름과 소유자 비밀번호를 설정한 다음, 마크다운 파일이 있는 폴더를 선택하세요.",
-    "run.source-availability.1.text0": "이 설정 안내에는 기존 소스 체크아웃이 필요합니다. 소스의 공개 배포는 아직 제공되지 않습니다.",
+    "run.source-availability.1.text0": "Knowledge는 클로즈드 베타 단계로, 요청을 통해 이용할 수 있습니다. 어떻게 사용하고 싶은지 알려 주세요. 핸드북은 누구나 읽을 수 있습니다.",
     "run.pre.1.text0": "# 기존 소스 체크아웃에서 실행\npnpm install && pnpm dev:web",
     "run.text-link.1.text0": "Knowledge 설치 안내",
     "run.option-number.2.text0": "02",
@@ -436,7 +436,7 @@
     "launch.text-link.1.text0": "Knowledge 핸드북 읽기"
   },
   "tracker": {
-    "hero.overline.1.text0": "Tracker · 사람과 에이전트를 위한 프로젝트 관리",
+    "hero.overline.1.text0": "Tracker · 알파",
     "hero.tracker-title.1.text0": "작업을 살피고,",
     "hero.em.1.text0": "다음 단계를 정하세요.",
     "hero.lede.1.text0": "프로젝트와 의존 관계를 관리하고, 작업의 맥락 안에서 에이전트와 협업하세요. 작업, 결정, 대화를 내가 소유한 파일 기반의 작업 공간에 모읍니다.",
@@ -523,10 +523,10 @@
     "chapter.p.6.text0": "캔버스는 현재 보기 밖의 선행 작업과 순환 관계를 보여 줍니다. CLI의 review는 주간 검토용으로 작업을 묶고, lint는 오래된 요청과 변경되거나 사라진 출처 등을 알려 줍니다.",
     "chapter.summary.4.text0": "맥락 연결하기",
     "chapter.p.7.text0": "원한다면 Knowledge 링크로 배경 정보를 연결하세요. Tracker는 독립적으로도 쓸 수 있고, 지식 베이스 연결은 선택입니다.",
-    "status.overline.1.text0": "개발 현황",
+    "status.overline.1.text0": "알파",
     "status.h2.1.text0": "개발을 이어가는 도구.",
     "status.em.1.text0": "실험하며 발전합니다.",
-    "status.p.1.text0": "Tracker는 현재 한 명의 소유자가 로컬 작업 공간에서 여러 에이전트와 협업하는 방식에 집중하고 있습니다. 개발 과정에서 이름과 화면은 바뀔 수 있습니다.",
+    "status.p.1.text0": "Tracker는 알파 단계로, 요청을 통해 이용할 수 있습니다. 인터페이스와 기능은 계속 바뀝니다. 직접 사용하고 의견을 나누고 싶다면 문의해 주세요.",
     "status.p.2.text0": "Tracker는 한지와 동일한 AGPL-3.0-only 라이선스를 사용합니다. 공개 배포와 지원되는 설치 방식은 아직 확정되지 않았습니다. 호스팅된 팀 작업 공간, 사용자별 권한, 가져오기 도구, GitHub 상태 동기화는 현재 지원하지 않습니다. 빌드 자동화는 사용 전에 실제 환경 검증이 필요합니다.",
     "status.text-link.1.href": "/ko/lab/",
     "status.text-link.1.text0": "한지 연구실 둘러보기 ",
@@ -540,7 +540,7 @@
   "metadata": {
     "lab": {
       "title": "한지 — 협업을 연구하는 실험실",
-      "description": "사람과 에이전트가 지식을 공유하고, 작업을 조율하며, 충분한 맥락을 바탕으로 판단할 수 있도록 실험적인 도구를 만듭니다."
+      "description": "Hanji는 지식을 나누고, 생각을 주고받고, 에이전트와 일하는 방식에 따라 모습을 바꿉니다. 함께 일하는 방식의 가능성을 탐구하는 공간입니다."
     },
     "knowledge": {
       "title": "Hanji Knowledge — Git 기반 지식베이스",
@@ -705,8 +705,8 @@
     }
   },
   "onboarding": {
-    "cta": "시작하기",
-    "title": "설정 및 이용 안내",
+    "cta": "이용 문의",
+    "title": "Hanji를 함께 사용해 보세요",
     "heads": [
       "준비 사항",
       "로컬 설정",
@@ -714,7 +714,7 @@
       "에이전트 연결"
     ],
     "knowledge": {
-      "availability": "Knowledge 핸드북은 공개되어 있습니다. 로컬 설정에는 기존 소스 체크아웃이 필요하며, 소스의 공개 배포는 아직 제공되지 않습니다.",
+      "availability": "Knowledge는 클로즈드 베타 단계로, 요청을 통해 이용할 수 있습니다. 어떻게 사용하고 싶은지 알려 주세요. 핸드북은 누구나 읽을 수 있습니다.",
       "now": "공개 핸드북 둘러보기",
       "prerequisites": "기존 Knowledge 소스, 최신 Node.js, pnpm, Git, C 빌드 도구와 Markdown 폴더가 필요합니다. 읽기와 편집에는 모델 계정이 필요하지 않습니다.",
       "setup": "소스 폴더에서 의존성을 설치하고 웹 앱을 시작하세요. localhost:4100을 엽니다.",
@@ -723,13 +723,39 @@
       "next": "자세한 설정 보기"
     },
     "tracker": {
-      "availability": "Tracker는 초기 개발 단계입니다. 공개 다운로드와 설치 패키지는 아직 제공하지 않습니다. 아래 절차는 기존 Tracker 체크아웃이 있는 개발자를 위한 안내입니다.",
+      "availability": "Tracker는 알파 단계로, 요청을 통해 이용할 수 있습니다. 인터페이스와 기능은 계속 바뀝니다. 직접 사용하고 의견을 나누고 싶다면 문의해 주세요.",
       "now": "실제 화면 둘러보기",
       "prerequisites": "Tracker가 포함된 기존 소스, 최신 Node.js, pnpm 9.15, Git, SQLite용 C 빌드 도구가 필요합니다. 작업 생성과 탐색에는 모델 계정이 필요하지 않습니다.",
       "setup": "소스 폴더에서 새 작업 공간, 프로젝트, 첫 작업을 만드세요. 웹 앱을 시작할 때도 같은 터미널의 작업 공간 변수를 유지하세요.",
       "outcome": "localhost:4102를 여세요. 목록이나 캔버스에서 Fieldnotes와 초대 글 작업을 찾으세요. 프로젝트와 작업은 작업 공간 저장소의 Markdown 파일입니다.",
       "agent": "설정 화면에서 설치된 Claude 또는 Codex 에이전트를 구성하고 별도로 인증한 다음, 같은 TRACKER_WORKSPACE로 pnpm tracker-host를 실행하세요. 에이전트 세션은 실험 단계이며 실제 제공업체 환경에서 검증 중입니다.",
       "next": "현재 개발 상태 보기"
+    }
+  },
+  "access": {
+    "cta": "이용 문의",
+    "title": "Hanji를 함께 사용해 보세요",
+    "setup": "이미 이용 중이신가요? 설정 안내",
+    "knowledge": {
+      "stage": "클로즈드 베타",
+      "description": "Knowledge는 클로즈드 베타 단계로, 요청을 통해 이용할 수 있습니다. 어떻게 사용하고 싶은지 알려 주세요. 핸드북은 누구나 읽을 수 있습니다."
+    },
+    "tracker": {
+      "stage": "알파",
+      "description": "Tracker는 알파 단계로, 요청을 통해 이용할 수 있습니다. 인터페이스와 기능은 계속 바뀝니다. 직접 사용하고 의견을 나누고 싶다면 문의해 주세요."
+    },
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "message": "어떤 작업에 사용하고 싶으신가요?",
+      "placeholder": "현재 하는 일과 이 프로젝트를 어떻게 사용하고 싶은지 알려 주세요.",
+      "submit": "문의 보내기",
+      "sending": "보내는 중…",
+      "success": "문의가 전송되었습니다. 이메일로 답변드리겠습니다.",
+      "error": "전송하지 못했습니다. 입력한 내용은 유지되어 있으니 다시 시도해 주세요.",
+      "privacy": "입력한 정보는 문의에 답변하는 데 사용됩니다. 문의는 FormSubmit을 통해 처리됩니다.",
+      "unavailable": "곧 이곳에서 이용 문의를 받습니다.",
+      "availability": "이용 안내"
     }
   }
 }

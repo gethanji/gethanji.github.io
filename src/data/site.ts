@@ -11,8 +11,8 @@ export const localeTags = { en: 'en_US', ko: 'ko_KR', de: 'de_DE', ja: 'ja_JP', 
 const dictionaries = { en, ko, de, ja, fr };
 export const dictionary = (lang: Locale) => dictionaries[lang];
 export const projects = [
-  { id: 'knowledge', name: 'Knowledge', accent: 'celadon', summary: 'knowledgeSummary', status: 'experimental' },
-  { id: 'tracker', name: 'Tracker', accent: 'orchid', summary: 'trackerSummary', status: 'experimental' },
+  { id: 'knowledge', name: 'Knowledge', accent: 'celadon', summary: 'knowledgeSummary', status: 'closed-beta' },
+  { id: 'tracker', name: 'Tracker', accent: 'orchid', summary: 'trackerSummary', status: 'alpha' },
 ] as const;
 export const pages: Page[] = ['lab', ...projects.map(p => p.id)];
 export function route(lang: Locale, page: Page) {

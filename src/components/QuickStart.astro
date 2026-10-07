@@ -1,8 +1,10 @@
 ---
+import AccessForm from './AccessForm.astro';
 import {dictionary} from '../data/site';
 import '../styles/quick-start.css';
 const {lang,product}=Astro.props;
 const t=dictionary(lang).onboarding,c=t[product as 'knowledge'|'tracker'];
+const access=dictionary(lang).access;
 const command=product==='knowledge'?'pnpm install\npnpm dev:web':`pnpm install
 pnpm tracker init ../fieldnotes --name Fieldnotes --prefix LAB --owner ada
 export TRACKER_WORKSPACE="$(cd ../fieldnotes && pwd)"
@@ -13,9 +15,12 @@ pnpm dev:tracker-web`;
 <section id="get-started" class:list={['quick-start','chapter',product==='tracker'&&'wrap']} aria-labelledby="quick-start-title" tabindex="-1">
  <p class="quick-start-eyebrow">{t.cta}</p><h2 id="quick-start-title">{t.title}</h2>
  <p class="quick-start-availability">{c.availability}</p>
- <a class="button" href={product==='knowledge'?'https://gethanji.github.io/docs/':'#views'}>{c.now}</a>
+ <AccessForm lang={lang} product={product} />
+ <a class="text-link" href={product==='knowledge'?'https://gethanji.github.io/docs/':'#views'}>{c.now} <span aria-hidden="true">↗</span></a>
+ <details class="setup-notes"><summary>{access.setup}</summary>
  <ol class="quick-start-steps">
   {[c.prerequisites,c.setup,c.outcome,c.agent].map((text,i)=><li><h3><span aria-hidden="true">0{i+1}</span>{t.heads[i]}</h3><p>{text}</p>{i===1&&<pre><code>{command}</code></pre>}</li>)}
  </ol>
  <a class="text-link" href={product==='knowledge'?'#run':'#status'}>{c.next} <span aria-hidden="true">↗</span></a>
+ </details>
 </section>

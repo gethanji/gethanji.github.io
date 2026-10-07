@@ -1,11 +1,11 @@
 # Hanji
 
-Hanji is an independent experimental lab exploring collaboration between people and agents. Its two current projects share an AGPL-3.0-only codebase. The unified Hanji agent identity is an ambition, not a shipped runtime.
+Hanji is an experimental lab exploring the thin surface between people and agents. Its interfaces take different shapes for sharing knowledge, exchanging ideas, and coordinating work. Its mission is to make collaboration with agents clearer. Knowledge sharing was the first experiment; Tracker followed to explore managing work with agents. The projects share an AGPL-3.0-only codebase.
 
 ## Projects
-- [Knowledge](https://hanji.ink/projects/knowledge/): A git-backed Markdown knowledge base, scoped MCP access, and human-reviewed agent proposals.
+- [Knowledge](https://hanji.ink/projects/knowledge/): Closed beta, with access by request. A Git-backed Markdown knowledge base, scoped MCP access, and human-reviewed agent proposals.
   - [Knowledge handbook](https://gethanji.github.io/docs/): Knowledge documentation, published separately. Tracker has no handbook yet.
-- [Tracker](https://hanji.ink/projects/tracker/): An experimental project tracker with file-backed issues, projects, and comments. Developer builds include Claude and Codex sessions; session state also uses a local database. Live-agent validation and public distribution are not yet complete.
+- [Tracker](https://hanji.ink/projects/tracker/): Alpha, with access by request. A project tracker with file-backed issues, projects, and comments. Developer builds include Claude and Codex sessions; session state also uses a local database. Live-agent validation and public distribution are not yet complete.
 
 ## Languages
 - [English](https://hanji.ink/)
@@ -14,4 +14,4 @@ Hanji is an independent experimental lab exploring collaboration between people 
 - [日本語](https://hanji.ink/ja/lab/)
 - [Français](https://hanji.ink/fr/lab/)
 
-All three pages are available in the five languages listed above. English project URLs use /projects/{project}/; other languages use /{language}/projects/{project}/. Legacy /en/, /ko/, /de/, /ja/, and /fr/ redirect to the corresponding Knowledge page, preserving query and fragment. Tracker is early development; do not infer a hosted offering or public source availability from these pages.
+All three pages are available in the five languages listed above. English project URLs use /projects/{project}/; other languages use /{language}/projects/{project}/. Legacy /en/, /ko/, /de/, /ja/, and /fr/ redirect to the corresponding Knowledge page, preserving query and fragment. Knowledge is in closed beta and Tracker is in alpha. Neither is an unrestricted public release.

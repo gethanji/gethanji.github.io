@@ -1,9 +1,9 @@
 {
   "lab": {
-    "hero.overline.1.text0": "Hanji · 協働を探る独立したラボ",
-    "hero.h1.1.text0": "ともに進める仕事を、",
-    "hero.em.1.text0": "人の手でかたちに。",
-    "hero.lede.1.text0": "人とエージェントが知識を共有し、仕事を進め、十分な文脈に基づいて判断できるよう、実験的な道具をつくっています。",
+    "hero.overline.1.text0": "Hanji · コラボレーションを探る実験室",
+    "hero.h1.1.text0": "人とエージェントの間に、",
+    "hero.em.1.text0": "薄い一枚の面を。",
+    "hero.lede.1.text0": "Hanjiは、知識を共有し、考えを交わし、エージェントと働く方法に合わせて形を変えます。これからの協働のあり方を探る場所です。",
     "hero.button.1.text0": "プロジェクトを見る",
     "hero.text-link.1.text0": "私たちのアプローチ ",
     "hero.span.1.text0": "↓",
@@ -28,10 +28,10 @@
     "paper-story.p.3.text1": "変化から学ぶ。",
     "paper-story.paper-foot.3.text0": "理解できる前進",
     "about.overline.1.text0": "Hanji が存在する理由",
-    "about.h2.1.text0": "文脈を共有し、",
-    "about.em.1.text0": "確かな判断へ。",
-    "about.p.1.text0": "よい協働には、仕事の目的、判断の理由、次の一歩を担う人について、共通の理解が必要です。",
-    "about.p.2.text0": "エージェントが担う仕事が増えるほど、その文脈が重要になります。Hanji は、誰が何をしたかを理解し、確認し、方向を定めるためのソフトウェアを探究しています。",
+    "about.h2.1.text0": "急速に変わる世界に、",
+    "about.em.1.text0": "少しの明瞭さを。",
+    "about.p.1.text0": "エージェントは、私たちが慣れるよりも速く仕事のあり方を変えています。新しい知性と共に働く方法を学びながら、その関わり方も少しずつ形になっています。",
+    "about.p.2.text0": "Hanjiの使命は、その関わり方をより分かりやすくすることです。エージェントの貢献を理解し、問いかけ、次の方向を決められる、小さく丁寧なインターフェースを作り、試しています。",
     "chapter.overline.1.text0": "私たちの取り組み方",
     "chapter.h2.1.text0": "よりよく協働するための",
     "chapter.em.1.text0": "条件をつくる。",
@@ -47,15 +47,15 @@
     "chapter.h3.3.text0": "知識と実行をつなぐ。",
     "chapter.p.4.text0": "共有した知識をプロジェクトの仕事に生かします。エージェントの役割を明確にし、優先順位と方向は人が決められるようにします。",
     "projects.overline.1.text0": "プロジェクト",
-    "projects.h2.1.text0": "二つのプロジェクト。",
-    "projects.em.1.text0": "一つの研究方針。",
-    "projects.p.1.text0": "Knowledge は文書による知識共有を、Tracker はプロジェクトの作業管理を支えます。それぞれ独立して使え、文脈と実行が互いにどう役立つかを探究します。",
+    "projects.h2.1.text0": "二つの実験。",
+    "projects.em.1.text0": "共通する一つの問い。",
+    "projects.p.1.text0": "エージェントとの協働を分かりやすく、有用なものにするには何が必要でしょうか。知識の共有から始めた実験は、そこから生まれる仕事へと広がりました。",
     "projects.project-number.1.text0": "01",
-    "projects.tag.1.text0": "ナレッジベース · 日々利用中",
+    "projects.tag.1.text0": "クローズドベータ",
     "projects.h3.1.text0": "Knowledge",
     "projects.project-subhead.1.text0": "エージェントはすでに Git で働いています。",
     "projects.project-subhead.1.text1": "これからは知識も一緒に。",
-    "projects.p.2.text0": "自分の Git リポジトリにある Markdown を読み、編集します。エージェントのアクセス範囲を定め、提案された変更をマージ前に確認できます。",
+    "projects.p.2.text0": "エージェントは多くの文書やノートを作成します。Knowledgeは、人がそれらを読み、編集し、エージェントと共に育てるための場として始まりました。Markdownは自分のGitリポジトリに残り、変更案は人がレビューします。",
     "projects.text-link.1.href": "/ja/projects/knowledge/",
     "projects.text-link.1.text0": "Knowledge を見る ",
     "projects.product-photo.1.href": "/ja/projects/knowledge/#demo",
@@ -69,11 +69,11 @@
     "projects.small.1.text0": "画像を原寸で開く。",
     "projects.photo-caption.1.text0": "Hanji で書き、公開したハンドブックです。 ",
     "projects.project-number.2.text0": "02",
-    "projects.tag.2.text0": "プロジェクト管理 · 実験中",
+    "projects.tag.2.text0": "アルファ",
     "projects.h3.2.text0": "Tracker",
     "projects.project-subhead.2.text0": "仕事を見渡す。",
     "projects.project-subhead.2.text1": "次の一歩を相談できる場所。",
-    "projects.p.3.text0": "自分のファイルで課題、プロジェクト、依存関係を管理します。個々の課題やワークスペース全体に結び付いた会話で、エージェントと協働できます。",
+    "projects.p.3.text0": "そこから、二つ目の問いが生まれました。エージェントと共に進める仕事をどう管理すればよいのでしょうか。Trackerは、プロジェクト、タスク、依存関係を探る実験です。会話を仕事に結び付け、状況を理解し、次の一歩を導けるようにします。",
     "projects.text-link.2.href": "/ja/projects/tracker/",
     "projects.text-link.2.text0": "Tracker を見る ",
     "projects.product-photo.2.href": "/ja/projects/tracker/#views",
@@ -85,22 +85,22 @@
     "projects.small.2.text0": "画像を原寸で開く。",
     "projects.photo-caption.2.text0": "実際の画面 · 架空のワークスペース ",
     "projects.span.7.text0": "↗",
-    "vision.overline.1.text0": "研究の方向性",
-    "vision.h2.1.text0": "仕事に関わる人を",
-    "vision.em.1.text0": "理解するエージェント。",
+    "vision.overline.1.text0": "問い続けるために",
+    "vision.h2.1.text0": "エージェント時代への、",
+    "vision.em.1.text0": "一つの扉。",
     "vision.img.1.alt": "",
-    "vision.p.1.text0": "長期的には、共有する文脈を理解し、意思決定に目を配り、関わる人に応じて協働を支える Hanji エージェントを目指しています。",
-    "vision.p.2.text0": "これは研究上の目標です。現在は Knowledge と Tracker を開発し、実際に使いながら、その基礎となる考え方を検証しています。",
+    "vision.p.1.text0": "Hanjiは、変わりゆく仕事の世界への実験的な入り口です。人とエージェントが互いをよりよく理解し、明確な方向を持って共に働く方法を探っています。",
+    "vision.p.2.text0": "学ぶたびに、その面も形を変えていきます。KnowledgeとTrackerは、使う人たちと共に育てる最初の実験です。",
     "chapter.overline.2.text0": "한지 / 考えるための素材",
-    "chapter.p.5.text0": "紙は思いを受け止め、",
-    "chapter.em.2.text0": "人は意味を与える。",
-    "chapter.div.2.text0": "Hanji は、韓国の伝統的な手すき紙に由来します。知識を記録し、考えを育て、ともに働くための、長く使える土台をつくるという姿勢を表しています。",
-    "chapter.div.2.text2": "各プロジェクトで、現在の取り組みと今後の方向をご覧ください。",
+    "chapter.p.5.text0": "一つの素材。",
+    "chapter.em.2.text0": "さまざまな形。",
+    "chapter.div.2.text0": "Hanjiの名前は、韓国の伝統的な紙、韓紙に由来します。私たちにとってそれは、ソフトウェアを考えるための手がかりです。人とエージェントの間にある薄い面が、やり取りに応じて形や色合いを変えていきます。",
+    "chapter.div.2.text2": "文書、会話、プロジェクトのキャンバス。面は異なっても、問いは同じです。どうすれば、一緒にうまく働けるのでしょうか。",
     "chapter.text-link.1.text0": "プロジェクトを見る ",
     "chapter.span.4.text0": "↑"
   },
   "knowledge": {
-    "hero.eyebrow.1.text0": "Git を基盤とするナレッジベース",
+    "hero.eyebrow.1.text0": "Knowledge · クローズドベータ",
     "hero.span.1.text0": "エージェントはすでに Git にいる",
     "hero.em.1.text0": "チームの知識も、そこへ",
     "hero.lede.1.text0": "自分の Git リポジトリで Markdown を編集。エージェントのアクセス範囲を定め、変更案を確認できます。",
@@ -402,11 +402,11 @@
     "run.run-heading.1.text0": "ローカルで動かす",
     "run.em.1.text0": "共有は好きなかたちで",
     "run.p.1.text0": "ローカルで。チームと。公開して。選ぶのはあなたです。",
-    "run.availability.1.text1": " 開発版で利用できるデプロイ方法です。",
+    "run.availability.1.text1": " クローズドベータ",
     "run.option-number.1.text0": "01",
     "run.summary.1.text1": "ひとりで、ローカルで",
     "run.p.2.text0": "Hanji を起動し、ワークスペース名と所有者のパスワードを設定して、Markdown ファイルのあるフォルダーを選びます。",
-    "run.source-availability.1.text0": "この手順には既存のソースチェックアウトが必要です。ソースの一般公開はまだ行われていません。",
+    "run.source-availability.1.text0": "Knowledgeはクローズドベータです。利用をご希望の方は、どのように使いたいかを添えてお問い合わせください。ハンドブックは誰でも閲覧できます。",
     "run.pre.1.text0": "# 取得済みのソースコードで実行\npnpm install && pnpm dev:web",
     "run.text-link.1.text0": "Knowledge のセットアップ",
     "run.option-number.2.text0": "02",
@@ -436,7 +436,7 @@
     "launch.text-link.1.text0": "Knowledge のハンドブックを読む"
   },
   "tracker": {
-    "hero.overline.1.text0": "Tracker · 人とエージェントのためのプロジェクト管理",
+    "hero.overline.1.text0": "Tracker · アルファ",
     "hero.tracker-title.1.text0": "仕事を見渡し、",
     "hero.em.1.text0": "次の一歩をかたちに。",
     "hero.lede.1.text0": "プロジェクトと依存関係を管理し、仕事の文脈の中でエージェントと協働できます。タスク、判断、会話を、自分のファイルに基づくワークスペースにまとめます。",
@@ -523,10 +523,10 @@
     "chapter.p.6.text0": "キャンバスは表示範囲外の前提作業や循環を示します。CLI の review は週次振り返り用に仕事を整理し、lint は古い依頼や変更・消失した出典などを知らせます。",
     "chapter.summary.4.text0": "文脈をつなぐ",
     "chapter.p.7.text0": "必要なら Knowledge のリンクで背景をつなげられます。Tracker は単独でも使え、ナレッジベースとの接続は任意です。",
-    "status.overline.1.text0": "開発状況",
+    "status.overline.1.text0": "アルファ",
     "status.h2.1.text0": "開発を続ける道具。",
     "status.em.1.text0": "実践から学ぶ。",
-    "status.p.1.text0": "Tracker は現在、一人の所有者がローカルのワークスペースで複数のエージェントと働く使い方に重点を置いています。開発に伴い、名前や画面は変わる可能性があります。",
+    "status.p.1.text0": "Trackerはアルファ段階です。利用はお問い合わせください。画面や機能は今後も変わります。試用やフィードバックに関心のある方をお待ちしています。",
     "status.p.2.text0": "Tracker は Hanji と同じ AGPL-3.0-only ライセンスを採用しています。一般公開と正式にサポートするインストール方法は、まだ確定していません。ホスト型のチーム用ワークスペース、個人別の権限、インポート、GitHub のステータス同期には現在対応していません。ビルドの自動化は、利用前に実環境での検証が必要です。",
     "status.text-link.1.href": "/ja/lab/",
     "status.text-link.1.text0": "Hanji ラボを見る ",
@@ -540,7 +540,7 @@
   "metadata": {
     "lab": {
       "title": "Hanji — 協働を研究するラボ",
-      "description": "人とエージェントが知識を共有し、仕事を進め、十分な文脈に基づいて判断できるよう、実験的な道具をつくっています。"
+      "description": "Hanjiは、知識を共有し、考えを交わし、エージェントと働く方法に合わせて形を変えます。これからの協働のあり方を探る場所です。"
     },
     "knowledge": {
       "title": "Hanji Knowledge — Git を基盤とするナレッジベース",
@@ -705,8 +705,8 @@
     }
   },
   "onboarding": {
-    "cta": "始める",
-    "title": "セットアップと提供状況",
+    "cta": "利用を問い合わせる",
+    "title": "Hanjiを一緒に試す",
     "heads": [
       "必要な環境",
       "ローカル設定",
@@ -714,7 +714,7 @@
       "エージェントの接続"
     ],
     "knowledge": {
-      "availability": "Knowledge のハンドブックは公開されています。ローカルでの設定には既存のソースチェックアウトが必要です。ソースの一般公開はまだ行われていません。",
+      "availability": "Knowledgeはクローズドベータです。利用をご希望の方は、どのように使いたいかを添えてお問い合わせください。ハンドブックは誰でも閲覧できます。",
       "now": "公開ハンドブックを見る",
       "prerequisites": "既存のKnowledgeソース、新しいNode.js、pnpm、Git、Cビルドツール、Markdownフォルダが必要です。閲覧や編集にモデルのアカウントは不要です。",
       "setup": "ソースのフォルダで依存関係をインストールし、Webアプリを起動します。localhost:4100を開いてください。",
@@ -723,13 +723,39 @@
       "next": "詳しい設定を見る"
     },
     "tracker": {
-      "availability": "Tracker は開発初期の段階です。一般向けのダウンロードやインストールパッケージはまだ提供していません。以下は、既存の Tracker チェックアウトを持つ開発者向けの手順です。",
+      "availability": "Trackerはアルファ段階です。利用はお問い合わせください。画面や機能は今後も変わります。試用やフィードバックに関心のある方をお待ちしています。",
       "now": "実際の画面を見る",
       "prerequisites": "Trackerを含む既存のソース、新しいNode.js、pnpm 9.15、Git、SQLite用Cビルドツールが必要です。タスクの作成や閲覧にモデルのアカウントは不要です。",
       "setup": "ソースのフォルダから、新しいワークスペース、プロジェクト、最初のタスクを作成します。Webアプリの起動時も同じターミナルのワークスペース変数を使います。",
       "outcome": "localhost:4102を開き、リストかキャンバスでFieldnotesと招待文のタスクを探します。プロジェクトとタスクはワークスペースのリポジトリ内のMarkdownファイルです。",
       "agent": "Setup でインストール済みの Claude または Codex エージェントを設定し、別途認証したうえで、同じ TRACKER_WORKSPACE で pnpm tracker-host を起動します。エージェントのセッションは実験段階で、実際のサービスとの接続を検証中です。",
       "next": "現在の開発状況を見る"
+    }
+  },
+  "access": {
+    "cta": "利用を問い合わせる",
+    "title": "Hanjiを一緒に試す",
+    "setup": "すでに利用中の方へ：セットアップ案内",
+    "knowledge": {
+      "stage": "クローズドベータ",
+      "description": "Knowledgeはクローズドベータです。利用をご希望の方は、どのように使いたいかを添えてお問い合わせください。ハンドブックは誰でも閲覧できます。"
+    },
+    "tracker": {
+      "stage": "アルファ",
+      "description": "Trackerはアルファ段階です。利用はお問い合わせください。画面や機能は今後も変わります。試用やフィードバックに関心のある方をお待ちしています。"
+    },
+    "form": {
+      "name": "お名前",
+      "email": "メールアドレス",
+      "message": "どのように使ってみたいですか？",
+      "placeholder": "お仕事の内容や、このプロジェクトをどう使いたいかを教えてください。",
+      "submit": "問い合わせを送信",
+      "sending": "送信中…",
+      "success": "お問い合わせを送信しました。メールで返信します。",
+      "error": "送信できませんでした。内容は残っていますので、もう一度お試しください。",
+      "privacy": "ご記入いただいた情報は返信に使用します。お問い合わせはFormSubmitを通じて処理されます。",
+      "unavailable": "まもなくこちらで利用のお問い合わせを受け付けます。",
+      "availability": "利用について"
     }
   }
 }

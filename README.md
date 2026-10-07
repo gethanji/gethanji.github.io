@@ -19,6 +19,7 @@ npm run test:tracker-hero
 npm run test:controls
 npm run test:theme
 npm run test:header
+npm run test:access
 npm run preview -- --port 4321
 ```
 
@@ -187,8 +188,9 @@ one owner, so those effects do not overwrite one another.
 ## Product onboarding
 
 Both product heroes point to `#get-started`, rendered by `QuickStart.astro`.
-The shared guide covers prerequisites, checkout-only setup, a first outcome,
-and an optional agent step. Knowledge keeps its original detailed setup
+The shared section identifies Knowledge as closed beta and Tracker as alpha,
+with an access-request form. Existing-checkout setup instructions remain in a
+secondary disclosure for participants who already have access. Knowledge keeps its original detailed setup
 section and its own handbook links. Tracker links to its real screenshots
 and development status; it does not borrow Knowledge's handbook.
 
@@ -226,3 +228,18 @@ Ongoing Claude/Codex sessions are implemented in developer builds; live-provider
 approval, deny, stop/resume and build checks remain open. Session state uses a
 local database. The hero remains a concept illustration, not proof of an
 automated project-creation flow or a supported public release.
+
+## Lab mission and access requests
+
+Hanji is a thin surface between people and agents, adapting to different
+interactions. The lab story moves from knowledge sharing to managing work.
+All five locales include explicit closed-beta and alpha maturity labels.
+
+Access requests use FormSubmit. `src/data/access.ts` holds only the public opaque
+form ID. Never commit a recipient email or confirmation link. Configure the ID
+after activation; an unconfigured form is disabled and clearly marked as not
+open yet. Recipient changes happen with the provider, not in the site source.
+Name, reply email, project and message are submitted. The form has validation,
+a honeypot, a pending state, and success/error feedback; failures retain input.
+Provider acceptance is not proof of email delivery. The privacy note names the
+processor. JavaScript uses its AJAX endpoint; native POST is the fallback.

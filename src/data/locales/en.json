@@ -1,9 +1,9 @@
 {
   "lab": {
-    "hero.overline.1.text0": "Hanji · An independent collaboration lab",
-    "hero.h1.1.text0": "Shared work,",
-    "hero.em.1.text0": "shaped by people.",
-    "hero.lede.1.text0": "We build experimental tools for people and agents to share knowledge, coordinate work, and make informed decisions.",
+    "hero.overline.1.text0": "Hanji · An experimental collaboration lab",
+    "hero.h1.1.text0": "A thin surface",
+    "hero.em.1.text0": "between people and agents.",
+    "hero.lede.1.text0": "Hanji takes different shapes to suit the ways we share knowledge, exchange ideas, and work with agents. A place to explore what working together can become.",
     "hero.button.1.text0": "Explore the projects",
     "hero.text-link.1.text0": "Our approach ",
     "hero.span.1.text0": "↓",
@@ -28,10 +28,10 @@
     "paper-story.p.3.text1": "Learn as it changes.",
     "paper-story.paper-foot.3.text0": "Progress we can understand",
     "about.overline.1.text0": "Why Hanji exists",
-    "about.h2.1.text0": "Shared context.",
-    "about.em.1.text0": "Informed decisions.",
-    "about.p.1.text0": "Effective collaboration depends on shared context: the purpose of the work, the reasons behind a decision, and who is responsible for the next step.",
-    "about.p.2.text0": "As agents take on more work, that context becomes essential. Hanji explores how software can make contributions easier to understand, review, and direct.",
+    "about.h2.1.text0": "A little clarity.",
+    "about.em.1.text0": "In a fast-moving world.",
+    "about.p.1.text0": "Agents are changing how work gets done, faster than our habits can adapt. We are learning to work alongside new forms of intelligence—and the ways we interact with them are still taking shape.",
+    "about.p.2.text0": "Hanji’s mission is to bring clarity to those interactions. We build and test small, thoughtful surfaces where people can understand what agents contribute, ask questions, and shape what happens next.",
     "chapter.overline.1.text0": "How we approach it",
     "chapter.h2.1.text0": "Build the conditions",
     "chapter.em.1.text0": "for better collaboration.",
@@ -47,15 +47,15 @@
     "chapter.h3.3.text0": "Connect knowledge and action.",
     "chapter.p.4.text0": "Bring shared knowledge into project work. Give agents a defined role while keeping priorities and direction in people’s hands.",
     "projects.overline.1.text0": "The projects",
-    "projects.h2.1.text0": "Two projects.",
-    "projects.em.1.text0": "One research direction.",
-    "projects.p.1.text0": "Knowledge supports shared documentation. Tracker organizes project work. Each can be used independently; together, they explore how context and action inform one another.",
+    "projects.h2.1.text0": "Two experiments.",
+    "projects.em.1.text0": "A shared question.",
+    "projects.p.1.text0": "What does collaboration with agents need to feel clear and useful? We began with knowledge sharing, then turned to the work that grows around it.",
     "projects.project-number.1.text0": "01",
-    "projects.tag.1.text0": "Knowledge base · In daily use",
+    "projects.tag.1.text0": "Closed beta",
     "projects.h3.1.text0": "Knowledge",
     "projects.project-subhead.1.text0": "Your agents already live in Git.",
     "projects.project-subhead.1.text1": "Now your knowledge does too.",
-    "projects.p.2.text0": "Read and edit Markdown in your own Git repositories. Give agents scoped access and review their proposed changes before merging.",
+    "projects.p.2.text0": "Agents are prolific at creating documents and notes. Knowledge began as a surface for people to read, edit, and build on that work together with agents. Markdown lives in your Git repository; proposed changes stay open to human review.",
     "projects.text-link.1.href": "/projects/knowledge/",
     "projects.text-link.1.text0": "Discover Knowledge ",
     "projects.product-photo.1.href": "/projects/knowledge/#demo",
@@ -69,11 +69,11 @@
     "projects.small.1.text0": "Open the image to view full size.",
     "projects.photo-caption.1.text0": "The handbook, written and published with Hanji. ",
     "projects.project-number.2.text0": "02",
-    "projects.tag.2.text0": "Project tracker · Experimental",
+    "projects.tag.2.text0": "Alpha",
     "projects.h3.2.text0": "Tracker",
     "projects.project-subhead.2.text0": "A clear view of the work.",
     "projects.project-subhead.2.text1": "A place to ask what comes next.",
-    "projects.p.3.text0": "Manage issues, projects, and dependencies in files you own. Work with agents in conversations attached to an issue or the wider workspace.",
+    "projects.p.3.text0": "That led to a second question: how should we manage work alongside agents? Tracker explores projects, tasks, and dependencies, with conversations attached to the work so people can see what is happening and guide the next step.",
     "projects.text-link.2.href": "/projects/tracker/",
     "projects.text-link.2.text0": "Discover Tracker ",
     "projects.product-photo.2.href": "/projects/tracker/#views",
@@ -85,22 +85,22 @@
     "projects.small.2.text0": "Open the image to view full size.",
     "projects.photo-caption.2.text0": "Real interface · fictional workspace ",
     "projects.span.7.text0": "↗",
-    "vision.overline.1.text0": "Research direction",
-    "vision.h2.1.text0": "An agent with a sense",
-    "vision.em.1.text0": "of the people in the work.",
+    "vision.overline.1.text0": "An open question",
+    "vision.h2.1.text0": "A door into",
+    "vision.em.1.text0": "the agentic era.",
     "vision.img.1.alt": "",
-    "vision.p.1.text0": "Our long-term ambition is a Hanji agent that supports more human collaboration: aware of shared context, attentive to decisions, and responsive to the people involved.",
-    "vision.p.2.text0": "This is a research goal. Today, we develop and use Knowledge and Tracker to test the ideas behind it.",
+    "vision.p.1.text0": "Hanji is an experimental doorway into a changing world of work. We explore how people and agents can work alongside one another with greater understanding and a clearer sense of direction.",
+    "vision.p.2.text0": "The surface will keep changing as we learn. Knowledge and Tracker are our first experiments, shaped by the people who use them.",
     "chapter.overline.2.text0": "한지 / A material to think with",
-    "chapter.p.5.text0": "Paper holds our ideas.",
-    "chapter.em.2.text0": "People give them meaning.",
-    "chapter.div.2.text0": "Hanji takes its name from traditional Korean handmade paper. It reflects our approach to software: a durable foundation for recording knowledge, developing ideas, and working together.",
-    "chapter.div.2.text2": "Explore the projects to see the current work and where it is heading.",
+    "chapter.p.5.text0": "One material.",
+    "chapter.em.2.text0": "Many forms.",
+    "chapter.div.2.text0": "Hanji takes its name from traditional Korean paper. For us, it is a way to think about software: a thin surface between people and agents, taking different shapes and shades to suit each interaction.",
+    "chapter.div.2.text2": "A document, a conversation, a project canvas. Different surfaces for the same question: how can we work well together?",
     "chapter.text-link.1.text0": "Explore the projects ",
     "chapter.span.4.text0": "↑"
   },
   "knowledge": {
-    "hero.eyebrow.1.text0": "A Git-backed knowledge base",
+    "hero.eyebrow.1.text0": "Knowledge · Closed beta",
     "hero.span.1.text0": "Your agents already live in Git",
     "hero.em.1.text0": "Now your knowledge does too",
     "hero.lede.1.text0": "Edit Markdown in your Git repository. Give agents scoped access and review their proposals.",
@@ -402,11 +402,11 @@
     "run.run-heading.1.text0": "Run locally.",
     "run.em.1.text0": "Share on your terms.",
     "run.p.1.text0": "Local. Shared. Published. Your choice.",
-    "run.availability.1.text1": " Deployment options in the development version.",
+    "run.availability.1.text1": " Closed beta",
     "run.option-number.1.text0": "01",
     "run.summary.1.text1": "Just you, locally",
     "run.p.2.text0": "Start Hanji, name your workspace, set an owner password, and select the folder containing your Markdown files.",
-    "run.source-availability.1.text0": "These setup instructions require an existing source checkout. A public source release is not yet available.",
+    "run.source-availability.1.text0": "Knowledge is in closed beta, with access by request. Contact us to tell us how you would like to use it. The handbook is open to everyone.",
     "run.pre.1.text0": "# From an existing source checkout\npnpm install && pnpm dev:web",
     "run.text-link.1.text0": "Knowledge setup notes",
     "run.option-number.2.text0": "02",
@@ -436,7 +436,7 @@
     "launch.text-link.1.text0": "Read the Knowledge handbook"
   },
   "tracker": {
-    "hero.overline.1.text0": "Tracker · Project coordination for people and agents",
+    "hero.overline.1.text0": "Tracker · Alpha",
     "hero.tracker-title.1.text0": "See the work.",
     "hero.em.1.text0": "Shape what comes next.",
     "hero.lede.1.text0": "Manage projects, follow dependencies, and work with agents in context. Keep tasks, decisions, and conversations in a workspace backed by your own files.",
@@ -523,10 +523,10 @@
     "chapter.p.6.text0": "Canvas chains can reveal prerequisites outside the current view and mark cycles. The CLI’s review command groups work for a weekly review; lint flags things such as stale asks and changed or missing sources.",
     "chapter.summary.4.text0": "Connect the context",
     "chapter.p.7.text0": "Optional Knowledge links bring background into the work. Tracker remains useful on its own; connecting a knowledge base is a choice.",
-    "status.overline.1.text0": "Development status",
+    "status.overline.1.text0": "Alpha",
     "status.h2.1.text0": "In active development.",
     "status.em.1.text0": "Open to learning.",
-    "status.p.1.text0": "Tracker currently focuses on one owner working with multiple agents in a local workspace. Its name and interface may change as development continues.",
+    "status.p.1.text0": "Tracker is in alpha, with access by request. Expect an evolving interface and capabilities. Contact us if you would like to try it and share feedback.",
     "status.p.2.text0": "Tracker shares Hanji’s AGPL-3.0-only license. Public distribution and supported installation are not yet finalized. Hosted team workspaces, individual permissions, importers, and GitHub status synchronization are not currently supported. Build automation still requires live validation before use.",
     "status.text-link.1.href": "/",
     "status.text-link.1.text0": "Explore the Hanji lab ",
@@ -540,7 +540,7 @@
   "metadata": {
     "lab": {
       "title": "Hanji — A collaboration research lab",
-      "description": "We build experimental tools for people and agents to share knowledge, coordinate work, and make informed decisions."
+      "description": "Hanji takes different shapes to suit the ways we share knowledge, exchange ideas, and work with agents. A place to explore what working together can become."
     },
     "knowledge": {
       "title": "Hanji Knowledge — A Git-backed knowledge base",
@@ -705,8 +705,8 @@
     }
   },
   "onboarding": {
-    "cta": "Get started",
-    "title": "Setup and availability",
+    "cta": "Request access",
+    "title": "Try Hanji with us",
     "heads": [
       "Requirements",
       "Local setup",
@@ -714,7 +714,7 @@
       "Agent connection"
     ],
     "knowledge": {
-      "availability": "The Knowledge handbook is publicly available. Local setup requires an existing source checkout; a public source release is not yet available.",
+      "availability": "Knowledge is in closed beta, with access by request. Contact us to tell us how you would like to use it. The handbook is open to everyone.",
       "now": "Explore the live handbook",
       "prerequisites": "An existing Knowledge checkout, recent Node.js, pnpm, Git, a C build toolchain, and a folder of Markdown. No model account is needed to read or edit.",
       "setup": "From the checkout, install dependencies and start the web app. Open localhost:4100.",
@@ -723,13 +723,39 @@
       "next": "More setup options"
     },
     "tracker": {
-      "availability": "Tracker is in early development. Public downloads and packaged installation are not yet available. The steps below are for developers with an existing Tracker checkout.",
+      "availability": "Tracker is in alpha, with access by request. Expect an evolving interface and capabilities. Contact us if you would like to try it and share feedback.",
       "now": "Explore the interface",
       "prerequisites": "An existing checkout containing Tracker, recent Node.js, pnpm 9.15, Git, and a C build toolchain for SQLite. You can create and browse tasks without a model account.",
       "setup": "From the checkout, create a fresh workspace, then a project and its first task. Keep this terminal’s workspace variable when starting the web app.",
       "outcome": "Open localhost:4102. Find Fieldnotes and its invitation task in the list or canvas. The project and task are Markdown files in your workspace repository.",
       "agent": "Configure an installed Claude or Codex agent in Setup, authenticate it separately, and start pnpm tracker-host with the same TRACKER_WORKSPACE. Agent sessions remain experimental and are still being validated with live providers.",
       "next": "See the current development status"
+    }
+  },
+  "access": {
+    "cta": "Request access",
+    "title": "Try Hanji with us",
+    "setup": "Already have access? Setup notes",
+    "knowledge": {
+      "stage": "Closed beta",
+      "description": "Knowledge is in closed beta, with access by request. Contact us to tell us how you would like to use it. The handbook is open to everyone."
+    },
+    "tracker": {
+      "stage": "Alpha",
+      "description": "Tracker is in alpha, with access by request. Expect an evolving interface and capabilities. Contact us if you would like to try it and share feedback."
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "What would you like to try?",
+      "placeholder": "Tell us a little about your work and how you would use this project.",
+      "submit": "Send request",
+      "sending": "Sending…",
+      "success": "Your request has been sent. We’ll reply by email.",
+      "error": "Your request could not be sent. Please try again; your message is still here.",
+      "privacy": "We’ll use your details to reply to this request. Submissions are processed by FormSubmit.",
+      "unavailable": "Access requests will open here soon.",
+      "availability": "Availability"
     }
   }
 }

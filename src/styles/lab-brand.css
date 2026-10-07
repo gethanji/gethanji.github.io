@@ -36,3 +36,5 @@ html[data-theme=dark] [data-product=lab]{
 .brand-v3 .lab-statement h2 em{color:#d7d3cc}
 @media(forced-colors:active){.brand-v3 .hero h1 em,.brand-v3 .lab-statement h2 em{color:CanvasText}}
 @media print{.brand-v3 .hero h1 em,.brand-v3 .lab-statement h2 em{color:inherit}}
+
+.brand-v3 .project-actions{display:flex;align-items:center;gap:16px 28px;flex-wrap:wrap}
