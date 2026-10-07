@@ -44,8 +44,9 @@ for(const root of document.querySelectorAll<HTMLElement>('.mini-hanji')){
   steps.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.storyStep)===Math.min(n,4))));
  },(running,n,resumed)=>{
   const button=root.querySelector<HTMLButtonElement>('[data-story-toggle]')!;
-  button.textContent=running?t.pause:n>=5?t.replay:resumed?t.resume:t.play;
-  button.setAttribute('aria-pressed',String(running));
+  const text=running?t.pause:n>=5?t.replay:resumed?t.resume:t.play;
+  if(button.textContent!==text)button.textContent=text;
+  if(button.getAttribute('aria-pressed')!==String(running))button.setAttribute('aria-pressed',String(running));
  },[clock],{loop:true,hold:0});
  steps.forEach(b=>b.addEventListener('click',()=>{const n=+b.dataset.storyStep!;control.choose(n,samples[n]-starts[n]);}));
  root.querySelector('[data-story-toggle]')!.addEventListener('click',control.toggle);

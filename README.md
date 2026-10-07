@@ -262,3 +262,26 @@ retain their independent pause, replay and focus behavior.
 Run `npm run test:editorial` after changing shared primitives. It compares all
 three pages across five languages and four widths, plus both themes, keyboard
 focus, anchor navigation, reduced motion and no-JavaScript reading.
+
+
+## Loading and navigation
+
+Astro builds and minifies the legacy CSS imports and page scripts. Page-specific
+styles are linked as hashed assets; the Tracker illustration CSS only loads on
+Tracker. Keep CSS imports in the build pipeline rather than public wrappers.
+Below-the-fold screenshots use native lazy loading, including inactive tabs.
+
+Astro prefetches same-origin destinations on hover or keyboard focus. Native
+cross-document view transitions keep the header anchored with a short content
+crossfade where supported; other browsers retain ordinary document navigation.
+This preserves the existing scripts' document lifecycle without an SPA router.
+Language and theme are resolved in the head. Internal navigation, history and
+anchor visits skip the entrance animation, and reduced motion skips transitions.
+
+Knowledge reserves control geometry before initialization and pauses its CSS
+fallback at frame zero until the shared timeline takes over. Visible editorial
+content is never hidden again by a late initialization. Playback labels update
+only when their state changes.
+
+Run `npm run test:navigation` for delayed script loading, a single hero entrance,
+stable control geometry, prefetch, lazy screenshot tabs, and back/forward behavior.

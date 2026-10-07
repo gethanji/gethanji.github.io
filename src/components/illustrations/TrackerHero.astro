@@ -1,7 +1,6 @@
 ---
 import {dictionary} from '../../data/site';
 import StoryControls from './StoryControls.astro';
-import '../../styles/illustration.css';
 const {lang} = Astro.props;
 const t=dictionary(lang).story,c=t.canvasHero;
 const tasks=[{title:c.outline,ask:c.ask2,reply:c.reply2},{title:c.invitation,ask:c.ask0,reply:c.reply0},{title:c.feedback,ask:c.ask1,reply:c.reply1},{title:c.publish,ask:c.ask3,reply:c.reply3}];

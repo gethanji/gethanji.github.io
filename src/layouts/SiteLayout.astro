@@ -1,5 +1,8 @@
 ---
 import SEO from '../components/SEO.astro';
+import knowledgeCSS from '../styles/knowledge-base.css?url';
+import labCSS from '../styles/lab-base.css?url';
+import trackerCSS from '../styles/tracker-base.css?url';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { dictionary } from '../data/site';
@@ -18,18 +21,40 @@ const ui = dictionary(lang).ui;
 <html lang={lang}>
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <SEO lang={lang} page={page} />
-  <link rel="icon" href="/hanji-mark.svg" type="image/svg+xml" />
-  <meta name="theme-color" content="#f9faf6" />
-  <link rel="stylesheet" href={page==='knowledge'?'/assets/knowledge-editorial.css':'/assets/lab-editorial.css'} />
+  <style is:inline>@view-transition{navigation:auto}@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
   <script is:inline>
     (() => {
+      const root = document.documentElement;
+      root.dataset.js = 'true';
+      // Native transitions may be skipped for redirects, history or a slow load.
+      // Their rejected ready promise must not become an unhandled page error.
+      for (const name of ['pageswap','pagereveal']) addEventListener(name, event => {
+        event.viewTransition?.ready.catch(() => {});
+      });
+      const internal = document.referrer && new URL(document.referrer).origin === location.origin;
+      const restored = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
+      if (location.hash || internal || restored) root.dataset.entryStatic = 'true';
+      // Resolve language before the body can paint; explicit localized links win.
+      const supported = ['en','ko','de','ja','fr'];
+      const detected = (navigator.languages || [navigator.language]).map(tag => tag.toLowerCase().split('-')[0]).find(lang => supported.includes(lang)) || 'en';
+      let language = 'system';
+      try { const saved = localStorage.getItem('hanji-language'); if (['system',...supported].includes(saved)) language = saved; } catch {}
+      const target = language === 'system' ? detected : language;
+      if (!/^\/(ko|de|ja|fr)\//.test(location.pathname) && !internal && root.lang !== target) {
+        const suffix = location.pathname === '/' ? '/lab/' : location.pathname;
+        location.replace('/' + target + suffix + location.search + location.hash);
+      }
       let choice = 'system';
       try { const saved = localStorage.getItem('hanji-theme'); if (['light','dark','system'].includes(saved)) choice = saved; } catch {}
       document.documentElement.dataset.themeChoice = choice;
       document.documentElement.dataset.theme = choice === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : choice;
     })();
   </script>
+  <SEO lang={lang} page={page} />
+  <link rel="icon" href="/hanji-mark.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#f9faf6" />
+  <link rel="stylesheet" href={page==='knowledge'?knowledgeCSS:page==='tracker'?trackerCSS:labCSS} />
+
   <noscript><style>.media-status{position:static;background:none;border:0;padding:16px}.media-status small,.capture-tabs{display:none}.capture[hidden]{display:block}</style></noscript>
 </head>
 <body class:list={[page==='knowledge'?'knowledge-family':page==='tracker'?'tracker tracker-v3':'lab lab-v2 brand-v3']} data-product={page}>
@@ -37,7 +62,6 @@ const ui = dictionary(lang).ui;
   <SiteHeader lang={lang} page={page} />
   <main id="main" class={page==='knowledge'?'wrap':undefined}><slot /></main>
   <SiteFooter lang={lang} />
-  {page==='knowledge'?<script is:inline src="/assets/landing.js" defer></script>:<script is:inline src="/assets/lab.js" defer></script>}
 <script>import '../scripts/paper-tilt';
  import '../scripts/theme';
  import '../scripts/page-motion';

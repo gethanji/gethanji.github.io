@@ -35,3 +35,11 @@ html[data-entry-static=true] body[data-product] .hero :is(h1,.hero-bottom){anima
  body[data-product] *,body[data-product] *::before,body[data-product] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  body[data-product] .reveal.waiting{opacity:1;transform:none}
 }
+
+/* Native document navigation preserves each page's script lifecycle. The header
+   stays anchored while content crossfades; internal visits skip the hero reveal. */
+@media(prefers-reduced-motion:no-preference){
+ .site-header{view-transition-name:site-header}
+ ::view-transition-group(*){animation-duration:180ms;animation-timing-function:ease-out}
+ ::view-transition-old(site-header),::view-transition-new(site-header){animation:none}
+}

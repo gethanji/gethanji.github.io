@@ -27,8 +27,10 @@ if ('IntersectionObserver' in window && !preference.matches) {
   }, {threshold: 0.08});
   for (const section of sections) {
     section.classList.add('reveal');
-    if (section.getBoundingClientRect().top > innerHeight) section.classList.add('waiting');
-    observer.observe(section);
+    if (section.getBoundingClientRect().top > innerHeight) {
+      section.classList.add('waiting');
+      observer.observe(section);
+    }
   }
   preference.addEventListener('change', () => {
     if (!preference.matches) return;

@@ -6,15 +6,18 @@ export function timeline(root: HTMLElement, durations: number[], render: (index:
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const starts=durations.map((_,i)=>durations.slice(0,i).reduce((a,b)=>a+b,0));
  const total=starts.at(-1)!;
+ let labelState='';
  let time=reduced.matches?total:0,index=-1,frame=0,last=0,initiated=false,holdTime=0,cycles=0;
  function paint(){
   tracks.forEach(a=>{a.currentTime=time;});
   const next=time>=total?durations.length-1:starts.findLastIndex(n=>n<=time);
   if(next!==index){index=next;render(index);}
   root.dataset.playhead=String(Math.round(time));
-  root.dataset.resetting=String(!!frame&&!!options.loop&&time>=total&&holdTime>1800);
-  root.dataset.running=String(!!frame);
-  label(!!frame,index,time>starts[index]);
+  const resetting=String(!!frame&&!!options.loop&&time>=total&&holdTime>1800),running=String(!!frame);
+  if(root.dataset.resetting!==resetting)root.dataset.resetting=resetting;
+  if(root.dataset.running!==running)root.dataset.running=running;
+  const state=`${running}:${index}:${time>starts[index]}`;
+  if(state!==labelState){labelState=state;label(!!frame,index,time>starts[index]);}
  }
  function tick(now:number){
   const delta=now-last;last=now;

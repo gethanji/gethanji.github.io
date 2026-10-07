@@ -1,0 +1,2 @@
+/* Resolve the legacy cascade at build time, not through a browser CSS import. */
+@import "../../public/assets/lab.css" layer(editorial);

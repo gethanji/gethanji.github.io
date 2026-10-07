@@ -21,11 +21,4 @@ if (picker) {
       link.href = withLocation(link.href);
     });
   }
-  const prefixed = /^\/(ko|de|ja|fr)\//.test(location.pathname);
-  const target = choice === 'system' ? detected : choice;
-  const internalNavigation = document.referrer && new URL(document.referrer).origin === location.origin;
-  if (!prefixed && !internalNavigation && document.documentElement.lang !== target) {
-    const link = picker.querySelector<HTMLAnchorElement>(`[data-language=${target}]`)!;
-    location.replace(withLocation(link.href));
-  }
 }
