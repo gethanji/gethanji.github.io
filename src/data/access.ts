@@ -1,5 +1,10 @@
-// Paste only the public opaque FormSubmit ID after recipient activation.
-// Never put the destination email or an activation link in this public file.
-export const accessFormId: string = '';
-export const accessFormReady = /^[a-f0-9]{32}$/i.test(accessFormId);
-export const accessFormEndpoint = accessFormReady ? `https://formsubmit.co/${accessFormId}` : undefined;
+// Public hosted form supplied by the recipient. Never include a recipient email
+// or private activation link here. /el/ links are not AJAX submission endpoints.
+export const accessFormUrl = 'https://formsubmit.co/el/xuriwu';
+
+export function accessRequestUrl(product: 'knowledge' | 'tracker'): string {
+  const url = new URL(accessFormUrl);
+  const project = product === 'knowledge' ? 'Knowledge' : 'Tracker';
+  url.searchParams.set('subject', `Hanji ${project} access request`);
+  return url.href;
+}

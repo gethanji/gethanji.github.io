@@ -235,11 +235,13 @@ Hanji is a thin surface between people and agents, adapting to different
 interactions. The lab story moves from knowledge sharing to managing work.
 All five locales include explicit closed-beta and alpha maturity labels.
 
-Access requests use FormSubmit. `src/data/access.ts` holds only the public opaque
-form ID. Never commit a recipient email or confirmation link. Configure the ID
-after activation; an unconfigured form is disabled and clearly marked as not
-open yet. Recipient changes happen with the provider, not in the site source.
-Name, reply email, project and message are submitted. The form has validation,
-a honeypot, a pending state, and success/error feedback; failures retain input.
-Provider acceptance is not proof of email delivery. The privacy note names the
-processor. JavaScript uses its AJAX endpoint; native POST is the fallback.
+Access requests open the recipient-provided FormSubmit hosted contact form.
+`src/data/access.ts` stores its public `/el/` link and adds a project-specific
+subject using the provider's documented query parameter. Never commit a recipient
+email or private activation link. The same-tab link works without JavaScript;
+the surrounding copy identifies FormSubmit before visitors leave the site.
+The provider handles the form and submission feedback. A hosted `/el/` link is
+not an AJAX endpoint; an embedded form would require a separate invisible-email
+form ID. Recipient changes happen with the provider, not in the site source.
+Browser checks intercept external navigation and do not send submissions.
+Email delivery still needs a recipient-confirmed end-to-end check.

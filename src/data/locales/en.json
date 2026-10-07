@@ -745,17 +745,8 @@
       "description": "Tracker is in alpha, with access by request. Expect an evolving interface and capabilities. Contact us if you would like to try it and share feedback."
     },
     "form": {
-      "name": "Your name",
-      "email": "Your email",
-      "message": "What would you like to try?",
-      "placeholder": "Tell us a little about your work and how you would use this project.",
-      "submit": "Send request",
-      "sending": "Sending…",
-      "success": "Your request has been sent. We’ll reply by email.",
-      "error": "Your request could not be sent. Please try again; your message is still here.",
-      "privacy": "We’ll use your details to reply to this request. Submissions are processed by FormSubmit.",
-      "unavailable": "Access requests will open here soon.",
-      "availability": "Availability"
+      "hosted": "Opens our contact form on FormSubmit.",
+      "privacy": "We’ll use your details to reply to this request. Submissions are processed by FormSubmit."
     }
   }
 }
