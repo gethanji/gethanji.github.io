@@ -21,16 +21,10 @@ const ui = dictionary(lang).ui;
 <html lang={lang}>
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style is:inline>@view-transition{navigation:auto}@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
   <script is:inline>
     (() => {
       const root = document.documentElement;
       root.dataset.js = 'true';
-      // Native transitions may be skipped for redirects, history or a slow load.
-      // Their rejected ready promise must not become an unhandled page error.
-      for (const name of ['pageswap','pagereveal']) addEventListener(name, event => {
-        event.viewTransition?.ready.catch(() => {});
-      });
       const internal = document.referrer && new URL(document.referrer).origin === location.origin;
       const restored = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
       if (location.hash || internal || restored) root.dataset.entryStatic = 'true';

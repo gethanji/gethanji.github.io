@@ -54,26 +54,45 @@ try {
  await go('/');
  const prefetched=p.waitForResponse(r=>new URL(r.url()).pathname==='/projects/tracker/');
  await p.hover('.family-shortcuts a[href="/projects/tracker/"]');await prefetched;
- await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click('.family-shortcuts a[href="/projects/tracker/"]')]);await wait(300);
+ await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click('.family-shortcuts a[href="/projects/tracker/"]')]);
  assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none','Navigation does not replay the page entrance');
- assert.equal(await p.evaluate(()=>window.__nativeTransition),true,'Native transition is enabled before the destination reveals');
+ assert.equal(await p.evaluate(()=>window.__nativeTransition),false,'Navigation must not overlay old and new page snapshots');
  await p.waitForFunction(()=>document.querySelector('.tracker-mini').dataset.running==='true');
  await p.click('[data-story-toggle]');assert.equal(await p.$eval('.tracker-mini',e=>e.dataset.running),'false');
  assert.equal(await p.$eval('#capture-panel-list img',e=>e.complete),false,'Hidden screenshots are deferred');
  await p.click('#capture-list');await p.waitForFunction(()=>document.querySelector('#capture-panel-list img').naturalWidth>0);
- await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click('.family-shortcuts a[href="/projects/knowledge/"]')]);await wait(300);
+ await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click('.family-shortcuts a[href="/projects/knowledge/"]')]);
  assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
  await p.click('[data-story-toggle]');await p.click('[data-story-restart]');
  assert.equal(await p.$eval('.mini-hanji',e=>e.dataset.running),'true');
- await p.goBack({waitUntil:'load'});await wait(250);assert.equal(new URL(p.url()).pathname,'/projects/tracker/');
+ await p.goBack({waitUntil:'load'});assert.equal(new URL(p.url()).pathname,'/projects/tracker/');
  await p.click('.theme-picker summary');assert(await p.$eval('.theme-picker',e=>e.open));
- await p.goForward({waitUntil:'load'});await wait(250);assert.equal(new URL(p.url()).pathname,'/projects/knowledge/');
+ await p.goForward({waitUntil:'load'});assert.equal(new URL(p.url()).pathname,'/projects/knowledge/');
  await p.click('[data-story-restart]');assert.equal(await p.$eval('.mini-hanji',e=>e.dataset.running),'true');
+ // Real link clicks: header stays identical from the first rendered frame,
+ // without masking the result behind a transition-settling delay.
+ const header=()=>p.$eval('.site-header',e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect(),mark=getComputedStyle(e.querySelector('.family-brand>span'));return {bg:s.backgroundColor,color:s.color,border:s.borderBottomColor,height:r.height,width:r.width,mark:mark.backgroundColor};});
+ for(const width of [1366,390])for(const theme of ['light','dark']){
+  await p.setViewport({width,height:900});
+  await p.evaluate(theme=>localStorage.setItem('hanji-theme',theme),theme);
+  await go('/');const expected=await header();
+  for(const path of ['/projects/knowledge/','/projects/tracker/','/']){
+   const selector=path==='/'?'.family-brand':`.family-shortcuts a[href="${path}"]`;
+   await Promise.all([p.waitForNavigation({waitUntil:'load'}),p.click(selector)]);
+   assert.equal(await p.evaluate(()=>window.__nativeTransition),false);
+   assert.deepEqual(await header(),expected,`${width}/${theme}/${path} header palette and geometry`);
+   assert.equal(await p.$eval('.hero h1',e=>getComputedStyle(e).animationName),'none');
+   const frames=await p.evaluate(()=>new Promise(resolve=>{
+    const frames=[];function sample(){const h=document.querySelector('.site-header'),s=getComputedStyle(h);frames.push({opacity:s.opacity,bg:s.backgroundColor,overlap:document.documentElement.matches(':active-view-transition')});if(frames.length<12)requestAnimationFrame(sample);else resolve(frames);}requestAnimationFrame(sample);
+   }));
+   assert(frames.every(f=>f.opacity==='1'&&f.bg===expected.bg&&!f.overlap),'No header fade, recoloring or overlapping page snapshots');
+  }
+ }
  for(const product of pages){
   await go(route('en',product));
   const imports=await p.evaluate(()=>[...document.styleSheets].flatMap(s=>[...s.cssRules]).filter(r=>r instanceof CSSImportRule).length);
   assert.equal(imports,0,'No runtime stylesheet import waterfall');
  }
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
- console.log('PASS: delayed Knowledge enhancement has one entrance and stable geometry; low control churn, intent prefetch, native navigation, lazy screenshots and history interactions verified');
+ console.log('PASS: delayed Knowledge enhancement has one entrance and stable geometry; low control churn, intent prefetch, snapshot-free navigation, neutral header in both themes, lazy screenshots and history interactions verified');
 }finally{await browser.close();await new Promise(r=>server.close(r));}

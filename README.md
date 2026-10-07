@@ -271,12 +271,12 @@ styles are linked as hashed assets; the Tracker illustration CSS only loads on
 Tracker. Keep CSS imports in the build pipeline rather than public wrappers.
 Below-the-fold screenshots use native lazy loading, including inactive tabs.
 
-Astro prefetches same-origin destinations on hover or keyboard focus. Native
-cross-document view transitions keep the header anchored with a short content
-crossfade where supported; other browsers retain ordinary document navigation.
-This preserves the existing scripts' document lifecycle without an SPA router.
-Language and theme are resolved in the head. Internal navigation, history and
-anchor visits skip the entrance animation, and reduced motion skips transitions.
+Astro prefetches same-origin destinations on hover or keyboard focus. Navigation
+uses ordinary document replacement with no page snapshots or crossfades: outgoing
+and incoming content must never overlap. The header uses the same neutral palette
+on every route in each theme. This preserves the existing scripts' document
+lifecycle without an SPA router. Language and theme are resolved in the head.
+Internal navigation, history and anchor visits skip the entrance animation.
 
 Knowledge reserves control geometry before initialization and pauses its CSS
 fallback at frame zero until the shared timeline takes over. Visible editorial
