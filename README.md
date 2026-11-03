@@ -299,3 +299,12 @@ only when their state changes.
 Run `npm run test:navigation` for delayed script loading, a single hero entrance,
 stable control geometry, actual header/document persistence, repeated demos and
 mocked form submissions, locale/theme changes, history, and router fallback.
+
+
+## Desktop setup guide
+
+`/start/` walks through receiving the invited desktop preview, moving the app to
+Applications, creating a workspace and making a first canvas, issue or page.
+The guide deliberately links to the existing access request form while there is
+no public binary release. It does not advertise an unavailable download. Product
+quick-start sections link to the guide; the in-app wizard also provides local help.
