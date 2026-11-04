@@ -4,5 +4,5 @@ const {lang}=Astro.props,copy=dictionary(lang).suite;
 ---
 <section class="hero suite-hero wrap"><p class="overline">Think · {copy.previewLabel}</p><h1>{copy.products.think[0]}</h1><p class="lede">{copy.products.think[1]}</p><div class="actions"><a class="button" href="#get-started">{copy.cta} <LinkArrow /></a><a class="button button-quiet" href="#current-think">{copy.see}</a></div></section>
 <CurrentCapabilities lang={lang} product="think"/>
-<section class="suite-templates wrap"><div class="section-head"><div><p class="overline">Think</p><h2>{copy.projectsTitle}</h2></div><p>{copy.features.think[2]}</p></div><figure class="current-capture"><img src="/assets/current/preview-templates.webp" width="1440" height="1000" alt={copy.features.think[2]} loading="lazy" decoding="async"/><figcaption>{copy.captureNote}</figcaption></figure></section>
+<section class="suite-templates wrap"><div class="section-head"><div><p class="overline">Think</p><h2>{copy.templatesTitle}</h2></div><p>{copy.features.think[2]}</p></div><figure class="current-capture"><img src="/assets/current/preview-templates.webp" width="1440" height="1000" alt={copy.features.think[2]} loading="lazy" decoding="async"/><figcaption>{copy.captureNote}</figcaption></figure></section>
 <SuiteShared lang={lang}/><QuickStart lang={lang} product="think"/>

@@ -1,11 +1,15 @@
 # Hanji
 
-One workspace for Think, Plan and Document, with a shared conductor when you connect your own agent. The Mac desktop app is an invited preview. Public binary downloads and hosted workspace sync are not available yet. The basic products do not require a model account; Claude or Codex access is configured separately. Files stay in local folders and Git repositories; durable workspace configuration and sessions also use local databases.
+Hanji is a workspace for people and agents to explore ideas, organize work and keep knowledge. Its mission is to help them build shared understanding on a foundation they own. Think, Plan and Document are the first expression of that mission, with a shared conductor when you connect your own agent. The Mac desktop app is an invited preview. Public binary downloads and hosted workspace sync are not available yet. The basic products do not require a model account; Claude or Codex access is configured separately. Files stay in local folders and Git repositories; durable workspace configuration and sessions also use local databases.
 
 ## Products
 - [Think](https://hanji.ink/projects/think/): A canvas with live notes, text, shapes, connectors, editable tables, groups, visual templates, a shared timer and voting. Agent activity is visible on the canvas.
 - [Plan](https://hanji.ink/projects/plan/): Issues, projects, list/board/dependency views, objectives and key results, contextual task conversations, and a workspace conductor.
 - [Document](https://hanji.ink/projects/document/): Real Markdown reading and editing, scoped search, comments, history, human-reviewed proposals and publishing.
+
+## Mission and workflow
+- [Mission and vision](https://hanji.ink/docs/handbook/story/mission-and-vision/): Why Hanji exists, the current workspace as a first step, and the longer-term ambition.
+- [From idea to action](https://hanji.ink/docs/handbook/guide/idea-to-action/): A fictional worked example following a decision across Think, Plan and Document.
 
 ## Get started and learn
 - [Desktop setup guide](https://hanji.ink/start/): Invited preview access, installation and the four-stage workspace setup.

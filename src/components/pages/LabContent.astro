@@ -1,10 +1,27 @@
 ---
-import {dictionary,route} from '../../data/site';import {captures} from '../../data/captures';import LinkArrow from '../LinkArrow.astro';import SuiteShared from '../SuiteShared.astro';
+import {dictionary,route} from '../../data/site';
+import {captures} from '../../data/captures';
+import LinkArrow from '../LinkArrow.astro';
+import SuiteShared from '../SuiteShared.astro';
+import WorkspaceTour from '../WorkspaceTour.astro';
 const {lang}=Astro.props,copy=dictionary(lang).suite;
 ---
-<div class="suite-intro-layout wrap"><section class="hero suite-hero"><p class="overline">{copy.eyebrow}</p><h1>{copy.hero[0]}<br/><em>{copy.hero[1]}</em></h1><p class="lede">{copy.summary}</p><div class="actions"><a class="button" href={route(lang,'knowledge')+'#get-started'}>{copy.cta} <LinkArrow /></a><a class="button button-quiet" href="#projects">{copy.see}</a></div><p class="suite-availability">{copy.availability}</p></section>
-<figure class="suite-flagship"><img src={captures.think.src} width={captures.think.width} height={captures.think.height} alt={`Think — ${copy.captureNote}`} fetchpriority="high"/><figcaption><span>Think · Plan · Document</span><span>{copy.captureNote}</span></figcaption></figure></div>
-<section class="suite-projects wrap" id="projects"><div class="section-head"><div><p class="overline">Think · Plan · Document</p><h2>{copy.projectsTitle}</h2></div><p>{copy.projectsText}</p></div>
- {(['think','tracker','knowledge'] as const).map((id,i)=><article class="suite-project project"><div class="suite-project-description"><span class="overline">0{i+1} · {captures[id].name}</span><h3>{copy.products[id][0]}</h3><p>{copy.products[id][1]}</p><ul>{copy.features[id].map(f=><li>{f}</li>)}</ul><a class="text-link" href={route(lang,id)}>{copy.discover} {captures[id].name} <LinkArrow /></a></div><figure><a href={route(lang,id)}><img src={captures[id].src} width={captures[id].width} height={captures[id].height} alt={`${captures[id].name} — ${copy.captureNote}`} loading="lazy" decoding="async"/></a><figcaption>{copy.captureNote}</figcaption></figure></article>)}
-</section><SuiteShared lang={lang}/>
+<section class="suite-hero suite-home-hero wrap">
+ <p class="overline">{copy.eyebrow}</p>
+ <h1>{copy.hero[0]}<br/><em>{copy.hero[1]}</em></h1>
+ <p class="lede">{copy.summary}</p>
+ <div class="actions"><a class="button" href={route(lang,'knowledge')+'#get-started'}>{copy.cta} <LinkArrow /></a><a class="text-link" href="#mission">{copy.see} <span aria-hidden="true">↓</span></a></div>
+ <p class="suite-availability">{copy.setupText}</p>
+</section>
+<section class="suite-mission wrap" id="mission" aria-labelledby="mission-heading">
+ <p class="overline">{copy.missionLabel}</p>
+ <div><h2 id="mission-heading">{copy.missionTitle}</h2><p>{copy.missionText}</p><p>{copy.missionBridge}</p><a class="text-link" href="https://hanji.ink/docs/handbook/story/mission-and-vision/">{copy.missionLink} <LinkArrow /></a></div>
+</section>
+<section class="suite-workspace wrap" id="projects" aria-labelledby="workspace-heading">
+ <div class="section-head"><h2 id="workspace-heading">{copy.projectsTitle}</h2><p>{copy.projectsText}</p></div>
+ <WorkspaceTour lang={lang}/>
+ <div class="suite-surface-grid">{(['think','tracker','knowledge'] as const).map((id,i)=><article><p class="overline">0{i+1} · {captures[id].name}</p><h3>{copy.products[id][0]}</h3><p>{copy.products[id][1]}</p><a class="text-link" href={route(lang,id)}>{copy.discover} {captures[id].name} <LinkArrow /></a></article>)}</div>
+ <a class="text-link suite-workflow-link" href="https://hanji.ink/docs/handbook/guide/idea-to-action/">{copy.workflowLink} <LinkArrow /></a>
+</section>
+<SuiteShared lang={lang}/>
 <section class="suite-closing wrap" id="vision"><p class="overline">Hanji</p><h2>{copy.closingTitle}</h2><p>{copy.closingText}</p><div class="actions"><a class="button" href={route(lang,'knowledge')+'#get-started'}>{copy.cta} <LinkArrow /></a><a class="text-link" href="https://hanji.ink/docs/">{copy.handbook} <LinkArrow /></a></div></section>

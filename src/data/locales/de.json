@@ -539,8 +539,8 @@
   },
   "metadata": {
     "lab": {
-      "title": "Hanji — Think · Plan · Document",
-      "description": "Ideen auf einer Fläche erkunden, daraus einen Plan machen und Wissen zusammenhalten. Think, Plan und Document teilen einen Arbeitsraum – mit einem Agenten an Ihrer Seite, wenn Sie ihn brauchen."
+      "title": "Hanji — Das Denken bleibt bei der Arbeit.",
+      "description": "Hanji vereint Ideen, Pläne und Wissen in einem Arbeitsraum. Erkundet ein Problem, entscheidet über die nächsten Schritte und behaltet den Kontext bei den Menschen und Agenten, die daran arbeiten."
     },
     "knowledge": {
       "title": "Hanji Document — Eine Wissensbasis auf Git",
@@ -777,17 +777,17 @@
     }
   },
   "suite": {
-    "eyebrow": "EIN ARBEITSRAUM · DREI WEGE VORAN",
+    "eyebrow": "EIN ARBEITSRAUM FÜR MENSCHEN UND AGENTEN",
     "hero": [
-      "Raum zum Denken.",
-      "Klarheit zum Handeln."
+      "Das Denken bleibt",
+      "bei der Arbeit."
     ],
-    "summary": "Ideen auf einer Fläche erkunden, daraus einen Plan machen und Wissen zusammenhalten. Think, Plan und Document teilen einen Arbeitsraum – mit einem Agenten an Ihrer Seite, wenn Sie ihn brauchen.",
+    "summary": "Hanji vereint Ideen, Pläne und Wissen in einem Arbeitsraum. Erkundet ein Problem, entscheidet über die nächsten Schritte und behaltet den Kontext bei den Menschen und Agenten, die daran arbeiten.",
     "cta": "Mac-Vorschau anfragen",
-    "see": "Den Arbeitsraum entdecken",
-    "captureNote": "Echte Vorschauoberfläche · fiktiver Arbeitsraum · englische UI",
-    "projectsTitle": "Aus einem Gedanken wird etwas.",
-    "projectsText": "Beginnen Sie dort, wo die Arbeit ist. Wechseln Sie zwischen Ideenfläche, nächstem Schritt und Hintergrund, ohne neu anzufangen.",
+    "see": "Hanji kennenlernen",
+    "captureNote": "Ein Beispiel-Arbeitsraum in der Desktop-Vorschau.",
+    "projectsTitle": "Ein Arbeitsraum. Drei Wege voran.",
+    "projectsText": "Think, Plan und Document geben jeder Aufgabe den passenden Raum. Ein gemeinsames Agentengespräch begleitet die Arbeit.",
     "products": {
       "think": [
         "Geben Sie einer Idee Raum.",
@@ -820,12 +820,12 @@
       ]
     },
     "discover": "Entdecken",
-    "currentTitle": "Ein Blick in die aktuelle Vorschau.",
-    "currentText": "Diese Aufnahmen stammen aus dem laufenden Produkt. Die interaktiven Geschichten auf dieser Website veranschaulichen einen Ablauf; sie starten keinen Agenten und legen keine echte Arbeit an.",
-    "sharedTitle": "Ein Arbeitsraum für den ganzen Kontext.",
-    "sharedText": "Die Produkte teilen Identität, Personen, Hauptfarbe und conductor des Arbeitsraums. Jede Oberfläche behält die Werkzeuge, die zur Arbeit passen.",
-    "conductorTitle": "Ein Agent, der bei der Arbeit bleibt.",
-    "conductorText": "Der conductor ist ein fortlaufendes Gespräch in allen drei Produkten. Seiten, Aufgaben oder ausgewählte Canvas-Objekte liefern Kontext; prüfen Sie angeforderte Änderungen und nutzen Sie Rückgängig, soweit verfügbar. Verbinden Sie Ihre eigene Claude- oder Codex-Umgebung.",
+    "currentTitle": "Der Arbeitsraum in der Praxis.",
+    "currentText": "Erkundet die Oberfläche. Der Produktleitfaden erklärt Abläufe, Bedienelemente und aktuelle Grenzen.",
+    "sharedTitle": "Eure Arbeit im Mittelpunkt. Ihr behaltet die Kontrolle.",
+    "sharedText": "Bessere Werkzeuge sollten eure Arbeit nützlicher machen und die Kontrolle bei euch lassen.",
+    "conductorTitle": "Holt einen Agenten in den Kontext.",
+    "conductorText": "Stellt Fragen zur geöffneten Seite, zur aktuellen Aufgabe oder zu ausgewählten Objekten. Der Conductor führt ein fortlaufendes Gespräch über alle Oberflächen hinweg. Verbindet bei Bedarf eure eigene Claude- oder Codex-Umgebung.",
     "insightsTitle": "Sehen, was sich bewegt hat.",
     "insightsText": "Die Einblicke verbinden ein lesbares Journal mit Aktivitätstrends, Produktanteilen und Beiträgen von Menschen und Agenten. Sie zeigen aufgezeichnete Beiträge, keinen Produktivitätswert.",
     "onboardingTitle": "Richten Sie sich in Ruhe ein.",
@@ -839,10 +839,23 @@
     "handbook": "Handbuch lesen",
     "setup": "Mac-Einrichtungsanleitung",
     "availability": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet.",
-    "closingTitle": "Mit einer Idee beginnen.",
-    "closingText": "Eine Ideenfläche, ein nächster Schritt oder eine Seite. Für alle drei ist Platz.",
+    "closingTitle": "Ein Ort zum Weiterbauen.",
+    "closingText": "Beginnt mit einer Frage, einem Projekt oder einer Seite. Bewahrt, was ihr lernt.",
     "thinkTitle": "Hanji Think — Eine Fläche für Ideen und Entscheidungen",
     "thinkDescription": "Ideen mit Live-Notizen, Diagrammen, Tabellen, Vorlagen, Timer und Abstimmungen erkunden. Agentenaktivität auf dem Canvas sehen, im selben Arbeitsraum wie Plan und Document.",
-    "previewLabel": "Desktop-Vorschau"
+    "previewLabel": "Desktop-Vorschau",
+    "missionLabel": "WARUM ES HANJI GIBT",
+    "missionTitle": "Gemeinsames Verständnis. Eine Grundlage, die euch gehört.",
+    "missionText": "Unsere Mission: Menschen und Agenten helfen, gemeinsames Verständnis auf einer eigenen Grundlage aufzubauen. Die Gedanken hinter einer Entscheidung, die daraus folgende Arbeit und das gewonnene Wissen sollen über ein Gespräch, ein Modell oder ein Werkzeug hinaus nützlich bleiben.",
+    "missionBridge": "Heute macht Hanji den ersten Schritt: ein Arbeitsraum mit drei verbundenen Oberflächen zum Denken, Handeln und Bewahren von Wissen.",
+    "missionLink": "Unsere Mission und Prinzipien",
+    "ownershipTitle": "Eine Grundlage, die ihr mitnehmen könnt.",
+    "ownershipText": "Dokumente und Aufgaben liegen als Markdown in Repositories, die ihr kontrolliert. Canvases haben eigene Dateien und Sicherungspunkte. Hanji ergänzt Oberfläche, Verlauf und Werkzeuge; Konfiguration und Journale brauchen eine eigene Sicherung.",
+    "agencyTitle": "Entscheidet, wie sich die Arbeit verändert.",
+    "agencyText": "Arbeitet direkt in Hanji oder bittet einen Agenten um Hilfe. Begrenzte Zugriffsrechte und prüfbare Vorschläge helfen, Beiträge zu kontrollieren. Das Handbuch erklärt die Rechte jeder Oberfläche.",
+    "workflowLink": "Eine Idee durch den Arbeitsraum begleiten",
+    "setupTitle": "Beginnt mit Arbeit, die euch wichtig ist.",
+    "setupText": "Bringt Inhalte mit oder erstellt einen neuen Arbeitsraum. Die Mac-Desktop-Vorschau ist derzeit auf Einladung verfügbar.",
+    "templatesTitle": "Beginnt mit einer hilfreichen Struktur."
   }
 }

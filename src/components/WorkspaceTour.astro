@@ -1,0 +1,11 @@
+---
+import {dictionary} from '../data/site';
+import {captures} from '../data/captures';
+const {lang}=Astro.props,copy=dictionary(lang).suite;
+const surfaces=['think','tracker','knowledge'] as const;
+---
+<fieldset class="workspace-tour">
+ <legend class="sr-only">{copy.projectsTitle}</legend>
+ <div class="workspace-tour-choices">{surfaces.map((id,i)=><label class="workspace-tour-choice"><input type="radio" name="workspace-surface" value={id} checked={i===0} aria-controls={`tour-${id}`}/><span>{captures[id].name}</span></label>)}</div>
+ {surfaces.map(id=><figure id={`tour-${id}`} data-surface={id} class="suite-flagship"><a href={captures[id].src}><img src={captures[id].src} width={captures[id].width} height={captures[id].height} alt={`${captures[id].name} — ${copy.products[id][1]}`} loading="lazy" decoding="async"/></a><figcaption><span>{captures[id].name} · {copy.products[id][0]}</span><span>{copy.captureNote}</span></figcaption></figure>)}
+</fieldset>

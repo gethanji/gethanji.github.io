@@ -539,8 +539,8 @@
   },
   "metadata": {
     "lab": {
-      "title": "Hanji — Think · Plan · Document",
-      "description": "Explorez une idée sur un canevas, transformez-la en plan et gardez le savoir ensemble. Think, Plan et Document partagent un espace de travail, avec un agent à vos côtés quand vous en avez besoin."
+      "title": "Hanji — Gardez la réflexion avec le travail.",
+      "description": "Hanji réunit idées, projets et connaissances dans un même espace. Explorez un problème, décidez de la suite et gardez le contexte avec les personnes et les agents qui font avancer le travail."
     },
     "knowledge": {
       "title": "Hanji Document — Une base de connaissances fondée sur Git",
@@ -777,17 +777,17 @@
     }
   },
   "suite": {
-    "eyebrow": "UN ESPACE · TROIS FAÇONS D’AVANCER",
+    "eyebrow": "UN ESPACE POUR LES ÉQUIPES ET LES AGENTS",
     "hero": [
-      "La place de réfléchir.",
-      "La clarté pour avancer."
+      "Gardez la réflexion",
+      "avec le travail."
     ],
-    "summary": "Explorez une idée sur un canevas, transformez-la en plan et gardez le savoir ensemble. Think, Plan et Document partagent un espace de travail, avec un agent à vos côtés quand vous en avez besoin.",
+    "summary": "Hanji réunit idées, projets et connaissances dans un même espace. Explorez un problème, décidez de la suite et gardez le contexte avec les personnes et les agents qui font avancer le travail.",
     "cta": "Demander la préversion Mac",
-    "see": "Découvrir l’espace de travail",
-    "captureNote": "Interface réelle de la préversion · espace fictif · UI en anglais",
-    "projectsTitle": "Une idée peut prendre forme.",
-    "projectsText": "Commencez là où le travail vous appelle. Passez du canevas à la prochaine étape puis au contexte, sans repartir de zéro.",
+    "see": "Découvrir Hanji",
+    "captureNote": "Un exemple d’espace dans la version de bureau en aperçu.",
+    "projectsTitle": "Un espace. Trois façons d’avancer.",
+    "projectsText": "Think, Plan et Document donnent à chaque activité l’espace nécessaire, avec une conversation commune avec l’agent.",
     "products": {
       "think": [
         "Donnez de l’espace à une idée.",
@@ -820,12 +820,12 @@
       ]
     },
     "discover": "Découvrir",
-    "currentTitle": "La préversion, telle qu’elle fonctionne.",
-    "currentText": "Ces captures proviennent du produit en fonctionnement. Les récits interactifs de ce site illustrent un parcours ; ils ne lancent aucun agent et ne créent aucun travail réel.",
-    "sharedTitle": "Un seul espace pour tout le contexte.",
-    "sharedText": "Les produits partagent l’identité, les personnes, la couleur principale et le conductor de l’espace. Chaque surface garde les outils adaptés au travail.",
-    "conductorTitle": "Un agent qui reste près du travail.",
-    "conductorText": "Le conductor est une conversation continue dans les trois produits. Ajoutez une page, un ticket ou les objets sélectionnés au contexte, examinez les changements demandés et annulez ceux qui le permettent. Connectez votre propre configuration Claude ou Codex.",
+    "currentTitle": "L’espace en pratique.",
+    "currentText": "Explorez l’interface, puis consultez le guide du produit pour les usages, les commandes et les limites actuelles.",
+    "sharedTitle": "Votre travail au centre. Vous gardez la main.",
+    "sharedText": "De meilleurs outils doivent rendre votre travail plus utile et vous en laisser la maîtrise.",
+    "conductorTitle": "Invitez un agent dans le contexte.",
+    "conductorText": "Interrogez la page que vous lisez, le sujet sur lequel vous travaillez ou les objets sélectionnés. Le conductor conserve une conversation entre les surfaces. Connectez votre propre configuration Claude ou Codex selon vos besoins.",
     "insightsTitle": "Voyez ce qui a avancé.",
     "insightsText": "Les analyses réunissent un journal lisible, les tendances d’activité, la répartition par produit et les contributions humaines ou d’agents. Elles décrivent les actions enregistrées, pas un score de productivité.",
     "onboardingTitle": "Installez-vous à votre rythme.",
@@ -839,10 +839,23 @@
     "handbook": "Lire le manuel",
     "setup": "Guide de configuration Mac",
     "availability": "La préversion Mac est partagée sur invitation. Aucun binaire public n’est encore disponible. L’IA est facultative ; votre compte fournisseur est géré séparément.",
-    "closingTitle": "Commencez par une idée.",
-    "closingText": "Un canevas, une prochaine étape ou une page. Il y a de la place pour les trois.",
+    "closingTitle": "Un endroit pour construire la suite.",
+    "closingText": "Commencez par une question, un projet ou une page. Gardez ce que vous apprenez.",
     "thinkTitle": "Hanji Think — Un canevas pour les idées et les décisions",
     "thinkDescription": "Explorez avec des notes en direct, diagrammes, tableaux, modèles, minuteur et votes. Suivez l’agent sur le canevas, dans le même espace que Plan et Document.",
-    "previewLabel": "Préversion Mac"
+    "previewLabel": "Préversion Mac",
+    "missionLabel": "POURQUOI HANJI EXISTE",
+    "missionTitle": "Une compréhension partagée. Des bases qui vous appartiennent.",
+    "missionText": "Notre mission est d’aider les personnes et les agents à construire une compréhension partagée sur des bases qui leur appartiennent. Les idées derrière une décision, le travail qui en découle et les connaissances acquises doivent rester utiles au-delà de la conversation, du modèle ou de l’outil.",
+    "missionBridge": "Aujourd’hui, Hanji fait un premier pas vers cette mission : un espace avec trois surfaces reliées pour réfléchir, agir et conserver les connaissances.",
+    "missionLink": "Notre mission et nos principes",
+    "ownershipTitle": "Des bases que vous pouvez emporter.",
+    "ownershipText": "Documents et tâches sont des fichiers Markdown dans des dépôts que vous contrôlez. Les canevas disposent de leurs propres fichiers et points de sauvegarde. Hanji y ajoute une interface, un historique et des outils ; la configuration et les journaux demandent une sauvegarde distincte.",
+    "agencyTitle": "Décidez comment le travail évolue.",
+    "agencyText": "Utilisez Hanji directement ou demandez de l’aide à un agent. Les accès délimités et les propositions à examiner permettent de contrôler les contributions ; le manuel précise les permissions de chaque surface.",
+    "workflowLink": "Suivre une idée à travers l’espace",
+    "setupTitle": "Commencez par ce qui compte pour vous.",
+    "setupText": "Apportez votre contenu ou créez un nouvel espace. L’aperçu de bureau Mac est actuellement accessible sur invitation.",
+    "templatesTitle": "Commencez avec une structure utile."
   }
 }

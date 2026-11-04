@@ -539,8 +539,8 @@
   },
   "metadata": {
     "lab": {
-      "title": "Hanji — Think · Plan · Document",
-      "description": "Explore ideas on a canvas, turn them into a plan, and keep the knowledge together. Think, Plan and Document share one workspace, with an agent alongside when you need one."
+      "title": "Hanji — Keep the thinking with the work.",
+      "description": "Hanji brings ideas, plans and knowledge into one workspace. Explore a problem, decide what comes next, and keep the context with the people and agents doing the work."
     },
     "knowledge": {
       "title": "Hanji Document — A Git-backed knowledge base",
@@ -777,17 +777,17 @@
     }
   },
   "suite": {
-    "eyebrow": "ONE WORKSPACE · THREE WAYS TO MAKE PROGRESS",
+    "eyebrow": "A WORKSPACE FOR PEOPLE AND AGENTS",
     "hero": [
-      "Room to think.",
-      "Clarity to move."
+      "Keep the thinking",
+      "with the work."
     ],
-    "summary": "Explore ideas on a canvas, turn them into a plan, and keep the knowledge together. Think, Plan and Document share one workspace, with an agent alongside when you need one.",
+    "summary": "Hanji brings ideas, plans and knowledge into one workspace. Explore a problem, decide what comes next, and keep the context with the people and agents doing the work.",
     "cta": "Request the desktop preview",
-    "see": "Explore the workspace",
-    "captureNote": "Actual preview interface · fictional workspace · English UI",
-    "projectsTitle": "A thought can become something.",
-    "projectsText": "Start where the work is. Move between the canvas, the next step and the context without starting over.",
+    "see": "Meet Hanji",
+    "captureNote": "An example workspace in the desktop preview.",
+    "projectsTitle": "One workspace. Three ways forward.",
+    "projectsText": "Think, Plan and Document give each kind of work the space it needs, with a shared agent conversation alongside.",
     "products": {
       "think": [
         "Give an idea some room.",
@@ -820,12 +820,12 @@
       ]
     },
     "discover": "Explore",
-    "currentTitle": "A look inside the current preview.",
-    "currentText": "These captures come from the working product. The interactive stories elsewhere on this website illustrate a workflow; they do not run an agent or create real work.",
-    "sharedTitle": "One workspace, all the context.",
-    "sharedText": "The products share your workspace identity, people, primary color and conductor. Each surface keeps the tools that fit the work.",
-    "conductorTitle": "An agent that stays with the work.",
-    "conductorText": "The conductor is a standing conversation across all three products. Bring the page, issue or selected canvas objects into context; review requested changes and use Undo when available. Connect your own Claude or Codex setup.",
+    "currentTitle": "The workspace in practice.",
+    "currentText": "Explore the interface, then use the product guide for the full workflow, controls and current limits.",
+    "sharedTitle": "Built around your work. On your terms.",
+    "sharedText": "Better tools should make your work more useful and leave you in control of it.",
+    "conductorTitle": "Bring an agent into the context.",
+    "conductorText": "Ask about the page you are reading, the issue you are working on or the objects you selected. The conductor keeps a standing conversation across the workspace. Connect your own Claude or Codex setup when you need it.",
     "insightsTitle": "See what has moved.",
     "insightsText": "Workspace insights combine a readable journal with activity trends, product mix and human/agent attribution. The view reports recorded contributions, not a score for productivity.",
     "onboardingTitle": "Make yourself at home.",
@@ -839,10 +839,23 @@
     "handbook": "Read the handbook",
     "setup": "Desktop setup guide",
     "availability": "The Mac desktop preview is shared by invitation. Public binary downloads are not available yet. AI is optional; your provider account is managed separately.",
-    "closingTitle": "Begin with one idea.",
-    "closingText": "A canvas, a next step or a page. There is room for all three.",
+    "closingTitle": "A place to build on.",
+    "closingText": "Start with one question, one project or one page. Keep what you learn.",
     "thinkTitle": "Hanji Think — A canvas for ideas and decisions",
     "thinkDescription": "Explore ideas with live notes, diagrams, tables, templates, timer and voting. See agent activity on the canvas, in the same workspace as Plan and Document.",
-    "previewLabel": "Desktop preview"
+    "previewLabel": "Desktop preview",
+    "missionLabel": "WHY HANJI EXISTS",
+    "missionTitle": "Shared understanding. A foundation you own.",
+    "missionText": "Our mission is to help people and agents build shared understanding on a foundation they own. The ideas behind a decision, the work it creates and the knowledge it leaves should stay useful beyond the conversation, the model or the tool.",
+    "missionBridge": "Today, Hanji takes its first step toward that mission: one workspace with three connected surfaces for thinking, doing and remembering.",
+    "missionLink": "Our mission and principles",
+    "ownershipTitle": "Keep a foundation you can carry forward.",
+    "ownershipText": "Documents and issues live as Markdown in repositories you control. Canvases have their own files and checkpoints. Hanji adds an interface, history and tools around that content; workspace configuration and journals need their own backup.",
+    "agencyTitle": "Decide how the work changes.",
+    "agencyText": "Use Hanji directly, or ask an agent to help. Scoped access and reviewable proposals give you ways to control contributions; the handbook explains which permissions apply to each surface.",
+    "workflowLink": "Follow an idea through the workspace",
+    "setupTitle": "Start with work that matters to you.",
+    "setupText": "Bring existing content or create a fresh workspace. The Mac desktop preview is currently shared by invitation.",
+    "templatesTitle": "Start with a useful structure."
   }
 }

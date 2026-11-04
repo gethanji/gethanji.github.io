@@ -39,7 +39,7 @@ the current suite rig go to `/tmp/hanji-public-review` or `QA_OUTPUT`.
 - `CurrentCapabilities.astro` labels authentic product captures separately from
   the existing interactive workflow illustrations. No illustration runs an agent
   or creates real work.
-- `SuiteShared.astro` covers the conductor, workspace insights and onboarding.
+- `SuiteShared.astro` explains contextual agents, content ownership and control over contributions. It links to the deeper guides rather than showcasing settings.
 - `public/assets/current/` contains captures from isolated fictional workspaces,
   plus localized social cards. No real colleague or workspace is used.
 - `src/styles/current-suite.css` provides cool neutral surfaces and shared current
@@ -50,6 +50,8 @@ the current suite rig go to `/tmp/hanji-public-review` or `QA_OUTPUT`.
 Product image provenance is the Hanji repository’s `docs/handbook/assets/` and
 `scripts/docs-shots.mjs`. The public canvas has a deterministic paused conductor
 fixture and makes no model call. The document screenshot uses Ada and Remy.
+
+The public story and benchmark rationale are in `docs/positioning-review.md`. The homepage introduces the mission and whole workspace before the three product surfaces; product pages and the handbook carry the deeper workflows. Current product stills are captured at 2× density; the fictional First mile example connects the canvas, issue and decision record.
 
 The original Document editorial CSS remains checksum-protected. Its miniatures,
 proposal and permissions demonstrations retain their own tested behavior.
