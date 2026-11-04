@@ -25,7 +25,7 @@ const knowledgeSchema = page === 'knowledge' ? {
 <meta property="og:title" content={meta.title} /><meta property="og:description" content={meta.description} />
 <meta property="og:url" content={url} /><meta property="og:locale" content={localeTags[lang]} />
 {locales.filter(l=>l!==lang).map(l=><meta property="og:locale:alternate" content={localeTags[l]} />)}
-{<meta property="og:image" content={new URL(`/assets/current/og-${lang}.png`,base)} />}
+<meta property="og:image" content={new URL(`/assets/current/og-${lang}.png`,base)} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={meta.title} /><meta name="twitter:description" content={meta.description} />
 

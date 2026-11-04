@@ -128,13 +128,13 @@ try {
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
  console.log('PASS: persistent document/header/controls, product palette, one intro per visit, repeated demos, disposal, language/theme/history/reduced motion and no-View-Transition fallback');
  // Bookmarks to former project routes retain their locale, query and section.
- for(const lang of langs)for(const [id,slug] of [['knowledge','write'],['tracker','work']]){
+ for(const lang of langs)for(const [id,slug] of [['knowledge','document'],['write','document'],['tracker','plan'],['work','plan']]){
   const prefix=lang==='en'?'':`/${lang}`;
   await go(`${prefix}/projects/${id}/?from=legacy#get-started`);
   await ready(`${prefix}/projects/${slug}/`);
   assert.equal(new URL(p.url()).pathname,`${prefix}/projects/${slug}/`);
   assert(p.url().endsWith('?from=legacy#get-started'));
-  assert.deepEqual(await p.$$eval('.family-shortcuts a',nodes=>nodes.map(n=>n.textContent.trim())),['Write','Work']);
+  assert.deepEqual(await p.$$eval('.family-shortcuts a',nodes=>nodes.map(n=>n.textContent.trim())),['Think','Plan','Document']);
  }
- console.log('PASS: all ten former project URLs redirect with locale, query and fragment intact');
+ console.log('PASS: all twenty former project URLs redirect with locale, query and fragment intact');
 }finally{await browser.close();await new Promise(r=>server.close(r));}
