@@ -15,7 +15,7 @@ const p=await browser.newPage();const errors=[],missing=[];
 p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.url().startsWith(origin)&&r.status()>=400)missing.push(r.url());});
 const go=route=>p.goto(origin+route,{waitUntil:'load'}),wait=ms=>new Promise(r=>setTimeout(r,ms));
 const langs=['en','ko','de','ja','fr'],pages=['lab','knowledge','tracker'];
-const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page==='knowledge'?'write':'work'}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page==='knowledge'?'write':'work'}/`;
+const route=(l,page)=>l==='en'?(page==='lab'?'/':`/projects/${page==='knowledge'?'document':'plan'}/`):page==='lab'?`/${l}/lab/`:`/${l}/projects/${page==='knowledge'?'document':'plan'}/`;
 const out=process.env.QA_OUTPUT||'test-results';mkdirSync(out,{recursive:true});
 try {
  const french=await browser.newPage();
@@ -25,20 +25,20 @@ try {
  assert(french.url().endsWith('?entry=system#about'));
  assert.equal(await french.$eval('.lang-picker .is-current',e=>e.dataset.language),'system');
  assert.equal(await french.$eval('.theme-picker input:checked',e=>e.value),'system');
- await french.goto(origin+'/ja/projects/work/?entry=direct#views');
+ await french.goto(origin+'/ja/projects/plan/?entry=direct#views');
  assert.equal(await french.$eval('html',e=>e.lang),'ja','Explicit localized URLs remain shareable');
  await french.click('.lang-picker summary');
  await navigateClick(french,'[data-language=system]');
- assert.equal(new URL(french.url()).pathname,'/fr/projects/work/');
+ assert.equal(new URL(french.url()).pathname,'/fr/projects/plan/');
  assert(french.url().endsWith('?entry=direct#views'));
  await french.click('.lang-picker summary');
  await navigateClick(french,'[data-language=en]');
- assert.equal(new URL(french.url()).pathname,'/projects/work/');
+ assert.equal(new URL(french.url()).pathname,'/projects/plan/');
  assert.equal(await french.evaluate(()=>localStorage.getItem('hanji-language')),'en');
  await french.reload();assert.equal(await french.$eval('html',e=>e.lang),'en');
  await french.click('.lang-picker summary');
  await navigateClick(french,'[data-language=system]');
- assert.equal(new URL(french.url()).pathname,'/fr/projects/work/');
+ assert.equal(new URL(french.url()).pathname,'/fr/projects/plan/');
  await french.close();
  const blocked=await browser.newPage();
  await blocked.evaluateOnNewDocument(()=>{Object.defineProperty(navigator,'languages',{get:()=>['fr']});Storage.prototype.getItem=()=>{throw new Error('Unavailable')};Storage.prototype.setItem=()=>{throw new Error('Unavailable')};});
@@ -51,7 +51,7 @@ try {
   for(const product of pages) {
    await go(route('en',product));await p.evaluate(()=>document.fonts.ready);
    assert.equal(await p.$('.family-projects'),null);assert.equal(await p.$('.family-lab'),null);
-   assert.equal((await p.$$('.family-shortcuts a')).length,2);
+   assert.equal((await p.$$('.family-shortcuts a')).length,3);
    const bounds=await p.evaluate(()=>[...document.querySelectorAll('.family-brand,.family-shortcuts,.family-right')].map(e=>{const r=e.getBoundingClientRect();return {left:r.left,right:r.right}}));
    assert(bounds.every(b=>b.left>=0&&b.right<=width));assert(bounds[0].right<=bounds[1].left);assert(bounds[1].right<=bounds[2].left);
    assert.equal(await p.$eval('.lang-picker summary',e=>e.textContent.trim()),'');

@@ -52,16 +52,16 @@
     "projects.p.1.text0": "Was braucht die Zusammenarbeit mit Agenten, um verständlich und hilfreich zu sein? Wir begannen beim Wissensaustausch und wandten uns dann der Arbeit zu, die daraus entsteht.",
     "projects.project-number.1.text0": "01",
     "projects.tag.1.text0": "Geschlossene Beta",
-    "projects.h3.1.text0": "Write",
+    "projects.h3.1.text0": "Document",
     "projects.project-subhead.1.text0": "Gemeinsames Wissen aufbauen und verfeinern.",
     "projects.project-subhead.1.text1": "Zusammen mit Ihren Agenten.",
-    "projects.p.2.text0": "Agenten erstellen viele Dokumente und Notizen. Write entstand als Oberfläche, auf der Menschen diese Inhalte gemeinsam mit Agenten lesen, bearbeiten und weiterentwickeln können. Markdown bleibt im eigenen Git-Repository; vorgeschlagene Änderungen werden von Menschen geprüft.",
-    "projects.text-link.1.href": "/de/projects/write/",
-    "projects.text-link.1.text0": "Write entdecken ",
-    "projects.product-photo.1.href": "/de/projects/write/#demo",
-    "projects.product-photo.1.aria-label": "Die ursprüngliche Write-Produktdemo ansehen",
+    "projects.p.2.text0": "Agenten erstellen viele Dokumente und Notizen. Document entstand als Oberfläche, auf der Menschen diese Inhalte gemeinsam mit Agenten lesen, bearbeiten und weiterentwickeln können. Markdown bleibt im eigenen Git-Repository; vorgeschlagene Änderungen werden von Menschen geprüft.",
+    "projects.text-link.1.href": "/de/projects/document/",
+    "projects.text-link.1.text0": "Document entdecken ",
+    "projects.product-photo.1.href": "/de/projects/document/#demo",
+    "projects.product-photo.1.aria-label": "Die ursprüngliche Document-Produktdemo ansehen",
     "projects.img.1.alt": "",
-    "projects.span.1.text1": " Hanji Write",
+    "projects.span.1.text1": " Hanji Document",
     "projects.span.2.text0": "Zum Lesen gemacht",
     "projects.img.2.alt": "Das Hanji-Handbuch mit Repository-Navigation und einer übersichtlichen Startseite",
     "projects.strong.1.text0": "Ansicht der Oberfläche",
@@ -70,14 +70,14 @@
     "projects.photo-caption.1.text0": "Das Handbuch, mit Hanji geschrieben und veröffentlicht. ",
     "projects.project-number.2.text0": "02",
     "projects.tag.2.text0": "Alpha",
-    "projects.h3.2.text0": "Work",
+    "projects.h3.2.text0": "Plan",
     "projects.project-subhead.2.text0": "Aufgaben organisieren und Projekte voranbringen.",
     "projects.project-subhead.2.text1": "Zusammen mit Ihren Agenten.",
-    "projects.p.3.text0": "Daraus ergab sich eine zweite Frage: Wie organisieren wir Arbeit gemeinsam mit Agenten? Work erkundet Projekte, Aufgaben und Abhängigkeiten. Gespräche bleiben mit der Arbeit verbunden, damit Menschen den Überblick behalten und die nächsten Schritte bestimmen können.",
-    "projects.text-link.2.href": "/de/projects/work/",
-    "projects.text-link.2.text0": "Work entdecken ",
-    "projects.product-photo.2.href": "/de/projects/work/#views",
-    "projects.span.4.text0": "Hanji Work",
+    "projects.p.3.text0": "Daraus ergab sich eine zweite Frage: Wie organisieren wir Arbeit gemeinsam mit Agenten? Plan erkundet Projekte, Aufgaben und Abhängigkeiten. Gespräche bleiben mit der Arbeit verbunden, damit Menschen den Überblick behalten und die nächsten Schritte bestimmen können.",
+    "projects.text-link.2.href": "/de/projects/plan/",
+    "projects.text-link.2.text0": "Plan entdecken ",
+    "projects.product-photo.2.href": "/de/projects/plan/#views",
+    "projects.span.4.text0": "Hanji Plan",
     "projects.span.5.text0": "Ein kleinerer Start",
     "projects.img.3.alt": "Works Abhängigkeits-Canvas zeigt sechs verknüpfte Aufgaben eines fiktiven Starts",
     "projects.strong.2.text0": "Ansicht der Oberfläche",
@@ -90,7 +90,7 @@
     "vision.em.1.text0": "das agentische Zeitalter.",
     "vision.img.1.alt": "",
     "vision.p.1.text0": "Hanji ist ein experimenteller Zugang zu einer Arbeitswelt im Wandel. Wir erkunden, wie Menschen und Agenten mit mehr Verständnis und einer klareren gemeinsamen Richtung zusammenarbeiten können.",
-    "vision.p.2.text0": "Mit jeder Erkenntnis verändert sich die Oberfläche. Write und Work sind unsere ersten Experimente, geprägt von den Menschen, die sie nutzen.",
+    "vision.p.2.text0": "Die Produkte teilen Identität, Personen, Hauptfarbe und conductor des Arbeitsraums. Jede Oberfläche behält die Werkzeuge, die zur Arbeit passen.",
     "chapter.overline.2.text0": "한지 / Ein Material zum Denken",
     "chapter.p.5.text0": "Ein Material.",
     "chapter.em.2.text0": "Viele Formen.",
@@ -100,7 +100,7 @@
     "chapter.span.4.text0": "↑"
   },
   "knowledge": {
-    "hero.eyebrow.1.text0": "Write · Geschlossene Beta",
+    "hero.eyebrow.1.text0": "Document · Geschlossene Beta",
     "hero.span.1.text0": "Ihre Agenten leben längst in Git",
     "hero.em.1.text0": "Jetzt zieht Ihr Wissen nach.",
     "hero.lede.1.text0": "Markdown im eigenen Git-Repository bearbeiten. Agentenzugriff begrenzen und Änderungsvorschläge prüfen.",
@@ -110,10 +110,10 @@
     "hero.button.1.text0": "Handbuch lesen",
     "hero.agent-cta.1.text0": "Agent anbinden",
     "hero.agent-command-text.1.text0": "claude mcp add hanji --transport http http://localhost:4101/mcp --header \"Authorization: Bearer YOUR_TOKEN\"",
-    "hero.agent-command-note.1.text0": "Zuerst Hanji Write starten und einen Scoped Token anlegen. Vor dem Anbinden YOUR_TOKEN ersetzen.",
+    "hero.agent-command-note.1.text0": "Zuerst Hanji Document starten und einen Scoped Token anlegen. Vor dem Anbinden YOUR_TOKEN ersetzen.",
     "hero.mini-hanji.1.aria-label": "Illustration in Endlosschleife: eine Person und zwei Agenten arbeiten an einer Seite",
     "hero.img.1.alt": "",
-    "hero.mini-brand.1.text1": "Write",
+    "hero.mini-brand.1.text1": "Document",
     "hero.i.1.text0": "A",
     "hero.i.2.text0": "✳",
     "hero.i.3.text0": "⌘",
@@ -138,7 +138,7 @@
     "hero.mini-pause.1.data-label-play": "Abspielen",
     "hero.span.5.text0": "Pause",
     "hero.hero-explore.1.text0": "So funktioniert es",
-    "hero.demo.1.aria-label": "Beispielhafte Produktdemo von Hanji Write",
+    "hero.demo.1.aria-label": "Beispielhafte Produktdemo von Hanji Document",
     "hero.stage-label.1.text0": "Lesen. Prüfen. Mergen.",
     "hero.tabs.1.aria-label": "Die beiden Ansichten erkunden",
     "hero.people-tab.1.text0": "Für Menschen",
@@ -273,7 +273,7 @@
     "permissions.small.7.text0": "private / rough-thoughts.md",
     "permissions.access-label.4.text0": "Nur Ada",
     "permissions.permission-status.1.text0": "Der Workspace gehört Ada. Alle vier Seiten sind sichtbar.",
-    "permissions.fine-print.1.text0": "Hanji Write steuert den Zugriff in der App. Wer Zugriff auf das Repository hat, sieht die Dateien trotzdem.",
+    "permissions.fine-print.1.text0": "Hanji Document steuert den Zugriff in der App. Wer Zugriff auf das Repository hat, sieht die Dateien trotzdem.",
     "collaboration-section.section-index.1.text0": "KOMMENTARE & VERLAUF",
     "collaboration-section.collaboration-heading.1.text0": "Änderungen besprechen.",
     "collaboration-section.em.1.text0": "Beiträge nachverfolgen.",
@@ -311,17 +311,17 @@
     "compare.em.1.text0": "für Ihr Wissen finden.",
     "compare.p.1.text0": "Vergleichen Sie die Arbeitsabläufe, für die die Werkzeuge entwickelt wurden.",
     "compare.p.2.text0": "Der Unterschied liegt im Fundament.",
-    "compare.compare-picker.1.text0": "Hanji Write vs.",
+    "compare.compare-picker.1.text0": "Hanji Document vs.",
     "compare.option.1.text0": "Obsidian",
     "compare.option.2.text0": "Notion",
     "compare.option.3.text0": "Confluence",
     "compare.option.4.text0": "GitBook",
     "compare.compare-desktop-note.1.text0": "FÜNF TOOLS / FÜNF AUFGABEN",
-    "compare.visually-hidden.1.text0": "Vergleich von Hanji Write mit anderen Werkzeugen für Teamwissen: Zweck, Inhalte, Git-Workflow und Agentenzugriff.",
+    "compare.visually-hidden.1.text0": "Vergleich von Hanji Document mit anderen Werkzeugen für Teamwissen: Zweck, Inhalte, Git-Workflow und Agentenzugriff.",
     "compare.matrix-corner.1.text0": "Was ist Ihnen",
     "compare.matrix-corner.1.text1": "wichtig?",
     "compare.img.1.alt": "",
-    "compare.matrix-brand.1.text1": "Hanji Write",
+    "compare.matrix-brand.1.text1": "Hanji Document",
     "compare.small.1.text0": "IHR WISSEN, IHR GIT",
     "compare.th.2.text0": "Obsidian",
     "compare.small.2.text0": "DER PERSÖNLICHE VAULT",
@@ -370,13 +370,13 @@
     "compare.td.25.text0": "Der Workspace ist Confluence.",
     "compare.small.14.text0": "Kein Markdown-Repository",
     "compare.td.26.text0": "Veröffentlichen zuerst.",
-    "compare.small.15.text0": "Anderer Fokus als Hanji Write",
+    "compare.small.15.text0": "Anderer Fokus als Hanji Document",
     "compare.p.3.text0": "Wählen Sie den passenden Arbeitsablauf für Ihr Team.",
     "compare.text-link.1.text0": "Ihr Werkzeug finden",
     "compare.summary.1.text0": "Quellen & Umfang ",
     "compare.source-date.1.text0": "Geprüft am 9. September 2026",
     "compare.p.4.text0": "Unsere Einschätzung, welches Werkzeug zu wem passt, auf Grundlage der unten verlinkten offiziellen Dokumentation. Confluence bezieht sich auf Cloud. Funktionen und Zugriff können von Tarif und Konfiguration abhängen; Erweiterungen können weitere Workflows ergänzen.",
-    "compare.strong.2.text0": "Hanji Write:",
+    "compare.strong.2.text0": "Hanji Document:",
     "compare.a.1.text0": "Aktueller Stand",
     "compare.li.1.text2": " · ",
     "compare.a.2.text0": "Menschen und Agenten",
@@ -405,10 +405,10 @@
     "run.availability.1.text1": " Geschlossene Beta",
     "run.option-number.1.text0": "01",
     "run.summary.1.text1": "Nur Sie, lokal",
-    "run.p.2.text0": "Starten Sie Hanji Write, benennen Sie den Arbeitsbereich, legen Sie ein Passwort für den Eigentümer fest und wählen Sie Ihren Markdown-Ordner.",
-    "run.source-availability.1.text0": "Write ist in der geschlossenen Beta. Zugang gibt es auf Anfrage. Schreiben Sie uns, wie Sie es nutzen möchten. Das Handbuch ist frei zugänglich.",
+    "run.p.2.text0": "Starten Sie Hanji Document, benennen Sie den Arbeitsbereich, legen Sie ein Passwort für den Eigentümer fest und wählen Sie Ihren Markdown-Ordner.",
+    "run.source-availability.1.text0": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet.",
     "run.pre.1.text0": "# In einem vorhandenen Quellcode-Checkout\npnpm install && pnpm dev:web",
-    "run.text-link.1.text0": "Write einrichten",
+    "run.text-link.1.text0": "Document einrichten",
     "run.option-number.2.text0": "02",
     "run.summary.2.text1": "Ihr Team, im Tailnet",
     "run.p.3.text0": "Eine gemeinsame Instanz, bei der das Netzwerk die Anmeldung übernimmt. Niemand tippt ein Passwort. Die Berechtigungen bleiben genau so, wie Sie sie vergeben haben.",
@@ -430,31 +430,31 @@
     "launch.p.1.text0": "Erhalten Sie gelegentlich Neuigkeiten zum Entwicklungsstand und zur Verfügbarkeit neuer Versionen.",
     "launch.label.1.text0": "Launch-Notiz erhalten",
     "launch.email.1.placeholder": "you@yours.dev",
-    "launch.button.1.aria-label": "Die Hanji Write-Launch-Notiz abonnieren",
+    "launch.button.1.aria-label": "Die Hanji Document-Launch-Notiz abonnieren",
     "launch.button.1.text0": "Abonnieren",
     "launch.p.2.text0": "Wenige Mitteilungen im Jahr. Jederzeit abbestellbar.",
-    "launch.text-link.1.text0": "Das Write-Handbuch lesen"
+    "launch.text-link.1.text0": "Das Document-Handbuch lesen"
   },
   "tracker": {
-    "hero.overline.1.text0": "Work · Alpha",
+    "hero.overline.1.text0": "Plan · Alpha",
     "hero.tracker-title.1.text0": "Die Arbeit sehen.",
     "hero.em.1.text0": "Das Nächste gestalten.",
     "hero.lede.1.text0": "Projekte verwalten, Abhängigkeiten verfolgen und mit Agenten im Kontext arbeiten. Aufgaben, Entscheidungen und Gespräche bleiben in einem Arbeitsbereich auf Basis Ihrer eigenen Dateien.",
-    "hero.button.1.text0": "Work entdecken",
+    "hero.button.1.text0": "Plan entdecken",
     "hero.text-link.1.text0": "Oberfläche ansehen ",
     "hero.span.1.text0": "↓",
     "views.overline.1.text0": "Ein Arbeitsbereich, drei Ansichten",
     "views.h2.1.text0": "Die Ansicht wechseln.",
     "views.em.1.text0": "Bei derselben Arbeit bleiben.",
     "views.p.1.text0": "Prüfen Sie Details in der Liste, verfolgen Sie den Status auf dem Board und erkennen Sie Abhängigkeiten auf dem Canvas. Alle drei Ansichten zeigen dieselben Issues.",
-    "views.capture-tabs.1.aria-label": "Work-Ansichten",
+    "views.capture-tabs.1.aria-label": "Plan-Ansichten",
     "views.capture-canvas.1.text0": "Canvas",
     "views.capture-list.1.text0": "Liste",
     "views.capture-board.1.text0": "Board",
     "views.a.1.aria-label": "Canvas-Aufnahme in voller Größe öffnen",
-    "views.img.1.alt": "Abhängigkeits-Canvas mit verbundenen Aufgaben in Work und ausschließlich fiktiven Daten von Ada und Remy",
+    "views.img.1.alt": "Abhängigkeits-Canvas mit verbundenen Aufgaben in Plan und ausschließlich fiktiven Daten von Ada und Remy",
     "views.strong.1.text0": "Ansicht der Oberfläche",
-    "views.span.1.text0": "Abhängigkeits-Canvas mit verbundenen Aufgaben in Work und ausschließlich fiktiven Daten von Ada und Remy",
+    "views.span.1.text0": "Abhängigkeits-Canvas mit verbundenen Aufgaben in Plan und ausschließlich fiktiven Daten von Ada und Remy",
     "views.small.1.text0": "Bild in voller Größe öffnen.",
     "views.span.2.text0": "Die Beziehungen zwischen sechs Aufgaben eines fiktiven Starts.",
     "views.span.3.text0": "Echte Entwicklungsoberfläche · Fiktive Daten · Volle Größe ↗",
@@ -466,9 +466,9 @@
     "views.span.5.text0": "Zuständigkeiten, Prioritäten und Status überblicken, ohne das Ganze zu verlieren.",
     "views.span.6.text0": "Echte Entwicklungsoberfläche · Fiktive Daten · Volle Größe ↗",
     "views.a.3.aria-label": "Board-Aufnahme in voller Größe öffnen",
-    "views.img.3.alt": "Work-Board mit sechs fiktiven, nach Status gruppierten Aufgaben",
+    "views.img.3.alt": "Plan-Board mit sechs fiktiven, nach Status gruppierten Aufgaben",
     "views.strong.3.text0": "Ansicht der Oberfläche",
-    "views.span.7.text0": "Work-Board mit sechs fiktiven, nach Status gruppierten Aufgaben",
+    "views.span.7.text0": "Plan-Board mit sechs fiktiven, nach Status gruppierten Aufgaben",
     "views.small.3.text0": "Bild in voller Größe öffnen.",
     "views.span.8.text0": "Arbeit nach Status gruppiert, von der ersten Entscheidung bis zum nächsten Gespräch.",
     "views.span.9.text0": "Echte Entwicklungsoberfläche · Fiktive Daten · Volle Größe ↗",
@@ -493,9 +493,9 @@
     "direction.em.1.text0": "mit ihrem Zweck verbinden.",
     "direction.p.1.text0": "Verantwortliche benennen, Meilensteine definieren und Issues mit Schlüsselergebnissen verknüpfen. Prüfen Sie Fortschritt im Zusammenhang mit den jeweiligen Zielen.",
     "direction.a.1.aria-label": "Zielübersicht in voller Größe öffnen",
-    "direction.img.1.alt": "Work-Ziele eines fiktiven Projekts mit einem Abschlussziel und einer Kennzahl für Leserfeedback",
+    "direction.img.1.alt": "Plan-Ziele eines fiktiven Projekts mit einem Abschlussziel und einer Kennzahl für Leserfeedback",
     "direction.strong.1.text0": "Ansicht der Oberfläche",
-    "direction.span.1.text0": "Work-Ziele eines fiktiven Projekts mit einem Abschlussziel und einer Kennzahl für Leserfeedback",
+    "direction.span.1.text0": "Plan-Ziele eines fiktiven Projekts mit einem Abschlussziel und einer Kennzahl für Leserfeedback",
     "direction.small.1.text0": "Bild in voller Größe öffnen.",
     "direction.span.2.text0": "Fortschritt, Messwerte und Zwischenstände im selben Arbeitsbereich.",
     "direction.span.3.text0": "Echte Entwicklungsoberfläche · Fiktive Daten",
@@ -522,33 +522,37 @@
     "chapter.summary.3.text0": "Erkennen, was Aufmerksamkeit braucht",
     "chapter.p.6.text0": "Canvas-Ketten zeigen Voraussetzungen außerhalb der Ansicht und markieren Zyklen. Der CLI-Befehl review gruppiert Arbeit für den Wochenrückblick; lint meldet etwa alte Anfragen sowie geänderte oder fehlende Quellen.",
     "chapter.summary.4.text0": "Kontext verbinden",
-    "chapter.p.7.text0": "Optionale Write-Verknüpfungen bringen Hintergrundwissen in die Arbeit. Work funktioniert auch allein; eine Wissensbasis anzuschließen bleibt Ihre Entscheidung.",
+    "chapter.p.7.text0": "Die Produkte teilen Identität, Personen, Hauptfarbe und conductor des Arbeitsraums. Jede Oberfläche behält die Werkzeuge, die zur Arbeit passen.",
     "status.overline.1.text0": "Alpha",
     "status.h2.1.text0": "In aktiver Entwicklung.",
     "status.em.1.text0": "Offen für neue Erkenntnisse.",
-    "status.p.1.text0": "Work ist in der Alpha. Zugang gibt es auf Anfrage. Oberfläche und Funktionen entwickeln sich weiter. Schreiben Sie uns, wenn Sie es ausprobieren und Feedback geben möchten.",
-    "status.p.2.text0": "Work steht wie Hanji unter der AGPL-3.0-only-Lizenz. Öffentliche Bereitstellung und unterstützte Installation sind noch nicht abschließend festgelegt. Gehostete Team-Arbeitsbereiche, individuelle Berechtigungen, Importfunktionen und GitHub-Statussynchronisierung werden derzeit nicht unterstützt. Die Build-Automatisierung muss vor dem Einsatz noch unter realen Bedingungen geprüft werden.",
+    "status.p.1.text0": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet.",
+    "status.p.2.text0": "Plan steht wie Hanji unter der AGPL-3.0-only-Lizenz. Öffentliche Bereitstellung und unterstützte Installation sind noch nicht abschließend festgelegt. Gehostete Team-Arbeitsbereiche, individuelle Berechtigungen, Importfunktionen und GitHub-Statussynchronisierung werden derzeit nicht unterstützt. Die Build-Automatisierung muss vor dem Einsatz noch unter realen Bedingungen geprüft werden.",
     "status.text-link.1.href": "/de/lab/",
     "status.text-link.1.text0": "Das Hanji-Labor entdecken ",
     "status.span.1.text0": "↗",
-    "chapter.overline.3.text0": "Write · Die andere Hälfte",
+    "chapter.overline.3.text0": "Document",
     "chapter.h2.3.text0": "Der Arbeit eine",
     "chapter.em.3.text0": "Grundlage geben.",
-    "chapter.button.1.href": "/de/projects/write/",
-    "chapter.button.1.text0": "Write entdecken ↗"
+    "chapter.button.1.href": "/de/projects/document/",
+    "chapter.button.1.text0": "Document entdecken ↗"
   },
   "metadata": {
     "lab": {
-      "title": "Hanji — Ein Forschungslabor für Zusammenarbeit",
-      "description": "Hanji nimmt unterschiedliche Formen an: um Wissen zu teilen, Ideen auszutauschen und mit Agenten zu arbeiten. Ein Ort, an dem wir erkunden, wie Zusammenarbeit aussehen kann."
+      "title": "Hanji — Think · Plan · Document",
+      "description": "Ideen auf einer Fläche erkunden, daraus einen Plan machen und Wissen zusammenhalten. Think, Plan und Document teilen einen Arbeitsraum – mit einem Agenten an Ihrer Seite, wenn Sie ihn brauchen."
     },
     "knowledge": {
-      "title": "Hanji Write — Eine Wissensbasis auf Git",
+      "title": "Hanji Document — Eine Wissensbasis auf Git",
       "description": "Markdown im eigenen Git-Repository bearbeiten. Agentenzugriff begrenzen und Änderungsvorschläge prüfen."
     },
     "tracker": {
-      "title": "Hanji Work — Projekte, Abhängigkeiten und Agenten",
+      "title": "Hanji Plan — Projekte, Abhängigkeiten und Agenten",
       "description": "Projekte verwalten, Abhängigkeiten verfolgen und mit Agenten im Kontext arbeiten. Aufgaben, Entscheidungen und Gespräche bleiben in einem Arbeitsbereich auf Basis Ihrer eigenen Dateien."
+    },
+    "think": {
+      "title": "Hanji Think — Eine Fläche für Ideen und Entscheidungen",
+      "description": "Ideen mit Live-Notizen, Diagrammen, Tabellen, Vorlagen, Timer und Abstimmungen erkunden. Agentenaktivität auf dem Canvas sehen, im selben Arbeitsraum wie Plan und Document."
     }
   },
   "story": {
@@ -714,18 +718,27 @@
       "Agenten verbinden"
     ],
     "knowledge": {
-      "availability": "Write ist in der geschlossenen Beta. Zugang gibt es auf Anfrage. Schreiben Sie uns, wie Sie es nutzen möchten. Das Handbuch ist frei zugänglich.",
+      "availability": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet.",
       "now": "Live-Handbuch erkunden",
-      "prerequisites": "Eine vorhandene Write-Codebasis, aktuelles Node.js, pnpm, Git, eine C-Build-Umgebung und ein Markdown-Ordner. Lesen und Bearbeiten benötigen kein Modellkonto.",
+      "prerequisites": "Eine vorhandene Document-Codebasis, aktuelles Node.js, pnpm, Git, eine C-Build-Umgebung und ein Markdown-Ordner. Lesen und Bearbeiten benötigen kein Modellkonto.",
       "setup": "Im Quellcodeordner Abhängigkeiten installieren und die Web-App starten. Dann localhost:4100 öffnen.",
-      "outcome": "Den Arbeitsbereich benennen, ein Eigentümerpasswort wählen und den Markdown-Ordner auswählen. Eine Seite bearbeiten und Update drücken: Die erste Änderung wird in Git gespeichert.",
-      "agent": "Verbinden Sie Ihren Coding-Agenten bei Bedarf mit einem Token mit begrenztem Zugriff. Agentenkonto oder Abonnement werden separat verwaltet. Verbindungsdetails finden Sie in den Bereitstellungsoptionen unten.",
+      "outcome": "Arbeitsraum benennen, Produkte wählen und frisch starten: Hanji bereitet die Ordner vor. Bestehende Inhalte lassen sich bei der Einrichtung oder später verbinden.",
+      "agent": "Der conductor ist ein fortlaufendes Gespräch in allen drei Produkten. Seiten, Aufgaben oder ausgewählte Canvas-Objekte liefern Kontext; prüfen Sie angeforderte Änderungen und nutzen Sie Rückgängig, soweit verfügbar. Verbinden Sie Ihre eigene Claude- oder Codex-Umgebung.",
       "next": "Weitere Einrichtungsmöglichkeiten"
     },
     "tracker": {
-      "availability": "Work ist in der Alpha. Zugang gibt es auf Anfrage. Oberfläche und Funktionen entwickeln sich weiter. Schreiben Sie uns, wenn Sie es ausprobieren und Feedback geben möchten.",
+      "availability": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet.",
       "now": "Oberfläche erkunden",
-      "prerequisites": "Vorhandener Quellcode mit Work, aktuelles Node.js, pnpm 9.15, Git und eine C-Build-Umgebung für SQLite. Aufgaben lassen sich ohne Modellkonto erstellen und ansehen.",
+      "prerequisites": "Vorhandener Quellcode mit Plan, aktuelles Node.js, pnpm 9.15, Git und eine C-Build-Umgebung für SQLite. Aufgaben lassen sich ohne Modellkonto erstellen und ansehen.",
+      "setup": "Im Quellcodeordner einen neuen Arbeitsbereich, ein Projekt und die erste Aufgabe erstellen. Beim Start der Web-App die Arbeitsbereichsvariable dieses Terminals beibehalten.",
+      "outcome": "Arbeitsraum benennen, Produkte wählen und frisch starten: Hanji bereitet die Ordner vor. Bestehende Inhalte lassen sich bei der Einrichtung oder später verbinden.",
+      "agent": "Der conductor ist ein fortlaufendes Gespräch in allen drei Produkten. Seiten, Aufgaben oder ausgewählte Canvas-Objekte liefern Kontext; prüfen Sie angeforderte Änderungen und nutzen Sie Rückgängig, soweit verfügbar. Verbinden Sie Ihre eigene Claude- oder Codex-Umgebung.",
+      "next": "Aktuellen Entwicklungsstand ansehen"
+    },
+    "think": {
+      "availability": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet.",
+      "now": "Den Arbeitsraum entdecken",
+      "prerequisites": "Vorhandener Quellcode mit Plan, aktuelles Node.js, pnpm 9.15, Git und eine C-Build-Umgebung für SQLite. Aufgaben lassen sich ohne Modellkonto erstellen und ansehen.",
       "setup": "Im Quellcodeordner einen neuen Arbeitsbereich, ein Projekt und die erste Aufgabe erstellen. Beim Start der Web-App die Arbeitsbereichsvariable dieses Terminals beibehalten.",
       "outcome": "localhost:4102 öffnen. Fieldnotes und die Einladungsaufgabe in Liste oder Canvas finden. Projekt und Aufgabe liegen als Markdown-Dateien im Repository des Arbeitsbereichs.",
       "agent": "Konfigurieren Sie einen installierten Claude- oder Codex-Agenten unter Setup, authentifizieren Sie ihn separat und starten Sie pnpm tracker-host mit demselben TRACKER_WORKSPACE. Agentensitzungen sind experimentell und werden noch mit den tatsächlichen Anbieterdiensten geprüft.",
@@ -738,11 +751,11 @@
     "setup": "Bereits Zugang? Hinweise zur Einrichtung",
     "knowledge": {
       "stage": "Geschlossene Beta",
-      "description": "Write ist in der geschlossenen Beta. Zugang gibt es auf Anfrage. Schreiben Sie uns, wie Sie es nutzen möchten. Das Handbuch ist frei zugänglich."
+      "description": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet."
     },
     "tracker": {
       "stage": "Alpha",
-      "description": "Work ist in der Alpha. Zugang gibt es auf Anfrage. Oberfläche und Funktionen entwickeln sich weiter. Schreiben Sie uns, wenn Sie es ausprobieren und Feedback geben möchten."
+      "description": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet."
     },
     "form": {
       "name": "Ihr Name",
@@ -757,6 +770,79 @@
       "unavailable": "Zugangsanfragen sind hier in Kürze möglich.",
       "availability": "Verfügbarkeit",
       "hosted": "Öffnet unser Kontaktformular bei FormSubmit."
+    },
+    "think": {
+      "stage": "Preview",
+      "description": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet."
     }
+  },
+  "suite": {
+    "eyebrow": "EIN ARBEITSRAUM · DREI WEGE VORAN",
+    "hero": [
+      "Raum zum Denken.",
+      "Klarheit zum Handeln."
+    ],
+    "summary": "Ideen auf einer Fläche erkunden, daraus einen Plan machen und Wissen zusammenhalten. Think, Plan und Document teilen einen Arbeitsraum – mit einem Agenten an Ihrer Seite, wenn Sie ihn brauchen.",
+    "cta": "Mac-Vorschau anfragen",
+    "see": "Den Arbeitsraum entdecken",
+    "captureNote": "Echte Vorschauoberfläche · fiktiver Arbeitsraum · englische UI",
+    "projectsTitle": "Aus einem Gedanken wird etwas.",
+    "projectsText": "Beginnen Sie dort, wo die Arbeit ist. Wechseln Sie zwischen Ideenfläche, nächstem Schritt und Hintergrund, ohne neu anzufangen.",
+    "products": {
+      "think": [
+        "Geben Sie einer Idee Raum.",
+        "Eine Fläche für Notizen, Diagramme und Gespräche. Erkunden Sie einen Gedanken, bevor Sie entscheiden, was daraus wird."
+      ],
+      "tracker": [
+        "Den nächsten Schritt klären.",
+        "Aufgaben, Projekte, Abhängigkeiten und Ziele. Halten Sie Entscheidungen und Gespräche nah an der Arbeit."
+      ],
+      "knowledge": [
+        "Bewahren Sie, was zählt.",
+        "Echtes Markdown lesen und bearbeiten, Repositorys verbinden und Änderungen vertrauter Menschen und Agenten prüfen."
+      ]
+    },
+    "features": {
+      "think": [
+        "Live-Notizen, Text, Formen, Verbindungen und direkt bearbeitbare Tabellen.",
+        "Flüssige Auswahl, Größenänderung, Gruppen und Duplizieren per Option-Ziehen.",
+        "Visuelle Vorlagen, gemeinsamer Timer, Abstimmungen und sichtbare Agentenaktivität."
+      ],
+      "tracker": [
+        "Zwischen Liste, Board und Abhängigkeiten wechseln.",
+        "Ziele und Schlüsselergebnisse mit der zugehörigen Arbeit verbinden.",
+        "Aufgabengespräche, Agentensitzungen und Entscheidungen im Kontext behalten."
+      ],
+      "knowledge": [
+        "Markdown direkt bearbeiten, mit Verlauf und Kommentaren.",
+        "Die richtige Passage durch berechtigungsgebundene Suche und klare Ordner finden.",
+        "Vorschläge prüfen und ausgewählte Inhalte öffentlich publizieren."
+      ]
+    },
+    "discover": "Entdecken",
+    "currentTitle": "Ein Blick in die aktuelle Vorschau.",
+    "currentText": "Diese Aufnahmen stammen aus dem laufenden Produkt. Die interaktiven Geschichten auf dieser Seite veranschaulichen einen Ablauf; sie starten keinen Agenten und legen keine echte Arbeit an.",
+    "sharedTitle": "Ein Arbeitsraum für den ganzen Kontext.",
+    "sharedText": "Die Produkte teilen Identität, Personen, Hauptfarbe und conductor des Arbeitsraums. Jede Oberfläche behält die Werkzeuge, die zur Arbeit passen.",
+    "conductorTitle": "Ein Agent, der bei der Arbeit bleibt.",
+    "conductorText": "Der conductor ist ein fortlaufendes Gespräch in allen drei Produkten. Seiten, Aufgaben oder ausgewählte Canvas-Objekte liefern Kontext; prüfen Sie angeforderte Änderungen und nutzen Sie Rückgängig, soweit verfügbar. Verbinden Sie Ihre eigene Claude- oder Codex-Umgebung.",
+    "insightsTitle": "Sehen, was sich bewegt hat.",
+    "insightsText": "Die Einblicke verbinden ein lesbares Journal mit Aktivitätstrends, Produktanteilen und Beiträgen von Menschen und Agenten. Sie zeigen aufgezeichnete Beiträge, keinen Produktivitätswert.",
+    "onboardingTitle": "Richten Sie sich in Ruhe ein.",
+    "onboardingText": "Arbeitsraum benennen, Produkte wählen und frisch starten: Hanji bereitet die Ordner vor. Bestehende Inhalte lassen sich bei der Einrichtung oder später verbinden.",
+    "steps": [
+      "Ihr Arbeitsraum",
+      "Ihre Inhalte",
+      "Sicherer Zugang",
+      "Prüfen und beginnen"
+    ],
+    "handbook": "Handbuch lesen",
+    "setup": "Mac-Einrichtungsanleitung",
+    "availability": "Die Mac-Vorschau wird auf Einladung geteilt. Öffentliche Binärdownloads gibt es noch nicht. KI ist optional; Ihr Anbieterkonto wird separat verwaltet.",
+    "closingTitle": "Mit einer Idee beginnen.",
+    "closingText": "Eine Ideenfläche, ein nächster Schritt oder eine Seite. Für alle drei ist Platz.",
+    "thinkTitle": "Hanji Think — Eine Fläche für Ideen und Entscheidungen",
+    "thinkDescription": "Ideen mit Live-Notizen, Diagrammen, Tabellen, Vorlagen, Timer und Abstimmungen erkunden. Agentenaktivität auf dem Canvas sehen, im selben Arbeitsraum wie Plan und Document.",
+    "previewLabel": "Desktop-Vorschau"
   }
 }

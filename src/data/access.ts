@@ -4,7 +4,7 @@ import {projects} from './site';
 // or private activation link here. /el/ links are not AJAX submission endpoints.
 export const accessFormUrl = 'https://formsubmit.co/el/xuriwu';
 
-export function accessRequestUrl(product: 'knowledge' | 'tracker'): string {
+export function accessRequestUrl(product: 'knowledge' | 'tracker' | 'think'): string {
   const url = new URL(accessFormUrl);
   const project = projects.find(p => p.id === product)!.name;
   url.searchParams.set('subject', `Hanji ${project} access request`);

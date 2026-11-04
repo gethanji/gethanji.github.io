@@ -1,11 +1,16 @@
 # Hanji
 
-Hanji is an experimental lab exploring the thin surface between people and agents. Its interfaces take different shapes for sharing knowledge, exchanging ideas, and coordinating work. Its mission is to make collaboration with agents clearer. Hanji Write is for shared knowledge; Hanji Work is for organizing tasks and moving projects forward. Knowledge sharing was the first experiment; Work followed to explore managing work with agents. The projects share an AGPL-3.0-only codebase.
+One workspace for Think, Plan and Document, with a shared conductor when you connect your own agent. The Mac desktop app is an invited preview. Public binary downloads and hosted workspace sync are not available yet. The basic products do not require a model account; Claude or Codex access is configured separately. Files stay in local folders and Git repositories; durable workspace configuration and sessions also use local databases.
 
-## Projects
-- [Write](https://hanji.ink/projects/write/): Closed beta, with access by request. A Git-backed Markdown knowledge base, scoped MCP access, and human-reviewed agent proposals.
-  - [Write handbook](https://gethanji.github.io/docs/): Write documentation, published separately. Work has no handbook yet.
-- [Work](https://hanji.ink/projects/work/): Alpha, with access by request. A project tracker with file-backed issues, projects, and comments. Developer builds include Claude and Codex sessions; session state also uses a local database. Live-agent validation and public distribution are not yet complete.
+## Products
+- [Think](https://hanji.ink/projects/think/): A canvas with live notes, text, shapes, connectors, editable tables, groups, visual templates, a shared timer and voting. Agent activity is visible on the canvas.
+- [Plan](https://hanji.ink/projects/plan/): Issues, projects, list/board/dependency views, objectives and key results, contextual task conversations, and a workspace conductor.
+- [Document](https://hanji.ink/projects/document/): Real Markdown reading and editing, scoped search, comments, history, human-reviewed proposals and publishing.
+
+## Get started and learn
+- [Desktop setup guide](https://hanji.ink/start/): Invited preview access, installation and the four-stage workspace setup.
+- [Shared handbook](https://hanji.ink/docs/): Public documentation for all three products, the conductor, workspace insights, permissions and source/server setup.
+- [Handbook Markdown index](https://hanji.ink/docs/llms.txt): Every publicly exported page as Markdown.
 
 ## Languages
 - [English](https://hanji.ink/)
@@ -14,4 +19,4 @@ Hanji is an experimental lab exploring the thin surface between people and agent
 - [日本語](https://hanji.ink/ja/lab/)
 - [Français](https://hanji.ink/fr/lab/)
 
-All three pages are available in the five languages listed above. English project URLs use /projects/{project}/; other languages use /{language}/projects/{project}/. Legacy /en/, /ko/, /de/, /ja/, and /fr/ redirect to the corresponding Write page, preserving query and fragment. Former /projects/knowledge/ and /projects/tracker/ URLs, including their localized versions, redirect to Write and Work. Write is in closed beta and Work is in alpha. Neither is an unrestricted public release.
+The overview and all three product pages are available in five languages. The setup guide is in English. Older Write/Knowledge and Work/Tracker product URLs redirect to Document and Plan, preserving query strings and fragments. Interactive stories on the website illustrate workflows; current product captures are separately labeled. No website demo starts an agent or creates real work.

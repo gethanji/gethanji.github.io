@@ -12,7 +12,7 @@ const knowledgeSchema = page === 'knowledge' ? {
   '@graph': schemas[lang]['@graph'].map(node => node['@type'] === 'WebSite'
     ? {...node, inLanguage: lang, description: dictionary(lang).metadata.lab.description}
     : node['@type'] === 'SoftwareApplication'
-      ? {...node, description: meta.description}
+      ? {...node, name:'Hanji Document',url:url.href,softwareHelp:'https://hanji.ink/docs/', description: meta.description}
       : node),
 } : undefined;
 ---
@@ -25,8 +25,9 @@ const knowledgeSchema = page === 'knowledge' ? {
 <meta property="og:title" content={meta.title} /><meta property="og:description" content={meta.description} />
 <meta property="og:url" content={url} /><meta property="og:locale" content={localeTags[lang]} />
 {locales.filter(l=>l!==lang).map(l=><meta property="og:locale:alternate" content={localeTags[l]} />)}
-{page === 'knowledge' && <meta property="og:image" content={new URL(`/assets/og${lang==='ko'?'.ko':''}.png`,base)} />}
-<meta name="twitter:card" content={page === 'knowledge' ? 'summary_large_image' : 'summary'} />
+{<meta property="og:image" content={new URL(`/assets/current/og-${lang}.png`,base)} />}
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={meta.title} /><meta name="twitter:description" content={meta.description} />
 
-{page === 'knowledge' && <><meta name="twitter:image" content={new URL(`/assets/og${lang==='ko'?'.ko':''}.png`,base)} /><script type="application/ld+json" set:html={JSON.stringify(knowledgeSchema).replaceAll('<','\\u003c')}></script></>}
+<meta name="twitter:image" content={new URL(`/assets/current/og-${lang}.png`,base)} />
+{knowledgeSchema && <script type="application/ld+json" set:html={JSON.stringify(knowledgeSchema).replaceAll('<','\\u003c')}></script>}

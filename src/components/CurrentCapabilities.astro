@@ -1,0 +1,12 @@
+---
+import {dictionary} from '../data/site';
+import {captures} from '../data/captures';
+import LinkArrow from './LinkArrow.astro';
+const {lang,product}=Astro.props,copy=dictionary(lang).suite,capture=captures[product];
+---
+<section class:list={['current-capabilities',product==='knowledge'?'chapter':'chapter wrap']} data-current-capabilities aria-labelledby={`current-${product}`}>
+ <div class="section-head"><div><p class="overline">{capture.name} · {copy.previewLabel}</p><h2 id={`current-${product}`}>{copy.currentTitle}</h2></div><p>{copy.currentText}</p></div>
+ <figure class="current-capture"><a href={capture.src}><img src={capture.src} width={capture.width} height={capture.height} alt={`${capture.name} — ${copy.captureNote}`} loading="lazy" decoding="async" /></a><figcaption>{copy.captureNote}</figcaption></figure>
+ <ul class="current-feature-list">{copy.features[product].map(text=><li>{text}</li>)}</ul>
+ <a class="text-link" href={`https://hanji.ink/docs/handbook/guide/${product==='think'?'whiteboard':product==='tracker'?'objectives':'reading-and-writing'}/`}>{copy.handbook} <LinkArrow /></a>
+</section>

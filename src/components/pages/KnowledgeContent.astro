@@ -1,5 +1,6 @@
 ---
 import QuickStart from '../QuickStart.astro';
+import CurrentCapabilities from '../CurrentCapabilities.astro';
 import { dictionary, localHref } from '../../data/site';
 import KnowledgeHero from '../illustrations/KnowledgeHero.astro';
 const { lang } = Astro.props;
@@ -24,7 +25,7 @@ const copy = dictionary(lang).knowledge;
    <div class="stage-foot"><span id="demo-status" role="status" aria-live="polite">{copy["hero.demo-status.1.text0"]}</span><button class="reset" id="reset" hidden>{copy["hero.reset.1.text0"]}</button><span class="branch">{copy["hero.branch.1.text0"]}</span></div>
   </div>
  </section>
- <QuickStart lang={lang} product="knowledge" />
+ <CurrentCapabilities lang={lang} product="knowledge" /><QuickStart lang={lang} product="knowledge" />
  <section class="story" id="writing" aria-labelledby="writing-heading">
   <div class="story-head"><div><p class="section-index">{copy["writing.section-index.1.text0"]}</p><h2 id="writing-heading">{copy["writing.writing-heading.1.text0"]}<br /><em>{copy["writing.em.1.text0"]}</em></h2></div><div class="story-copy"><p>{copy["writing.p.1.text0"]}</p></div></div>
   <div class="flow" aria-label={copy["writing.flow.1.aria-label"]}><div class="flow-panel"><div class="flow-kicker"><span>{copy["writing.span.1.text0"]}</span><span>{copy["writing.span.2.text0"]}</span></div><p class="flow-quote">{copy["writing.flow-quote.1.text0"]}<del>{copy["writing.del.1.text0"]}</del> <ins>{copy["writing.ins.1.text0"]}</ins>{copy["writing.flow-quote.1.text2"]}<br />{copy["writing.flow-quote.1.text3"]}</p><p class="flow-note">{copy["writing.flow-note.1.text0"]}</p></div><div class="flow-arrow" aria-hidden="true">{copy["writing.flow-arrow.1.text0"]}</div><div class="flow-panel git-panel"><div class="flow-kicker"><span>{copy["writing.span.3.text0"]}</span><span>{copy["writing.span.4.text0"]}</span></div><pre><span class="minus">{copy["writing.minus.1.text0"]}</span>
