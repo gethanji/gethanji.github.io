@@ -36,6 +36,7 @@ the current suite rig go to `/tmp/hanji-public-review` or `QA_OUTPUT`.
 - `src/data/locales/*.json` contains the five dictionaries, metadata and current
   suite descriptions. All dictionaries have the same keys.
 - `src/components/pages/` contains the overview and three product pages.
+- `ProductExample.astro` explains a human request, an agent contribution and human review on each surface, in all five languages. The scenarios are illustrative; captures use the real interface with fictional content.
 - `CurrentCapabilities.astro` labels authentic product captures separately from
   the existing interactive workflow illustrations. No illustration runs an agent
   or creates real work.

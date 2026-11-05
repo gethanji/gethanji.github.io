@@ -882,6 +882,40 @@
       "historyText": "Dateibasierte Arbeit hat einen Git-Verlauf, um Änderungen zu prüfen und frühere Versionen wiederherzustellen. Live-Canvases speichern zusätzlich über ein Journal und Git-Sicherungspunkte. Die Leitfäden erklären Wiederherstellung und Backups.",
       "historyLink": "Verlauf und Wiederherstellung"
     },
-    "workspaceActors": "Dieselben Oberflächen für Menschen und Agenten."
+    "workspaceActors": "Dieselben Oberflächen für Menschen und Agenten.",
+    "examples": {
+      "labels": {
+        "kicker": "Ein Beispiel für Zusammenarbeit",
+        "request": "Eure Anfrage",
+        "agent": "Der Beitrag des Agenten",
+        "human": "Ihr prüft und entscheidet",
+        "result": "Das Ergebnis",
+        "note": "Beispielablauf · echte Oberfläche mit fiktiven Inhalten"
+      },
+      "think": {
+        "title": "Möglichkeiten erkunden. Gemeinsam entscheiden.",
+        "summary": "Ada und Noor verbessern die erste Sitzung. Ihre Frage auf dem Canvas: Sollte ein neuer Kollege zuerst den Arbeitsraum einrichten oder ein bearbeitbares Beispiel ausprobieren?",
+        "prompt": "Vergleiche die beiden Richtungen auf diesem Canvas. Ordne die Vor- und Nachteile und ergänze, was wir noch lernen müssen.",
+        "agent": "Der Conductor kann ausgewählte Notizen lesen, Alternativen anordnen, einen Entscheidungsablauf ergänzen und Testfragen entwerfen. Der Beitrag bleibt auf dem Canvas sichtbar und bearbeitbar.",
+        "human": "Ada und Noor prüfen die Annahmen, ändern Formulierungen und entscheiden sich, das bearbeitbare Beispiel zu testen. Aus der nächsten Notiz wird eine Plan-Aufgabe; die Begründung bleibt daneben sichtbar.",
+        "outcome": "Ein Canvas mit Frage, Alternativen, gewählter Richtung und nächstem Schritt."
+      },
+      "tracker": {
+        "title": "Aus einer Richtung eine umsetzbare Aufgabe machen.",
+        "summary": "Das Team entscheidet sich für ein bearbeitbares Startprojekt. Ada öffnet die Aufgabe in Plan und lässt sie präzisieren, bevor sie sich festlegt.",
+        "prompt": "@claude präzisiere die Abnahmekriterien dieser Aufgabe und schlage eine Folgeaufgabe zum Test der ersten Sitzung vor.",
+        "agent": "Die gezielte Anfrage enthält Aufgabe, Diskussion und relevanten Projektkontext. Der eingerichtete Agent kann die Arbeit präzisieren, Folgeaufgaben vorschlagen und direkt an der Aufgabe antworten.",
+        "human": "Ada prüft die Kriterien, entscheidet über den Umfang und legt die Überprüfung fest. Der Conductor kann anschließend die größere Frage beantworten: Was ändert sich dadurch für das restliche Projekt?",
+        "outcome": "Eine Aufgabe mit prüfbaren Kriterien, einer verantwortlichen Person und einem klaren Review."
+      },
+      "knowledge": {
+        "title": "Den Agenten entwerfen lassen. Die Entscheidung selbst prüfen.",
+        "summary": "Das Team möchte festhalten, warum es ein nutzbares Beispiel statt einer geführten Einrichtung wählt. Ada bringt die Notizen in Document und bittet um einen kurzen Entscheidungsvermerk.",
+        "prompt": "Entwirf den Entscheidungsvermerk aus diesen Notizen. Erhalte beide Alternativen, erkläre die Abwägung und liste offene Fragen auf.",
+        "agent": "Mit Vorschlagsrechten schlägt der Agent eine Markdown-Änderung auf einem Branch vor. Der Entwurf kann Begründung und nächste Schritte ordnen, ohne unbemerkt zur angenommenen Seite zu werden.",
+        "human": "Ada liest den Diff, prüft die Darstellung als Experiment und übernimmt den Vorschlag, wenn er die Entscheidung wiedergibt. Menschen können die Seite weiter direkt bearbeiten; der Dateiverlauf hält Änderungen nachvollziehbar.",
+        "outcome": "Ein Entscheidungsvermerk für Menschen und Agenten, mit Begründung und offenen Fragen."
+      }
+    }
   }
 }

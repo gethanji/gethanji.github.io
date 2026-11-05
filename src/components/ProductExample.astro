@@ -1,0 +1,9 @@
+---
+import {dictionary} from '../data/site';
+const {lang,product}=Astro.props,examples=dictionary(lang).suite.examples,copy=examples[product],labels=examples.labels;
+---
+<div class="product-example">
+ <figure class="product-request"><figcaption>{labels.request}</figcaption><blockquote>{copy.prompt}</blockquote></figure>
+ <div class="product-collaboration-grid"><article><p class="overline">01 · {labels.agent}</p><p>{copy.agent}</p></article><article><p class="overline">02 · {labels.human}</p><p>{copy.human}</p></article></div>
+ <p class="product-outcome"><strong>{labels.result}</strong><span>{copy.outcome}</span></p>
+</div>

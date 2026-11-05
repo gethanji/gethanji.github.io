@@ -882,6 +882,40 @@
       "historyText": "Le contenu enregistré en fichiers dispose d’un historique Git pour examiner les changements et retrouver des versions précédentes. Les canevas utilisent aussi un journal et des points de sauvegarde Git. Les guides expliquent la récupération et les sauvegardes.",
       "historyLink": "Historique et récupération"
     },
-    "workspaceActors": "Les mêmes surfaces, pour les personnes et les agents."
+    "workspaceActors": "Les mêmes surfaces, pour les personnes et les agents.",
+    "examples": {
+      "labels": {
+        "kicker": "Un exemple de collaboration",
+        "request": "Votre demande",
+        "agent": "La contribution de l’agent",
+        "human": "Vous examinez et décidez",
+        "result": "Le résultat",
+        "note": "Scénario illustratif · interface réelle avec du contenu fictif"
+      },
+      "think": {
+        "title": "Explorer les options. Décider ensemble.",
+        "summary": "Ada et Noor améliorent une première session. Sur le canevas, ils posent la question : faut-il configurer l’espace d’abord, ou essayer un exemple modifiable ?",
+        "prompt": "Compare les deux directions sur ce canevas. Organise les compromis et ajoute ce qu’il reste à apprendre.",
+        "agent": "Le conductor peut lire les notes sélectionnées, organiser les alternatives, ajouter un schéma de décision et préparer des questions à tester. La contribution reste visible et modifiable sur le canevas.",
+        "human": "Ada et Noor vérifient les hypothèses, ajustent les mots et choisissent de tester un exemple modifiable. La note suivante devient une tâche dans Plan, tandis que le raisonnement reste visible à côté.",
+        "outcome": "Un canevas avec la question, les alternatives, une direction choisie et une prochaine étape."
+      },
+      "tracker": {
+        "title": "Transformer une direction en tâche concrète.",
+        "summary": "L’équipe choisit un projet de départ modifiable. Ada ouvre la tâche dans Plan et demande de l’aide pour la préciser avant de s’engager.",
+        "prompt": "@claude précise les critères d’acceptation de cette tâche et propose une suite pour tester la première session.",
+        "agent": "La demande ciblée apporte la tâche, la discussion et le contexte pertinent du projet. L’agent configuré peut préciser le travail, proposer une suite et répondre directement sur la tâche.",
+        "human": "Ada examine les critères, fixe le périmètre et attribue la revue. Le conductor peut ensuite aider sur une question plus large : qu’est-ce que cela change pour le reste du projet ?",
+        "outcome": "Une tâche avec des critères vérifiables, un responsable et une revue clairement définie."
+      },
+      "knowledge": {
+        "title": "Laisser l’agent rédiger. Examiner la décision soi-même.",
+        "summary": "L’équipe veut conserver la raison du choix d’un exemple fonctionnel plutôt qu’une configuration guidée. Ada apporte les notes dans Document et demande un compte rendu court.",
+        "prompt": "Rédige la décision à partir de ces notes. Conserve les deux options, explique le compromis et liste ce qu’il reste à apprendre.",
+        "agent": "Avec un accès de proposition, l’agent suggère une modification Markdown sur une branche. Le brouillon organise le raisonnement et la suite sans devenir silencieusement la page acceptée.",
+        "human": "Ada lit le diff, vérifie que le choix reste présenté comme une expérience et fusionne la proposition quand elle reflète la décision. Les personnes peuvent aussi modifier la page directement ; l’historique permet d’examiner les changements.",
+        "outcome": "Une décision à laquelle personnes et agents peuvent revenir, avec son raisonnement et ses questions ouvertes."
+      }
+    }
   }
 }

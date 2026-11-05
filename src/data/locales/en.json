@@ -882,6 +882,40 @@
       "historyText": "File-backed work has Git history, so you can review changes and return to earlier versions. Live canvases also save through a journal and Git checkpoints. The guides explain recovery and what to back up.",
       "historyLink": "History and recovery"
     },
-    "workspaceActors": "The same surfaces, for people and agents."
+    "workspaceActors": "The same surfaces, for people and agents.",
+    "examples": {
+      "labels": {
+        "kicker": "A collaboration example",
+        "request": "Your request",
+        "agent": "The agent contributes",
+        "human": "You review and decide",
+        "result": "The result",
+        "note": "Illustrative workflow · real interface with sample content"
+      },
+      "think": {
+        "title": "Explore the options. Make the decision together.",
+        "summary": "Ada and Noor are improving a first session. They start with a question on the canvas: should a new teammate configure the workspace first, or try an editable example?",
+        "prompt": "Compare the two directions on this canvas. Organize the trade-offs and add what we still need to learn.",
+        "agent": "The conductor can read the selected notes, arrange the alternatives, add a decision flow and draft questions to test. The contribution stays on the canvas, where the people doing the work can see and edit it.",
+        "human": "Ada and Noor check the assumptions, change the wording and choose an editable example to test. They turn the next-step note into a Plan issue, with the reasoning still visible beside it.",
+        "outcome": "A canvas with the question, alternatives, a chosen direction and a next step."
+      },
+      "tracker": {
+        "title": "Turn a direction into a task someone can act on.",
+        "summary": "The team has chosen an editable starter project. Ada opens the issue in Plan and asks for help making the work precise before committing to it.",
+        "prompt": "@claude clarify the acceptance criteria for this task and suggest a follow-up to test the first session.",
+        "agent": "A focused request carries the issue, discussion and relevant project context. The configured agent can clarify the task, suggest follow-up work and return a response attached to the issue.",
+        "human": "Ada reviews the criteria, decides what belongs in scope and assigns the review. The conductor can then help answer the wider question: what does this change for the rest of the project?",
+        "outcome": "A task with checkable criteria, an owner and a clear way to review the result."
+      },
+      "knowledge": {
+        "title": "Let an agent draft. Give the decision a human review.",
+        "summary": "The team wants to preserve why it chose a working example over guided setup. Ada brings the notes into Document and asks for a short decision record.",
+        "prompt": "Draft the decision record from these notes. Keep both alternatives, explain the trade-off and list what we still need to learn.",
+        "agent": "With proposal access, the agent suggests a Markdown change on a branch. The draft can organize the reasoning and next steps without silently making the proposal the accepted page.",
+        "human": "Ada reads the diff, checks that the choice is still described as an experiment, and merges the proposal when it reflects the decision. People can continue editing the page directly; its file history keeps the changes reviewable.",
+        "outcome": "A decision record people and agents can return to, with the reasoning and open questions intact."
+      }
+    }
   }
 }
