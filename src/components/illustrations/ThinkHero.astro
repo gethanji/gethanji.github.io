@@ -1,0 +1,25 @@
+---
+import {dictionary} from '../../data/site';
+import StoryControls from './StoryControls.astro';
+import '../../styles/think-hero.css';
+const {lang}=Astro.props,shared=dictionary(lang).story,c=dictionary(lang).suite.thinkHero,controls={controlsLabel:shared.controlsLabel,staticLabel:shared.staticLabel,play:shared.play,pause:shared.pause,resume:shared.resume,replay:shared.replay,restart:shared.restart,steps:c.steps};
+---
+<figure class="think-mini illustration" data-stage="done" aria-label={c.label}>
+ <script type="application/json" data-think-copy set:html={JSON.stringify(controls).replaceAll('<','\u003c')}></script>
+ <div class="think-mini-window" aria-hidden="true">
+  <div class="th-chrome"><span><img src="/hanji-mark.svg" alt=""/>Think</span><span>{c.board}</span><span class="th-presence"><i>A</i><i>✳</i></span></div>
+  <div class="th-canvas">
+   <p class="th-question">{c.question}</p>
+   <div class="th-group"></div>
+   <svg class="th-links" viewBox="0 0 500 300" preserveAspectRatio="none"><path d="M130 145 C130 205 250 205 250 246 M370 145 C370 205 250 205 250 246"/></svg>
+   <div class="th-note th-left"><span>01</span><b>{c.left}</b><small>{c.leftDetail}</small></div>
+   <div class="th-note th-right"><span>02</span><b>{c.right}</b><small>{c.rightDetail}</small></div>
+   <div class="th-annotation th-tradeoff">{c.agentNote}</div><div class="th-annotation th-test">{c.testNote}</div>
+   <div class="th-decision"><span aria-hidden="true">✓</span><div><small>{c.review}</small><b>{c.decision}</b></div></div>
+   {['Claude','Ada'].map((name,i)=><span class:list={['th-pointer',i===0?'th-agent':'th-person']}><svg viewBox="0 0 18 22"><path d="M2 2 15 13 9 14 6 20Z" fill="currentColor" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg><span>{name}</span></span>)}
+  </div>
+ </div>
+ <figcaption><span>{c.caption}</span><StoryControls copy={controls} frames={[0,1,2,3,4]}/></figcaption>
+ <ol class="illustration-summary">{c.steps.map(step=><li>{step}</li>)}</ol>
+</figure>
+<script>import '../../scripts/think-story';</script>

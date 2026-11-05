@@ -916,6 +916,31 @@
         "human": "Ada lit le diff, vérifie que le choix reste présenté comme une expérience et fusionne la proposition quand elle reflète la décision. Les personnes peuvent aussi modifier la page directement ; l’historique permet d’examiner les changements.",
         "outcome": "Une décision à laquelle personnes et agents peuvent revenir, avec son raisonnement et ses questions ouvertes."
       }
+    },
+    "thinkHero": {
+      "title": [
+        "Donnez de l’espace aux idées.",
+        "Façonnez-les ensemble."
+      ],
+      "label": "Illustration : une personne et un agent comparent des idées, puis la personne choisit la suite.",
+      "caption": "Scénario illustratif · données fictives · aucun agent en direct",
+      "board": "First mile",
+      "question": "Une première session plus claire",
+      "left": "Configuration guidée",
+      "right": "Un exemple modifiable",
+      "leftDetail": "Davantage de conseils au départ",
+      "rightDetail": "Essayer quelque chose d’utile",
+      "agentNote": "Comparer les compromis",
+      "testNote": "Que faut-il tester ?",
+      "decision": "Essayer l’exemple fonctionnel",
+      "review": "Ada · prochaine étape",
+      "steps": [
+        "Poser une question",
+        "Explorer deux idées",
+        "Organiser avec un agent",
+        "Examiner la direction",
+        "Choisir la suite"
+      ]
     }
   }
 }

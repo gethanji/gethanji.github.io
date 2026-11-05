@@ -25,8 +25,8 @@ export function paperTilt(scene: HTMLElement, paper: HTMLElement, scope:PageScop
   return reset;
 }
 onPage(scope=>{
-for(const scene of document.querySelectorAll<HTMLElement>('.mini-hanji,.tracker-mini')){
- const paper=scene.querySelector<HTMLElement>('.mini-window,.tracker-mini-window');
+for(const scene of document.querySelectorAll<HTMLElement>('.mini-hanji,.tracker-mini,.think-mini')){
+ const paper=scene.querySelector<HTMLElement>('.mini-window,.tracker-mini-window,.think-mini-window');
  if(paper)paperTilt(scene,paper,scope);
 }
 

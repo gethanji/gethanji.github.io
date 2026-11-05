@@ -16,6 +16,7 @@ npm run build
 npm test
 node tests/current-suite-browser.mjs
 npm run test:browser
+npm run test:think-hero
 npm run test:header
 npm run test:navigation
 npm run test:access
@@ -36,6 +37,7 @@ the current suite rig go to `/tmp/hanji-public-review` or `QA_OUTPUT`.
 - `src/data/locales/*.json` contains the five dictionaries, metadata and current
   suite descriptions. All dictionaries have the same keys.
 - `src/components/pages/` contains the overview and three product pages.
+- `ThinkHero.astro` uses the shared illustration timeline, controls and paper treatment. It shows a question, an agent organizing options and a human choosing the next step, with reduced-motion and no-JavaScript fallbacks.
 - `ProductExample.astro` explains a human request, an agent contribution and human review on each surface, in all five languages. The scenarios are illustrative; captures use the real interface with fictional content.
 - `CurrentCapabilities.astro` labels authentic product captures separately from
   the existing interactive workflow illustrations. No illustration runs an agent

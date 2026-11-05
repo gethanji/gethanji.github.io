@@ -18,7 +18,8 @@
     "test:header": "node tests/header-browser.mjs",
     "test:access": "node tests/access-browser.mjs",
     "test:editorial": "node tests/editorial-browser.mjs",
-    "test:navigation": "node tests/navigation-browser.mjs"
+    "test:navigation": "node tests/navigation-browser.mjs",
+    "test:think-hero": "node tests/think-hero-browser.mjs"
   },
   "dependencies": {
     "astro": "7.3.5"

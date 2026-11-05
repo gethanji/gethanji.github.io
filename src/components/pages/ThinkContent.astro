@@ -1,8 +1,9 @@
 ---
 import {dictionary}from'../../data/site';import LinkArrow from '../LinkArrow.astro';import CurrentCapabilities from '../CurrentCapabilities.astro';import SuiteShared from '../SuiteShared.astro';import QuickStart from '../QuickStart.astro';
+import ThinkHero from '../illustrations/ThinkHero.astro';
 const {lang}=Astro.props,copy=dictionary(lang).suite;
 ---
-<section class="hero suite-hero wrap"><p class="overline">Think · {copy.previewLabel}</p><h1>{copy.products.think[0]}</h1><p class="lede">{copy.products.think[1]}</p><div class="actions"><a class="button" href="#get-started">{copy.cta} <LinkArrow /></a><a class="button button-quiet" href="#current-think">{copy.see}</a></div></section>
+<section class="hero suite-hero think-hero wrap"><p class="overline">Think · {copy.previewLabel}</p><h1>{copy.thinkHero.title[0]}<br/><em>{copy.thinkHero.title[1]}</em></h1><div class="think-hero-bottom"><div class="think-hero-message"><p class="lede">{copy.products.think[1]}</p><div class="actions"><a class="button" href="#get-started">{copy.cta} <LinkArrow /></a><a class="button button-quiet" href="#current-think">{copy.discover}</a></div></div><ThinkHero lang={lang}/></div></section>
 <CurrentCapabilities lang={lang} product="think"/>
 <section class="suite-templates wrap"><div class="section-head"><div><p class="overline">Think</p><h2>{copy.templatesTitle}</h2></div><p>{copy.features.think[2]}</p></div><figure class="current-capture"><img src="/assets/current/preview-templates.webp" width="1440" height="1000" alt={copy.features.think[2]} loading="lazy" decoding="async"/><figcaption>{copy.captureNote}</figcaption></figure></section>
 <SuiteShared lang={lang}/><QuickStart lang={lang} product="think"/>

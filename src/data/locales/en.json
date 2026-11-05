@@ -916,6 +916,31 @@
         "human": "Ada reads the diff, checks that the choice is still described as an experiment, and merges the proposal when it reflects the decision. People can continue editing the page directly; its file history keeps the changes reviewable.",
         "outcome": "A decision record people and agents can return to, with the reasoning and open questions intact."
       }
+    },
+    "thinkHero": {
+      "title": [
+        "Give an idea some room.",
+        "Shape it together."
+      ],
+      "label": "Illustration: a person and an agent compare ideas, then a person chooses the next step.",
+      "caption": "Illustrative workflow · fictional data · no live agent",
+      "board": "First mile",
+      "question": "A clearer first session",
+      "left": "Guided setup",
+      "right": "An editable example",
+      "leftDetail": "More guidance up front",
+      "rightDetail": "Try something useful first",
+      "agentNote": "Compare the trade-offs",
+      "testNote": "What should we test?",
+      "decision": "Try the working example",
+      "review": "Ada · next step",
+      "steps": [
+        "Ask a question",
+        "Explore two ideas",
+        "Organize with an agent",
+        "Review the direction",
+        "Choose the next step"
+      ]
     }
   }
 }

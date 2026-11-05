@@ -916,6 +916,31 @@
         "human": "Ada liest den Diff, prüft die Darstellung als Experiment und übernimmt den Vorschlag, wenn er die Entscheidung wiedergibt. Menschen können die Seite weiter direkt bearbeiten; der Dateiverlauf hält Änderungen nachvollziehbar.",
         "outcome": "Ein Entscheidungsvermerk für Menschen und Agenten, mit Begründung und offenen Fragen."
       }
+    },
+    "thinkHero": {
+      "title": [
+        "Gebt einer Idee Raum.",
+        "Formt sie gemeinsam."
+      ],
+      "label": "Illustration: Ein Mensch und ein Agent vergleichen Ideen, dann wählt der Mensch den nächsten Schritt.",
+      "caption": "Beispielablauf · fiktive Daten · kein aktiver Agent",
+      "board": "First mile",
+      "question": "Eine klarere erste Sitzung",
+      "left": "Geführte Einrichtung",
+      "right": "Editierbares Beispiel",
+      "leftDetail": "Mehr Anleitung zu Beginn",
+      "rightDetail": "Zuerst etwas Nützliches testen",
+      "agentNote": "Die Abwägungen ordnen",
+      "testNote": "Was sollten wir testen?",
+      "decision": "Das Arbeitsbeispiel testen",
+      "review": "Ada · nächster Schritt",
+      "steps": [
+        "Eine Frage stellen",
+        "Zwei Ideen erkunden",
+        "Mit einem Agenten ordnen",
+        "Die Richtung prüfen",
+        "Den nächsten Schritt wählen"
+      ]
     }
   }
 }
