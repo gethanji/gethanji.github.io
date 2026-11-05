@@ -1,6 +1,8 @@
 # Hanji
 
-Hanji is a workspace for people and agents to explore ideas, organize work and keep knowledge. Its mission is to help them build shared understanding on a foundation they own. Think, Plan and Document are the first expression of that mission, with a shared conductor when you connect your own agent. The Mac desktop app is an invited preview. Public binary downloads and hosted workspace sync are not available yet. The basic products do not require a model account; Claude or Codex access is configured separately. Files stay in local folders and Git repositories; durable workspace configuration and sessions also use local databases.
+Hanji is a research lab exploring human–agent interaction. It exists as a thin layer between people and agents, bringing clarity so people can understand the work, exercise judgment and guide what comes next. Born from an individual need and countless iterations, it shares results publicly and as open source while continuing to evolve with AI tools and methods.
+
+Think, Plan and Document form a current workspace experiment within that research. The Mac desktop app is an invited preview. Public binary downloads and hosted workspace sync are not available yet. The basic products do not require a model account; Claude or Codex access is configured separately. Files stay in local folders and Git repositories; durable workspace configuration and sessions also use local databases.
 
 ## Products
 - [Think](https://hanji.ink/projects/think/): A canvas with live notes, text, shapes, connectors, editable tables, groups, visual templates, a shared timer and voting. Agent activity is visible on the canvas.
@@ -8,7 +10,7 @@ Hanji is a workspace for people and agents to explore ideas, organize work and k
 - [Document](https://hanji.ink/projects/document/): Real Markdown reading and editing, scoped search, comments, history, human-reviewed proposals and publishing.
 
 ## Mission and workflow
-- [Mission and vision](https://hanji.ink/docs/handbook/story/mission-and-vision/): Why Hanji exists, the current workspace as a first step, and the longer-term ambition.
+- [Mission and vision](https://hanji.ink/docs/handbook/story/mission-and-vision/): The research lab, clarity and human judgment, its personal origin, and an ongoing practice of open sharing and iteration.
 - [From idea to action](https://hanji.ink/docs/handbook/guide/idea-to-action/): A fictional worked example following a decision across Think, Plan and Document.
 
 ## Get started and learn

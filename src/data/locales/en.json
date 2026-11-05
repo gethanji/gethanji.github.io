@@ -539,8 +539,8 @@
   },
   "metadata": {
     "lab": {
-      "title": "Hanji — Keep the thinking with the work.",
-      "description": "Hanji brings ideas, plans and knowledge into one workspace. Explore a problem, decide what comes next, and keep the context with the people and agents doing the work."
+      "title": "Hanji — A thin surface between people and agents.",
+      "description": "Hanji is a research lab exploring how people work with agents. We build interfaces that make these interactions clearer, so people can understand what is happening, exercise judgment and guide what comes next."
     },
     "knowledge": {
       "title": "Hanji Document — A Git-backed knowledge base",
@@ -777,17 +777,17 @@
     }
   },
   "suite": {
-    "eyebrow": "A WORKSPACE FOR PEOPLE AND AGENTS",
+    "eyebrow": "Hanji · An experimental collaboration lab",
     "hero": [
-      "Keep the thinking",
-      "with the work."
+      "A thin surface",
+      "between people and agents."
     ],
-    "summary": "Hanji brings ideas, plans and knowledge into one workspace. Explore a problem, decide what comes next, and keep the context with the people and agents doing the work.",
+    "summary": "Hanji is a research lab exploring how people work with agents. We build interfaces that make these interactions clearer, so people can understand what is happening, exercise judgment and guide what comes next.",
     "cta": "Request the desktop preview",
     "see": "Meet Hanji",
     "captureNote": "An example workspace in the desktop preview.",
-    "projectsTitle": "One workspace. Three ways forward.",
-    "projectsText": "Think, Plan and Document give each kind of work the space it needs, with a shared agent conversation alongside.",
+    "projectsTitle": "The research, in practice.",
+    "projectsText": "One workspace, three surfaces. Think, Plan and Document are our current experiments in making work with agents clearer and more useful.",
     "products": {
       "think": [
         "Give an idea some room.",
@@ -822,8 +822,8 @@
     "discover": "Explore",
     "currentTitle": "The workspace in practice.",
     "currentText": "Explore the interface, then use the product guide for the full workflow, controls and current limits.",
-    "sharedTitle": "Built around your work. On your terms.",
-    "sharedText": "Better tools should make your work more useful and leave you in control of it.",
+    "sharedTitle": "Make the interaction understandable.",
+    "sharedText": "See the context, understand what changes, and decide what happens next.",
     "conductorTitle": "Bring an agent into the context.",
     "conductorText": "Ask about the page you are reading, the issue you are working on or the objects you selected. The conductor keeps a standing conversation across the workspace. Connect your own Claude or Codex setup when you need it.",
     "insightsTitle": "See what has moved.",
@@ -839,23 +839,26 @@
     "handbook": "Read the handbook",
     "setup": "Desktop setup guide",
     "availability": "The Mac desktop preview is shared by invitation. Public binary downloads are not available yet. AI is optional; your provider account is managed separately.",
-    "closingTitle": "A place to build on.",
-    "closingText": "Start with one question, one project or one page. Keep what you learn.",
+    "closingTitle": "The question stays open.",
+    "closingText": "How can we work better with our new virtual companions and colleagues? Try the current experiments, and help shape what we explore next.",
     "thinkTitle": "Hanji Think — A canvas for ideas and decisions",
     "thinkDescription": "Explore ideas with live notes, diagrams, tables, templates, timer and voting. See agent activity on the canvas, in the same workspace as Plan and Document.",
     "previewLabel": "Desktop preview",
     "missionLabel": "WHY HANJI EXISTS",
-    "missionTitle": "Shared understanding. A foundation you own.",
-    "missionText": "Our mission is to help people and agents build shared understanding on a foundation they own. The ideas behind a decision, the work it creates and the knowledge it leaves should stay useful beyond the conversation, the model or the tool.",
-    "missionBridge": "Today, Hanji takes its first step toward that mission: one workspace with three connected surfaces for thinking, doing and remembering.",
+    "missionTitle": "Clarity for a new way of working.",
+    "missionText": "Agents are becoming our virtual companions and colleagues. Their capabilities are evolving faster than our ways of working with them. Hanji exists as a thin layer between people and agents: making context, contributions and choices easier to understand, so people can make sound judgments.",
+    "missionBridge": "Our current workspace is one expression of this research. Think, Plan and Document explore different ways to interact with agents while keeping people able to understand, question and direct the work.",
     "missionLink": "Our mission and principles",
-    "ownershipTitle": "Keep a foundation you can carry forward.",
-    "ownershipText": "Documents and issues live as Markdown in repositories you control. Canvases have their own files and checkpoints. Hanji adds an interface, history and tools around that content; workspace configuration and journals need their own backup.",
-    "agencyTitle": "Decide how the work changes.",
-    "agencyText": "Use Hanji directly, or ask an agent to help. Scoped access and reviewable proposals give you ways to control contributions; the handbook explains which permissions apply to each surface.",
+    "ownershipTitle": "Make contributions visible.",
+    "ownershipText": "History, authorship, comments and proposals help explain what changed and who contributed. The useful question is what you need to understand before deciding what to keep or change.",
+    "agencyTitle": "Keep human judgment present.",
+    "agencyText": "An interface should help you question, review and direct an agent’s contribution. Scoped access, approval requests and supported Undo actions are part of that work; the guides explain their current boundaries.",
     "workflowLink": "Follow an idea through the workspace",
     "setupTitle": "Start with work that matters to you.",
     "setupText": "Bring existing content or create a fresh workspace. The Mac desktop preview is currently shared by invitation.",
-    "templatesTitle": "Start with a useful structure."
+    "templatesTitle": "Start with a useful structure.",
+    "originTitle": "A personal need. An ongoing practice.",
+    "originText": "Hanji began with an individual need to work better with agents. It grew through countless iterations in everyday use: trying an interaction, noticing what remained unclear, and refining the interface.",
+    "openText": "We now share the results publicly and as open source, while continuing to experiment. As AI tools and methods evolve, so will Hanji. The products are working explorations of that question, with room to change as we learn."
   }
 }

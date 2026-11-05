@@ -52,3 +52,9 @@ body .suite-home-hero h1{font-size:clamp(58px,7.2vw,102px);max-width:1000px;line
 .workspace-tour:has(input[value=think]:checked)>[data-surface=think],.workspace-tour:has(input[value=tracker]:checked)>[data-surface=tracker],.workspace-tour:has(input[value=knowledge]:checked)>[data-surface=knowledge]{display:block}
 .workspace-tour .suite-flagship a{display:block}.workspace-tour .suite-flagship img{display:block;width:100%;height:auto}
 @media(max-width:600px){.workspace-tour-choices{padding:8px}.workspace-tour-choice span{padding:10px 5px;font-size:13px}}
+
+.suite-origin{display:grid;grid-template-columns:1fr 1.15fr;gap:65px;border-top:1px solid var(--color-border);padding-top:65px;padding-bottom:75px}
+.suite-origin h2{font:500 clamp(32px,3.4vw,47px)/1.15 var(--font-editorial);letter-spacing:-.8px;margin:0;max-width:480px}
+.suite-origin p{font:16px/1.85 var(--font-ui);color:var(--color-muted);margin:0 0 22px;max-width:680px}
+body .suite-home-hero h1{font-size:clamp(48px,6.2vw,86px);max-width:1120px}
+@media(max-width:700px){.suite-origin{grid-template-columns:1fr;gap:24px;padding-top:38px;padding-bottom:35px}.suite-origin p{font-size:15px}body .suite-home-hero h1{font-size:clamp(43px,10.5vw,62px)}}

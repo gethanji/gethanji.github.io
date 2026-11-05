@@ -539,8 +539,8 @@
   },
   "metadata": {
     "lab": {
-      "title": "Hanji — Gardez la réflexion avec le travail.",
-      "description": "Hanji réunit idées, projets et connaissances dans un même espace. Explorez un problème, décidez de la suite et gardez le contexte avec les personnes et les agents qui font avancer le travail."
+      "title": "Hanji — Une surface légère entre humains et agents.",
+      "description": "Hanji est un laboratoire de recherche sur la manière de travailler avec les agents. Nous créons des interfaces qui clarifient ces interactions, pour comprendre ce qui se passe, exercer son jugement et orienter la suite."
     },
     "knowledge": {
       "title": "Hanji Document — Une base de connaissances fondée sur Git",
@@ -777,17 +777,17 @@
     }
   },
   "suite": {
-    "eyebrow": "UN ESPACE POUR LES ÉQUIPES ET LES AGENTS",
+    "eyebrow": "Hanji · Un laboratoire de collaboration expérimentale",
     "hero": [
-      "Gardez la réflexion",
-      "avec le travail."
+      "Une surface légère",
+      "entre humains et agents."
     ],
-    "summary": "Hanji réunit idées, projets et connaissances dans un même espace. Explorez un problème, décidez de la suite et gardez le contexte avec les personnes et les agents qui font avancer le travail.",
+    "summary": "Hanji est un laboratoire de recherche sur la manière de travailler avec les agents. Nous créons des interfaces qui clarifient ces interactions, pour comprendre ce qui se passe, exercer son jugement et orienter la suite.",
     "cta": "Demander la préversion Mac",
     "see": "Découvrir Hanji",
     "captureNote": "Un exemple d’espace dans la version de bureau en aperçu.",
-    "projectsTitle": "Un espace. Trois façons d’avancer.",
-    "projectsText": "Think, Plan et Document donnent à chaque activité l’espace nécessaire, avec une conversation commune avec l’agent.",
+    "projectsTitle": "La recherche, en pratique.",
+    "projectsText": "Un espace, trois surfaces. Think, Plan et Document sont nos expériences actuelles pour rendre le travail avec les agents plus clair et plus utile.",
     "products": {
       "think": [
         "Donnez de l’espace à une idée.",
@@ -822,8 +822,8 @@
     "discover": "Découvrir",
     "currentTitle": "L’espace en pratique.",
     "currentText": "Explorez l’interface, puis consultez le guide du produit pour les usages, les commandes et les limites actuelles.",
-    "sharedTitle": "Votre travail au centre. Vous gardez la main.",
-    "sharedText": "De meilleurs outils doivent rendre votre travail plus utile et vous en laisser la maîtrise.",
+    "sharedTitle": "Rendre l’interaction compréhensible.",
+    "sharedText": "Voir le contexte, comprendre ce qui change et décider de la suite.",
     "conductorTitle": "Invitez un agent dans le contexte.",
     "conductorText": "Interrogez la page que vous lisez, le sujet sur lequel vous travaillez ou les objets sélectionnés. Le conductor conserve une conversation entre les surfaces. Connectez votre propre configuration Claude ou Codex selon vos besoins.",
     "insightsTitle": "Voyez ce qui a avancé.",
@@ -839,23 +839,26 @@
     "handbook": "Lire le manuel",
     "setup": "Guide de configuration Mac",
     "availability": "La préversion Mac est partagée sur invitation. Aucun binaire public n’est encore disponible. L’IA est facultative ; votre compte fournisseur est géré séparément.",
-    "closingTitle": "Un endroit pour construire la suite.",
-    "closingText": "Commencez par une question, un projet ou une page. Gardez ce que vous apprenez.",
+    "closingTitle": "La question reste ouverte.",
+    "closingText": "Comment mieux travailler avec nos nouveaux compagnons et collègues virtuels ? Essayez les expériences actuelles et contribuez à orienter la suite.",
     "thinkTitle": "Hanji Think — Un canevas pour les idées et les décisions",
     "thinkDescription": "Explorez avec des notes en direct, diagrammes, tableaux, modèles, minuteur et votes. Suivez l’agent sur le canevas, dans le même espace que Plan et Document.",
     "previewLabel": "Préversion Mac",
     "missionLabel": "POURQUOI HANJI EXISTE",
-    "missionTitle": "Une compréhension partagée. Des bases qui vous appartiennent.",
-    "missionText": "Notre mission est d’aider les personnes et les agents à construire une compréhension partagée sur des bases qui leur appartiennent. Les idées derrière une décision, le travail qui en découle et les connaissances acquises doivent rester utiles au-delà de la conversation, du modèle ou de l’outil.",
-    "missionBridge": "Aujourd’hui, Hanji fait un premier pas vers cette mission : un espace avec trois surfaces reliées pour réfléchir, agir et conserver les connaissances.",
+    "missionTitle": "De la clarté pour une nouvelle façon de travailler.",
+    "missionText": "Les agents deviennent nos compagnons et collègues virtuels. Leurs capacités évoluent plus vite que nos façons de travailler avec eux. Hanji forme une fine couche entre les personnes et les agents : rendre le contexte, les contributions et les choix plus compréhensibles pour permettre un jugement éclairé.",
+    "missionBridge": "Notre espace actuel est une expression de cette recherche. Think, Plan et Document explorent différentes interactions avec les agents, tout en permettant aux personnes de comprendre, questionner et orienter le travail.",
     "missionLink": "Notre mission et nos principes",
-    "ownershipTitle": "Des bases que vous pouvez emporter.",
-    "ownershipText": "Documents et tâches sont des fichiers Markdown dans des dépôts que vous contrôlez. Les canevas disposent de leurs propres fichiers et points de sauvegarde. Hanji y ajoute une interface, un historique et des outils ; la configuration et les journaux demandent une sauvegarde distincte.",
-    "agencyTitle": "Décidez comment le travail évolue.",
-    "agencyText": "Utilisez Hanji directement ou demandez de l’aide à un agent. Les accès délimités et les propositions à examiner permettent de contrôler les contributions ; le manuel précise les permissions de chaque surface.",
+    "ownershipTitle": "Rendre les contributions visibles.",
+    "ownershipText": "Historique, attribution, commentaires et propositions aident à comprendre ce qui a changé et qui y a contribué. L’essentiel est de savoir ce qu’il faut comprendre avant de décider quoi garder ou modifier.",
+    "agencyTitle": "Préserver le jugement humain.",
+    "agencyText": "Une interface doit aider à questionner, examiner et orienter la contribution d’un agent. Accès délimités, demandes d’autorisation et actions annulables y participent ; les guides en précisent les limites actuelles.",
     "workflowLink": "Suivre une idée à travers l’espace",
     "setupTitle": "Commencez par ce qui compte pour vous.",
     "setupText": "Apportez votre contenu ou créez un nouvel espace. L’aperçu de bureau Mac est actuellement accessible sur invitation.",
-    "templatesTitle": "Commencez avec une structure utile."
+    "templatesTitle": "Commencez avec une structure utile.",
+    "originTitle": "Un besoin personnel. Une pratique qui continue.",
+    "originText": "Hanji est né d’un besoin individuel de mieux travailler avec les agents. Il a grandi au fil d’innombrables itérations dans un usage quotidien : essayer une interaction, repérer ce qui reste flou et affiner l’interface.",
+    "openText": "Nous partageons désormais les résultats publiquement et en open source, tout en poursuivant nos expériences. Hanji évoluera avec les outils et méthodes de l’ère de l’IA. Les produits sont des explorations concrètes, qui peuvent changer avec nos apprentissages."
   }
 }

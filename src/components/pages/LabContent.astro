@@ -17,6 +17,7 @@ const {lang}=Astro.props,copy=dictionary(lang).suite;
  <p class="overline">{copy.missionLabel}</p>
  <div><h2 id="mission-heading">{copy.missionTitle}</h2><p>{copy.missionText}</p><p>{copy.missionBridge}</p><a class="text-link" href="https://hanji.ink/docs/handbook/story/mission-and-vision/">{copy.missionLink} <LinkArrow /></a></div>
 </section>
+<section class="suite-origin wrap" aria-labelledby="origin-heading"><h2 id="origin-heading">{copy.originTitle}</h2><div><p>{copy.originText}</p><p>{copy.openText}</p></div></section>
 <section class="suite-workspace wrap" id="projects" aria-labelledby="workspace-heading">
  <div class="section-head"><h2 id="workspace-heading">{copy.projectsTitle}</h2><p>{copy.projectsText}</p></div>
  <WorkspaceTour lang={lang}/>

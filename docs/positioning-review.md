@@ -13,23 +13,31 @@ Reviewed 4 November 2026. This is an editorial benchmark, not a feature comparis
 
 These are interpretations of the linked first-party pages. We borrow the editorial discipline, not their slogans, visual identities, traction claims or enterprise positioning.
 
-## Hanji's position
+## Hanji's position — corrected 5 November 2026
 
-**Mission:** Help people and agents build shared understanding on a foundation they own.
+The founder's clarification and the earlier landing-page history are authoritative for the identity. The 7 October refinement (`f2e4973`) already described an experimental collaboration lab, a thin surface between people and agents, clarity in those interactions and human judgment throughout. The later suite rewrite incorrectly elevated ownership of content into the mission.
 
-**Product today:** A workspace for exploring ideas, organizing work and keeping knowledge. Think, Plan and Document are three connected surfaces of that workspace. The conductor brings an optional agent into the context of the work.
+**Identity:** A research lab exploring human–agent interaction.
 
-**Promise:** Keep the thinking with the work.
+**Mission:** Bring clarity to the interaction between people and agents so people can exercise sound judgment and make better use of the emerging workflow.
 
-**Why it matters:** Ideas, decisions and tasks usually end up in different places. People repeat context, and agents inherit fragments. Hanji brings these activities into one workspace, while keeping durable content in files the workspace owner controls.
+**Role:** A thin layer between humans and their new virtual companions and colleagues. Make context, contributions, changes and choices understandable.
 
-**Relationship to the mission:** The current desktop preview is a first step toward that foundation. It is not a claim that every connection is automatic, that every surface has identical permissions, or that hosted collaboration is available.
+**Origin:** An individual need, developed through countless iterations in everyday use.
+
+**Practice:** Share results publicly and as open source while continuing to iterate as AI tools and methods evolve.
+
+**Product today:** Think, Plan and Document form a current workspace experiment. Their present arrangement is one expression of the research and can evolve. The conductor brings an agent into the context of the work.
+
+**Promise:** A thin surface between people and agents.
+
+Ownership and open formats remain useful product principles. They support the research; they do not define its mission. The benchmark informs the clarity and hierarchy of the presentation, not Hanji's identity.
 
 ## Public information architecture
 
-1. Home: what Hanji is → why it exists → the workspace as a whole → three ways to use it → ownership and agency → preview access.
+1. Home: the research lab → clarity and human judgment → personal origin and open iteration → the current workspace experiment → three surfaces → practical interaction principles → preview access.
 2. Product pages: the problem each surface solves, useful workflows, readable product evidence, then detailed capabilities and the appropriate guide.
-3. Mission and vision: the durable ambition, principles and distinction between that ambition and what ships today.
+3. Mission and vision: clearer human–agent interaction, the research practice and the distinction between the lab’s wider scope and what ships today.
 4. Workflow guides: a concrete worked example spanning the surfaces. Label illustrative examples honestly; reserve “customer story” for actual customers and measured outcomes.
 5. Handbook: start with the mental model and the first useful task. Keep installation, usage, administration and implementation details separate.
 
