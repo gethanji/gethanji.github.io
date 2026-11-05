@@ -859,6 +859,29 @@
     "templatesTitle": "Commencez avec une structure utile.",
     "originTitle": "Un besoin personnel. Une pratique qui continue.",
     "originText": "Hanji est né d’un besoin individuel de mieux travailler avec les agents. Il a grandi au fil d’innombrables itérations dans un usage quotidien : essayer une interaction, repérer ce qui reste flou et affiner l’interface.",
-    "openText": "Nous partageons désormais les résultats publiquement et en open source, tout en poursuivant nos expériences. Hanji évoluera avec les outils et méthodes de l’ère de l’IA. Les produits sont des explorations concrètes, qui peuvent changer avec nos apprentissages."
+    "openText": "Nous partageons désormais les résultats publiquement et en open source, tout en poursuivant nos expériences. Hanji évoluera avec les outils et méthodes de l’ère de l’IA. Les produits sont des explorations concrètes, qui peuvent changer avec nos apprentissages.",
+    "collaboration": {
+      "heading": "Un espace. Deux façons de travailler avec votre agent.",
+      "intro": "Les personnes et les agents connectés peuvent lire, créer et modifier dans Think, Plan et Document, selon les accès accordés. Travaillez directement, demandez de l’aide sur l’ensemble de l’espace ou déléguez une tâche précise.",
+      "providers": "Choisissez votre agent. Connectez Claude ou Codex ; les autres agents compatibles peuvent utiliser les outils MCP de Hanji avec un accès délimité.",
+      "wideLabel": "À l’échelle de l’espace",
+      "widePrompt": "Qu’est-ce qui a changé dans ce projet, et quelle serait la suite ?",
+      "taskLabel": "Sur une tâche précise",
+      "taskPrompt": "Précise les critères d’acceptation et propose la prochaine étape.",
+      "exampleLabel": "Exemples de demandes",
+      "conductorTitle": "Un conductor avec une vue d’ensemble.",
+      "conductorText": "Une conversation continue avec l’agent vous accompagne entre les trois surfaces. Posez des questions, créez ou modifiez du contenu et organisez l’espace avec le contexte pertinent à portée de main.",
+      "conductorLink": "Découvrir le conductor",
+      "focusedTitle": "Une mention lance une tâche ciblée.",
+      "focusedText": "Dans Plan, mentionnez @claude ou @gpt dans un commentaire de tâche ou un fil de l’espace pour solliciter l’agent configuré. La tâche dispose de sa session et du contexte pertinent, pour limiter le contexte inutile.",
+      "focusedLink": "Travailler avec les agents",
+      "briefTitle": "Les agents apprennent le fonctionnement de Hanji.",
+      "briefText": "Hanji fournit des instructions sur ses outils et usages : gérer des tâches, structurer un brainstorming, créer ou améliorer des documents. Le brief relie ces outils au travail demandé.",
+      "briefLink": "Comment connecter les agents",
+      "historyTitle": "Des changements à suivre et à revoir.",
+      "historyText": "Le contenu enregistré en fichiers dispose d’un historique Git pour examiner les changements et retrouver des versions précédentes. Les canevas utilisent aussi un journal et des points de sauvegarde Git. Les guides expliquent la récupération et les sauvegardes.",
+      "historyLink": "Historique et récupération"
+    },
+    "workspaceActors": "Les mêmes surfaces, pour les personnes et les agents."
   }
 }

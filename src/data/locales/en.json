@@ -859,6 +859,29 @@
     "templatesTitle": "Start with a useful structure.",
     "originTitle": "A personal need. An ongoing practice.",
     "originText": "Hanji began with an individual need to work better with agents. It grew through countless iterations in everyday use: trying an interaction, noticing what remained unclear, and refining the interface.",
-    "openText": "We now share the results publicly and as open source, while continuing to experiment. As AI tools and methods evolve, so will Hanji. The products are working explorations of that question, with room to change as we learn."
+    "openText": "We now share the results publicly and as open source, while continuing to experiment. As AI tools and methods evolve, so will Hanji. The products are working explorations of that question, with room to change as we learn.",
+    "collaboration": {
+      "heading": "One workspace. Two ways to work with your agent.",
+      "intro": "People and connected agents can read, create and edit across Think, Plan and Document, within the access you give them. Work directly, ask for help across the workspace, or hand off a focused task.",
+      "providers": "Bring your preferred agent. Connect Claude or Codex; other compatible agents can use Hanji’s scoped MCP tools.",
+      "wideLabel": "Across the workspace",
+      "widePrompt": "What changed in this project, and what should we do next?",
+      "taskLabel": "On a specific task",
+      "taskPrompt": "Clarify the acceptance criteria and suggest the next step.",
+      "exampleLabel": "Example requests",
+      "conductorTitle": "A conductor with the wider view.",
+      "conductorText": "One standing agent conversation follows you across all three surfaces. Ask questions, create or edit content, and organize the workspace with the relevant context close at hand.",
+      "conductorLink": "Meet the conductor",
+      "focusedTitle": "A mention starts a focused task.",
+      "focusedText": "In Plan, mention @claude or @gpt in an issue comment or workspace thread to ask your configured agent for help. The task gets its own session and relevant context, helping limit unnecessary context.",
+      "focusedLink": "Explore working with agents",
+      "briefTitle": "Agents learn how Hanji works.",
+      "briefText": "Hanji gives agents instructions about its tools and workflows: managing tasks, structuring a brainstorm, and creating or improving documents. Their brief connects those tools to the work you are asking for.",
+      "briefLink": "How agents connect",
+      "historyTitle": "Changes you can trace and revisit.",
+      "historyText": "File-backed work has Git history, so you can review changes and return to earlier versions. Live canvases also save through a journal and Git checkpoints. The guides explain recovery and what to back up.",
+      "historyLink": "History and recovery"
+    },
+    "workspaceActors": "The same surfaces, for people and agents."
   }
 }

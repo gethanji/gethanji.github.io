@@ -51,7 +51,7 @@ Product image provenance is the Hanji repository’s `docs/handbook/assets/` and
 `scripts/docs-shots.mjs`. The public canvas has a deterministic paused conductor
 fixture and makes no model call. The document screenshot uses Ada and Remy.
 
-The public story and benchmark rationale are in `docs/positioning-review.md`. The homepage introduces Hanji as a research lab for clearer human–agent interaction, its personal origin and open iteration, then the current workspace experiment. Product pages and the handbook carry the deeper workflows. The earlier lab identity is preserved in the history (`f2e4973`); competitors inform presentation, not the mission. Current product stills are captured at 2× density; the fictional First mile example connects the canvas, issue and decision record.
+The public story and benchmark rationale are in `docs/positioning-review.md`. The homepage introduces Hanji as a research lab for clearer human–agent interaction, its personal origin and open iteration, then the current workspace experiment and its agent workflows. The homepage explains the conductor, focused mentions, task briefs and version history before directing visitors to detailed pages. Product pages and the handbook carry the deeper workflows. The earlier lab identity is preserved in the history (`f2e4973`); competitors inform presentation, not the mission. Current product stills are captured at 2× density; the fictional First mile example connects the canvas, issue and decision record.
 
 The original Document editorial CSS remains checksum-protected. Its miniatures,
 proposal and permissions demonstrations retain their own tested behavior.

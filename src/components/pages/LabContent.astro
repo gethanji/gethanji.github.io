@@ -2,7 +2,7 @@
 import {dictionary,route} from '../../data/site';
 import {captures} from '../../data/captures';
 import LinkArrow from '../LinkArrow.astro';
-import SuiteShared from '../SuiteShared.astro';
+import AgentOverview from '../AgentOverview.astro';
 import WorkspaceTour from '../WorkspaceTour.astro';
 const {lang}=Astro.props,copy=dictionary(lang).suite;
 ---
@@ -17,12 +17,13 @@ const {lang}=Astro.props,copy=dictionary(lang).suite;
  <p class="overline">{copy.missionLabel}</p>
  <div><h2 id="mission-heading">{copy.missionTitle}</h2><p>{copy.missionText}</p><p>{copy.missionBridge}</p><a class="text-link" href="https://hanji.ink/docs/handbook/story/mission-and-vision/">{copy.missionLink} <LinkArrow /></a></div>
 </section>
-<section class="suite-origin wrap" aria-labelledby="origin-heading"><h2 id="origin-heading">{copy.originTitle}</h2><div><p>{copy.originText}</p><p>{copy.openText}</p></div></section>
 <section class="suite-workspace wrap" id="projects" aria-labelledby="workspace-heading">
  <div class="section-head"><h2 id="workspace-heading">{copy.projectsTitle}</h2><p>{copy.projectsText}</p></div>
+ <p class="overline workspace-actors">{copy.workspaceActors}</p>
  <WorkspaceTour lang={lang}/>
  <div class="suite-surface-grid">{(['think','tracker','knowledge'] as const).map((id,i)=><article><p class="overline">0{i+1} · {captures[id].name}</p><h3>{copy.products[id][0]}</h3><p>{copy.products[id][1]}</p><a class="text-link" href={route(lang,id)}>{copy.discover} {captures[id].name} <LinkArrow /></a></article>)}</div>
  <a class="text-link suite-workflow-link" href="https://hanji.ink/docs/handbook/guide/idea-to-action/">{copy.workflowLink} <LinkArrow /></a>
 </section>
-<SuiteShared lang={lang}/>
+<AgentOverview lang={lang}/>
+<section class="suite-origin wrap" aria-labelledby="origin-heading"><h2 id="origin-heading">{copy.originTitle}</h2><div><p>{copy.originText}</p><p>{copy.openText}</p></div></section>
 <section class="suite-closing wrap" id="vision"><p class="overline">Hanji</p><h2>{copy.closingTitle}</h2><p>{copy.closingText}</p><div class="actions"><a class="button" href={route(lang,'knowledge')+'#get-started'}>{copy.cta} <LinkArrow /></a><a class="text-link" href="https://hanji.ink/docs/">{copy.handbook} <LinkArrow /></a></div></section>

@@ -1,0 +1,19 @@
+---
+import {dictionary,route} from '../data/site';
+import LinkArrow from './LinkArrow.astro';
+const {lang}=Astro.props,copy=dictionary(lang).suite.collaboration;
+const cards=[
+ {title:copy.conductorTitle,text:copy.conductorText,label:copy.conductorLink,href:'https://hanji.ink/docs/handbook/guide/conductor/'},
+ {title:copy.focusedTitle,text:copy.focusedText,label:copy.focusedLink,href:route(lang,'tracker')},
+ {title:copy.briefTitle,text:copy.briefText,label:copy.briefLink,href:'https://hanji.ink/docs/handbook/guide/agents/'},
+ {title:copy.historyTitle,text:copy.historyText,label:copy.historyLink,href:'https://hanji.ink/docs/handbook/guide/whiteboard/'},
+];
+---
+<section class="agent-overview wrap" aria-labelledby="agents-heading" id="working-with-agents">
+ <div class="section-head"><h2 id="agents-heading">{copy.heading}</h2><div><p>{copy.intro}</p><p class="agent-providers">{copy.providers}</p></div></div>
+ <div class="agent-request-examples" role="group" aria-label={copy.exampleLabel}>
+  <figure><figcaption>{copy.wideLabel} · Conductor</figcaption><blockquote>{copy.widePrompt}</blockquote></figure>
+  <figure><figcaption>{copy.taskLabel} · Plan</figcaption><blockquote><span class="agent-mention">@claude</span> {copy.taskPrompt}</blockquote></figure>
+ </div>
+ <div class="agent-overview-grid">{cards.map((card,i)=><article><p class="overline">0{i+1}</p><h3>{card.title}</h3><p>{card.text}</p><a class="text-link" href={card.href}>{card.label} <LinkArrow /></a></article>)}</div>
+</section>

@@ -859,6 +859,29 @@
     "templatesTitle": "Beginnt mit einer hilfreichen Struktur.",
     "originTitle": "Ein persönliches Bedürfnis. Eine fortlaufende Praxis.",
     "originText": "Hanji entstand aus dem persönlichen Bedürfnis, besser mit Agenten zu arbeiten. Unzählige Iterationen im Alltag haben es geprägt: eine Interaktion ausprobieren, Unklarheiten erkennen und die Oberfläche weiterentwickeln.",
-    "openText": "Heute teilen wir die Ergebnisse öffentlich und als Open Source und experimentieren weiter. Mit den Werkzeugen und Methoden des KI-Zeitalters wird sich auch Hanji verändern. Die Produkte sind praktische Erkundungen, die mit unseren Erkenntnissen wachsen."
+    "openText": "Heute teilen wir die Ergebnisse öffentlich und als Open Source und experimentieren weiter. Mit den Werkzeugen und Methoden des KI-Zeitalters wird sich auch Hanji verändern. Die Produkte sind praktische Erkundungen, die mit unseren Erkenntnissen wachsen.",
+    "collaboration": {
+      "heading": "Ein Arbeitsraum. Zwei Wege mit eurem Agenten.",
+      "intro": "Menschen und verbundene Agenten können in Think, Plan und Document lesen, erstellen und bearbeiten – innerhalb der erteilten Zugriffe. Arbeitet direkt, holt Hilfe für den ganzen Arbeitsraum oder übergebt eine gezielte Aufgabe.",
+      "providers": "Wählt euren Agenten. Verbindet Claude oder Codex; andere kompatible Agenten können Hanjis MCP-Werkzeuge mit begrenztem Zugriff nutzen.",
+      "wideLabel": "Im ganzen Arbeitsraum",
+      "widePrompt": "Was hat sich in diesem Projekt geändert, und was sollten wir als Nächstes tun?",
+      "taskLabel": "Für eine bestimmte Aufgabe",
+      "taskPrompt": "Präzisiere die Abnahmekriterien und schlage den nächsten Schritt vor.",
+      "exampleLabel": "Beispielanfragen",
+      "conductorTitle": "Ein Conductor mit Überblick.",
+      "conductorText": "Ein fortlaufendes Agentengespräch begleitet euch durch alle drei Oberflächen. Stellt Fragen, erstellt oder bearbeitet Inhalte und organisiert den Arbeitsraum mit dem passenden Kontext.",
+      "conductorLink": "Den Conductor kennenlernen",
+      "focusedTitle": "Eine Erwähnung startet eine gezielte Aufgabe.",
+      "focusedText": "Erwähnt in Plan @claude oder @gpt in einem Aufgabenkommentar oder Workspace-Thread, um euren eingerichteten Agenten um Hilfe zu bitten. Die Aufgabe erhält eine eigene Sitzung mit relevantem Kontext und weniger unnötigem Ballast.",
+      "focusedLink": "Mit Agenten arbeiten",
+      "briefTitle": "Agenten lernen, wie Hanji funktioniert.",
+      "briefText": "Hanji gibt Agenten Anleitungen zu Werkzeugen und Abläufen: Aufgaben verwalten, ein Brainstorming strukturieren und Dokumente erstellen oder verbessern. Das Briefing verbindet diese Werkzeuge mit eurem Auftrag.",
+      "briefLink": "So werden Agenten verbunden",
+      "historyTitle": "Änderungen nachvollziehen und wieder aufgreifen.",
+      "historyText": "Dateibasierte Arbeit hat einen Git-Verlauf, um Änderungen zu prüfen und frühere Versionen wiederherzustellen. Live-Canvases speichern zusätzlich über ein Journal und Git-Sicherungspunkte. Die Leitfäden erklären Wiederherstellung und Backups.",
+      "historyLink": "Verlauf und Wiederherstellung"
+    },
+    "workspaceActors": "Dieselben Oberflächen für Menschen und Agenten."
   }
 }

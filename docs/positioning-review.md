@@ -41,6 +41,12 @@ Ownership and open formats remain useful product principles. They support the re
 4. Workflow guides: a concrete worked example spanning the surfaces. Label illustrative examples honestly; reserve “customer story” for actual customers and measured outcomes.
 5. Handbook: start with the mental model and the first useful task. Keep installation, usage, administration and implementation details separate.
 
+## Product overview — 5 November 2026
+
+After the mission, show the practical product before the longer origin story. People and connected agents work across the same Think, Plan and Document surfaces. Explain the conductor's workspace view, focused tasks through configured agent mentions, Hanji-specific tool/workflow instructions, and reviewable Git history. Send visitors to the product pages and handbook for controls and limits.
+
+Be precise: Claude and Codex are the integrated runners, with other compatible agents able to use scoped MCP tools. Mentions such as @claude and @gpt apply to configured agents in Plan. Focused briefs limit unnecessary context; there is no measured token-savings claim. Git versions file-backed content; live canvas journals, comments, configuration and sessions have separate storage boundaries. Do not promise that Git alone recovers everything.
+
 ## Visual and copy rules
 
 - Show a coherent piece of work, with a readable task or decision. Full application windows are useful for orientation; focused captures explain a specific action.
