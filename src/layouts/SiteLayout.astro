@@ -46,6 +46,26 @@ const ui = dictionary(lang).ui;
       document.documentElement.dataset.theme = choice === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : choice;
     })();
   </script>
+  <!-- Landing-only analytics, including Astro navigation and localized paths. -->
+  <script is:inline>
+    (() => {
+      if (window.hanjiAnalyticsInstalled) return;
+      window.hanjiAnalyticsInstalled = true;
+      window.goatcounter = {
+        no_onload: true, no_events: true, referrer: '',
+        path: () => location.pathname,
+      };
+      let pageReady = false;
+      const count = () => {
+        if (pageReady && window.goatcounter.count) window.goatcounter.count();
+      };
+      document.addEventListener('astro:page-load', () => { pageReady = true; count(); });
+      document.addEventListener('hanji:analytics-ready', count);
+    })();
+  </script>
+  <script is:inline data-goatcounter="https://hanji-ink.goatcounter.com/count"
+    async src="https://gc.zgo.at/count.js" referrerpolicy="no-referrer"
+    onload="document.dispatchEvent(new Event('hanji:analytics-ready'))"></script>
   <ClientRouter fallback="swap" />
   <SEO lang={lang} page={page} />
   <link rel="icon" href="/hanji-mark.svg" type="image/svg+xml" />
