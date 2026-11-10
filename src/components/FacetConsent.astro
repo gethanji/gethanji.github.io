@@ -1,0 +1,9 @@
+---
+import notices from '../data/facet-consent.json';
+const {lang='en'}=Astro.props;
+const selected=Object.hasOwn(notices,lang)?lang:'en';
+const copy=notices[selected];
+---
+<aside class="facet-choice" lang={selected} aria-label={copy.title}><details><summary>{copy.title}</summary>{copy.paragraphs.map(text=><p>{text}</p>)}<p><a href="mailto:contact@mmaxence.me">contact@mmaxence.me</a></p><p id="fn-consent-status" role="status">{copy.off}</p><div class="facet-choices"><button id="fn-allow" type="button">{copy.allow}</button><button id="fn-decline" type="button">{copy.decline}</button><button id="fn-withdraw" type="button">{copy.withdraw}</button></div><noscript>{copy.off}</noscript></details></aside>
+<script is:inline defer src="/facet-consent.js?v=pages-v1" data-site="hanji" data-route-consent="pages-v1" data-collector="https://fieldnotes-pilot.holy-waterfall-a8d6.workers.dev" data-navigation-event="astro:page-load"></script>
+<style>.facet-choice{max-width:72rem;margin:2rem auto;padding:1rem 1.5rem;font-size:.875rem;line-height:1.6}.facet-choice summary{cursor:pointer;text-decoration:underline}.facet-choice p{max-width:75ch;margin:.8rem 0}.facet-choices{display:flex;flex-wrap:wrap;gap:.6rem}.facet-choices button{font:inherit;color:inherit;background:transparent;border:1px solid currentColor;border-radius:.4rem;padding:.6rem .9rem;cursor:pointer}.facet-choice :focus-visible{outline:2px solid currentColor;outline-offset:4px}</style>

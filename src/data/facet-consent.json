@@ -1,0 +1,67 @@
+{
+  "en": {
+    "title": "Optional analytics: your choice",
+    "allow": "Allow Facet",
+    "decline": "Decline",
+    "withdraw": "Withdraw permission",
+    "off": "Facet is off. Your choice does not affect access.",
+    "paragraphs": [
+      "Facet stays off unless you allow it. Declining does not change access. It records page views, time, configured public paths, limited sources and approved referring domains. It does not collect country, browser, operating system or device categories in this trial.",
+      "Event records do not contain raw IP addresses, raw browser identification strings, full referring URLs, queries, precise location, visitor IDs or linked activity across sites. A random event key prevents duplicate delivery; it does not identify a visitor. Blockers and network failures can leave gaps.",
+      "Active events are scheduled for deletion after 30 days. Cloudflare D1 recovery can retain deleted records for seven additional days. Outages can delay deletion; collection pauses when retention checks become stale. Cloudflare processes network information to deliver the service.",
+      "Your choice is stored separately for this app in this browser. Withdrawal stops future collection; past events remain until scheduled deletion. Browser privacy signals override permission. A new notice version requires a new choice. This controls only Facet, not separate GoatCounter analytics."
+    ]
+  },
+  "fr": {
+    "title": "Statistiques facultatives : à vous de choisir",
+    "allow": "Autoriser Facet",
+    "decline": "Refuser",
+    "withdraw": "Retirer mon accord",
+    "off": "Facet est désactivé. Votre choix ne change pas votre accès.",
+    "paragraphs": [
+      "Facet reste désactivé sans votre accord. Refuser ne change pas votre accès. Il enregistre les pages vues, leur heure, les chemins publics configurés, des sources limitées et des domaines référents approuvés. Cet essai ne collecte pas le pays, le navigateur, le système ni la catégorie d’appareil.",
+      "Les événements ne contiennent ni adresse IP brute, ni chaîne brute d’identification du navigateur, ni URL référente complète, paramètres d’URL, position précise, identifiant de visiteur ou parcours reliant plusieurs sites. Une clé aléatoire évite les doublons d’un événement, sans identifier une personne. Les bloqueurs et pannes réseau peuvent laisser des lacunes.",
+      "La suppression des événements actifs et de leurs détails est prévue après 30 jours. La récupération Cloudflare D1 peut conserver les données supprimées sept jours supplémentaires. Une panne peut retarder la suppression ; la collecte s’arrête si les contrôles de conservation deviennent trop anciens. Cloudflare traite les informations réseau nécessaires au service.",
+      "Votre choix est enregistré séparément pour cette application dans ce navigateur. Le retrait arrête la collecte future ; les événements passés restent jusqu’à leur suppression prévue. Les signaux de confidentialité du navigateur priment. Une nouvelle version de la notice exige un nouveau choix. Ce contrôle concerne uniquement Facet, pas les statistiques GoatCounter distinctes."
+    ]
+  },
+  "de": {
+    "title": "Optionale Statistik: Ihre Entscheidung",
+    "allow": "Facet erlauben",
+    "decline": "Ablehnen",
+    "withdraw": "Einwilligung widerrufen",
+    "off": "Facet ist ausgeschaltet. Ihre Entscheidung beeinflusst den Zugang nicht.",
+    "paragraphs": [
+      "Facet bleibt ohne Ihre Zustimmung ausgeschaltet. Ablehnen ändert Ihren Zugang nicht. Erfasst werden Seitenaufrufe, Zeitpunkt, konfigurierte öffentliche Pfade, begrenzte Quellen und freigegebene verweisende Domains. In diesem Versuch werden Land, Browser, Betriebssystem und Gerätekategorie nicht erfasst.",
+      "Ereignisse enthalten keine rohen IP-Adressen, Browser-Kennungszeichenfolgen, vollständigen Verweis-URLs, URL-Parameter, genauen Standorte, Besucherkennungen oder verknüpften Aktivitäten über mehrere Websites. Ein zufälliger Ereignisschlüssel verhindert doppelte Übertragung, ohne Besucher zu identifizieren. Blocker und Netzwerkfehler können Lücken verursachen.",
+      "Aktive Ereignisse sollen nach 30 Tagen gelöscht werden. Die Cloudflare-D1-Wiederherstellung kann gelöschte Daten weitere sieben Tage aufbewahren. Ausfälle können die Löschung verzögern; bei veralteten Aufbewahrungsprüfungen pausiert die Erfassung. Cloudflare verarbeitet Netzwerkdaten zur Bereitstellung des Dienstes.",
+      "Ihre Wahl wird für diese Anwendung in diesem Browser separat gespeichert. Ein Widerruf stoppt die zukünftige Erfassung; bisherige Ereignisse bleiben bis zur geplanten Löschung erhalten. Datenschutzsignale des Browsers haben Vorrang. Eine neue Fassung dieses Hinweises erfordert eine neue Wahl. Diese Einstellung betrifft nur Facet, nicht die separate GoatCounter-Statistik."
+    ]
+  },
+  "ko": {
+    "title": "선택적 분석: 직접 선택하세요",
+    "allow": "Facet 허용",
+    "decline": "거절",
+    "withdraw": "동의 철회",
+    "off": "Facet이 꺼져 있습니다. 선택은 사이트 이용에 영향을 주지 않습니다.",
+    "paragraphs": [
+      "Facet은 허용하기 전까지 꺼져 있습니다. 거절해도 이용에 제한이 없습니다. 페이지 조회, 시각, 설정된 공개 경로, 제한된 유입 출처와 승인된 참조 도메인을 기록합니다. 이번 시험에서는 국가, 브라우저, 운영체제 또는 기기 분류를 수집하지 않습니다.",
+      "이벤트에는 원본 IP 주소, 원본 브라우저 식별 문자열, 전체 참조 URL, URL 쿼리, 정확한 위치, 방문자 ID 또는 사이트 간 연결된 활동을 저장하지 않습니다. 무작위 이벤트 키는 중복 전송을 방지하며 방문자를 식별하지 않습니다. 차단 도구와 네트워크 오류로 일부 기록이 누락될 수 있습니다.",
+      "활성 이벤트는 30일 후 삭제하도록 예약됩니다. Cloudflare D1 복구 기능에는 삭제된 기록이 추가로 7일간 남을 수 있습니다. 장애로 삭제가 지연될 수 있으며, 보관 상태 확인이 오래되면 수집이 일시 중지됩니다. Cloudflare는 서비스 제공을 위해 네트워크 정보를 처리합니다.",
+      "선택은 이 브라우저에서 이 앱용으로 따로 저장됩니다. 철회하면 이후 수집이 중단되며 기존 이벤트는 예정된 삭제 시점까지 남습니다. 브라우저 개인정보 보호 신호가 동의보다 우선합니다. 안내문 버전이 바뀌면 다시 선택해야 합니다. 이 설정은 Facet에만 적용되며 별도의 GoatCounter 분석은 변경하지 않습니다."
+    ]
+  },
+  "ja": {
+    "title": "任意のアクセス解析：ご自身で選べます",
+    "allow": "Facetを許可",
+    "decline": "拒否",
+    "withdraw": "同意を撤回",
+    "off": "Facetはオフです。選択によって利用が制限されることはありません。",
+    "paragraphs": [
+      "Facetは許可するまでオフです。拒否しても利用は制限されません。ページ表示、時刻、設定済みの公開パス、限定された流入元と承認済みの参照ドメインを記録します。この試験では国、ブラウザー、OS、端末の分類は収集しません。",
+      "イベントには生のIPアドレス、ブラウザー識別文字列全体、参照URL全体、URLクエリー、正確な位置、訪問者ID、サイト間で結び付けた行動を保存しません。ランダムなイベントキーは重複送信を防ぎ、訪問者を識別しません。ブロック機能や通信障害で記録が欠けることがあります。",
+      "稼働中のイベントは30日後に削除する予定です。Cloudflare D1の復旧機能では削除済み記録がさらに7日間残る場合があります。障害で削除が遅れることがあり、保持状態の確認が古くなると収集を停止します。Cloudflareはサービス提供のためネットワーク情報を処理します。",
+      "選択はこのブラウザー内でこのアプリ用に個別に保存されます。撤回すると今後の収集が止まり、過去のイベントは予定された削除時点まで残ります。ブラウザーのプライバシー信号が優先されます。案内の版が変わると再選択が必要です。この設定はFacetのみを対象とし、別のGoatCounter解析は変更しません。"
+    ]
+  }
+}
